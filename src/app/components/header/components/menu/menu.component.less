@@ -1,0 +1,194 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 400px;
+  width: 100%;
+
+  &__item {
+    &__link {
+      color: #000;
+      font-size: 16px;
+      line-height: 22px;
+      text-transform: uppercase;
+      font-family: Acherus-Regular;
+      font-weight: 600;
+      transition: 0.3s;
+
+      &:hover {
+        color: #00619d;
+      }
+    }
+
+    &.submenu {
+      position: relative;
+
+      .submenu__list {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        min-width: 350px;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        transform: translate(-33%, -15px);
+        padding: 20px 35px 20px 20px;
+        box-shadow: 0 33px 36px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+
+        &__item {
+          position: relative;
+          text-align: left;
+          width: 100%;
+          max-width: 320px;
+          margin-left: 15px;
+          margin-right: 0;
+          margin-top: 15px;
+
+          &__link {
+            display: block;
+            border-bottom: 1px solid #00619d;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 22px;
+            color: #000;
+            text-transform: none;
+            transition: 0.3s;
+
+            &:hover {
+              color: #00619d;
+            }
+          }
+
+          .menu {
+            position: static;
+            transform: none;
+            display: block;
+            box-shadow: none;
+            background-color: transparent;
+            padding: 0;
+            min-height: 10px;
+
+            &__item {
+              margin-left: 15px;
+
+              a {
+                display: block;
+                padding-bottom: 3px;
+                font-size: 15px;
+                line-height: 22px;
+                color: #000;
+                text-transform: none;
+                transition: 0.3s;
+                border-bottom: none;
+                margin-top: 0;
+                margin-bottom: 5px;
+
+                &:hover {
+                  color: #00619d;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .submenu__list {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+svg-arrow {
+  margin-left: 5px;
+
+  ::ng-deep {
+    svg {
+      vertical-align: middle;
+    }
+  }
+}
+
+.drawer {
+  position: relative;
+  transform: unset;
+  overflow: auto;
+  max-height: 100%;
+  padding-top: 10px;
+  display: block;
+
+  &__item {
+    text-align: left;
+    width: 100%;
+    max-width: 320px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    &__link {
+      color: #000;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      text-transform: uppercase;
+    }
+
+    &.submenu {
+      .submenu__drawer {
+        &__item {
+          max-width: calc(320px - 15px);
+          margin-left: 15px;
+          margin-right: 0;
+          margin-top: 15px;
+          text-align: left;
+          width: 100%;
+
+          &__link {
+            display: block;
+            border-bottom: 1px solid #00619d;
+            padding-bottom: 3px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 22px;
+            color: #000;
+            text-transform: none;
+          }
+
+          .drawer-menu {
+            display: block;
+            width: 100%;
+
+            &__item {
+              max-width: calc(320px - 30px);
+              margin-left: 15px;
+              margin-bottom: 10px;
+
+              a {
+                display: block;
+                border-bottom: 1px solid #00619d;
+                padding-bottom: 3px;
+                margin-bottom: 10px;
+                font-size: 15px;
+                line-height: 22px;
+                color: #000;
+                text-transform: none;
+                border-bottom: none;
+                margin-top: 0;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

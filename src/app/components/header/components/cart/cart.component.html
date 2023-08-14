@@ -1,0 +1,13 @@
+<div class="cart">
+  <div class="cart__viewer" (click)="toggleCartPopup()">
+    <svg-cart></svg-cart>
+  </div>
+  <ng-container *ngIf="isVisibleCart">
+    <div class="cart__list">
+      <h4 class="cart__list__title">Basket</h4>
+      <div class="empty">
+        <p>No products in the basket.</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

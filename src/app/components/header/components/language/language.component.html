@@ -1,0 +1,23 @@
+<div class="lang">
+  <div class="lang__viewer" (click)="toggleLangPopup()">
+    <div class="lang__img">
+      <img src="./assets/image/uz-flag.png" alt="flag" />
+    </div>
+    <span class="lang__title">UZB</span>
+    <span class="lang__arrow">
+      <svg-arrow></svg-arrow>
+    </span>
+  </div>
+  <!-- LANGUAGE POPUP -->
+  <ng-container *ngIf="isVisibleLanguagePopup">
+    <div class="lang__selector">
+      <p class="lang__selector__title">Languages:</p>
+      <!-- СДЕЛАТЬ РАБОЧИМ СЕЛЕКТОР ЯЗЫКА -->
+      <select class="lang__selector__select" name="language">
+        <option value="ru">Русский</option>
+        <option value="uzb_latn">O'zbekcha</option>
+        <option value="uzb_cyrl">Узбекча</option>
+      </select>
+    </div>
+  </ng-container>
+</div>

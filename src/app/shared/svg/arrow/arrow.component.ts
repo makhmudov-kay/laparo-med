@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './arrow.component.svg',
   standalone: true,
 })
-export class ArrowComponent {}
+export class ArrowSVG {}

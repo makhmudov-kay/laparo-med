@@ -1,106 +1,82 @@
 .header {
-    background: #fff;
-    height: 90px;
-    transition: all .4s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99;
+  background: #fff;
+  height: 90px;
+  transition: all 0.4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 20px -16px #777;
+
+  &-wrapper {
     display: flex;
-    align-items: center;
-    box-shadow: 0 1px 20px -16px #777;
+    justify-content: space-between;
 
-    &-wrapper {
+    &__logo {
+      display: flex;
+      align-items: center;
+
+      svg-logo {
         display: flex;
-        justify-content: space-between;
+      }
 
-        &__navbar {
-            display: flex;
-            align-items: center;
-
-            .list {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                min-width: 400px;
-                width: 100%;
-
-
-                &__item {
-                    &__link {
-                        color: #000;
-                        font-size: 16px;
-                        line-height: 22px;
-                        text-transform: uppercase;
-                        font-family: Acherus-Regular;
-                        font-weight: 600;
-                        transition: 0.3s;
-
-                        &:hover {
-                            color: #00619d;
-                        }
-                    }
-                }
-            }
+      ::ng-deep {
+        svg {
+          @media (max-width: 575px) {
+            width: 110px;
+          }
         }
-
-        &__lang-and-cart {
-            display: flex;
-            align-items: center;
-
-            .lang {
-                display: flex;
-                align-items: center;
-                margin-right: 15px;
-                cursor: pointer;
-                position: relative;
-
-                &__img {
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    overflow: hidden;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: fill;
-                    }
-                }
-
-                &__title {
-                    margin: 0 8px 0 5px;
-                }
-
-                &__arrow {
-                    ::ng-deep {
-                        svg {
-                            vertical-align: middle;
-                        }
-                    }
-                }
-
-                &__selector {
-                    position: absolute;
-                    border: 1px solid #000;
-                    background: #fff;
-                    bottom: -100px;
-                    left: -130px;
-                    padding: 25px;
-                    width: 220px;
-                }
-            }
-
-            .cart {
-                cursor: pointer;
-
-                ::ng-deep {
-                    svg {
-                        vertical-align: middle;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    &__navbar {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+
+    &__lang-and-cart {
+      display: flex;
+      align-items: center;
+
+      .burger {
+        margin-right: 10px;
+        display: none;
+
+        @media (max-width: 992px) {
+          display: inline-block;
+        }
+
+        ::ng-deep {
+          svg {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.drawer {
+  display: block;
+  width: 100%;
+  transform: translateX(0);
+  background: #fff;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  left: 0;
+  padding-top: 90px;
+  transform: translateX(-100%);
+  transition: 0.3s;
+
+  &.open {
+    transform: translateX(0);
+  }
 }

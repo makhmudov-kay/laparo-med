@@ -1,0 +1,58 @@
+.cart {
+  position: relative;
+
+  &__viewer {
+    cursor: pointer;
+    ::ng-deep {
+      svg {
+        vertical-align: middle;
+
+        @media (max-width: 575px) {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    padding: 25px;
+    min-width: 450px;
+    background-color: #fff;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid #eaeaea;
+    border-top: none;
+
+    @media (max-width: 575px) {
+      min-width: 320px;
+    }
+
+    @media (max-width: 360px) {
+      max-width: calc(100vw - 36px);
+      width: 100vw;
+      min-width: unset;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .empty {
+      p {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+}

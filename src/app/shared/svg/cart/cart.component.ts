@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './cart.component.svg',
   standalone: true,
 })
-export class CartComponent {}
+export class CartSVG {}

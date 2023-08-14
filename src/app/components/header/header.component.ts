@@ -1,18 +1,87 @@
-import { NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ArrowComponent } from 'src/app/shared/svg/arrow/arrow.component';
-import { CartComponent } from 'src/app/shared/svg/cart/cart.component';
+import { NgClass, NgIf } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
 import { LogoComponent } from 'src/app/shared/svg/logo/logo.component';
+import { LanguageComponent } from './components/language/language.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less'],
   standalone: true,
-  imports: [LogoComponent, CartComponent, ArrowComponent, NgIf],
+  imports: [
+    LogoComponent,
+    LanguageComponent,
+    CartComponent,
+    MenuComponent,
+    BurgerSVG,
+    NgClass,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
-  constructor() {}
+export class HeaderComponent {
+  /**
+   *
+   */
+  isVisibleLanguagePopup = false;
 
-  ngOnInit() {}
+  /**
+   *
+   */
+  isVisibleCart = false;
+
+  /**
+   *
+   */
+  isDrawer = false;
+
+  /**
+   *
+   * @param el
+   */
+  constructor(private el: ElementRef) {}
+
+  /**
+   *
+   */
+  toggleLangPopup() {
+    this.isVisibleLanguagePopup = !this.isVisibleLanguagePopup;
+  }
+
+  /**
+   *
+   */
+  toggleCartPopup() {
+    this.isVisibleCart = !this.isVisibleCart;
+  }
+
+  /**
+   *
+   */
+  openDrawer() {
+    this.isDrawer = !this.isDrawer;
+  }
+
+  /**
+   *
+   * @param event
+   */
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      if (this.isVisibleLanguagePopup) {
+        this.isVisibleLanguagePopup = false;
+      }
+      if (this.isVisibleCart) {
+        this.isVisibleCart = false;
+      }
+    }
+  }
 }
