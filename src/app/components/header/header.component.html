@@ -1,7 +1,9 @@
 <div class="header">
   <div class="container">
     <div class="header-wrapper">
+      <!-- LOGO -->
       <div class="header-wrapper__logo"><svg-logo></svg-logo></div>
+      <!-- MENU -->
       <div class="header-wrapper__navbar">
         <ul class="list">
           <li class="list__item">
@@ -17,6 +19,30 @@
             <a class="list__item__link" href="">Contact</a>
           </li>
         </ul>
+      </div>
+      <!-- LANGUAGE AND CART -->
+      <div class="header-wrapper__lang-and-cart">
+        <!-- LANGUAGE -->
+        <div class="lang">
+          <div class="lang__img">
+            <img src="./assets/image/uz-flag.png" alt="flag" />
+          </div>
+          <span class="lang__title">UZB</span>
+          <span class="lang__arrow">
+            <svg-arrow></svg-arrow>
+          </span>
+
+          <!-- LANGUAGE POPUP -->
+          <ng-container *ngIf="true">
+            <div class="lang__selector">
+              <p></p>
+            </div>
+          </ng-container>
+        </div>
+        <!-- CART -->
+        <div class="cart">
+          <svg-cart></svg-cart>
+        </div>
       </div>
     </div>
   </div>
