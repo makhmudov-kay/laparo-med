@@ -1,0 +1,126 @@
+.carousel {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 575px) {
+    min-height: 90vh;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: url(../../../../../assets/image/swiper-home-strokes.png);
+    z-index: 2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 3;
+    background-image: url(../../../../../assets/image/swiper-home-strokes-1.png);
+    bottom: -20px;
+    height: 255px;
+    background-size: cover;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+
+    @media (max-width: 992px) {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+    }
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+
+    ::ng-deep {
+      svg {
+        path {
+          transition: 0.3s;
+        }
+      }
+    }
+
+    &:hover {
+      border: 2px solid #f76002;
+
+      ::ng-deep {
+        svg {
+          path {
+            stroke: #f76002;
+          }
+        }
+      }
+    }
+  }
+
+  &__pre {
+    left: 8vw;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (min-width: 992px) and (max-width: 1700px) {
+      left: 5vw;
+    }
+
+    @media (min-width: 992px) and (max-width: 1600px) {
+      left: 3vw;
+    }
+
+    @media (min-width: 992px) and (max-width: 1500px) {
+      left: 2vw;
+    }
+
+    @media (max-width: 992px) {
+      left: 1vw;
+    }
+  }
+
+  &__next {
+    right: 8vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+
+    @media (min-width: 992px) and (max-width: 1700px) {
+      right: 5vw;
+    }
+
+    @media (min-width: 992px) and (max-width: 1600px) {
+      right: 3vw;
+    }
+
+    @media (min-width: 992px) and (max-width: 1500px) {
+      right: 2vw;
+    }
+
+    @media (max-width: 992px) {
+      right: 1vw;
+    }
+  }
+}

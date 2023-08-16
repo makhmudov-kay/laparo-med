@@ -1,0 +1,22 @@
+<div
+  class="slider"
+  [ngStyle]="{ background: 'url(' + slide.backgroundImage + ')' }"
+>
+  <div class="slider__wrapper">
+    <div class="container">
+      <div class="slider__content">
+        <div class="slider__content__block">
+          <div class="slider__title">{{ slide.title }}</div>
+          <div class="slider__text">
+            {{ slide.text }}
+          </div>
+          <a href="" class="slider__btn"
+            >Read more
+            <span class="slider__btn__arrow"
+              ><svg-arrow class="d-flex"></svg-arrow></span
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

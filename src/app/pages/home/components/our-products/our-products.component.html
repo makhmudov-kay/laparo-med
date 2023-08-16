@@ -1,0 +1,13 @@
+<div class="products">
+  <div class="container">
+    <h4 class="section-title">Our products</h4>
+    <div class="products__back-image">
+      <p class="products__back-image__title">Products</p>
+    </div>
+    <div class="products__wrapper">
+      <div class="products__col" *ngFor="let product of productsBlockInfo">
+        <app-product-block [product]="product"></app-product-block>
+      </div>
+    </div>
+  </div>
+</div>

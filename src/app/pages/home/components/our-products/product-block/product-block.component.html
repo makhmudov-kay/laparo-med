@@ -1,0 +1,39 @@
+<div class="products__col__title">
+  <h2
+    class="products__col__title__main"
+    [ngClass]="{
+      orange: product.color === 'orange',
+      blue: product.color === 'blue'
+    }"
+  >
+    {{ product.title }}
+  </h2>
+  <h4 class="products__col__title__sub">{{ product.subtitle }}</h4>
+</div>
+<div class="products__col__info">
+  <h3
+    class="products__col__info__title"
+    [ngClass]="{
+      orange: product.color === 'orange',
+      blue: product.color === 'blue'
+    }"
+  >
+    {{ product.textTitle }}
+  </h3>
+  <p class="products__col__info__text">
+    {{ product.text }}
+  </p>
+  <div class="products__col__info__btn">
+    <a
+      href=""
+      class="products__col__info__btn__link"
+      [ngClass]="{
+        orange: product.color === 'orange',
+        blue: product.color === 'blue'
+      }"
+    >
+      <span>Read more</span>
+      <svg-products-arrow class="d-flex"></svg-products-arrow>
+    </a>
+  </div>
+</div>

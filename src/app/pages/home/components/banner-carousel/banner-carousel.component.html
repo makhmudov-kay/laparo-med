@@ -1,0 +1,15 @@
+<div class="carousel">
+  <button class="carousel__pre carousel__btn" (click)="pre()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </button>
+  <div class="carousel__wrapper">
+    <swiper #swiper [slidesPerView]="1" [spaceBetween]="50">
+      <ng-template swiperSlide *ngFor="let slide of swiperData"
+        ><app-slide [slide]="slide"></app-slide
+      ></ng-template>
+    </swiper>
+  </div>
+  <button class="carousel__next carousel__btn" (click)="next()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </button>
+</div>

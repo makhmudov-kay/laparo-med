@@ -1,0 +1,192 @@
+.products__col {
+  &__title {
+    width: max-content;
+
+    @media (max-width: 1200px) {
+      margin: auto;
+    }
+
+    &__main {
+      line-height: 100%;
+      font-size: 72px;
+
+      &.orange {
+        color: #f76002;
+      }
+
+      &.blue {
+        color: #00619d;
+      }
+
+      @media (min-width: 992px) and (max-width: 1700px) {
+        line-height: 120%;
+        font-size: 62px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1500px) {
+        line-height: 120%;
+        font-size: 54px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1400px) {
+        line-height: 120%;
+        font-size: 48px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        line-height: 120%;
+        font-size: 38px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 48px;
+      }
+
+      @media (max-width: 567px) {
+        font-size: 36px;
+      }
+    }
+
+    &__sub {
+      font-size: 36px;
+      line-height: 105%;
+      text-align: center;
+      font-family: Acherus-Bold;
+      color: #000;
+
+      @media (min-width: 992px) and (max-width: 1300px) {
+        font-size: 28px;
+        line-height: 105%;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 24px;
+        line-height: 120%;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 567px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 150px;
+
+    @media (max-width: 1200px) {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    &__title {
+      font-family: Acherus-Black;
+      color: transparent;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 100%;
+      margin-bottom: 25px;
+
+      &.orange {
+        -webkit-text-stroke: 1px #f76002;
+      }
+
+      &.blue {
+        -webkit-text-stroke: 1px #00619d;
+      }
+
+      @media (min-width: 992px) and (max-width: 1700px) {
+        font-size: 42px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1300px) {
+        font-size: 38px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 36px;
+      }
+
+      @media (max-width: 567px) {
+        font-size: 28px;
+      }
+    }
+
+    &__text {
+      font-family: Acherus-Regular;
+      font-weight: 400;
+      width: 80%;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      line-height: 170%;
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        width: 95%;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 992px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 50px;
+
+      @media (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        color: #444;
+        text-shadow: none;
+        position: relative;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        transition: all 0.4s;
+        cursor: pointer;
+        line-height: 1.33;
+
+        span {
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 170%;
+          margin-right: 15px;
+        }
+
+        &.orange {
+          &::ng-deep {
+            svg {
+              path {
+                stroke: #f76002;
+              }
+            }
+          }
+        }
+
+        &.blue {
+          &::ng-deep {
+            svg {
+              path {
+                stroke: #00619d;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "swiper/less";
+@import "swiper/less/navigation";
+@import "swiper/less/pagination";
+
 @font-face {
   font-family: Acherus-Regular;
   src: url("./assets/fonts/AcherusGrotesque-Regular.ttf");
@@ -43,6 +47,20 @@
   font-weight: 600;
 }
 
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-family: Acherus-Black;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
 .container {
   max-width: 1440px;
   width: 100%;
@@ -58,6 +76,42 @@ a {
   text-decoration: none;
 }
 
+a,
+ol li,
+ul li {
+  line-height: 1.33;
+}
+
 .d-flex {
   display: flex;
+}
+
+.section-title {
+  text-transform: uppercase;
+  position: relative;
+  padding-right: 243px;
+  font-family: Acherus-Black;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 170%;
+  text-align: right;
+
+  @media (max-width: 567px) {
+    padding-right: 120px;
+  }
+
+  &::before {
+    position: absolute;
+    right: 0;
+    content: "";
+    width: 227px;
+    height: 2px;
+    background-color: #000;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 567px) {
+      width: 100px;
+    }
+  }
 }
