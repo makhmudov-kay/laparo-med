@@ -1,0 +1,44 @@
+<div class="subscribe">
+  <div class="subscribe__wrapper">
+    <div class="subscribe__row">
+      <div class="subscribe__col">
+        <h3 class="subscribe__title">SUBSCRIBE</h3>
+      </div>
+      <div class="subscribe__col">
+        <div class="subscribe__subtitle">
+          Sign up for our Newsletter and get a
+        </div>
+        <div class="subscribe__discount">5% discount</div>
+      </div>
+      <div class="subscribe__col">
+        <form class="subscribe__form" [formGroup]="form">
+          <label for="email">E-mail</label>
+          <div class="subscribe__form__input">
+            <input type="text" formControlName="email" id="email" />
+            <button>Subscribe</button>
+          </div>
+          <div class="subscribe__form__terms">
+            <div class="subscribe__form__terms__recieve">
+              <input
+                type="checkbox"
+                [(ngModel)]="recieveTheNews"
+                id="receive"
+              />
+              <label for="receive">I agree to receive the newsletter</label>
+            </div>
+            <div class="subscribe__form__terms__recieve">
+              <input
+                type="checkbox"
+                [(ngModel)]="privacyPolice"
+                id="privacyPolice"
+              />
+              <label for="privacyPolice"
+                >I accept the terms and privacy policy</label
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
