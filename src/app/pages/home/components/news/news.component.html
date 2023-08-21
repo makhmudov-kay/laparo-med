@@ -1,0 +1,15 @@
+<div class="news">
+  <div class="container">
+    <h4 class="section-title">News</h4>
+    <div class="news__header">
+      <h2 class="news__header__title">What’s going on?</h2>
+    </div>
+    <div class="news__content">
+      <swiper #swiper [slidesPerView]="1.5" [spaceBetween]="50">
+        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
+        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
+        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
+      </swiper>
+    </div>
+  </div>
+</div>
