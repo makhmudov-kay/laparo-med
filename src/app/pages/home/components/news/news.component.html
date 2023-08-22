@@ -2,14 +2,45 @@
   <div class="container">
     <h4 class="section-title">News</h4>
     <div class="news__header">
-      <h2 class="news__header__title">What’s going on?</h2>
+      <h2 class="news__header__title title">What’s going on?</h2>
     </div>
     <div class="news__content">
-      <swiper #swiper [slidesPerView]="1.5" [spaceBetween]="50">
-        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
-        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
-        <ng-template swiperSlide><app-news-slide></app-news-slide></ng-template>
+      <swiper
+        [breakpoints]="{
+          '360': {
+            slidesPerView: 1,
+            spaceBetween: 5
+          },
+          '991': {
+            slidesPerView: 1.25,
+            spaceBetween: 20
+          },
+          '1170': {
+            slidesPerView: 1.4,
+            spaceBetween: 20
+          },
+          '1300': {
+            slidesPerView: 1.6,
+            spaceBetween: 20
+          }
+        }"
+        #swiper
+        [slidesPerView]="1"
+        [spaceBetween]="10"
+        class="news__swiper"
+      >
+        <ng-template swiperSlide *ngFor="let newsEl of news"
+          ><app-news-slide [new]="newsEl"></app-news-slide
+        ></ng-template>
       </swiper>
+    </div>
+    <div class="news__btn">
+      <button class="pre action-button" (click)="pre()">
+        <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+      </button>
+      <button class="next action-button" (click)="next()">
+        <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+      </button>
     </div>
   </div>
 </div>

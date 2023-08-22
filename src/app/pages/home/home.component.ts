@@ -4,6 +4,7 @@ import { OurProductsComponent } from './components/our-products/our-products.com
 import { SubscribeComponent } from 'src/app/shared/components/subscribe/subscribe.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NewsComponent } from './components/news/news.component';
+import { PartnersComponent } from './components/partners/partners.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { NewsComponent } from './components/news/news.component';
     SubscribeComponent,
     AboutUsComponent,
     NewsComponent,
+    PartnersComponent,
   ],
 })
 export class HomeComponent {}

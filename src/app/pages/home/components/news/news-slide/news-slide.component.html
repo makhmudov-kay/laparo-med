@@ -1,18 +1,22 @@
 <div class="news-card">
   <div class="news-card__img">
-    <img src="./assets/image/news-carousel-1.jpg" alt="img" />
+    <img [src]="new.img" alt="img" />
   </div>
   <div class="news-card__description">
-    <h4 class="section-title date">08/08/2023</h4>
+    <h4 class="section-title date">{{ new.created_at }}</h4>
     <h5 class="news-card__description__title">
-      Esophageal Atresia in Virtual Reality
+      {{ new.title }}
     </h5>
     <p class="news-card__description__text">
-      Some time ago, we showed you how the Pediatric Pyeloplasty procedure looks
-      in virtual reality. Now, it's time for esophageal atres...
+      {{ new.text }}
     </p>
     <div class="news-card__description__btn">
-      <a href="">Read more</a>
+      <a href=""
+        ><span class="link">Read more </span>
+        <span class="icon">
+          <svg-arrow-btn></svg-arrow-btn>
+        </span>
+      </a>
     </div>
   </div>
 </div>

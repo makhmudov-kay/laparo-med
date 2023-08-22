@@ -1,0 +1,40 @@
+<div class="partners">
+  <div class="container">
+    <h4 class="section-title">Partners</h4>
+    <div class="partners__header">
+      <h2 class="title">They trusted us</h2>
+    </div>
+  </div>
+  <div class="partners__list">
+    <swiper
+      [breakpoints]="{
+        '360': {
+          slidesPerView: 1,
+          spaceBetween: 5
+        },
+        '991': {
+          slidesPerView: 1.25,
+          spaceBetween: 20
+        },
+        '1170': {
+          slidesPerView: 1.4,
+          spaceBetween: 20
+        },
+        '1300': {
+          slidesPerView: 5,
+          spaceBetween: 100
+        }
+      }"
+      #swiper
+      [slidesPerView]="1"
+      [spaceBetween]="100"
+      class="partners__swiper"
+    >
+      <ng-template swiperSlide *ngFor="let partner of data">
+        <div class="partners__list__item">
+          <img [src]="partner.img" alt="logo" />
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</div>
