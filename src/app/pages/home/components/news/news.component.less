@@ -19,39 +19,4 @@
       margin-top: 60px;
     }
   }
-
-  &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 60px;
-
-    button {
-      border: 2px solid #00619d;
-      ::ng-deep {
-        svg {
-          path {
-            transition: 0.3s;
-            stroke: #00619d;
-          }
-        }
-      }
-
-      &:hover {
-        border: 2px solid #f76002;
-
-        ::ng-deep {
-          svg {
-            path {
-              stroke: #f76002;
-            }
-          }
-        }
-      }
-
-      &.next {
-        transform: rotate(180deg);
-      }
-    }
-  }
 }

@@ -1,22 +1,17 @@
 import { NgFor } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { SwiperComponent, SwiperModule } from 'swiper/angular';
-import { PARTNERS } from './partners-data';
+import { AwardsCardComponent } from './awards-card/awards-card.component';
 import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-nav.component';
 
 @Component({
-  selector: 'app-partners',
-  templateUrl: './partners.component.html',
-  styleUrls: ['./partners.component.less'],
+  selector: 'app-awards',
+  templateUrl: './awards.component.html',
+  styleUrls: ['./awards.component.less'],
   standalone: true,
-  imports: [SwiperModule, NgFor, SwiperNavComponent],
+  imports: [SwiperModule, NgFor, AwardsCardComponent, SwiperNavComponent],
 })
-export class PartnersComponent {
-  /**
-   *
-   */
-  data = PARTNERS;
-
+export class AwardsComponent {
   /**
    *
    */

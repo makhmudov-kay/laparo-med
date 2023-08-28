@@ -5,13 +5,20 @@ import { NewsSlideComponent } from './news-slide/news-slide.component';
 import { NEWS_BLOCK } from './news-block';
 import { News } from './news-block.interface';
 import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
+import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-nav.component';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.less'],
   standalone: true,
-  imports: [SwiperModule, NgFor, NewsSlideComponent, ArrowBtnSVG],
+  imports: [
+    SwiperModule,
+    NgFor,
+    NewsSlideComponent,
+    ArrowBtnSVG,
+    SwiperNavComponent,
+  ],
 })
 export class NewsComponent {
   /**

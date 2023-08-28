@@ -1,0 +1,48 @@
+<div class="awards">
+  <div class="container">
+    <h4 class="section-title">Awards</h4>
+    <div class="awards__header">
+      <h2 class="title">Awards</h2>
+    </div>
+    <div class="awards__wrapper">
+      <div class="awards__description">
+        <h5 class="awards__description__text">
+          We are proud to have received the recognition of some esteemed
+          business development organizations both domestically here in Poland
+          and more recently abroad internationally.
+        </h5>
+      </div>
+      <div class="awards__cards">
+        <swiper
+          #swiper
+          [slidesPerView]="1"
+          [spaceBetween]="70"
+          [breakpoints]="{
+            '360': {
+              slidesPerView: 1,
+              spaceBetween: 5
+            },
+            '991': {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            '1170': {
+              slidesPerView: 1.4,
+              spaceBetween: 50
+            },
+            '1300': {
+              slidesPerView: 1.5,
+              spaceBetween: 80
+            }
+          }"
+          class="awards__swiper"
+        >
+          <ng-template swiperSlide *ngFor="let partner of [].constructor(10)">
+            <app-awards-card></app-awards-card>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+    <app-swiper-nav (next)="next()" (pre)="pre()"></app-swiper-nav>
+  </div>
+</div>

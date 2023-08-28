@@ -5,6 +5,8 @@ import { SubscribeComponent } from 'src/app/shared/components/subscribe/subscrib
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { NewsComponent } from './components/news/news.component';
 import { PartnersComponent } from './components/partners/partners.component';
+import { AwardsComponent } from './components/awards/awards.component';
+import { SendFormComponent } from './components/send-form/send-form.component';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +20,8 @@ import { PartnersComponent } from './components/partners/partners.component';
     AboutUsComponent,
     NewsComponent,
     PartnersComponent,
+    AwardsComponent,
+    SendFormComponent
   ],
 })
 export class HomeComponent {}
