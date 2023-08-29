@@ -10,6 +10,7 @@ import { LanguageComponent } from './components/language/language.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
     MenuComponent,
     BurgerSVG,
     NgClass,
+    RouterLink,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

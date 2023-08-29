@@ -4,9 +4,16 @@ import { Route, provideRouter } from '@angular/router';
 
 export const ROUTES: Route[] = [
   {
-    path: 'home',
+    path: '',
     loadComponent: () =>
       import('./app/pages/home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'about-us',
+    loadComponent: () =>
+      import('./app/pages/about-us/about-us.component').then(
+        (m) => m.AboutUsComponent
+      ),
   },
 ];
 

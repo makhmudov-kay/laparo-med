@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
 
 @Component({
@@ -7,7 +8,7 @@ import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.less'],
   standalone: true,
-  imports: [ArrowSVG, NgIf],
+  imports: [ArrowSVG, NgIf, RouterLink],
 })
 export class MenuComponent {
   @Input()
