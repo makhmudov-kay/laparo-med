@@ -1,0 +1,58 @@
+.card {
+  color: #fff;
+  display: flex;
+
+  @media (max-width: 992px) {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    flex: 0 0 15%;
+    position: relative;
+
+    span {
+      font-family: Acherus-Bold;
+      font-weight: 900;
+      font-size: 42px;
+      line-height: 100%;
+      -webkit-text-stroke: 1px #fff;
+      color: transparent;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-65%) translateY(-50%) rotate(-90deg);
+
+      @media (max-width: 992px) {
+        font-size: 38px;
+        display: block;
+        position: static;
+        margin-bottom: 15px;
+        transform: translateX(0) translateY(0) rotate(0deg);
+      }
+
+      @media (max-width: 567px) {
+        font-size: 28px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 170%;
+
+    p {
+      margin-bottom: 10px;
+      margin-top: 0;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+      word-break: break-word;
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}

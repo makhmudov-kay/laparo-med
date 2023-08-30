@@ -1,0 +1,145 @@
+.our-story {
+  margin-top: 180px;
+  margin-bottom: 180px;
+
+  @media (max-width: 992px) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    &__title {
+      color: #00619d;
+      line-height: 100%;
+      font-size: 72px;
+      max-width: 50%;
+      flex: 0 0 50%;
+
+      @media (min-width: 992px) and (max-width: 1700px) {
+        line-height: 120%;
+        font-size: 62px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1500px) {
+        font-size: 54px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1400px) {
+        font-size: 48px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 38px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 48px;
+      }
+
+      @media (max-width: 567px) {
+        font-size: 36px;
+      }
+    }
+
+    &__subtitle {
+      max-width: 50%;
+      flex: 0 0 50%;
+
+      @media (max-width: 992px) {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+
+      @media (max-width: 576px) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 120px;
+    display: flex;
+    gap: 120px;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      margin-top: 60px;
+      text-align: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    &__description {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+
+      @media (max-width: 992px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      p {
+        width: 85%;
+        margin-bottom: 50px;
+        font-family: Acherus-Black;
+        font-size: 22px;
+        line-height: 170%;
+
+        @media (max-width: 1500px) and (min-width: 992px) {
+          font-size: 18px;
+        }
+
+        @media (min-width: 992px) and (max-width: 1300px) {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+          width: 100%;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &__link {
+      @media (max-width: 992px) {
+        width: max-content;
+        margin: auto;
+      }
+    }
+
+    &__img {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+
+      @media (max-width: 992px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+      }
+
+      img {
+        max-width: 54vw;
+        height: auto;
+        border-style: none;
+        display: block;
+
+        @media (max-width: 992px) {
+          margin: auto;
+        }
+      }
+    }
+  }
+}

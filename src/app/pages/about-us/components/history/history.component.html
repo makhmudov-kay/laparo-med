@@ -11,8 +11,17 @@
           software and hardware engineers who are pushing the boundaries of
           laparoscopy training and education. This is our story:
         </h5>
-
-        <app-history-card></app-history-card>
+        <div class="stories">
+          <div class="story" *ngFor="let story of stories">
+            <div class="story__circle"><span></span></div>
+            <div class="story__content">
+              <h4 class="story__content__date">{{ story.date }}</h4>
+              <p class="story__content__title">
+                {{ story.title }}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

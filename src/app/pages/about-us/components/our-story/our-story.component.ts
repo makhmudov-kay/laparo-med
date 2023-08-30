@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.component';
 
 @Component({
-  selector: 'app-awards-card',
-  templateUrl: './awards-card.component.html',
-  styleUrls: ['./awards-card.component.less'],
+  selector: 'app-our-story',
+  templateUrl: './our-story.component.html',
+  styleUrls: ['./our-story.component.less'],
   standalone: true,
   imports: [LinkBtnComponent],
 })
-export class AwardsCardComponent {}
+export class OurStoryComponent {}
