@@ -1,3 +1,17 @@
-<p>
-  blog works!
-</p>
+<div class="blog">
+  <div class="container">
+    <div class="blog__wrapper">
+      <div class="blog__list">
+        <app-posts></app-posts>
+      </div>
+      <div class="blog__menu">
+        <app-categories></app-categories>
+        <app-popular [title]="'Most popular'"></app-popular>
+        <app-popular [title]="'Editor pick'"></app-popular>
+      </div>
+    </div>
+    <div class="blog__btn">
+      <button>More posts</button>
+    </div>
+  </div>
+</div>

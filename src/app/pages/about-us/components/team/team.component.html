@@ -5,53 +5,11 @@
       <h4 class="section-title team__header__subtitle">LAPARO TEAM</h4>
     </div>
     <div class="team__content">
-
-      <div class="team__content__card">
-        <div class="team__content__card__title"><span>R&D</span></div>
-        <div class="team__content__card__description">
-          <div class="team__content__card__description__img">
-            <img src="./assets/image/team-1.png" alt="img" />
-          </div>
-          <div class="team__content__card__description__text">
-            To ensure the highest level of quality, we develop and produce all
-            our solutions in-house. We believe that maintaining a close
-            relationship between our research, development and production
-            departments is the key to success.
-          </div>
-        </div>
-      </div>
-      
-
-      <div class="team__content__card">
-        <div class="team__content__card__title"><span>R&D</span></div>
-        <div class="team__content__card__description reverse">
-          <div class="team__content__card__description__img">
-            <img src="./assets/image/team-1.png" alt="img" />
-          </div>
-          <div class="team__content__card__description__text">
-            To ensure the highest level of quality, we develop and produce all
-            our solutions in-house. We believe that maintaining a close
-            relationship between our research, development and production
-            departments is the key to success.
-          </div>
-        </div>
-      </div>
-
-      <div class="team__content__card">
-        <div class="team__content__card__title"><span>R&D</span></div>
-        <div class="team__content__card__description">
-          <div class="team__content__card__description__img">
-            <img src="./assets/image/team-1.png" alt="img" />
-          </div>
-          <div class="team__content__card__description__text">
-            To ensure the highest level of quality, we develop and produce all
-            our solutions in-house. We believe that maintaining a close
-            relationship between our research, development and production
-            departments is the key to success.
-          </div>
-        </div>
-      </div>
-
+      <app-team-card
+        *ngFor="let card of team; let id = index"
+        [teamCard]="card"
+        [isEven]="id % 2 !== 0"
+      ></app-team-card>
     </div>
   </div>
 </div>

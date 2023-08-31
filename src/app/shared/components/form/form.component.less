@@ -22,6 +22,7 @@
       flex: 50%;
       display: flex;
       flex-direction: column;
+      margin-bottom: 15px;
 
       span {
         color: #fff;
@@ -110,6 +111,48 @@
       &:hover {
         background-color: #000;
         color: #fff;
+      }
+    }
+  }
+}
+
+.isContact {
+  label,
+  span,
+  a {
+    color: #000 !important;
+  }
+
+  input,
+  textarea {
+    background-color: #f4f4f4;
+    color: #000;
+  }
+
+  .form {
+    &__inputs {
+      @media (max-width: 992px) {
+        gap: 0px;
+      }
+    }
+
+    &__checkboxes {
+      &__field {
+        span {
+          font-family: Acherus-Medium;
+        }
+      }
+    }
+
+    &__btn {
+      button {
+        background-color: #00619d;
+        color: #fff;
+
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
       }
     }
   }

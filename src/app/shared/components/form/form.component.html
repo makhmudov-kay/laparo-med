@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" [ngClass]="{ isContact }">
   <div class="form__inputs">
     <div class="form__inputs__field">
       <label for="name">Name</label>
@@ -9,6 +9,10 @@
       <input type="text" id="mail" />
       <span>This field is required</span>
     </div>
+  </div>
+  <div class="form__subject form__inputs__field" *ngIf="isContact">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" />
   </div>
   <div class="form__textare">
     <label for="text">Your message</label>
@@ -29,7 +33,7 @@
       >
     </div>
   </div>
-  <div class="form__btn">
+  <div class="form__btn" [ngClass]="{ isContact }">
     <button>Send</button>
   </div>
 </form>

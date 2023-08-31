@@ -1,0 +1,26 @@
+.blog {
+  &__wrapper {
+    display: flex;
+    gap: 120px;
+  }
+
+  &__list {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @media (min-width: 992px) {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}

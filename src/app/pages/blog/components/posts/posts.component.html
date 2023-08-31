@@ -1,0 +1,10 @@
+<div class="posts">
+  <h3>Recent</h3>
+  <div
+    class="posts__card"
+    [ngClass]="{ isFirst: isFirst }"
+    *ngFor="let card of [].constructor(3); let isFirst = first"
+  >
+    <app-post-card [isFirst]="isFirst"></app-post-card>
+  </div>
+</div>

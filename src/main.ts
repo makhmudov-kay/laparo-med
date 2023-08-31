@@ -15,6 +15,18 @@ export const ROUTES: Route[] = [
         (m) => m.AboutUsComponent
       ),
   },
+  {
+    path: 'contacts',
+    loadComponent: () =>
+      import('./app/pages/contacts/contacts.component').then(
+        (m) => m.ContactsComponent
+      ),
+  },
+  {
+    path: 'blog',
+    loadComponent: () =>
+      import('./app/pages/blog/blog.component').then((m) => m.BlogComponent),
+  },
 ];
 
 bootstrapApplication(AppComponent, {

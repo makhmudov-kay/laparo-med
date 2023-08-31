@@ -22,6 +22,7 @@
               <input
                 type="checkbox"
                 [(ngModel)]="recieveTheNews"
+                [ngModelOptions]="{ standalone: true }"
                 id="receive"
               />
               <label for="receive">I agree to receive the newsletter</label>
@@ -30,6 +31,7 @@
               <input
                 type="checkbox"
                 [(ngModel)]="privacyPolice"
+                [ngModelOptions]="{ standalone: true }"
                 id="privacyPolice"
               />
               <label for="privacyPolice"
