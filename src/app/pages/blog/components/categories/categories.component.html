@@ -1,3 +1,22 @@
-<p>
-  categories works!
-</p>
+<div class="categories" [ngClass]="{ isDetail: isDetail }">
+  <h3 class="blog-title">Categories</h3>
+  <div class="categories__list">
+    <a
+      *ngFor="let cat of [].constructor(6)"
+      href=""
+      class="categories__list__item"
+      >Awards (5)</a
+    >
+  </div>
+  <div class="categories__search">
+    <form class="categories__search__form">
+      <input type="text" placeholder="Search our blog" />
+      <button type="button" class="search-icon">
+        <svg-search class="d-flex"></svg-search>
+      </button>
+      <button type="button" class="close-icon">
+        <svg-close class="d-flex"></svg-close>
+      </button>
+    </form>
+  </div>
+</div>

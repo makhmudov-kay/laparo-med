@@ -1,12 +1,26 @@
 .blog {
+  margin-top: 120px;
+  margin-bottom: 60px;
+
   &__wrapper {
     display: flex;
     gap: 120px;
+
+    @media (max-width: 1700px) {
+      gap: 60px;
+    }
+
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
   }
 
   &__list {
-    flex: 0 0 58.333333%;
-    max-width: 58.333333%;
+    @media (min-width: 992px) {
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+    }
   }
 
   &__menu {
@@ -14,13 +28,61 @@
     flex-direction: column;
     gap: 60px;
 
-    @media (min-width: 992px) {
+    @media (min-width: 1550px) {
       flex: 0 0 41.666667%;
       max-width: 41.666667%;
+    }
+
+    @media (max-width: 1549px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 992px) {
+      gap: 30px;
     }
   }
 
   &__btn {
-    text-align: center;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+
+    button {
+      padding: 10px 30px;
+      border: 2px solid #00619d;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      transition: 0.4s;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 170%;
+      background-color: #fff;
+
+      span {
+        margin-right: 20px;
+      }
+
+      ::ng-deep {
+        svg {
+          path {
+            transition: 0.4s;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: #00619d;
+        color: #fff;
+
+        ::ng-deep {
+          svg {
+            path {
+              stroke: #fff;
+            }
+          }
+        }
+      }
+    }
   }
 }

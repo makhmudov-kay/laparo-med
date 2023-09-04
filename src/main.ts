@@ -27,6 +27,13 @@ export const ROUTES: Route[] = [
     loadComponent: () =>
       import('./app/pages/blog/blog.component').then((m) => m.BlogComponent),
   },
+  {
+    path: 'blog/:id',
+    loadComponent: () =>
+      import('./app/pages/blog-detail/blog-detail.component').then(
+        (m) => m.BlogDetailComponent
+      ),
+  },
 ];
 
 bootstrapApplication(AppComponent, {

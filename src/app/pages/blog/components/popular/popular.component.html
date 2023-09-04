@@ -1,6 +1,9 @@
 <div class="posts-list">
-  <h3 class="posts-list__title">{{ title }}</h3>
+  <h3 class="posts-list__title blog-title">{{ title }}</h3>
   <div class="posts-list__cards">
-    <app-post-card *ngFor="let card of [].constructor(3)"></app-post-card>
+    <app-post-card
+      *ngFor="let card of [].constructor(3)"
+      [isSmCard]="true"
+    ></app-post-card>
   </div>
 </div>
