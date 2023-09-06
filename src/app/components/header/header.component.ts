@@ -1,16 +1,16 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostListener,
 } from '@angular/core';
-import { LogoComponent } from 'src/app/shared/svg/logo/logo.component';
 import { LanguageComponent } from './components/language/language.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
 import { RouterLink } from '@angular/router';
+import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 
 @Component({
   selector: 'app-header',
@@ -18,13 +18,13 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header.component.less'],
   standalone: true,
   imports: [
-    LogoComponent,
     LanguageComponent,
     CartComponent,
     MenuComponent,
     BurgerSVG,
     NgClass,
     RouterLink,
+    LogoComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

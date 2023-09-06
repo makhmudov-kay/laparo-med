@@ -1,0 +1,56 @@
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 15px;
+
+  svg-logo {
+    display: flex;
+  }
+
+  ::ng-deep {
+    svg {
+      @media (max-width: 575px) {
+        width: 110px;
+      }
+    }
+  }
+
+  &__img {
+    width: 43px;
+    height: 48px;
+
+    &.footer {
+      width: 42px;
+      height: 47px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 42px;
+      line-height: 100%;
+      color: #292997;
+      font-family: serif;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 100%;
+      text-align: center;
+      color: #292997;
+      font-family: serif;
+    }
+  }
+}
