@@ -29,28 +29,6 @@
       padding: 30px;
     }
 
-    &__date {
-      min-height: 24px;
-      font-style: normal;
-      position: relative;
-      margin-bottom: 10px;
-      font-size: 14px;
-      line-height: 170%;
-      font-weight: 800;
-      font-family: Acherus-Bold;
-
-      &::before {
-        position: absolute;
-        left: 100px;
-        top: 50%;
-        transform: translateY(-50%);
-        content: "";
-        width: calc(100% - 100px);
-        height: 2px;
-        background-color: #00619d;
-      }
-    }
-
     &__title {
       font-size: 24px;
       line-height: 100%;
@@ -170,6 +148,13 @@
       font-size: 22px;
       line-height: 100%;
       font-family: Acherus-Bold;
+    }
+
+    &.withoutImg {
+      .card__content {
+        flex: 0 0 100%;
+        padding: 30px;
+      }
     }
   }
 }

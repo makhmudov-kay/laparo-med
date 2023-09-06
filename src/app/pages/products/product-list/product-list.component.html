@@ -1,0 +1,35 @@
+<div class="product-list">
+  <div class="container">
+    <div class="product-list__new">
+      <div class="product-list__new__title">
+        <h3 class="title">NEW PRODUCTS</h3>
+        <h4 class="section-title">New products</h4>
+      </div>
+      <div class="product-list__row">
+        <div class="product-list__col" *ngFor="let card of [].constructor(4)">
+          <app-product-card></app-product-card>
+        </div>
+      </div>
+    </div>
+    <div class="product-list__new all">
+      <div class="product-list__new__title">
+        <h3 class="title">ALL PRODUCTS</h3>
+        <h4 class="section-title">NEW STUFF</h4>
+      </div>
+      <div class="product-list__categories">
+        <app-categories [isDetail]="true"></app-categories>
+      </div>
+      <div class="product-list__row wrap">
+        <div class="product-list__col" *ngFor="let card of [].constructor(16)">
+          <app-product-card></app-product-card>
+        </div>
+      </div>
+      <div class="product-list__pagination">
+        <app-pagination></app-pagination>
+      </div>
+    </div>
+  </div>
+  <div class="product-list__subscribe">
+    <app-subscribe></app-subscribe>
+  </div>
+</div>

@@ -2,6 +2,56 @@
   <div class="container">
     <div class="blog-detail__wrapper">
       <app-categories [isDetail]="true"></app-categories>
+      <div class="blog-detail__info">
+        <div class="blog-detail__info__left">
+          <div class="date-view-style blog-detail__info__left__date">
+            30/08/2023
+          </div>
+          <h3 class="blog-detail__info__left__title">
+            Esophageal Atresia – Physical Module
+          </h3>
+          <p class="blog-detail__info__left__text">
+            Recently, we showed you what esophageal atresia looks like in
+            virtual reality. Today it's time for the physics module of the
+            procedure!
+          </p>
+        </div>
+        <div class="blog-detail__info__right">
+          <img src="./assets/image/blog-1.jpg" alt="image" />
+        </div>
+      </div>
+      <app-social-links></app-social-links>
+      <div class="blog-detail__info__content">
+        <p>
+          Recently, we showed you what esophageal atresia looks like in virtual
+          reality. Today it’s time for the physics module of the procedure! The
+          training module makes it possible to close the fistula between the
+          esophagus and the trachea, then suture the upper and lower parts of
+          the esophagus together. The silicone model maps the upper and lower
+          tracheas and part of the esophagus. In addition, it has a vein that
+          serves as navigation and a reconstructed membrane that simulates the
+          connective tissue that needs to be dissected to gain access to the
+          esophagus and trachea. This advanced training module allows surgeons
+          to practice the intricate steps involved in closing the fistula and
+          suturing the esophagus.The silicone model’s realistic representation
+          of the trachea and esophagus, along with the navigation vein and
+          reconstructed membrane, provides a highly accurate simulation for
+          surgeons to develop their skills before performing the procedure on
+          actual patients.
+        </p>
+      </div>
+      <div class="blog-detail__info__video">
+        <video controls src="./assets/video/video-1.mp4"></video>
+      </div>
+      <app-social-links [center]="true"></app-social-links>
+      <div class="blog-detail__info__similar">
+        <!-- <h4 class="blog-detail__info__similar__title">Related articles</h4> -->
+        <div class="blog-detail__info__similar__cards">
+          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
+          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
+          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>

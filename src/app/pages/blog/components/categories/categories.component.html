@@ -1,10 +1,7 @@
 <div class="categories" [ngClass]="{ isDetail: isDetail }">
   <h3 class="blog-title">Categories</h3>
   <div class="categories__list">
-    <a
-      *ngFor="let cat of [].constructor(6)"
-      href=""
-      class="categories__list__item"
+    <a *ngFor="let cat of [].constructor(6)" class="categories__list__item"
       >Awards (5)</a
     >
   </div>

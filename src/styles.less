@@ -189,3 +189,25 @@ ul li {
     text-align: center;
   }
 }
+
+.date-view-style {
+  min-height: 24px;
+  font-style: normal;
+  position: relative;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 170%;
+  font-weight: 800;
+  font-family: Acherus-Bold;
+
+  &::before {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: calc(100% - 100px);
+    height: 2px;
+    background-color: #00619d;
+  }
+}

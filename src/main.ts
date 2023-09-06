@@ -1,6 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { Route, provideRouter } from '@angular/router';
+import { Route, provideRouter, withInMemoryScrolling } from '@angular/router';
 
 export const ROUTES: Route[] = [
   {
@@ -34,8 +34,30 @@ export const ROUTES: Route[] = [
         (m) => m.BlogDetailComponent
       ),
   },
+  {
+    path: 'products',
+    loadComponent: () =>
+      import('./app/pages/products/products.component').then(
+        (m) => m.ProductsComponent
+      ),
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'list' },
+      {
+        path: 'list',
+        loadComponent: () =>
+          import(
+            './app/pages/products/product-list/product-list.component'
+          ).then((m) => m.ProductListComponent),
+      },
+    ],
+  },
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(ROUTES)],
+  providers: [
+    provideRouter(
+      ROUTES,
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+    ),
+  ],
 });

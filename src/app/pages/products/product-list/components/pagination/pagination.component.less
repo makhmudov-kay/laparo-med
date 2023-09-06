@@ -1,0 +1,57 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  li {
+    cursor: pointer;
+  }
+
+  .btn {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    transition: 0.4s;
+
+    ::ng-deep {
+      svg {
+        path {
+          stroke: #999999;
+          transition: 0.4s;
+        }
+      }
+    }
+
+    &:hover {
+      border: 1px solid #00619d;
+
+      ::ng-deep {
+        svg {
+          path {
+            stroke: #00619d;
+          }
+        }
+      }
+    }
+
+    &.next {
+      transform: rotate(180deg);
+      margin-right: 20px;
+    }
+  }
+
+  &__number {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #999;
+    padding: 0.5em;
+    transition: 0.4s;
+
+    &:hover {
+      color: #00619d;
+    }
+  }
+}

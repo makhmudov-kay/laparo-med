@@ -14,7 +14,7 @@ export class LinkBtnComponent {
    *
    */
   @Input()
-  link = '';
+  link: string | number = '';
 
   /**
    *
