@@ -80,8 +80,8 @@
 
 <ng-template #drawer>
   <ul class="drawer">
-    <li class="drawer__item submenu">
-      <a class="drawer__item__link">Products</a>
+    <li class="drawer__item submenu" (click)="closeDrawer.emit(false)">
+      <a class="drawer__item__link" routerLink="../products">Products</a>
       <ul class="submenu__drawer">
         <!-- INDIVIDUALS -->
         <li class="submenu__drawer__item">
@@ -145,13 +145,13 @@
         </li>
       </ul>
     </li>
-    <li class="drawer__item">
+    <li class="drawer__item" (click)="closeDrawer.emit(false)">
       <a class="drawer__item__link" routerLink="../about-us">About us</a>
     </li>
-    <li class="drawer__item">
+    <li class="drawer__item" (click)="closeDrawer.emit(false)">
       <a class="drawer__item__link" routerLink="../blog">Blog</a>
     </li>
-    <li class="drawer__item">
+    <li class="drawer__item" (click)="closeDrawer.emit(false)">
       <a class="drawer__item__link" routerLink="../contacts">Contact</a>
     </li>
   </ul>

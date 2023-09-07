@@ -23,5 +23,5 @@
 </div>
 
 <div class="drawer" [ngClass]="{ open: isDrawer }">
-  <app-menu [isDrawer]="true"></app-menu>
+  <app-menu (closeDrawer)="closeDrawer($event)" [isDrawer]="true"></app-menu>
 </div>

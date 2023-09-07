@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
 
@@ -13,4 +13,7 @@ import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
 export class MenuComponent {
   @Input()
   isDrawer!: boolean;
+
+  @Output()
+  closeDrawer = new EventEmitter<boolean>();
 }

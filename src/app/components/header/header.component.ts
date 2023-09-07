@@ -73,6 +73,13 @@ export class HeaderComponent {
 
   /**
    *
+   */
+  closeDrawer(e: boolean) {
+    this.isDrawer = e;
+  }
+
+  /**
+   *
    * @param event
    */
   @HostListener('document:click', ['$event'])
