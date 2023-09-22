@@ -5,6 +5,7 @@ import { Route, provideRouter, withInMemoryScrolling } from '@angular/router';
 export const ROUTES: Route[] = [
   {
     path: '',
+    pathMatch: 'full',
     loadComponent: () =>
       import('./app/pages/home/home.component').then((m) => m.HomeComponent),
   },
@@ -48,6 +49,13 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/product-list/product-list.component'
           ).then((m) => m.ProductListComponent),
+      },
+      {
+        path: 'individuals',
+        loadComponent: () =>
+          import('./app/pages/products/individuals/individuals.component').then(
+            (m) => m.IndividualsComponent
+          ),
       },
     ],
   },

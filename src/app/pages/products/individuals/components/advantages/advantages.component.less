@@ -1,0 +1,116 @@
+.advantages {
+  margin-top: 140px;
+  position: relative;
+
+  img {
+    position: relative;
+    bottom: -153px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    @media (min-width: 992px) and (max-width: 1600px) {
+      bottom: -231px;
+    }
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    grid-template-rows: 200px 200px;
+    grid-auto-flow: column;
+
+    @media (min-width: 992px) and (max-width: 1600px) {
+      grid-template-rows: 280px 280px;
+    }
+
+    @media (max-width: 992px) {
+      display: block;
+    }
+  }
+
+  &__step {
+    margin-right: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: flex-start;
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+      margin-right: 30px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 992px) {
+      margin-right: 0px;
+      align-items: center;
+    }
+
+    @media (max-width: 567px) {
+      display: block;
+      text-align: center;
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+      margin-left: 100px;
+
+      @media (max-width: 992px) {
+        margin-left: 0;
+      }
+    }
+
+    &__number {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 96px;
+      -webkit-text-stroke: 1px #f76002;
+      color: transparent;
+      margin-right: 20px;
+      position: relative;
+      top: -15px;
+      line-height: 100%;
+      font-family: Acherus-Bold;
+
+      @media (max-width: 992px) {
+        top: -5px;
+        min-width: 50px;
+      }
+
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #f76002;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -80px;
+
+        @media (min-width: 992px) and (max-width: 1600px) {
+          bottom: -158px;
+        }
+
+        @media (max-width: 992px) {
+          content: none;
+        }
+      }
+    }
+
+    &:nth-child(2n) .advantages__step__number::before {
+      bottom: none;
+      top: -40px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 170%;
+      font-family: Acherus-Bold;
+    }
+  }
+}

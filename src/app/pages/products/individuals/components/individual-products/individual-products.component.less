@@ -1,0 +1,196 @@
+.products {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    margin-top: 100px;
+    background: #fbfbfb;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &--odd {
+      background: #fff;
+    }
+
+    &__left {
+      @media (min-width: 992px) {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+      }
+
+      &__title {
+        margin-bottom: 100px;
+
+        h4 {
+          padding-left: 243px;
+          text-align: left;
+          text-transform: uppercase;
+          @media (max-width: 567px) {
+            padding-left: 120px;
+          }
+
+          &::before {
+            left: 0;
+          }
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__text {
+          padding-left: 50px;
+          padding-right: 50px;
+          margin-left: -50px;
+
+          @media (min-width: 1200px) {
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%;
+          }
+
+          h2 {
+            color: #f76002;
+            line-height: 100%;
+            font-size: 72px;
+            font-family: Acherus-Black;
+            font-weight: 700;
+          }
+
+          p {
+            margin-top: 60px;
+            margin-bottom: 50px;
+            font-size: 0.85rem;
+            line-height: 170%;
+            font-weight: 400;
+          }
+
+          a {
+            min-width: 220px;
+            border: 2px solid #f76002;
+            padding: 10px 30px;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            cursor: pointer;
+            line-height: 170%;
+            font-weight: 700;
+            font-family: Acherus-Regular;
+            text-transform: uppercase;
+            color: #000;
+            transition: 0.4s;
+
+            ::ng-deep {
+              svg {
+                path {
+                  transition: 0.4;
+                  stroke: #f76002;
+                }
+              }
+            }
+
+            &:hover {
+              background-color: #f76002;
+              color: #fff;
+
+              ::ng-deep {
+                svg {
+                  path {
+                    stroke: #fff;
+                  }
+                }
+              }
+            }
+
+            span {
+              margin-left: 20px;
+              display: inline-block;
+              transform: rotate(-90deg);
+            }
+          }
+        }
+
+        &__list {
+          padding-left: 50px;
+          padding-right: 50px;
+
+          @media (min-width: 1200px) {
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%;
+          }
+
+          &__wrapper {
+            margin-top: 140px;
+            margin-right: -150px;
+
+            h4 {
+              font-family: Acherus-Black;
+              font-weight: 600;
+              font-size: 22px;
+              line-height: 170%;
+              margin-bottom: 30px;
+            }
+
+            ul {
+              margin-bottom: 50px;
+              margin-top: 30px;
+              display: flex;
+              flex-wrap: wrap;
+
+              li {
+                flex: 0 0 45%;
+                margin-right: 5%;
+                font-size: 0.85rem;
+                padding-left: 20px;
+                margin-bottom: 15px;
+                position: relative;
+                line-height: 170%;
+                font-weight: 400;
+
+                &::before {
+                  content: "";
+                  background-color: #f76002;
+                  position: absolute;
+                  left: 0;
+                  top: 6px;
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__right {
+      @media (min-width: 992px) {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+      }
+
+      img {
+        max-width: 48vw;
+        margin-top: -10vw;
+        margin-left: -120px;
+        height: auto;
+        border-style: none;
+        display: block;
+      }
+    }
+
+    &--even {
+      background: #fff;
+      .products__section__left {
+        order: 2;
+      }
+
+      .products__section__right {
+        order: 1;
+      }
+    }
+  }
+}

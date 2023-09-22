@@ -1,0 +1,16 @@
+<div class="advantages">
+  <img src="./assets/image/dashed-line.png" alt="line" />
+  <div class="container">
+    <div class="advantages__wrapper">
+      <div
+        class="advantages__step"
+        *ngFor="let card of advantages; let id = index"
+      >
+        <div class="advantages__step__number">{{ id + 1 }}</div>
+        <p class="advantages__step__text">
+          {{ card }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

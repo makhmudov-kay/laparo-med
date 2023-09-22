@@ -1,0 +1,44 @@
+<div class="products">
+  <div
+    class="products__section"
+    *ngFor="let product of products; let idx = index; let isFirst = first"
+    [ngClass]="{
+      'products__section--odd': (idx + 1) % 2 !== 0,
+      'products__section--even': (idx + 1) % 2 == 0
+    }"
+  >
+    <div class="container">
+      <div class="products__wrapper">
+        <div class="products__section__left">
+          <div class="products__section__left__title" *ngIf="isFirst">
+            <h4 class="section-title">Products</h4>
+          </div>
+          <div class="products__section__left__info">
+            <div class="products__section__left__info__text">
+              <h2>{{ product.title }}</h2>
+              <p>
+                {{ product.description }}
+              </p>
+              <a [href]="product.link">
+                read more <span><svg-arrow></svg-arrow></span
+              ></a>
+            </div>
+            <div class="products__section__left__info__list">
+              <div class="products__section__left__info__list__wrapper">
+                <h4>{{ product.listTitle }}</h4>
+                <ul>
+                  <li *ngFor="let list of product.list">
+                    {{ list }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="products__section__right">
+          <img [src]="product.img" alt="image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
