@@ -57,6 +57,13 @@ export const ROUTES: Route[] = [
             (m) => m.IndividualsComponent
           ),
       },
+      {
+        path: 'professionals',
+        loadComponent: () =>
+          import(
+            './app/pages/products/professionals/professionals.component'
+          ).then((m) => m.ProfessionalsComponent),
+      },
     ],
   },
 ];

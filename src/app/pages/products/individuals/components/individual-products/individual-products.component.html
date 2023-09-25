@@ -4,7 +4,9 @@
     *ngFor="let product of products; let idx = index; let isFirst = first"
     [ngClass]="{
       'products__section--odd': (idx + 1) % 2 !== 0,
-      'products__section--even': (idx + 1) % 2 == 0
+      'products__section--even': (idx + 1) % 2 == 0,
+      'first': isFirst,
+      'adept': idx === 2,
     }"
   >
     <div class="container">
