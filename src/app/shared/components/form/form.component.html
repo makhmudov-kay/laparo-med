@@ -1,24 +1,52 @@
-<form class="form" [ngClass]="{ isContact }">
+<form
+  class="form"
+  [ngClass]="{ isContact }"
+  [formGroup]="form"
+  (ngSubmit)="sendContact()"
+>
   <div class="form__inputs">
     <div class="form__inputs__field">
       <label for="name">Name</label>
-      <input type="text" id="name" />
+      <input formControlName="name" type="text" id="name" appError />
     </div>
     <div class="form__inputs__field">
+      <label for="phone">Phone</label>
+      <input
+        formControlName="phone"
+        type="text"
+        id="phone"
+        [mask]="PHONE_MASK"
+        appError
+      />
+    </div>
+
+    <!-- TODO: EMAIL -->
+    <!-- <div class="form__inputs__field">
       <label for="mail">E-mail</label>
       <input type="text" id="mail" />
       <span>This field is required</span>
-    </div>
+    </div> -->
   </div>
-  <div class="form__subject form__inputs__field" *ngIf="isContact">
+
+  <!-- TODO: SUBJECT -->
+  <!-- <div class="form__subject form__inputs__field" *ngIf="isContact">
     <label for="subject">Subject</label>
     <input type="text" id="subject" />
-  </div>
+  </div> -->
+
   <div class="form__textare">
     <label for="text">Your message</label>
-    <textarea id="text" cols="30" rows="6"></textarea>
+    <textarea
+      formControlName="message"
+      id="text"
+      cols="30"
+      rows="6"
+      appError
+    ></textarea>
   </div>
-  <div class="form__checkboxes">
+
+  <!-- TODO: REMOVE OR IMPLEMENT -->
+  <!-- <div class="form__checkboxes">
     <div class="form__checkboxes__field">
       <input type="checkbox" />
       <span>I want to subscribe for the newsletter</span>
@@ -32,7 +60,8 @@
         <a href="">privacy policy</a></span
       >
     </div>
-  </div>
+  </div> -->
+
   <div class="form__btn" [ngClass]="{ isContact }">
     <button>Send</button>
   </div>

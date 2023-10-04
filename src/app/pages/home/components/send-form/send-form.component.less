@@ -8,6 +8,15 @@
   background-color: #00619d;
   background-image: url(../../../../../assets/image/home-send-form.png);
 
+  ::ng-deep {
+    .ng-invalid {
+      border-color: white !important;
+    }
+    .ng-invalid + span {
+      color: white !important;
+    }
+  }
+
   &::before {
     background-image: url(../../../../../assets/image/send-form-strokes.png);
     background-repeat: no-repeat;

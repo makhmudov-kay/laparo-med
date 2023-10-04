@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { Route, provideRouter, withInMemoryScrolling } from '@angular/router';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HeaderInterceptor } from './app/core/interceptors/header.interceptor';
+import { importProvidersFrom } from '@angular/core';
+import { environment } from './environments/environment';
 
 export const ROUTES: Route[] = [
   {
@@ -74,5 +78,15 @@ bootstrapApplication(AppComponent, {
       ROUTES,
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
+    importProvidersFrom(HttpClientModule),
+    {
+      provide: 'API_URL',
+      useValue: environment.endpoint,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true,
+    },
   ],
 });
