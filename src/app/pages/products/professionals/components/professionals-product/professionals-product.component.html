@@ -1,3 +1,24 @@
-<p>
-  professionals-product works!
-</p>
+<div class="professionals-product">
+  <div class="container">
+    <div
+      class="professionals-product__card"
+      *ngFor="let product of products; let isFirst = first"
+    >
+      <div class="professionals-product__left">
+        <div class="professionals-product__title" *ngIf="isFirst">
+          <h4 class="section-title left">Products</h4>
+        </div>
+        <div class="professionals-product__info">
+          <app-products-info
+            [product]="product"
+            [isProfessional]="true"
+          ></app-products-info>
+        </div>
+      </div>
+
+      <div class="professionals-product__right">
+        <img [src]="product.img" alt="image" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,17 @@
-<p>
-  advantages works!
-</p>
+<section class="advantages">
+  <div class="container">
+    <div class="advantages__wrapper">
+      <div class="advantages__top">
+        <h4 class="section-title">PROFESSIONAL SERIES</h4>
+        <h2 class="advantages__title">What are the benefits?</h2>
+      </div>
+      <div class="advantages__bottom">
+        <app-advantages-card
+          *ngFor="let card of benefitsData; let idx = index"
+          [even]="idx % 2 !== 0"
+          [data]="card"
+        ></app-advantages-card>
+      </div>
+    </div>
+  </div>
+</section>

@@ -123,6 +123,19 @@ ul li {
       width: 100px;
     }
   }
+
+  &.left {
+    padding-left: 243px;
+    text-align: left;
+    text-transform: uppercase;
+    @media (max-width: 567px) {
+      padding-left: 120px;
+    }
+
+    &::before {
+      left: 0;
+    }
+  }
 }
 
 .title {
