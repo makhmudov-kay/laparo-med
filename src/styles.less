@@ -224,3 +224,15 @@ ul li {
     background-color: #00619d;
   }
 }
+
+input,
+textarea {
+  &.error {
+    border: 1px solid red !important;
+  }
+
+  &.error + span {
+    font-size: 12px;
+    color: red;
+  }
+}
