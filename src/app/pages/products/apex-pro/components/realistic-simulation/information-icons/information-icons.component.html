@@ -3,32 +3,13 @@
     <div class="grid grid--sm">
       <div class="information-icon__icall">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" *ngFor="let icons of iconsData">
             <div class="information-icon__icon">
-              <img
-                src="https://laparosimulators.com/wp-content/uploads/2023/06/hybrid.jpg"
-                alt="image"
-              />
+              <img [src]="icons.img" alt="image" />
             </div>
-            <div class="information-icon__title"><p>HYBRID APPROACH</p></div>
-          </div>
-          <div class="col-md-4">
-            <div class="information-icon__icon">
-              <img
-                src="https://laparosimulators.com/wp-content/uploads/2023/06/pediatrics.jpg"
-                alt="image"
-              />
+            <div class="information-icon__title">
+              <p>{{ icons.title }}</p>
             </div>
-            <div class="information-icon__title"><p>PEDIATRIC SURGERY</p></div>
-          </div>
-          <div class="col-md-4">
-            <div class="information-icon__icon">
-              <img
-                src="https://laparosimulators.com/wp-content/uploads/2023/06/ltp.jpg"
-                alt="image"
-              />
-            </div>
-            <div class="information-icon__title"><p>TRAINING PROGRAM</p></div>
           </div>
         </div>
       </div>
