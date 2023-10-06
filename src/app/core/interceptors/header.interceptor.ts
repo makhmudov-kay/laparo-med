@@ -6,20 +6,19 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LanguageHelper } from '../helpers/language.helper';
+import { Settings } from '../helpers/settings';
 
 @Injectable()
 export class HeaderInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private settings: Settings) {}
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const headers = req.headers.set(
-      'accept-language',
-      LanguageHelper.currentLangauge
-    );
+    const headers = req.headers
+      .set('accept-language', this.settings.language)
+      .set('currency', this.settings.currency);
     const authReq = req.clone({ headers });
     return next.handle(authReq);
   }

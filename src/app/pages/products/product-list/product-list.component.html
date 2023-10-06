@@ -16,12 +16,15 @@
         <h3 class="title">ALL PRODUCTS</h3>
         <h4 class="section-title">NEW STUFF</h4>
       </div>
-      <div class="product-list__categories">
-        <app-categories [isDetail]="true"></app-categories>
+      <div
+        class="product-list__categories"
+        *ngIf="category$ | async as categories"
+      >
+        <app-categories [isDetail]="true" [data]="categories"></app-categories>
       </div>
-      <div class="product-list__row wrap">
-        <div class="product-list__col" *ngFor="let card of [].constructor(16)">
-          <app-product-card></app-product-card>
+      <div class="product-list__row wrap" *ngIf="product$ | async as product">
+        <div class="product-list__col" *ngFor="let p of product.results">
+          <app-product-card [data]="p"></app-product-card>
         </div>
       </div>
       <div class="product-list__pagination">
