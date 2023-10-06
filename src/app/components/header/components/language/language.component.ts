@@ -66,6 +66,7 @@ export class LanguageComponent {
   onChangeLanguage(e: Event) {
     let { value } = e.target as HTMLSelectElement;
     this.settings.language = value as LanguageType;
+    this.translate.use(this.settings.language);
     this.isVisibleLanguagePopup = false;
   }
 

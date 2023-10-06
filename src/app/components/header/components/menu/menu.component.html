@@ -1,7 +1,7 @@
 <ul class="list" *ngIf="!isDrawer; else drawer">
   <li class="list__item submenu">
     <a class="list__item__link" routerLink="../products"
-      >Products <svg-arrow></svg-arrow
+      >{{ "products" | translate }} <svg-arrow></svg-arrow
     ></a>
 
     <ul class="submenu__list">
@@ -72,20 +72,28 @@
     </ul>
   </li>
   <li class="list__item">
-    <a class="list__item__link" routerLink="../about-us">About us</a>
+    <a class="list__item__link" routerLink="../about-us">{{
+      "aboutUs" | translate
+    }}</a>
   </li>
   <li class="list__item">
-    <a class="list__item__link" routerLink="../blog">Blog</a>
+    <a class="list__item__link" routerLink="../blog">{{
+      "blog" | translate
+    }}</a>
   </li>
   <li class="list__item">
-    <a class="list__item__link" routerLink="../contacts">Contact</a>
+    <a class="list__item__link" routerLink="../contacts">{{
+      "contact.contact" | translate
+    }}</a>
   </li>
 </ul>
 
 <ng-template #drawer>
   <ul class="drawer">
     <li class="drawer__item submenu" (click)="closeDrawer.emit(false)">
-      <a class="drawer__item__link" routerLink="../products">Products</a>
+      <a class="drawer__item__link" routerLink="../products">{{
+        "products" | translate
+      }}</a>
       <ul class="submenu__drawer">
         <!-- INDIVIDUALS -->
         <li class="submenu__drawer__item">

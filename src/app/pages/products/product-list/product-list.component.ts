@@ -10,7 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Grid } from 'src/app/shared/models/grid.model';
 import { Product } from 'src/app/shared/models/product.model';
 import { ProductService } from 'src/app/shared/services/product..service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngxs/store';
 
 @Component({
@@ -26,6 +26,7 @@ import { Store } from '@ngxs/store';
     CategoriesComponent,
     PaginationComponent,
     SubscribeComponent,
+    TranslateModule,
   ],
 })
 export class ProductListComponent {
