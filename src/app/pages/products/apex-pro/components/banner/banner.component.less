@@ -1,0 +1,65 @@
+.device__hero {
+  background: #000;
+  &__title {
+    text-align: left;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 200px;
+    top: 100px;
+    z-index: 9;
+    position: relative;
+    color: #fff;
+    line-height: 90%;
+
+    @media (max-width: 1250px) {
+      font-size: 5rem;
+      top: 0;
+      margin: 25px 0;
+    }
+
+    @media (max-width: 900px) {
+      font-size: 3rem;
+      text-align: center;
+      position: relative;
+      top: 0;
+      margin: 50px 0;
+    }
+  }
+
+  &__description {
+    color: #fff;
+    width: 500px;
+    position: relative;
+    margin-top: 160px;
+    font-size: 23px;
+    margin-left: 50px;
+
+    font-family: Acherus-Bold;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 170%;
+
+    @media (max-width: 1250px) {
+      width: auto;
+      margin-top: 20px;
+      margin-left: 0;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      width: auto;
+      margin: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__wraper {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-style: none;
+      display: block;
+    }
+  }
+}

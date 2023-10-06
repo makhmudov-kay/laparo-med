@@ -68,6 +68,13 @@ export const ROUTES: Route[] = [
             './app/pages/products/professionals/professionals.component'
           ).then((m) => m.ProfessionalsComponent),
       },
+      {
+        path: 'apex-pro',
+        loadComponent: () =>
+          import('./app/pages/products/apex-pro/apex-pro.component').then(
+            (m) => m.ApexProComponent
+          ),
+      },
     ],
   },
 ];
