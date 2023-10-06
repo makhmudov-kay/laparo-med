@@ -1,0 +1,76 @@
+.contact-us {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url(../../../../../../assets/image/contact-us-professional.png);
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 56, 101, 0.85);
+  }
+
+  &__title {
+    position: relative;
+    h3 {
+      text-align: center;
+      font-family: Acherus-Black;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 120%;
+      color: #fff;
+      margin-bottom: 30px;
+
+      span {
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+      }
+
+      @media (min-width: 992px) and (max-width: 1400px) {
+        font-size: 54px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1300px) {
+        font-size: 48px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 38px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    position: relative;
+
+    a {
+      padding: 10px 30px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      background-color: #fff;
+      color: #000;
+      font-weight: 700;
+      line-height: 170%;
+      cursor: pointer;
+      transition: all 0.4s;
+    }
+  }
+}

@@ -1,0 +1,193 @@
+.advantages-card {
+  margin-bottom: 140px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  align-items: center !important;
+
+  &.even {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 992px) {
+    margin-bottom: 100px;
+    display: block;
+  }
+
+  &__left {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    @media (max-width: 992px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &__img {
+      position: relative;
+      padding-left: 70px;
+
+      @media (max-width: 992px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0px;
+      }
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        border-style: none;
+      }
+    }
+
+    &__number {
+      position: absolute;
+      left: 0;
+      top: -50px;
+      font-size: 288px;
+      line-height: 193px;
+      color: #00619d;
+      font-family: Acherus-Bold;
+      font-style: normal;
+      font-weight: 900;
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        top: -90px;
+        font-size: 200px;
+      }
+
+      @media (max-width: 992px) {
+        position: absolute;
+        left: 0;
+        top: -80px;
+        font-size: 120px;
+        line-height: 130px;
+      }
+    }
+  }
+
+  &__right {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+
+    @media (max-width: 992px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    &__content {
+      min-height: 100%;
+      display: flex;
+
+      @media (max-width: 992px) {
+        display: block;
+        min-height: auto;
+      }
+
+      &__title {
+        flex: 0 0 20%;
+        max-width: 20%;
+        position: relative;
+        width: 100%;
+        padding-right: 30px;
+        padding-left: 30px;
+
+        @media (max-width: 992px) {
+          max-width: 100%;
+          position: relative;
+          width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+
+        &__rotate {
+          position: absolute;
+          min-width: 350px;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          text-align: right;
+          font-size: 42px;
+          -webkit-text-stroke: 1px #000;
+          color: transparent;
+          font-family: Acherus-Bold;
+          font-style: normal;
+          font-weight: 900;
+          line-height: 100%;
+
+          @media (max-width: 992px) {
+            position: static;
+            min-width: 350px;
+            transform: translateX(0%) translateY(0%) rotate(0deg);
+            text-align: left;
+            font-size: 38px;
+          }
+
+          @media (max-width: 567px) {
+            font-size: 28px;
+          }
+        }
+      }
+
+      &__text {
+        flex: 0 0 80%;
+        max-width: 80%;
+        position: relative;
+        width: 100%;
+        padding-right: 30px;
+        padding-left: 30px;
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+          flex: 0 0 85%;
+          max-width: 85%;
+        }
+
+        @media (max-width: 992px) {
+          max-width: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        &__wrapper {
+          font-size: 0.85rem;
+          line-height: 170%;
+
+          ul {
+            margin-top: 20px;
+
+            li {
+              font-size: 0.85rem;
+              position: relative;
+              padding-left: 20px;
+              margin-bottom: 15px;
+              line-height: 170%;
+
+              &::before {
+                content: "" !important;
+                top: 6px;
+                background-color: #00619d;
+                position: absolute;
+                left: 0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

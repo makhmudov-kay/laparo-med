@@ -1,16 +1,26 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { ProductsInfoComponent } from 'src/app/shared/components/products-info/products-info.component';
 import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
+
+export interface IndividualProductsData {
+  title: string;
+  description: string;
+  listTitle?: string;
+  list: string[];
+  img: string;
+  link: string;
+}
 
 @Component({
   selector: 'app-individual-products',
   templateUrl: './individual-products.component.html',
   styleUrls: ['./individual-products.component.less'],
   standalone: true,
-  imports: [ArrowSVG, NgFor, NgIf, NgClass],
+  imports: [ArrowSVG, NgFor, NgIf, NgClass, ProductsInfoComponent],
 })
 export class IndividualProductsComponent {
-  products = [
+  products: IndividualProductsData[] = [
     {
       title: 'ASPIRE',
       description:
