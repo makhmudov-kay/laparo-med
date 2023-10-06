@@ -1,8 +1,8 @@
 <div class="categories" [ngClass]="{ isDetail: isDetail }">
-  <h3 class="blog-title">Categories</h3>
+  <h3 class="blog-title">{{ "categories" | translate }}</h3>
   <div class="categories__list">
-    <a *ngFor="let cat of [].constructor(6)" class="categories__list__item"
-      >Awards (5)</a
+    <a *ngFor="let category of data" class="categories__list__item"
+      >{{ category.name | myTranslate }} ({{ category.count }})</a
     >
   </div>
   <div class="categories__search">

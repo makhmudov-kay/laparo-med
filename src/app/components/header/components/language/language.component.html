@@ -1,9 +1,9 @@
 <div class="lang">
   <div class="lang__viewer" (click)="toggleLangPopup()">
     <div class="lang__img">
-      <img src="./assets/image/uz-flag.png" alt="flag" />
+      <img src="./assets/image/{{ currentLanguage }}-flag.png" alt="flag" />
     </div>
-    <span class="lang__title">UZB</span>
+    <span class="lang__title">{{ LANGUAGE[currentLanguage] }}</span>
     <span class="lang__arrow">
       <svg-arrow></svg-arrow>
     </span>
@@ -13,10 +13,34 @@
     <div class="lang__selector">
       <p class="lang__selector__title">Languages:</p>
       <!-- СДЕЛАТЬ РАБОЧИМ СЕЛЕКТОР ЯЗЫКА -->
-      <select class="lang__selector__select" name="language">
-        <option value="ru">Русский</option>
-        <option value="uzb_latn">O'zbekcha</option>
-        <option value="uzb_cyrl">Узбекча</option>
+      <select
+        class="lang__selector__select"
+        name="language"
+        (change)="onChangeLanguage($event)"
+      >
+        <option
+          [value]="language.key"
+          [selected]="currentLanguage == language.key"
+          *ngFor="let language of LANGUAGE | keyvalue"
+        >
+          {{ language.value }}
+        </option>
+      </select>
+
+      <p class="lang__selector__title" style="margin-top: 10px">Currency:</p>
+      <!-- СДЕЛАТЬ РАБОЧИМ СЕЛЕКТОР ЯЗЫКА -->
+      <select
+        class="lang__selector__select"
+        name="currency"
+        (change)="onChangeCurrency($event)"
+      >
+        <option
+          [value]="currency.key"
+          [selected]="currentCurrency == currency.key"
+          *ngFor="let currency of CURRENCY | keyvalue"
+        >
+          {{ currency.value.name }}
+        </option>
       </select>
     </div>
   </ng-container>

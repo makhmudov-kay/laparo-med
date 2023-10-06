@@ -1,14 +1,16 @@
 <div class="product-card-wrapper">
   <div class="product-card">
     <div class="product-card__img">
-      <img src="./assets/image/product-card-1.png" alt="card" />
+      <img [src]="data.image" alt="card" />
     </div>
     <div class="product-card__info">
       <h4 class="product-card__title">
-        Laparoscopic Trainer Advance ver. Expert
+        {{ data.title | myTranslate }}
       </h4>
       <p class="product-card__text">4 COMPLETE COURSES IN ONE SET</p>
-      <span class="product-card__price"><strong>2 079$</strong></span>
+      <span class="product-card__price"
+        ><strong>{{ data.price | myCurrency }}</strong></span
+      >
     </div>
   </div>
   <div class="product-card-wrapper__cart">

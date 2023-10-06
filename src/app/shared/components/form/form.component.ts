@@ -4,6 +4,7 @@ import { ContactService } from './services/contact.service';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorDirective } from '../../directives/error.directive';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form',
@@ -16,6 +17,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     ReactiveFormsModule,
     ErrorDirective,
     NgxMaskDirective,
+    TranslateModule,
   ],
   providers: [provideNgxMask()],
 })
@@ -35,6 +37,7 @@ export class FormComponent {
   });
 
   PHONE_MASK = '(00) 000-00-00';
+  PHONE_PREFIX = '+998 ';
 
   sendContact() {
     Object.keys(this.form.controls).forEach((key) => {

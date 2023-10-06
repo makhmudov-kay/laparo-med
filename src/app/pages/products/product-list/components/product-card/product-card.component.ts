@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/shared/models/product.model';
+import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
+import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-add-to-cart.component';
 
 @Component({
@@ -6,6 +9,15 @@ import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-ad
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.less'],
   standalone: true,
-  imports: [SvgAddToCartComponent],
+  imports: [SvgAddToCartComponent, MyCurrencyPipe, MyTranslatePipe],
 })
-export class ProductCardComponent {}
+export class ProductCardComponent {
+  @Input() // { required: true }
+  data: Product = {
+    id: 0,
+    title: { ru: 'test', en: 'test', uz: 'test' },
+    price: 0,
+    image: './assets/image/product-card-1.png',
+    category: 0,
+  };
+}

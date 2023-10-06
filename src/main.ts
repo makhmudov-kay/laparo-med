@@ -1,11 +1,21 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { Route, provideRouter, withInMemoryScrolling } from '@angular/router';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { HeaderInterceptor } from './app/core/interceptors/header.interceptor';
 import { importProvidersFrom } from '@angular/core';
 import { environment } from './environments/environment';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ROUTES } from './_routes';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxsModule } from '@ngxs/store';
+import { DataState } from './app/shared/store/data/data.state';
 
+<<<<<<< HEAD
 export const ROUTES: Route[] = [
   {
     path: '',
@@ -78,6 +88,11 @@ export const ROUTES: Route[] = [
     ],
   },
 ];
+=======
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+>>>>>>> aaf4f06187ef6c846f16016daff64ccfe9d9c825
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -85,7 +100,19 @@ bootstrapApplication(AppComponent, {
       ROUTES,
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
-    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(
+      HttpClientModule,
+      TranslateModule.forRoot({
+        loader: {
+          provide: TranslateLoader,
+          useFactory: createTranslateLoader,
+          deps: [HttpClient],
+        },
+      }),
+
+      /** NgxsModule for store usage, StateList is for states which ngxs store serves */
+      NgxsModule.forRoot([DataState], {})
+    ),
     {
       provide: 'API_URL',
       useValue: environment.endpoint,

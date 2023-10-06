@@ -1,0 +1,12 @@
+{
+    "requiredField": "Majburiy maydon",
+    "name": "Ismingiz",
+    "phone": "Telefon nomer",
+    "yourMessage": "Sizning xabaringiz",
+    "send": "Yuborish",
+    "mask.(00) 000-00-00": "Telefon nomerini to'liq kiriting",
+    "categories": "Kategoriyalar",
+    "contact": {
+        "title": "Biz sizni tinglashdan mamnunmiz"
+    }
+}

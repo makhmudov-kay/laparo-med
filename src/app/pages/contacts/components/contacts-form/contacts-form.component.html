@@ -2,7 +2,9 @@
   <div class="container">
     <div class="contact-form__wrapper">
       <div class="contact-form__left">
-        <h2 class="contact-form__left__title">We’d love to hear from you</h2>
+        <h2 class="contact-form__left__title">
+          {{ "contact.title" | translate }}
+        </h2>
         <div class="contact-form__left__form">
           <app-form [isContact]="true"></app-form>
         </div>
