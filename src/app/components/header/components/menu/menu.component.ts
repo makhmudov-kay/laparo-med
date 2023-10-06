@@ -12,9 +12,15 @@ import { ArrowSVG } from 'src/app/shared/svg/arrow/arrow.component';
   imports: [ArrowSVG, NgIf, RouterLink, TranslateModule],
 })
 export class MenuComponent {
+  /**
+   *
+   */
   @Input()
   isDrawer!: boolean;
 
+  /**
+   *
+   */
   @Output()
   closeDrawer = new EventEmitter<boolean>();
 }
