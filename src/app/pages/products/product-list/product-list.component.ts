@@ -5,13 +5,11 @@ import { CategoriesComponent } from '../../blog/components/categories/categories
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SubscribeComponent } from 'src/app/shared/components/subscribe/subscribe.component';
 import { CategoryService } from 'src/app/shared/services/category.service';
-import { Observable, switchMap } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Observable } from 'rxjs';
 import { Grid } from 'src/app/shared/models/grid.model';
 import { Product } from 'src/app/shared/models/product.model';
 import { ProductService } from 'src/app/shared/services/product..service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Store } from '@ngxs/store';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-list',
@@ -32,8 +30,6 @@ import { Store } from '@ngxs/store';
 export class ProductListComponent {
   $category = inject(CategoryService);
   $product = inject(ProductService);
-  $translate = inject(TranslateService);
-  $store = inject(Store);
 
   get category$() {
     return this.$category.category$;
@@ -41,15 +37,26 @@ export class ProductListComponent {
 
   product$!: Observable<Grid<Product>>;
 
+  public get pageIndex(): number {
+    return this.$product.pageIndex;
+  }
+  public set pageIndex(v: number) {
+    this.$product.pageIndex = v;
+  }
+
   /**
    *
    */
   constructor() {
-    this.$store
-      .select((state) => state.data.currentCurrency)
-      .pipe(takeUntilDestroyed())
-      .subscribe((c) => {
-        this.product$ = this.$product.getAll();
-      });
+    this.product$ = this.$product.getAll();
+  }
+
+  /**
+   *
+   * @param pageIndex
+   */
+  handlePageIndexChange(pageIndex: number) {
+    this.pageIndex = pageIndex;
+    this.product$ = this.$product.getAll();
   }
 }

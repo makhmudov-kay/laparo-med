@@ -1,17 +1,33 @@
 <div class="blog">
-  <div class="container">
+  <div class="container" *ngIf="blog">
     <div class="blog__wrapper">
       <div class="blog__list">
-        <app-posts></app-posts>
+        <app-posts [data]="blog.results"></app-posts>
+
+        <div
+          class="blog__btn"
+          *ngIf="blog.count > PAGE_SIZE * pageIndex"
+          (click)="handlePageIndexChange(pageIndex + 1)"
+        >
+          <button>
+            <span>{{ "morePosts" | translate }}</span
+            ><svg-arrow></svg-arrow>
+          </button>
+        </div>
       </div>
+
       <div class="blog__menu">
-        <app-categories></app-categories>
-        <app-popular [title]="'Most popular'"></app-popular>
-        <app-popular [title]="'Editor pick'"></app-popular>
+        <!-- TODO: IMPLEMENT OR REMOVE -->
+        <!-- <app-categories></app-categories> -->
+
+        <app-popular
+          [title]="'mostPopular'"
+          [data]="blog.results"
+        ></app-popular>
+
+        <!-- TODO: IMPLEMENT OR REMOVE -->
+        <!-- <app-popular [title]="'Editor pick'"></app-popular> -->
       </div>
-    </div>
-    <div class="blog__btn">
-      <button><span>More posts</span><svg-arrow></svg-arrow></button>
     </div>
   </div>
 </div>

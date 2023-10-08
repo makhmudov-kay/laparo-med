@@ -12,7 +12,7 @@ export class MyCurrencyPipe extends DecimalPipe implements PipeTransform {
   settings = inject(Settings);
 
   override transform(value: any): any {
-    const number = super.transform(value);
+    const number = super.transform(value[this.settings.currency]);
     if (number) {
       // Replace ',' with ' '
       let separatedNumber = number.replace(new RegExp(',', 'g'), ' ');

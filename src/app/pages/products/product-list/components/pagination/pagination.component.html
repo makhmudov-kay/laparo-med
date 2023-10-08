@@ -1,10 +1,16 @@
-<ul class="pagination">
-  <li class="pre btn"><svg-arrow-btn class="d-flex"></svg-arrow-btn></li>
-  <li class="pagination__number">1</li>
-  <li class="pagination__number">2</li>
-  <li class="pagination__number">3</li>
-  <li class="pagination__number">4</li>
-  <li class="pagination__number">5</li>
-  <li class="pagination__number">6</li>
-  <li class="next btn"><svg-arrow-btn class="d-flex"></svg-arrow-btn></li>
+<ul class="pagination" *ngIf="maxPage > 1">
+  <li class="pre btn" (click)="left()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </li>
+  <li
+    class="pagination__number"
+    [ngClass]="{ active: pageIndex == i + 1 }"
+    (click)="choosePage(i + 1)"
+    *ngFor="let page of [].constructor(maxPage); index as i"
+  >
+    {{ i + 1 }}
+  </li>
+  <li class="next btn" (click)="right()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </li>
 </ul>

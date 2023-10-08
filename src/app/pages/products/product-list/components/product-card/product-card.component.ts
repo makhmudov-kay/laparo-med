@@ -16,7 +16,7 @@ export class ProductCardComponent {
   data: Product = {
     id: 0,
     title: { ru: 'test', en: 'test', uz: 'test' },
-    price: 0,
+    price: { uzs: 0, eur: 0, usd: 0 },
     image: './assets/image/product-card-1.png',
     category: 0,
   };

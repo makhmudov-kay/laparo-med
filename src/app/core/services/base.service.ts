@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { shareReplay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,9 @@ export class BaseService {
   ) {}
 
   get<T>(url: string, params?: HttpParams) {
-    return this.http.get<T>(`${this.apiUrl}${url}`, { params });
+    return this.http
+      .get<T>(`${this.apiUrl}${url}`, { params })
+      .pipe(shareReplay(1));
   }
 
   post<T>(url: string, body: any) {
