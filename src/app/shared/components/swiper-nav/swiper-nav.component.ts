@@ -1,14 +1,21 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ArrowBtnSVG } from '../../svg/arrow-btn/arrow-btn.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-swiper-nav',
   templateUrl: './swiper-nav.component.html',
   styleUrls: ['./swiper-nav.component.less'],
   standalone: true,
-  imports: [ArrowBtnSVG],
+  imports: [ArrowBtnSVG, NgClass],
 })
 export class SwiperNavComponent {
+  /**
+   *
+   */
+  @Input()
+  spaceBeetWeen!: boolean;
+
   /**
    *
    */

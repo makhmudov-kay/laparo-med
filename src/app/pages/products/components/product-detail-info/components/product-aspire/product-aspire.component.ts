@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-aspire',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-aspire.component.less'],
   standalone: true,
 })
-export class ProductAspireComponent {}
+export class ProductAspireComponent {
+  @Input()
+  data!: any;
+}

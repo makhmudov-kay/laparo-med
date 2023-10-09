@@ -1,26 +1,8 @@
 <div class="product-specification tab-content active">
-  <div class="title">Advanced trainer for Professionals</div>
+  <div class="title">{{ data.contentTitle }}</div>
   <div class="text text--14">
-    <p>
-      <span style="font-weight: 400"
-        >A complete and robust set for practical training in minimally invasive
-        surgery. Meet LAPARO Advance Training Station, which is designed in
-        cooperation with professionals for professionals in medical simulation
-        centers, universities and hospitals.</span
-      >
+    <p *ngFor="let text of data.text">
+      <span style="font-weight: 400">{{ text }}</span>
     </p>
-    <p>
-      <span style="font-weight: 400"
-        >Device dimensions 146-185 x 60 x 67cm&nbsp;</span
-      >
-    </p>
-    <p>
-      <span style="font-weight: 400"
-        >Package dimensions 80 x 120 x 136 cm&nbsp;</span
-      >
-    </p>
-    <p><span style="font-weight: 400">Shipping: Worldwide</span></p>
-    <p><span style="font-weight: 400">Made in EU</span></p>
-    <p><span style="font-weight: 400">Warranty: 2 years</span></p>
   </div>
 </div>

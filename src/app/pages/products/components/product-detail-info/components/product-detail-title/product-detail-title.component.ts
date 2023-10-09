@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-detail-title',
@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-detail-title.component.less'],
   standalone: true,
 })
-export class ProductDetailTitleComponent {}
+export class ProductDetailTitleComponent {
+  @Input()
+  title!: string;
+}

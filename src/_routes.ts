@@ -49,6 +49,13 @@ export const ROUTES: Route[] = [
           ).then((m) => m.ProductListComponent),
       },
       {
+        path: ':id',
+        loadComponent: () =>
+          import('./app/pages/product-detail/product-detail.component').then(
+            (m) => m.ProductDetailComponent
+          ),
+      },
+      {
         path: 'individuals',
         loadComponent: () =>
           import('./app/pages/products/individuals/individuals.component').then(
@@ -89,6 +96,13 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/training-station/training-station.component'
           ).then((m) => m.TrainingStationComponent),
+      },
+      {
+        path: 'advance-portable',
+        loadComponent: () =>
+          import(
+            './app/pages/products/advance-portable/advance-portable.component'
+          ).then((m) => m.AdvancePortableComponent),
       },
     ],
   },

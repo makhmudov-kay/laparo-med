@@ -1,0 +1,28 @@
+<section class="product__about">
+  <div class="grid grid--xl">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="content">
+          <h5>The set includes:</h5>
+          <div class="abouts">
+            <div class="text">
+              <ul class="row">
+                <div class="col-lg-6" *ngFor="let item of data.features">
+                  <li>
+                    {{ item }}
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="text text--14">
+            {{ data.description }}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img class="about-img" [src]="data.img" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

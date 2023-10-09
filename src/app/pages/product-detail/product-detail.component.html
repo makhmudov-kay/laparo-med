@@ -1,0 +1,23 @@
+<section class="product-detail">
+  <div class="grid grid--xl">
+    <div class="product-detail__wrapper">
+      <div class="row row60">
+        <div class="col-lg-5">
+          <div class="product-detail__title">
+            <div class="product-detail__title__title">Advance Configurator</div>
+            <div class="product-detail__title__subtitle">PROFESSIONALS</div>
+          </div>
+
+          <div class="product-detail__images">
+            <!-- SWIPER -->
+            <app-swiper-carousel [slides]="data.slides"></app-swiper-carousel>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <app-content></app-content>
+        </div>
+      </div>
+    </div>
+    <app-product-share></app-product-share>
+  </div>
+</section>

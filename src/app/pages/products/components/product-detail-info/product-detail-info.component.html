@@ -3,14 +3,17 @@
     <div class="presentation">
       <div class="row row60">
         <div class="col-lg-5">
-          <app-product-detail-title></app-product-detail-title>
+          <app-product-detail-title
+            [title]="data.title"
+          ></app-product-detail-title>
           <div class="presentation-images">
             <!-- SWIPER -->
+            <app-swiper-carousel [slides]="data.slides"></app-swiper-carousel>
           </div>
         </div>
         <div class="col-lg-7">
           <app-product-tabs></app-product-tabs>
-          <app-tab-content></app-tab-content>
+          <app-tab-content [data]="data"></app-tab-content>
         </div>
       </div>
     </div>
