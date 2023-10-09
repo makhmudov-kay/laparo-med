@@ -2,6 +2,9 @@ export type LanguageType = 'uz' | 'ru' | 'en';
 export type CurrencyType = 'uzs' | 'usd' | 'eur';
 
 export class Constants {
+  public static readonly PAGE_SIZE = 12;
+  public static readonly PAGE_INDEX = 1;
+
   public static readonly CURRENCY_UZS: CurrencyType = 'uzs';
   public static readonly CURRENCY_USD: CurrencyType = 'usd';
   public static readonly CURRENCY_EURO: CurrencyType = 'eur';

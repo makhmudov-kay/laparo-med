@@ -1,10 +1,10 @@
 <div class="posts">
-  <h3 class="blog-title">Recent</h3>
+  <h3 class="blog-title">{{ "recent" | translate }}</h3>
   <div
     class="posts__card"
     [ngClass]="{ isFirst: isFirst }"
-    *ngFor="let card of [].constructor(3); let isFirst = first"
+    *ngFor="let blog of data; let isFirst = first"
   >
-    <app-post-card [isFirst]="isFirst"></app-post-card>
+    <app-post-card [isFirst]="isFirst" [data]="blog"></app-post-card>
   </div>
 </div>

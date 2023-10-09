@@ -1,5 +1,5 @@
 export interface Grid<T> {
-  count: string;
+  count: number;
   next: number;
   previous: number;
   results: T[];
