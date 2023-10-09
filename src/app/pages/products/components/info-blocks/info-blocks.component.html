@@ -1,0 +1,12 @@
+<section class="analytic__introductions">
+  <div class="grid grid--sm">
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let card of data">
+        <div class="introduction">
+          <img [src]="card.img" alt="" />
+          <div class="title">{{ card.title }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

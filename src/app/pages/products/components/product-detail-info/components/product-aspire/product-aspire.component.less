@@ -1,0 +1,63 @@
+.product__aspire {
+    margin-top: 80px;
+
+    .aspire {
+        margin-top: 120px;
+
+        @media (max-width: 992px) {
+            margin-top: 60px;
+        }
+
+        .title-rotate {
+            position: relative;
+
+            span {
+                transform: translateX(-62%) translateY(300%) rotate(-90deg);
+                position: absolute;
+                top: 110%;
+                left: 70%;
+                font-family: Acherus-Bold;
+                font-weight: 900;
+                font-size: 144px;
+                line-height: 100%;
+                color: #f4f4f4;
+
+                @media (min-width: 992px) and (max-width: 1400px) {
+                    font-size: 100px;
+                    line-height: 100%;
+                }
+
+                @media (min-width: 992px) and (max-width: 1300px) {
+                    font-size: 80px;
+                    line-height: 100%;
+                }
+
+                @media (max-width: 992px) {
+                    display: none;
+                }
+            }
+        }
+
+        .text {
+            max-width: 750px;
+            font-size: 22px;
+            font-family: Acherus-Bold;
+            font-weight: 600;
+            line-height: 170%;
+
+            @media (max-width: 1500px) and (min-width: 992px) {
+                font-size: 18px;
+            }
+        }
+
+        .aspire__img {
+            margin-top: 30px;
+
+            .movie {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

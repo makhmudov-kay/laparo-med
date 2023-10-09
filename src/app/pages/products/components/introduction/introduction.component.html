@@ -1,0 +1,65 @@
+<section class="analytic__introduction">
+  <div class="grid grid--xl">
+    <div class="heading heading--right">
+      <h4 class="section-title">{{ data.header }}</h4>
+    </div>
+  </div>
+  <div class="grid grid--sm analytic__introduction__subtitle">
+    <div class="row">
+      <div class="col-lg-7">
+        <h5>
+          {{ data.description }}
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid--xl" style="margin-top: 4.5rem">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-10">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-10">
+            <video class="movie" controls="">
+              <source [src]="data.video" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid--hd analytic__introduction__perfection">
+    <div class="row align-items-end">
+      <div class="col-lg-4">
+        <div class="analytic__introduction__img">
+          <div
+            class="Sirv"
+            data-src="https://parrot-studio.sirv.com/Apex_spin/Apex_spin.spin"
+          ></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="wrap">
+          <h2 class="title">{{ data.title }}</h2>
+          <div class="content">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="text text--14">
+                  {{ data.leftText }}
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="text text--14">
+                  {{ data.rightText }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="analytic__introduction__svg">
+    <svg-introduction></svg-introduction>
+  </div>
+</section>

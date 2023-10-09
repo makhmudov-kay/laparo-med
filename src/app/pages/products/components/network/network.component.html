@@ -1,0 +1,42 @@
+<section class="analytic__work">
+  <div class="grid grid--xl">
+    <div class="heading heading--right">
+      <h4 class="section-title">NETWORKING</h4>
+    </div>
+  </div>
+  <div class="work__wraper">
+    <div class="grid grid--xl">
+      <h2 class="blue">{{ data.title }}</h2>
+    </div>
+    <div class="grid grid--sm">
+      <div class="work__h5">
+        <h5>
+          {{ data.description }}
+        </h5>
+      </div>
+    </div>
+    <div class="works">
+      <div class="grid grid--md">
+        <div class="row row60">
+          <div class="col-lg-4" *ngFor="let work of data.works">
+            <div class="work">
+              <div class="number">{{ work.value }}</div>
+              <div class="title">{{ work.title }}</div>
+              <div class="text text--14">
+                {{ work.text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            class="works__img"
+            [style]="'background-image: url(' + data.background + ');'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

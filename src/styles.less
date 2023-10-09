@@ -46,7 +46,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: Acherus-Regular;
+  font-family: Acherus-Regular, sans-serif;
 }
 
 * {
@@ -62,7 +62,7 @@ h2,
 h3,
 h4,
 h6 {
-  font-family: Acherus-Black;
+  font-family: Acherus-Black, sans-serif;
   font-weight: 900;
   margin-bottom: 0;
 }
@@ -134,6 +134,7 @@ ul li {
     padding-left: 243px;
     text-align: left;
     text-transform: uppercase;
+
     @media (max-width: 567px) {
       padding-left: 120px;
     }
@@ -237,7 +238,7 @@ textarea {
     border: 1px solid red !important;
   }
 
-  &.error + span {
+  &.error+span {
     font-size: 12px;
     color: red;
   }
@@ -1618,6 +1619,7 @@ label a {
 }
 
 @media (min-width: 576px) {
+
   .flex-sm-column,
   .flex-sm-row {
     flex-direction: row !important;
@@ -1738,6 +1740,7 @@ label a {
 }
 
 @media (min-width: 768px) {
+
   .flex-md-column,
   .flex-md-row {
     flex-direction: row !important;
@@ -1858,6 +1861,7 @@ label a {
 }
 
 @media (min-width: 992px) {
+
   .flex-lg-column,
   .flex-lg-row {
     flex-direction: row !important;
@@ -1978,6 +1982,7 @@ label a {
 }
 
 @media (min-width: 1200px) {
+
   .flex-xl-column,
   .flex-xl-row {
     flex-direction: row !important;

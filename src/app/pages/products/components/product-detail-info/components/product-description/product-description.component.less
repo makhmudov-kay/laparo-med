@@ -1,0 +1,57 @@
+.product__description {
+    margin-top: 150px;
+    padding-bottom: 200px;
+    position: relative;
+
+    @media (max-width: 992px) {
+        margin-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    .static {
+        position: static;
+    }
+
+    &__img {
+        left: 0;
+        width: 40vw;
+        bottom: 0;
+        padding-right: 30px;
+        position: absolute;
+    }
+
+    &__text {
+        margin-top: 50px;
+        margin-right: 100px;
+
+        @media (min-width: 992px) and (max-width: 1500px) {
+            margin-top: 50px;
+            margin-right: 0px;
+        }
+
+        @media (max-width: 992px) {
+            margin-top: 50px;
+            margin-right: 0px;
+        }
+
+        h5 {
+            font-family: Acherus-Bold;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 170%;
+
+            @media (min-width: 992px) and (max-width: 1200px) {
+                font-size: 16px;
+            }
+
+            @media (max-width: 992px) {
+                font-size: 18px;
+            }
+        }
+
+        .text {
+            margin-top: 20px;
+            font-size: .85rem;
+        }
+    }
+}

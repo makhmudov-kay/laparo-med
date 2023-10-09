@@ -69,6 +69,27 @@ export const ROUTES: Route[] = [
             (m) => m.ApexProComponent
           ),
       },
+      {
+        path: 'apex-vr',
+        loadComponent: () =>
+          import('./app/pages/products/apex-vr/apex-vr.component').then(
+            (m) => m.ApexVrComponent
+          ),
+      },
+      {
+        path: 'analytic',
+        loadComponent: () =>
+          import('./app/pages/products/analytic/analytic.component').then(
+            (m) => m.AnalyticComponent
+          ),
+      },
+      {
+        path: 'advance-training-station',
+        loadComponent: () =>
+          import(
+            './app/pages/products/training-station/training-station.component'
+          ).then((m) => m.TrainingStationComponent),
+      },
     ],
   },
 ];

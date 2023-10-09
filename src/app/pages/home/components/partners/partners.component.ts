@@ -1,5 +1,5 @@
-import { NgFor } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, Input, ViewChild } from '@angular/core';
 import { SwiperComponent, SwiperModule } from 'swiper/angular';
 import { PARTNERS } from './partners-data';
 import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-nav.component';
@@ -9,9 +9,14 @@ import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-
   templateUrl: './partners.component.html',
   styleUrls: ['./partners.component.less'],
   standalone: true,
-  imports: [SwiperModule, NgFor, SwiperNavComponent],
+  imports: [SwiperModule, NgFor, SwiperNavComponent, NgIf],
 })
 export class PartnersComponent {
+  /**
+   */
+  @Input()
+  hideTitle = false;
+  
   /**
    *
    */
