@@ -1,0 +1,18 @@
+<div class="product">
+  <div class="product__left">
+    <div class="product__img">
+      <img src="./assets/image/product-1.png" alt="product" />
+    </div>
+    <div class="product__title">
+      <span>{{ product.name }}</span>
+    </div>
+  </div>
+  <div class="product__right">
+    <div class="product__price">{{ product.price }}</div>
+    <div class="product__calc">
+      <button (click)="decrease()">-</button>
+      <input type="number" [(ngModel)]="count" />
+      <button (click)="increase()">+</button>
+    </div>
+  </div>
+</div>

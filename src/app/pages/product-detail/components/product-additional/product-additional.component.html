@@ -1,0 +1,14 @@
+<div class="additional-item" [ngClass]="{ active: data.isOpened }">
+  <div class="additional-item__title" (click)="toggleCollapse(data.id)">
+    <span class="title-t">Modules</span>
+    <span class="plus">{{ data.isOpened ? "-" : "+" }}</span>
+  </div>
+
+  <div class="additional-item__items" [ngClass]="{ active: data.isOpened }">
+    <app-product-item
+      *ngFor="let product of data.products"
+      [product]="product"
+      (addOrDeleteProduct)="addOrDeleteProduct.emit($event)"
+    ></app-product-item>
+  </div>
+</div>
