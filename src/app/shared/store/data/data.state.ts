@@ -6,7 +6,11 @@ import {
   CurrencyType,
   LanguageType,
 } from 'src/app/core/configs/constants';
-import { CurrentCurrencyAction, CurrentLanguageAction } from './data.action';
+import {
+  CartAction,
+  CurrentCurrencyAction,
+  CurrentLanguageAction,
+} from './data.action';
 
 @State<DataStateModel>({
   name: 'data',
@@ -19,6 +23,7 @@ import { CurrentCurrencyAction, CurrentLanguageAction } from './data.action';
       (localStorage.getItem(
         Constants.LOCALSTORAGE_CURRENT_LANGUAGE
       ) as LanguageType) || Constants.DEFAULT_LANGUAGE,
+    cart: JSON.parse(localStorage.getItem('cart') || '[]'),
   },
 })
 @Injectable()
@@ -39,6 +44,15 @@ export class DataState {
   @Selector()
   static currentLanguage(state: DataStateModel) {
     return state.currentLanguage;
+  }
+
+  /**
+   *
+   * @param state State model
+   */
+  @Selector()
+  static cart(state: DataStateModel) {
+    return state.cart;
   }
 
   /**
@@ -83,5 +97,21 @@ export class DataState {
       Constants.LOCALSTORAGE_CURRENT_LANGUAGE,
       action.currentLanguage
     );
+  }
+
+  /**
+   *
+   * @param ctx
+   * @returns
+   */
+  @Action(CartAction)
+  setCart(ctx: StateContext<DataStateModel>, action: CartAction) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      cart: [...action.cart],
+    });
+
+    localStorage.setItem('cart', JSON.stringify(action.cart));
   }
 }

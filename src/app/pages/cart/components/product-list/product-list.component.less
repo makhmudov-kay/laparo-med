@@ -1,0 +1,71 @@
+.cart-list {
+  &__table {
+    border: 0 !important;
+    margin-top: 30px !important;
+    border-collapse: separate !important;
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-radius: 5px;
+
+    th {
+      font-family: Acherus-Bold !important;
+      font-size: 16px !important;
+      line-height: 22px !important;
+      text-transform: capitalize !important;
+      font-weight: 700;
+      vertical-align: middle;
+      padding: 9px 12px;
+
+      &.product-name {
+        padding-left: 0 !important;
+        max-width: 20px !important;
+      }
+
+      &.product-thumbnail {
+        min-width: 32px;
+      }
+    }
+
+    td {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 9px 12px;
+      vertical-align: middle;
+      line-height: 1.5em;
+
+      &.product-remove {
+        padding-left: 0 !important;
+        max-width: 20px !important;
+      }
+
+      &.product-thumbnail {
+        width: 100px !important;
+      }
+
+      &.product-name {
+        font-size: 14px !important;
+        line-height: 126% !important;
+      }
+
+      &.product-price {
+        font-size: 14px !important;
+        line-height: 100% !important;
+        font-weight: 700 !important;
+        font-family: Acherus-Bold !important;
+      }
+
+      &.product-quantity {
+        min-width: 80px;
+        font-size: 14px !important;
+        line-height: 100% !important;
+        font-weight: 700 !important;
+        font-family: "Acherus Grotesque Bold" !important;
+      }
+
+      &.product-subtotal {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 9px 12px;
+      }
+    }
+  }
+}

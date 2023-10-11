@@ -25,3 +25,16 @@ export class CurrentLanguageAction {
    */
   constructor(public currentLanguage: LanguageType) {}
 }
+
+export class CartAction {
+  /**
+   *
+   */
+  static readonly type = 'Cart';
+
+  /**
+   *
+   * @param cart
+   */
+  constructor(public cart: any[]) {}
+}

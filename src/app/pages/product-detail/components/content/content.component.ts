@@ -4,10 +4,13 @@ import {
   Component,
 } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ProductAdditionalComponent } from '../product-additional/product-additional.component';
 import { ProductInfoComponent } from '../product-info/product-info.component';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
+import { Store } from '@ngxs/store';
+import { CartAction } from 'src/app/shared/store/data/data.action';
+import { DataState } from 'src/app/shared/store/data/data.state';
 
 @Component({
   selector: 'app-content',
@@ -21,6 +24,7 @@ import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
     ProductAdditionalComponent,
     ProductInfoComponent,
     MyCurrencyPipe,
+    NgIf,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -245,13 +249,24 @@ export class ContentComponent {
   /**
    *
    */
-  totalPrice: number = this.mainProduct.price;
+  totalPrice = 0;
 
   /**
    *
    */
   list: any = [];
-  cart: any = [];
+  needToAddcart: any = [];
+
+  /**
+   *
+   */
+  configurator = false;
+
+  /**
+   *
+   * @param $store
+   */
+  constructor(private $store: Store) {}
 
   /**
    *
@@ -262,34 +277,39 @@ export class ContentComponent {
 
     const result = Object.values(
       this.list.reduce(
-        (acc: any, n: any) => (
-          (!acc[n.id] || n.checked) && (acc[n.id] = n), acc
-        ),
+        (acc: any, n: any) => (!acc[n.id] && (acc[n.id] = n), acc),
         {}
       )
     );
 
-    this.totalPrice = result.reduce(
+    const totalPrice = result.reduce(
       (init: any, curr: any) => init + curr.totalPrice,
       0
     ) as number;
 
     const filteredList = result.filter((item: any) => item.count !== 0);
-    this.cart = filteredList;
+    this.totalPrice = totalPrice;
+    this.needToAddcart = filteredList;
   }
 
   /**
    *
    */
   addToCart() {
-    if (this.cart.length) {
-      if (localStorage.getItem('cart')) {
-        const cart = JSON.parse(localStorage.getItem('cart') || '{}');
-        const newCart = [...cart, ...this.cart];
-        localStorage.setItem('cart', JSON.stringify(newCart));
-      } else {
-        localStorage.setItem('cart', JSON.stringify(this.cart));
-      }
+    if (this.needToAddcart.length) {
+      const cart = this.$store.selectSnapshot(DataState.cart);
+
+      this.needToAddcart.forEach((item: any) => {
+        const sameItem = cart.find((cartItem: any) => item.id === cartItem.id);
+        if (sameItem) {
+          sameItem.count += item.count;
+          sameItem.totalPrice += item.totalPrice;
+        } else {
+          cart.push({ ...item });
+        }
+      });
+
+      this.$store.dispatch(new CartAction(cart));
     }
   }
 
@@ -306,5 +326,12 @@ export class ContentComponent {
       }
       return item;
     });
+  }
+
+  /**
+   * 
+   */
+  toggleConfigurator() {
+    this.configurator = !this.configurator;
   }
 }

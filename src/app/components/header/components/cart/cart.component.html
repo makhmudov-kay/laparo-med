@@ -1,13 +1,45 @@
 <div class="cart">
   <div class="cart__viewer" (click)="toggleCartPopup()">
     <svg-cart></svg-cart>
+    <span *ngIf="totalCount > 0">{{ totalCount }}</span>
   </div>
-  <ng-container *ngIf="isVisibleCart">
+  <ng-container *ngIf="isVisibleCart && cartItems">
     <div class="cart__list">
       <h4 class="cart__list__title">Basket</h4>
-      <div class="empty">
-        <p>No products in the basket.</p>
-      </div>
+
+      <ng-container *ngIf="cartItems && cartItems.length; else empty">
+        <div class="cart__list__products">
+          <div class="cart__list__products__total-price">
+            <span class="cart__list__products__total-price__text"
+              >Subtotal:</span
+            >
+            <span class="cart__list__products__total-price__price"
+              ><strong>{{ totalPrice }}</strong></span
+            >
+          </div>
+
+          <div class="cart__list__products__view-btn">
+            <button routerLink="../cart">View basket</button>
+          </div>
+
+          <ul class="cart__list__products__list">
+            <li
+              class="cart__list__products__list__item"
+              *ngFor="let item of cartItems"
+            >
+              <app-product
+                [item]="item"
+                (deleteProduct)="deleteProduct($event)"
+              ></app-product>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+      <ng-template #empty>
+        <div class="empty">
+          <p>No products in the basket.</p>
+        </div>
+      </ng-template>
     </div>
   </ng-container>
 </div>

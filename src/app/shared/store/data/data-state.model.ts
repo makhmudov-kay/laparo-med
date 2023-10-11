@@ -10,4 +10,9 @@ export interface DataStateModel {
    *
    */
   currentLanguage: LanguageType;
+
+  /**
+   * 
+   */
+  cart: any[];
 }

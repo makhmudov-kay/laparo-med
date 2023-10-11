@@ -3,13 +3,12 @@
 
   <div class="content__configurator">
     <div class="content__configurator__btn">
-      <button>CREATE YOUR OWN SET</button>
+      <button (click)="toggleConfigurator()">CREATE YOUR OWN SET</button>
     </div>
 
-    <div class="content__configurator__items">
+    <div class="content__configurator__items" *ngIf="configurator">
       <app-product-item
         [product]="mainProduct"
-        [isMain]="true"
         (addOrDeleteProduct)="addOrDeleteProduct($event)"
       ></app-product-item>
 
@@ -24,7 +23,8 @@
 
       <div class="content__configurator__items__totalPrice">
         <h6>
-          Total price: <span>{{ totalPrice }}</span>
+          Total price:
+          <span>{{ totalPrice }}</span>
         </h6>
       </div>
     </div>
