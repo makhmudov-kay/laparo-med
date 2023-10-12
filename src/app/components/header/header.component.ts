@@ -11,6 +11,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
 import { RouterLink } from '@angular/router';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
+import { SvgUserComponent } from 'src/app/shared/svg/svg-user/svg-user.component';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,7 @@ import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
     NgClass,
     RouterLink,
     LogoComponent,
+    SvgUserComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -5,7 +5,7 @@
   #swiper
 >
   <ng-template swiperSlide *ngFor="let slide of slides"
-    ><img [src]="slide"
+    ><img [src]="slide.image"
   /></ng-template>
 </swiper>
 <swiper
@@ -17,7 +17,7 @@
   class="mySwiper"
 >
   <ng-template swiperSlide *ngFor="let slide of slides"
-    ><img [src]="slide"
+    ><img [src]="slide.image"
   /></ng-template>
 </swiper>
 

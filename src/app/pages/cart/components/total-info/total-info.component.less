@@ -1,0 +1,115 @@
+.cart-collaterals {
+  width: 100%;
+
+  &::before {
+    content: " ";
+    display: table;
+  }
+
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  .cart_totals {
+    width: 100%;
+    margin-top: 70px;
+    padding: 25px;
+    background: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+    text-align: left;
+
+    @media (max-width: 567px) {
+      padding: 15px;
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    h5 {
+      font-family: Acherus-Bold;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 170%;
+
+      @media (min-width: 992px) and (max-width: 1500px) {
+        font-size: 18px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1200px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 18px;
+      }
+    }
+
+    .shop_table {
+      margin-top: 20px !important;
+      margin: 0 0 6px;
+      padding: 0;
+      text-align: left;
+      width: 100%;
+      border-radius: 5px;
+
+      tr {
+        display: table-row;
+      }
+
+      td {
+        text-align: right !important;
+        padding-right: 0 !important;
+        font-size: 15px !important;
+        line-height: 100% !important;
+        padding: 9px 12px;
+        font-family: Acherus-Bold !important;
+      }
+
+      th {
+        padding-left: 0 !important;
+        font-size: 15px !important;
+        line-height: 126% !important;
+        font-weight: 400 !important;
+        font-family: Acherus-Regular !important;
+        text-transform: capitalize !important;
+        border-top: 1px solid #e9e6ed;
+        width: 35%;
+        padding: 9px 12px;
+      }
+    }
+  }
+}
+
+.wc-proceed-to-checkout {
+  a {
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    line-height: 170% !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    padding: 10px 15px !important;
+    transition: all 0.4s !important;
+    background-color: #00619d !important;
+    color: #fff !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    border-radius: 3px;
+    display: block;
+    left: auto;
+    text-align: center;
+
+    &:hover {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+  }
+}

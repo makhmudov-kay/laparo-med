@@ -6,6 +6,7 @@ import { SwiperComponent } from 'swiper/angular';
 import SwiperCore, { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-nav.component';
 import { NgFor } from '@angular/common';
+import { ImageItem } from 'src/app/shared/models/product-detail.model';
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs]);
@@ -22,7 +23,7 @@ export class SwiperCarouselComponent {
    *
    */
   @Input()
-  slides!: string[];
+  slides!: ImageItem[];
 
   /**
    *

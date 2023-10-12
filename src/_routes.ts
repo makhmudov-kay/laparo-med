@@ -39,6 +39,11 @@ export const ROUTES: Route[] = [
       import('./app/pages/cart/cart.component').then((m) => m.CartComponent),
   },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./app/pages/login/login.component').then((m) => m.LoginComponent),
+  },
+  {
     path: 'products',
     loadComponent: () =>
       import('./app/pages/products/products.component').then(

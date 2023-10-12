@@ -5,14 +5,14 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
 
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.less'],
   standalone: true,
-  imports: [FormsModule],
+  imports: [CalcInputComponent],
 })
 export class ProductItemComponent {
   /**

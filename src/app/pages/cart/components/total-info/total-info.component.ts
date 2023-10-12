@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-total-info',
@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./total-info.component.less'],
   standalone: true,
 })
-export class TotalInfoComponent {}
+export class TotalInfoComponent {
+  private _totalPrice!: number;
+  public get totalPrice(): number {
+    return this._totalPrice;
+  }
+  @Input()
+  public set totalPrice(v: number) {
+    this._totalPrice = v;
+  }
+}

@@ -61,8 +61,6 @@ export class CartComponent {
         0
       );
       this.totalPrice = data.reduce((acc, item) => acc + item.totalPrice, 0);
-      console.log(this.totalPrice);
-
       this.cd.markForCheck();
     });
   }
@@ -79,11 +77,7 @@ export class CartComponent {
    * @param id
    */
   deleteProduct(id: number) {
-    console.log(id);
-
     const newCartList = this.cartItems.filter((item) => item.id !== id);
-    console.log('newCartList', newCartList);
-
     this.$store.dispatch(new CartAction(newCartList));
   }
 

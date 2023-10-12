@@ -1,4 +1,4 @@
-<section class="product-detail">
+<section class="product-detail" *ngIf="product$ | async as product">
   <div class="grid grid--xl">
     <div class="product-detail__wrapper">
       <div class="row row60">
@@ -10,7 +10,7 @@
 
           <div class="product-detail__images">
             <!-- SWIPER -->
-            <app-swiper-carousel [slides]="data.slides"></app-swiper-carousel>
+            <app-swiper-carousel [slides]="product.product_images"></app-swiper-carousel>
           </div>
         </div>
         <div class="col-lg-7">
