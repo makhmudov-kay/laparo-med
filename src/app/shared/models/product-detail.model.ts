@@ -15,27 +15,29 @@ export interface ProductDetail extends Id {
   product_features: ProductFeature;
 }
 
-interface ItemsType {
+export interface ItemsType {
   type: string;
   product: ProductItem[];
+  isOpened?: boolean;
 }
 
-interface ProductItem extends Id {
+export interface ProductItem extends Id {
   title: LanguageModel;
   price: Price;
   image: string;
+  count?: number;
+  totalPrice?: Price;
 }
 
 export interface ImageItem extends Id {
   image: string;
 }
 
-interface ProductFeature extends Id {
+export interface ProductFeature extends Id {
   image: string;
   features: Feature[];
 }
 
-interface Feature {
-  id: 5;
+export interface Feature extends Id {
   feature: LanguageModel;
 }

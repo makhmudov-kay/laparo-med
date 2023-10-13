@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from 'src/app/core/services/base.service';
 import { ProductDetail } from '../models/product-detail.model';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,14 @@ export class ProductDetailService {
    * @returns
    */
   getProductById(id: string | null) {
-    return this.$base.get<ProductDetail>(`shop/products/${id}`);
+    return this.$base.get<ProductDetail>(`shop/products/${id}/`).pipe(
+      map((res) => res),
+      map((res) => {
+        res.items.forEach((item) => {
+          item.isOpened = false;
+        });
+        return res;
+      })
+    );
   }
 }

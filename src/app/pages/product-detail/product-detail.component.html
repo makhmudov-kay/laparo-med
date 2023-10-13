@@ -4,17 +4,21 @@
       <div class="row row60">
         <div class="col-lg-5">
           <div class="product-detail__title">
-            <div class="product-detail__title__title">Advance Configurator</div>
+            <div class="product-detail__title__title">
+              {{ product.title | myTranslate }}
+            </div>
             <div class="product-detail__title__subtitle">PROFESSIONALS</div>
           </div>
 
           <div class="product-detail__images">
             <!-- SWIPER -->
-            <app-swiper-carousel [slides]="product.product_images"></app-swiper-carousel>
+            <app-swiper-carousel
+              [slides]="product.product_images"
+            ></app-swiper-carousel>
           </div>
         </div>
         <div class="col-lg-7">
-          <app-content></app-content>
+          <app-content [product]="product"></app-content>
         </div>
       </div>
     </div>

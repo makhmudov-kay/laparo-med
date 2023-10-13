@@ -7,6 +7,7 @@ import { Observable, map } from 'rxjs';
 import { ProductDetail } from 'src/app/shared/models/product-detail.model';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,21 +20,10 @@ import { AsyncPipe, NgIf } from '@angular/common';
     ProductShareComponent,
     NgIf,
     AsyncPipe,
+    MyTranslatePipe
   ],
 })
 export class ProductDetailComponent implements OnInit {
-  data = {
-    slides: [
-      './assets/image/product-slide-1.png',
-      './assets/image/product-slide-2.png',
-      './assets/image/product-slide-3.png',
-      './assets/image/product-slide-4.png',
-      './assets/image/product-slide-5.png',
-      './assets/image/product-slide-6.png',
-      './assets/image/product-slide-7.png',
-    ],
-  };
-
   /**
    *
    */

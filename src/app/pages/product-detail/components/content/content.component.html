@@ -7,14 +7,13 @@
     </div>
 
     <div class="content__configurator__items" *ngIf="configurator">
-      <app-product-item
-        [product]="mainProduct"
+      <!-- <app-product-item
         (addOrDeleteProduct)="addOrDeleteProduct($event)"
-      ></app-product-item>
+      ></app-product-item> -->
 
       <div class="content__configurator__items__additional">
         <app-product-additional
-          *ngFor="let additional of modules"
+          *ngFor="let additional of product.items"
           [data]="additional"
           (toggleCollapseHandler)="toggleCollapse($event)"
           (addOrDeleteProduct)="addOrDeleteProduct($event)"
@@ -24,7 +23,7 @@
       <div class="content__configurator__items__totalPrice">
         <h6>
           Total price:
-          <span>{{ totalPrice }}</span>
+          <span>{{ totalPrice | myCurrency }}</span>
         </h6>
       </div>
     </div>

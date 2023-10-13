@@ -1,6 +1,7 @@
 import { NgClass, NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
+import { ItemsType } from 'src/app/shared/models/product-detail.model';
 
 @Component({
   selector: 'app-product-additional',
@@ -14,7 +15,7 @@ export class ProductAdditionalComponent {
    *
    */
   @Input()
-  data!: any;
+  data!: ItemsType;
 
   /**
    *
@@ -26,7 +27,7 @@ export class ProductAdditionalComponent {
    *
    */
   @Output()
-  toggleCollapseHandler = new EventEmitter<number>();
+  toggleCollapseHandler = new EventEmitter<string>();
 
   /**
    *
@@ -36,7 +37,7 @@ export class ProductAdditionalComponent {
   /**
    *
    */
-  toggleCollapse(id: number) {
-    this.toggleCollapseHandler.emit(id);
+  toggleCollapse(type: string) {
+    this.toggleCollapseHandler.emit(type);
   }
 }

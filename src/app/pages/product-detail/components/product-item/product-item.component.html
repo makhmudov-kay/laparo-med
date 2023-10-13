@@ -1,14 +1,14 @@
 <div class="product">
   <div class="product__left">
     <div class="product__img">
-      <img src="./assets/image/product-1.png" alt="product" />
+      <img [src]="product.image" alt="product" />
     </div>
     <div class="product__title">
-      <span>{{ product.name }}</span>
+      <span>{{ product.title | myTranslate }}</span>
     </div>
   </div>
   <div class="product__right">
-    <div class="product__price">{{ product.price }}</div>
+    <div class="product__price">{{ product.price | myCurrency}}</div>
     <app-calc-input
       (countChangeDecrease)="decrease()"
       (countChangeIncrease)="increase()"

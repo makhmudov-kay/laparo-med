@@ -12,6 +12,9 @@ export class MyCurrencyPipe extends DecimalPipe implements PipeTransform {
   settings = inject(Settings);
 
   override transform(value: any): any {
+    if (value === undefined || value === null) {
+      return '';
+    }
     const number = super.transform(value[this.settings.currency]);
     if (number) {
       // Replace ',' with ' '
