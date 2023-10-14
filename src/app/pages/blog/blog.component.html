@@ -22,7 +22,7 @@
 
         <app-popular
           [title]="'mostPopular'"
-          [data]="blog.results"
+          [data]="popular$ | async"
         ></app-popular>
 
         <!-- TODO: IMPLEMENT OR REMOVE -->

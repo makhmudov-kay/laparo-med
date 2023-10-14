@@ -12,9 +12,7 @@
             {{ blog.title | myTranslate }}
           </h3>
           <p class="blog-detail__info__left__text">
-            Recently, we showed you what esophageal atresia looks like in
-            virtual reality. Today it's time for the physics module of the
-            procedure!
+            {{ blog.description | myTranslate }}
           </p>
         </div>
         <div class="blog-detail__info__right">
@@ -54,9 +52,12 @@
       <div class="blog-detail__info__similar">
         <!-- <h4 class="blog-detail__info__similar__title">Related articles</h4> -->
         <div class="blog-detail__info__similar__cards">
-          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
-          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
-          <app-post-card [isSmCard]="true" [withoutImg]="true"></app-post-card>
+          <app-post-card
+            *ngFor="let blog of popular$ | async"
+            [data]="blog"
+            [isSmCard]="true"
+            [withoutImg]="true"
+          ></app-post-card>
         </div>
       </div>
     </div>

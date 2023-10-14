@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 import { Observable } from 'rxjs';
 import { Grid } from 'src/app/shared/models/grid.model';
 import { Product } from 'src/app/shared/models/product.model';
-import { ProductService } from 'src/app/shared/services/product..service';
+import { ProductService } from 'src/app/shared/services/product.service';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

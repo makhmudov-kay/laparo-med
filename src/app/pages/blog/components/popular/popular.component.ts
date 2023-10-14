@@ -19,5 +19,5 @@ export class PopularComponent {
   title!: string;
 
   @Input()
-  data: Blog[] = [];
+  data!: Blog[] | null;
 }

@@ -5,4 +5,5 @@ export interface BlogDetails {
   preview_image: string;
   title: LanguageModel;
   text: LanguageModel;
+  description: LanguageModel;
 }

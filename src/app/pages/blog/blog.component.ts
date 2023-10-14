@@ -43,6 +43,10 @@ export class BlogComponent {
     this.$blog.pageIndex = v;
   }
 
+  get popular$() {
+    return this.$blog.popular$;
+  }
+
   readonly PAGE_SIZE = Constants.PAGE_SIZE;
 
   /**
