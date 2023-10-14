@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from 'src/app/shared/models/product.model';
@@ -10,7 +11,13 @@ import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-ad
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.less'],
   standalone: true,
-  imports: [SvgAddToCartComponent, MyCurrencyPipe, MyTranslatePipe, RouterLink],
+  imports: [
+    SvgAddToCartComponent,
+    MyCurrencyPipe,
+    MyTranslatePipe,
+    RouterLink,
+    AsyncPipe,
+  ],
 })
 export class ProductCardComponent {
   @Input() // { required: true }

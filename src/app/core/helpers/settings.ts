@@ -6,6 +6,7 @@ import {
   CurrentCurrencyAction,
   CurrentLanguageAction,
 } from 'src/app/shared/store/data/data.action';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class Settings {
@@ -35,4 +36,20 @@ export class Settings {
    *
    */
   constructor(private store: Store) {}
+
+  /**
+   *
+   * @returns
+   */
+  getLanguageObservable(): Observable<LanguageType> {
+    return this.store.select(DataState.currentLanguage);
+  }
+
+  /**
+   *
+   * @returns
+   */
+  getCurrencyObservable(): Observable<CurrencyType> {
+    return this.store.select(DataState.currentCurrency);
+  }
 }

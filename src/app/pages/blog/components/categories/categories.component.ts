@@ -1,4 +1,4 @@
-import { NgClass, NgFor } from '@angular/common';
+import { AsyncPipe, NgClass, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Category } from 'src/app/shared/models/category.model';
@@ -18,6 +18,7 @@ import { SvgSearchComponent } from 'src/app/shared/svg/svg-search/svg-search.com
     NgClass,
     TranslateModule,
     MyTranslatePipe,
+    AsyncPipe
   ],
 })
 export class CategoriesComponent {

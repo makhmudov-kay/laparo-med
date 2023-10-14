@@ -1,9 +1,11 @@
+import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
   Input,
   Output,
   EventEmitter,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
 import { Price } from 'src/app/shared/models/price.model';
@@ -16,7 +18,8 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.less'],
   standalone: true,
-  imports: [CalcInputComponent, MyTranslatePipe, MyCurrencyPipe],
+  imports: [CalcInputComponent, MyTranslatePipe, MyCurrencyPipe, AsyncPipe],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent {
   /**
@@ -69,7 +72,6 @@ export class ProductItemComponent {
       }
     }
 
-    // this.product.totalPrice = this.product.price * this.product.count;
     this.addOrDeleteProduct.emit(this.product);
     this.cd.markForCheck();
   }

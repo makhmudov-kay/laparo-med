@@ -1,5 +1,5 @@
-<div class="product-description">
-  <div class="product-description__header">
+<div class="product-description" [innerHTML]="info | myTranslate | async">
+  <!-- <div class="product-description__header">
     <div class="product-description__header__title active">
       INFORMATION AND SPECIFICATION
     </div>
@@ -26,5 +26,5 @@
     <p class="product-description__info__text">
       Create your training set! Add components and get a discount of up to 20%!
     </p>
-  </div>
+  </div> -->
 </div>

@@ -1,5 +1,5 @@
 <div class="content">
-  <app-product-info></app-product-info>
+  <app-product-info [info]="product.information"></app-product-info>
 
   <div class="content__configurator">
     <div class="content__configurator__btn">
@@ -7,9 +7,10 @@
     </div>
 
     <div class="content__configurator__items" *ngIf="configurator">
-      <!-- <app-product-item
+      <app-product-item
+        [product]="product.main_item"
         (addOrDeleteProduct)="addOrDeleteProduct($event)"
-      ></app-product-item> -->
+      ></app-product-item>
 
       <div class="content__configurator__items__additional">
         <app-product-additional
@@ -23,7 +24,7 @@
       <div class="content__configurator__items__totalPrice">
         <h6>
           Total price:
-          <span>{{ totalPrice | myCurrency }}</span>
+          <span>{{ totalPrice ? (totalPrice | myCurrency) : 0 }}</span>
         </h6>
       </div>
     </div>

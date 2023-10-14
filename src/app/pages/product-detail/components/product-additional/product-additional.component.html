@@ -1,6 +1,6 @@
 <div class="additional-item" [ngClass]="{ active: data.isOpened }">
   <div class="additional-item__title" (click)="toggleCollapse(data.type)">
-    <span class="title-t">Modules</span>
+    <span class="title-t">{{ data.type }}</span>
     <span class="plus">{{ data.isOpened ? "-" : "+" }}</span>
   </div>
 

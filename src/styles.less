@@ -238,7 +238,7 @@ textarea {
     border: 1px solid red !important;
   }
 
-  &.error+span {
+  &.error + span {
     font-size: 12px;
     color: red;
   }
@@ -1619,7 +1619,6 @@ label a {
 }
 
 @media (min-width: 576px) {
-
   .flex-sm-column,
   .flex-sm-row {
     flex-direction: row !important;
@@ -1740,7 +1739,6 @@ label a {
 }
 
 @media (min-width: 768px) {
-
   .flex-md-column,
   .flex-md-row {
     flex-direction: row !important;
@@ -1861,7 +1859,6 @@ label a {
 }
 
 @media (min-width: 992px) {
-
   .flex-lg-column,
   .flex-lg-row {
     flex-direction: row !important;
@@ -1982,7 +1979,6 @@ label a {
 }
 
 @media (min-width: 1200px) {
-
   .flex-xl-column,
   .flex-xl-row {
     flex-direction: row !important;
@@ -2229,4 +2225,28 @@ h4,
 h6 {
   font-family: Acherus-Bold;
   font-weight: 700;
+}
+
+.product-description {
+  .title {
+    font-family: Acherus-Bold !important;
+    font-size: 18px !important;
+    line-height: 100% !important;
+    margin-bottom: 15px !important;
+
+    @media (max-width: 992px) {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+
+  .text {
+    font-size: 0.85rem;
+    line-height: 170%;
+    margin-top: 20px;
+
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+  }
 }

@@ -13,6 +13,7 @@ export interface ProductDetail extends Id {
   product_video: string;
   product_description: string;
   product_features: ProductFeature;
+  main_item: ProductItem;
 }
 
 export interface ItemsType {

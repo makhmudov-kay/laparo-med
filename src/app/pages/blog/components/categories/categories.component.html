@@ -2,7 +2,7 @@
   <h3 class="blog-title">{{ "categories" | translate }}</h3>
   <div class="categories__list">
     <a *ngFor="let category of data" class="categories__list__item"
-      >{{ category.name | myTranslate }} ({{ category.count }})</a
+      >{{ category.name | myTranslate| async }} ({{ category.count }})</a
     >
   </div>
   <div class="categories__search">

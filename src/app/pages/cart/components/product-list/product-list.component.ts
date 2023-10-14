@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
@@ -8,13 +8,21 @@ import {
   Output,
 } from '@angular/core';
 import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
+import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
+import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.less'],
   standalone: true,
-  imports: [CalcInputComponent, NgIf],
+  imports: [
+    CalcInputComponent,
+    NgIf,
+    MyTranslatePipe,
+    AsyncPipe,
+    MyCurrencyPipe,
+  ],
 })
 export class ProductListComponent {
   /**

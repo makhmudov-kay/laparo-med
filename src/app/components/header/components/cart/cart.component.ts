@@ -13,13 +13,15 @@ import { Observable } from 'rxjs';
 import { DataState } from 'src/app/shared/store/data/data.state';
 import { CartAction } from 'src/app/shared/store/data/data.action';
 import { RouterLink } from '@angular/router';
+import { Price } from 'src/app/shared/models/price.model';
+import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.less'],
   standalone: true,
-  imports: [CartSVG, NgIf, ProductComponent, NgFor, RouterLink],
+  imports: [CartSVG, NgIf, ProductComponent, NgFor, RouterLink, MyCurrencyPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {
@@ -37,7 +39,7 @@ export class CartComponent {
    *
    */
   totalCount!: number;
-  totalPrice!: number;
+  totalPrice!: Price;
 
   /**
    *
@@ -60,7 +62,17 @@ export class CartComponent {
         (acc, item) => acc + item.count,
         0
       );
-      this.totalPrice = data.reduce((acc, item) => acc + item.totalPrice, 0);
+
+      const totalPrices = data.reduce(
+        (total: Price, item: any) => {
+          total.usd += item.totalPrice.usd;
+          total.uzs += item.totalPrice.uzs;
+          total.eur += item.totalPrice.eur;
+          return total;
+        },
+        { usd: 0, uzs: 0, eur: 0 }
+      );
+      this.totalPrice = totalPrices;
       this.cd.markForCheck();
     });
   }

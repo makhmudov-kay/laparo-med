@@ -5,7 +5,7 @@
     </div>
     <div class="product-card__info">
       <h4 class="product-card__title">
-        {{ data.title | myTranslate }}
+        {{ data.title | myTranslate | async }}
       </h4>
       <p class="product-card__text">4 COMPLETE COURSES IN ONE SET</p>
       <span class="product-card__price"
