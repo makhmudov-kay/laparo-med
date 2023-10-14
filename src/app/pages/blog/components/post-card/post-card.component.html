@@ -15,13 +15,12 @@
     <h4 class="card__content__title">{{ data.title | myTranslate | async}}</h4>
 
     <!-- TODO: REMOVE OR IMPLEMENT -->
-    <!-- <p class="card__content__text" *ngIf="!isSmCard">
-      Recently, we showed you what esophageal atresia looks like in virtual
-      reality. Today it's time for the physics module of the proce...
-    </p> -->
+    <p class="card__content__text" *ngIf="!isSmCard">
+      {{ data.description | myTranslate }}
+    </p>
 
     <div class="card__content__btn">
-      <app-link-btn [link]="[data.id]"></app-link-btn>
+      <app-link-btn [link]="['/blog', data.id]"></app-link-btn>
     </div>
   </div>
 </div>

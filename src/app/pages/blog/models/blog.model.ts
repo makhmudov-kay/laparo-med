@@ -5,4 +5,5 @@ export interface Blog extends Id {
   preview_image: string;
   title: LanguageModel;
   created_at: Date;
+  description: LanguageModel;
 }

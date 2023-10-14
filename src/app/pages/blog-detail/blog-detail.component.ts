@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../blog/services/blog.service';
 import { BlogDetails } from '../blog/models/blog-details.model';
 import { Observable } from 'rxjs';
-import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
+import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 
 @Component({
@@ -21,16 +21,21 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     AsyncPipe,
     DatePipe,
     NgIf,
+    NgFor,
 
     MyTranslatePipe,
   ],
 })
 export class BlogDetailComponent {
   route = inject(ActivatedRoute);
-  blogId = this.route.snapshot.params['id'];
   $blog = inject(BlogService);
-  blog$: Observable<BlogDetails>;
+  blog$!: Observable<BlogDetails>;
+  get popular$() {
+    return this.$blog.popular$;
+  }
   constructor() {
-    this.blog$ = this.$blog.getById(this.blogId);
+    this.route.params.subscribe((params) => {
+      this.blog$ = this.$blog.getById(params['id']);
+    });
   }
 }

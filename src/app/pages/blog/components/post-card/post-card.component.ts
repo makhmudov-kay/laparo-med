@@ -50,5 +50,10 @@ export class PostCardComponent {
       uz: 'Esophageal Atresia – Physical Mo...',
       en: 'Esophageal Atresia – Physical Mo...',
     },
+    description: {
+      ru: 'Esophageal Atresia – Physical Mo...',
+      uz: 'Esophageal Atresia – Physical Mo...',
+      en: 'Esophageal Atresia – Physical Mo...',
+    },
   };
 }
