@@ -24,7 +24,7 @@
       <div class="content__configurator__items__totalPrice">
         <h6>
           Total price:
-          <span>{{ totalPrice ? (totalPrice | myCurrency) : 0 }}</span>
+          <span>{{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}</span>
         </h6>
       </div>
     </div>

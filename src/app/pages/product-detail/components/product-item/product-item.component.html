@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="product__right">
-    <div class="product__price">{{ product.price | myCurrency}}</div>
+    <div class="product__price">{{ product.price | myCurrency | async }}</div>
     <app-calc-input
       (countChangeDecrease)="decrease()"
       (countChangeIncrease)="increase()"
