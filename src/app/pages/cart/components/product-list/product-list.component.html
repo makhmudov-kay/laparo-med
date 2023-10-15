@@ -35,7 +35,7 @@
         </td>
         <td class="product-price" data-title="Price">
           <span class="woocommerce-Price-amount amount">{{
-            product.price | myCurrency
+            product.price | myCurrency | async
           }}</span>
         </td>
         <td class="product-quantity" data-title="Quantity">
@@ -49,7 +49,7 @@
         </td>
         <td class="product-subtotal" data-title="Subtotal">
           <span class="woocommerce-Price-amount amount">{{
-            product.totalPrice 
+            product.totalPrice
           }}</span>
         </td>
       </tr>

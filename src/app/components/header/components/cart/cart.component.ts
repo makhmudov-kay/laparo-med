@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -21,7 +21,15 @@ import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.less'],
   standalone: true,
-  imports: [CartSVG, NgIf, ProductComponent, NgFor, RouterLink, MyCurrencyPipe],
+  imports: [
+    CartSVG,
+    NgIf,
+    AsyncPipe,
+    ProductComponent,
+    NgFor,
+    RouterLink,
+    MyCurrencyPipe,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {

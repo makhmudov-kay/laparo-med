@@ -17,9 +17,9 @@
     {{
       item.count +
         " X " +
-        (item.price | myCurrency) +
+        (item.price | myCurrency | async) +
         " = " +
-        (item.totalPrice | myCurrency)
+        (item.totalPrice | myCurrency | async)
     }}
   </div>
 </div>

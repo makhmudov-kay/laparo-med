@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
-import { NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { ProductAdditionalComponent } from '../product-additional/product-additional.component';
 import { ProductInfoComponent } from '../product-info/product-info.component';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
@@ -23,6 +23,7 @@ import { Price } from 'src/app/shared/models/price.model';
     ProductInfoComponent,
     MyCurrencyPipe,
     NgIf,
+    AsyncPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
