@@ -8,6 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
+import { ProductItem } from 'src/app/shared/models/product-detail.model';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 
@@ -29,7 +30,7 @@ export class ProductListComponent {
    *
    */
   @Input()
-  product!: any;
+  product!: ProductItem;
 
   /**
    *
@@ -74,22 +75,22 @@ export class ProductListComponent {
    *
    */
   decrease() {
-    this.decreaseProduct.emit(17);
+    this.decreaseProduct.emit(this.product.id);
   }
 
   /**
    *
    */
   increase() {
-    this.increaseProduct.emit(17);
+    this.increaseProduct.emit(this.product.id);
   }
 
   /**
    *
    * @param id
    */
-  deleteProduct(id: number) {
-    this.deleteProductHandler.emit(id);
+  deleteProduct() {
+    this.deleteProductHandler.emit(this.product.id);
   }
 
   /**

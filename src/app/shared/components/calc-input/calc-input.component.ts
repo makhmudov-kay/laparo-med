@@ -13,7 +13,7 @@ export class CalcInputComponent {
    *
    */
   @Input()
-  count!: number;
+  count!: number | undefined;
 
   /**
    *

@@ -6,6 +6,8 @@ import { NgFor } from '@angular/common';
 import { Select, Store } from '@ngxs/store';
 import { DataState } from 'src/app/shared/store/data/data.state';
 import { CartAction } from 'src/app/shared/store/data/data.action';
+import { Price } from 'src/app/shared/models/price.model';
+import { ProductItem } from 'src/app/shared/models/product-detail.model';
 
 @Component({
   selector: 'app-cart',
@@ -18,18 +20,18 @@ export class CartComponent {
   /**
    *
    */
-  cartItems!: any[];
+  cartItems!: ProductItem[];
 
   /**
    *
    */
-  totalPrice!: number;
+  totalPrice!: Price;
 
   /**
    *
    */
   @Select(DataState.cart)
-  cart$!: Observable<any[]>;
+  cart$!: Observable<ProductItem[]>;
 
   /**
    *
@@ -48,12 +50,16 @@ export class CartComponent {
    */
   private calcTotalsPrice() {
     this.cartItems.forEach((item) => {
-      item.totalPrice = item.count * item.price;
+      this.calcTotalPrice(item);
     });
-
     this.totalPrice = this.cartItems.reduce(
-      (acc, item) => acc + item.totalPrice,
-      0
+      (total: Price, item: any) => {
+        total.usd += item.totalPrice.usd;
+        total.uzs += item.totalPrice.uzs;
+        total.eur += item.totalPrice.eur;
+        return total;
+      },
+      { usd: 0, uzs: 0, eur: 0 }
     );
     this.cd.markForCheck();
   }
@@ -65,6 +71,19 @@ export class CartComponent {
   private updateCart(newCartList: any[]) {
     this.calcTotalsPrice();
     this.$store.dispatch(new CartAction(newCartList));
+  }
+
+  /**
+   *
+   * @param newCartList
+   */
+  private calcTotalPrice(newCartList: any) {
+    for (const key in newCartList.totalPrice) {
+      if (Object.prototype.hasOwnProperty.call(newCartList.totalPrice, key)) {
+        newCartList.totalPrice[key as keyof Price] =
+          newCartList.price[key as keyof Price] * newCartList.count;
+      }
+    }
   }
 
   /**
@@ -82,10 +101,12 @@ export class CartComponent {
    */
   decreaseProduct(id: number) {
     const newCartList = this.cartItems.find((item) => item.id === id);
-    if (newCartList) {
+    if (newCartList && newCartList.count) {
       --newCartList.count;
+      this.calcTotalPrice(newCartList);
     }
-    this.updateCart(this.cartItems);
+    const filteredList = this.cartItems.filter((item: any) => item.count !== 0);
+    this.updateCart(filteredList);
   }
 
   /**
@@ -94,8 +115,9 @@ export class CartComponent {
    */
   increaseProduct(id: number) {
     const newCartList = this.cartItems.find((item) => item.id === id);
-    if (newCartList) {
+    if (newCartList && newCartList.count) {
       ++newCartList.count;
+      this.calcTotalPrice(newCartList);
     }
     this.updateCart(this.cartItems);
   }

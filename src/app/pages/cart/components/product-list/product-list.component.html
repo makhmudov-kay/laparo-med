@@ -17,7 +17,7 @@
     <tbody>
       <tr class="woocommerce-cart-form__cart-item cart_item">
         <td class="product-remove">
-          <a class="remove" (click)="deleteProduct(100)">X</a>
+          <a class="remove" (click)="deleteProduct()">X</a>
         </td>
         <td class="product-thumbnail">
           <a
@@ -49,7 +49,7 @@
         </td>
         <td class="product-subtotal" data-title="Subtotal">
           <span class="woocommerce-Price-amount amount">{{
-            product.totalPrice 
+            product.totalPrice ? (product.totalPrice | myCurrency) : 0
           }}</span>
         </td>
       </tr>
@@ -60,7 +60,7 @@
     <div class="cart-list__item-list">
       <div class="cart-list__item">
         <div class="cart-list__item__remove-btn cart-list__item__row">
-          <button class="remove" (click)="deleteProduct(100)">X</button>
+          <button class="remove" (click)="deleteProduct()">X</button>
         </div>
         <div class="cart-list__item__row">
           <h5>Product</h5>
@@ -71,7 +71,7 @@
         </div>
         <div class="cart-list__item__row">
           <h5>Price</h5>
-          <p>{{ product.price }}</p>
+          <p>{{ product.price | myCurrency }}</p>
         </div>
         <div class="cart-list__item__row">
           <h5>Quantity</h5>
@@ -85,7 +85,7 @@
         </div>
         <div class="cart-list__item__row">
           <h5>SubTotal</h5>
-          <p>{{ product.totalPrice }}</p>
+          <p>{{ product.totalPrice | myCurrency }}</p>
         </div>
       </div>
     </div>

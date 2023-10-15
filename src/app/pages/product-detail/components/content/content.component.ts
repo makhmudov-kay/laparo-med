@@ -61,7 +61,6 @@ export class ContentComponent {
    */
   addOrDeleteProduct(product: any) {
     this.list.push(product);
-
     const result = Object.values(
       this.list.reduce(
         (acc: any, n: any) => (!acc[n.id] && (acc[n.id] = n), acc),
