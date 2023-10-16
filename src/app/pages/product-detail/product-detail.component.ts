@@ -20,7 +20,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     ProductShareComponent,
     NgIf,
     AsyncPipe,
-    MyTranslatePipe
+    MyTranslatePipe,
   ],
 })
 export class ProductDetailComponent implements OnInit {

@@ -19,7 +19,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
   styleUrls: ['./product-item.component.less'],
   standalone: true,
   imports: [CalcInputComponent, MyTranslatePipe, MyCurrencyPipe, AsyncPipe],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent {
   /**
@@ -40,12 +40,31 @@ export class ProductItemComponent {
    *
    */
   @Output()
-  addOrDeleteProduct = new EventEmitter<any>();
+  increaseCount = new EventEmitter();
 
   /**
    *
    */
-  count = 0;
+  @Output()
+  decreaseCount = new EventEmitter();
+
+  /**
+   *
+   */
+  private _count!: number;
+  public get count(): number {
+    return this._count;
+  }
+  @Input()
+  public set count(v: number) {
+    this._count = v;
+  }
+
+  /**
+   *
+   */
+  @Output()
+  addOrDeleteProduct = new EventEmitter<any>();
 
   /**
    *
@@ -58,12 +77,19 @@ export class ProductItemComponent {
    * @param encrese
    */
   private handleCounter(encrese: boolean = false) {
+    let count = this.count;
     if (encrese) {
-      ++this.count;
+      // ++this.count;
+
+      this.increaseCount.emit();
+      ++count;
     } else {
-      --this.count;
+      // --this.count;
+      this.decreaseCount.emit();
+      --count;
     }
-    this.product.count = this.count;
+    // this.product.count = this.count;
+    this.product.count = count;
 
     for (const key in this.product.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(this.product.totalPrice, key)) {

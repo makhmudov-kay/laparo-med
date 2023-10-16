@@ -20,16 +20,14 @@
           <a class="remove" (click)="deleteProduct()">X</a>
         </td>
         <td class="product-thumbnail">
-          <a
-            href="https://laparosimulators.com/produkt/general-surgery-training-modules-set/"
+          <a routerLink="../products/{{ product.id }}/"
             ><img
               [src]="product.image"
               class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
           /></a>
         </td>
         <td class="product-name" data-title="Product">
-          <a
-            href="https://laparosimulators.com/produkt/general-surgery-training-modules-set/"
+          <a routerLink="../products/{{ product.id }}/"
             >{{ product.title | myTranslate | async }}
           </a>
         </td>
@@ -49,7 +47,7 @@
         </td>
         <td class="product-subtotal" data-title="Subtotal">
           <span class="woocommerce-Price-amount amount">{{
-            product.totalPrice ? (product.totalPrice | myCurrency) : 0
+            product.totalPrice ? (product.totalPrice | myCurrency | async) : 0
           }}</span>
         </td>
       </tr>
@@ -64,14 +62,13 @@
         </div>
         <div class="cart-list__item__row">
           <h5>Product</h5>
-          <a
-            href="https://laparosimulators.com/produkt/general-surgery-training-modules-set/"
+          <a routerLink="../products/{{ product.id }}/"
             >{{ product.title | myTranslate | async }}
           </a>
         </div>
         <div class="cart-list__item__row">
           <h5>Price</h5>
-          <p>{{ product.price | myCurrency }}</p>
+          <p>{{ product.price | myCurrency | async }}</p>
         </div>
         <div class="cart-list__item__row">
           <h5>Quantity</h5>
@@ -85,7 +82,7 @@
         </div>
         <div class="cart-list__item__row">
           <h5>SubTotal</h5>
-          <p>{{ product.totalPrice | myCurrency }}</p>
+          <p>{{ product.totalPrice | myCurrency | async }}</p>
         </div>
       </div>
     </div>

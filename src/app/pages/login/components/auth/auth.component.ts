@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SvgHideComponent } from 'src/app/shared/svg/svg-hide/svg-hide.component';
 import { SvgShowComponent } from 'src/app/shared/svg/svg-show/svg-show.component';
 type FormType = 'login' | 'register';
@@ -8,15 +9,34 @@ type FormType = 'login' | 'register';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.less'],
   standalone: true,
-  imports: [SvgShowComponent, SvgHideComponent, NgIf],
+  imports: [
+    SvgShowComponent,
+    SvgHideComponent,
+    NgIf,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class AuthComponent {
   /**
-   * 
+   *
+   */
+
+  private _formType!: FormType;
+  public get formType(): FormType {
+    return this._formType;
+  }
+  @Input()
+  public set formType(v: FormType) {
+    this._formType = v;
+  }
+
+  /**
+   *
    */
   @Input()
-  formType: FormType = 'login';
-  
+  form!: FormGroup;
+
   /**
    *
    */
@@ -27,5 +47,9 @@ export class AuthComponent {
    */
   toggleShow() {
     this.show = !this.show;
+  }
+
+  onSubmit() {
+    console.log(this.form.value);
   }
 }

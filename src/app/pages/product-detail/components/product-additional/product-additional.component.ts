@@ -20,6 +20,18 @@ export class ProductAdditionalComponent {
   /**
    *
    */
+  private _count!: number;
+  public get count(): number {
+    return this._count;
+  }
+  @Input()
+  public set count(v: number) {
+    this._count = v;
+  }
+
+  /**
+   *
+   */
   @Output()
   addOrDeleteProduct = new EventEmitter<any>();
 

@@ -6,7 +6,8 @@ export interface ProductDetail extends Id {
   category: number;
   title: LanguageModel;
   information: LanguageModel;
-  price: number;
+  price: Price;
+  count?: number;
   configurator: any; //what type?
   items: ItemsType[];
   product_images: ImageItem[];

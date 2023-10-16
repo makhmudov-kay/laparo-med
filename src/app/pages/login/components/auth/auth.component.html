@@ -1,15 +1,31 @@
 <div class="auth">
   <h4>{{ formType === "login" ? "Login" : "Registration" }}</h4>
   <!-- LOGIN -->
-  <form class="form">
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form__item">
-      <label for="username">Username or email address <span>*</span></label>
-      <input type="text" id="username" />
+      <label [for]="'username' + formType">Phone <span>*</span></label>
+      <input type="text" [id]="'username' + formType" formControlName="phone" />
     </div>
+
+    <ng-container *ngIf="formType === 'register'">
+      <div class="form__item">
+        <label for="first">First name <span>*</span></label>
+        <input type="text" id="first" formControlName="first_name" />
+      </div>
+
+      <div class="form__item">
+        <label for="last">Last name <span>*</span></label>
+        <input type="text" id="last" formControlName="last_name" /></div
+    ></ng-container>
+
     <div class="form__item">
-      <label for="username">Password <span>*</span></label>
+      <label [for]="'password' + formType">Password <span>*</span></label>
       <div class="password">
-        <input [type]="show ? 'text' : 'password'" id="username" />
+        <input
+          [type]="show ? 'text' : 'password'"
+          [id]="'password' + formType"
+          formControlName="password"
+        />
         <span (click)="toggleShow()">
           <ng-container *ngIf="!show; else hide">
             <svg-show class="d-flex"></svg-show>

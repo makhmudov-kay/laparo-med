@@ -22,9 +22,12 @@ export class ProductDetailService {
     return this.$base.get<ProductDetail>(`shop/products/${id}/`).pipe(
       map((res) => res),
       map((res) => {
-        res.items.forEach((item) => {
-          item.isOpened = false;
-        });
+        if (res.items) {
+          res.items.forEach((item) => {
+            item.isOpened = false;
+          });
+          return res;
+        }
         return res;
       })
     );

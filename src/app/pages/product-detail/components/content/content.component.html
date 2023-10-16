@@ -2,24 +2,46 @@
   <app-product-info [info]="product.information"></app-product-info>
 
   <div class="content__configurator">
-    <div class="content__configurator__btn">
-      <button (click)="toggleConfigurator()">CREATE YOUR OWN SET</button>
-    </div>
-
-    <div class="content__configurator__items" *ngIf="configurator">
-      <app-product-item
-        [product]="product.main_item"
-        (addOrDeleteProduct)="addOrDeleteProduct($event)"
-      ></app-product-item>
-
-      <div class="content__configurator__items__additional">
-        <app-product-additional
-          *ngFor="let additional of product.items"
-          [data]="additional"
-          (toggleCollapseHandler)="toggleCollapse($event)"
-          (addOrDeleteProduct)="addOrDeleteProduct($event)"
-        ></app-product-additional>
+    <ng-container *ngIf="product.items; else single">
+      <div class="content__configurator__btn">
+        <button (click)="toggleConfigurator()">CREATE YOUR OWN SET</button>
       </div>
+
+      <div class="content__configurator__items" *ngIf="configurator">
+        <app-product-item
+          [product]="product.main_item"
+          (addOrDeleteProduct)="addOrDeleteProduct($event)"
+        ></app-product-item>
+
+        <div class="content__configurator__items__additional">
+          <app-product-additional
+            *ngFor="let additional of product.items"
+            [data]="additional"
+            [count]="count"
+            (toggleCollapseHandler)="toggleCollapse($event)"
+            (addOrDeleteProduct)="addOrDeleteProduct($event)"
+          ></app-product-additional>
+        </div>
+
+        <div class="content__configurator__items__totalPrice">
+          <h6>
+            Total price:
+            <span>{{
+              totalPrice ? (totalPrice | myCurrency | async) : 0
+            }}</span>
+          </h6>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #single>
+      asdasd
+      <app-product-item
+        [product]="singleProduct"
+        (addOrDeleteProduct)="addOrDeleteProduct($event)"
+        [count]="count"
+        (increaseCount)="increaseCount()"
+        (decreaseCount)="decreaseCount()"
+      ></app-product-item>
 
       <div class="content__configurator__items__totalPrice">
         <h6>
@@ -27,8 +49,7 @@
           <span>{{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}</span>
         </h6>
       </div>
-    </div>
-
+    </ng-template>
     <div class="content__configurator__cart-btn">
       <button (click)="addToCart()">Add to cart</button>
     </div>

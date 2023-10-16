@@ -3,10 +3,13 @@
     <div class="woocommerce-notices-wrapper"></div>
     <div class="u-columns row row30">
       <div class="u-column1 col-lg-6">
-        <app-auth [formType]="'login'"></app-auth>
+        <app-auth [formType]="'login'" [form]="loginFormGroup"></app-auth>
       </div>
       <div class="u-column2 col-lg-6">
-        <app-auth [formType]="'register'"></app-auth>
+        <app-auth
+          [formType]="'register'"
+          [form]="registrationFormGroup"
+        ></app-auth>
       </div>
     </div>
   </div>

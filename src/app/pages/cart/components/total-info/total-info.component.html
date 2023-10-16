@@ -2,7 +2,7 @@
   <div class="cart_totals">
     <div class="cart_totals__info">
       <h5>Total</h5>
-      <span>{{ totalPrice | myCurrency }}</span>
+      <span>{{ totalPrice | myCurrency | async }}</span>
     </div>
 
     <div class="wc-proceed-to-checkout">
