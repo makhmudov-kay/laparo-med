@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TEAM_CARD } from './team-info';
 import { TeamCardComponent } from './team-card/team-card.component';
 import { NgFor } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface Team {
   title: string;
@@ -14,7 +15,7 @@ export interface Team {
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.less'],
   standalone: true,
-  imports: [TeamCardComponent, NgFor],
+  imports: [TeamCardComponent, NgFor, TranslateModule],
 })
 export class TeamComponent {
   /**

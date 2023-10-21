@@ -1,15 +1,13 @@
 <div class="history">
   <div class="container">
-    <h4 class="section-title">About us</h4>
+    <h4 class="section-title">{{ "aboutUs" | translate }}</h4>
     <div class="history__info">
       <div class="history__info__title">
-        <span>History</span>
+        <span>{{ "history" | translate }}</span>
       </div>
       <div class="history__info__description">
         <h5 class="history__info__description__title">
-          We are a european technology company. We see ourselves as a team of
-          software and hardware engineers who are pushing the boundaries of
-          laparoscopy training and education. This is our story:
+          {{ "historyDescription" | translate }}
         </h5>
         <div class="stories">
           <div class="story" *ngFor="let story of stories">
@@ -17,7 +15,7 @@
             <div class="story__content">
               <h4 class="story__content__date">{{ story.date }}</h4>
               <p class="story__content__title">
-                {{ story.title }}
+                {{ story.title | translate }}
               </p>
             </div>
           </div>

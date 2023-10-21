@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.component';
 
 @Component({
@@ -6,6 +7,6 @@ import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.co
   templateUrl: './our-story.component.html',
   styleUrls: ['./our-story.component.less'],
   standalone: true,
-  imports: [LinkBtnComponent],
+  imports: [LinkBtnComponent, TranslateModule],
 })
 export class OurStoryComponent {}

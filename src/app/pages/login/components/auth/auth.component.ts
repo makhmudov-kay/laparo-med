@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { SvgHideComponent } from 'src/app/shared/svg/svg-hide/svg-hide.component';
 import { SvgShowComponent } from 'src/app/shared/svg/svg-show/svg-show.component';
 type FormType = 'login' | 'register';
@@ -15,6 +16,7 @@ type FormType = 'login' | 'register';
     NgIf,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule,
   ],
 })
 export class AuthComponent {

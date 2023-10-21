@@ -5,13 +5,13 @@
   </div>
   <ng-container *ngIf="isVisibleCart && cartItems">
     <div class="cart__list">
-      <h4 class="cart__list__title">Basket</h4>
+      <h4 class="cart__list__title">{{ "basket" | translate }}</h4>
 
       <ng-container *ngIf="cartItems && cartItems.length; else empty">
         <div class="cart__list__products">
           <div class="cart__list__products__total-price">
             <span class="cart__list__products__total-price__text"
-              >Subtotal:</span
+              >{{ "total" | translate }}:</span
             >
             <span class="cart__list__products__total-price__price"
               ><strong>{{ totalPrice | myCurrency | async }}</strong></span
@@ -19,7 +19,7 @@
           </div>
 
           <div class="cart__list__products__view-btn">
-            <button routerLink="../cart">View basket</button>
+            <button routerLink="../cart">{{ "viewBasket" | translate }}</button>
           </div>
 
           <ul class="cart__list__products__list">
@@ -37,7 +37,7 @@
       </ng-container>
       <ng-template #empty>
         <div class="empty">
-          <p>No products in the basket.</p>
+          <p>{{ "emptyBasket" | translate }}</p>
         </div>
       </ng-template>
     </div>

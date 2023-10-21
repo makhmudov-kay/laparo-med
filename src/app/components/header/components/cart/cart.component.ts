@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -29,6 +30,7 @@ import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
     NgFor,
     RouterLink,
     MyCurrencyPipe,
+    TranslateModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

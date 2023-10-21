@@ -1,25 +1,35 @@
 <div class="auth">
-  <h4>{{ formType === "login" ? "Login" : "Registration" }}</h4>
+  <h4>
+    {{
+      formType === "login"
+        ? ("login" | translate)
+        : ("registration" | translate)
+    }}
+  </h4>
   <!-- LOGIN -->
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form__item">
-      <label [for]="'username' + formType">Phone <span>*</span></label>
+      <label [for]="'username' + formType"
+        >{{ "phone" | translate }} <span>*</span></label
+      >
       <input type="text" [id]="'username' + formType" formControlName="phone" />
     </div>
 
     <ng-container *ngIf="formType === 'register'">
       <div class="form__item">
-        <label for="first">First name <span>*</span></label>
+        <label for="first">{{ "firstName" | translate }} <span>*</span></label>
         <input type="text" id="first" formControlName="first_name" />
       </div>
 
       <div class="form__item">
-        <label for="last">Last name <span>*</span></label>
+        <label for="last">{{ "lastName" | translate }} <span>*</span></label>
         <input type="text" id="last" formControlName="last_name" /></div
     ></ng-container>
 
     <div class="form__item">
-      <label [for]="'password' + formType">Password <span>*</span></label>
+      <label [for]="'password' + formType"
+        >{{ "password" | translate }} <span>*</span></label
+      >
       <div class="password">
         <input
           [type]="show ? 'text' : 'password'"
@@ -37,7 +47,7 @@
       </div>
     </div>
     <div class="form__btn">
-      <button>Log in</button>
+      <button>{{ "login" | translate }}</button>
     </div>
   </form>
 </div>

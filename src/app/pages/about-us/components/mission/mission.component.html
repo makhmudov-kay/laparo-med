@@ -1,8 +1,8 @@
 <div class="mission">
   <div class="container">
-    <h4 class="section-title mission__title">Mission, Vision, Values</h4>
+    <h4 class="section-title mission__title">{{"misVisVal" | translate}}</h4>
     <div class="mission__info">
-      <app-mission-card *ngFor="let value of [].constructor(3)"></app-mission-card>
+      <app-mission-card [info]="value" *ngFor="let value of cardData"></app-mission-card>
     </div>
   </div>
 </div>

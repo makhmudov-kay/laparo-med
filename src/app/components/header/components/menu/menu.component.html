@@ -10,17 +10,17 @@
         <a
           routerLink="../products/individuals"
           class="submenu__list__item__link"
-          >INDIVIDUALS – Affordable Laparoscopic Simulators</a
+          >{{ "individualsProducts" | translate }}</a
         >
         <ul class="menu">
           <li class="menu__item">
-            <a href="">Advance – Professional Simulator</a>
+            <a href="">{{ "advance" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a href="">Aspire – Simple Training Box</a>
+            <a href="">{{ "aspire" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a href="">Adept – Basic Surgical Skills</a>
+            <a href="">{{ "adept" | translate }}</a>
           </li>
         </ul>
       </li>
@@ -30,50 +30,50 @@
         <a
           routerLink="../products/professionals"
           class="submenu__list__item__link"
-          >PROFESSIONALS – Advanced Laparoscopic Simulators</a
+          >{{ "professionals" | translate }}</a
         >
         <ul class="menu">
           <li class="menu__item">
-            <a routerLink="../products/apex-pro"
-              >!NEW! Apex Pro – Hybrid Simulator</a
-            >
+            <a routerLink="../products/apex-pro">{{ "apexPro" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a routerLink="../products/apex-vr"
-              >Apex VR – Mixed Reality Simulator</a
-            >
+            <a routerLink="../products/apex-vr">{{ "apexVr" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a routerLink="../products/analytic"
-              >Analytic – Simulation with Analysis</a
-            >
+            <a routerLink="../products/analytic">{{
+              "analytic" | translate
+            }}</a>
           </li>
           <li class="menu__item">
-            <a routerLink="../products/advance-training-station"
-              >Advance Training Station</a
-            >
+            <a routerLink="../products/advance-training-station">{{
+              "advanceTraining" | translate
+            }}</a>
           </li>
           <li class="menu__item">
-            <a routerLink="../products/advance-portable">Advance Portable</a>
+            <a routerLink="../products/advance-portable">{{
+              "advancePortable" | translate
+            }}</a>
           </li>
         </ul>
       </li>
 
       <!-- OTHER -->
       <li class="submenu__list__item">
-        <a href="" class="submenu__list__item__link">Other</a>
+        <a href="" class="submenu__list__item__link">{{
+          "other" | translate
+        }}</a>
         <ul class="menu">
           <li class="menu__item">
-            <a href="">Laparoscopic Instruments</a>
+            <a href="">{{ "laparoscopic" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a href="">Training Modules</a>
+            <a href="">{{ "training" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a href="">FLS & E-BLUS Exam Sets</a>
+            <a href="">{{ "examSets" | translate }}</a>
           </li>
           <li class="menu__item">
-            <a href="">Accesories</a>
+            <a href="">{{ "accesories" | translate }}</a>
           </li>
         </ul>
       </li>
@@ -95,7 +95,7 @@
     }}</a>
   </li>
 </ul>
-
+<!-- +++++++++++++++++++++++++++++++++++++++++ DRAWER ++++++++++++++++++++++++++++++++++++++++++ -->
 <ng-template #drawer>
   <ul class="drawer">
     <li class="drawer__item submenu" (click)="closeDrawer.emit(false)">
@@ -108,17 +108,17 @@
           <a
             routerLink="../products/individuals"
             class="submenu__drawer__item__link"
-            >INDIVIDUALS – Affordable Simulators</a
+            >{{ "individualsProducts" | translate }}</a
           >
           <ul class="drawer-menu">
             <li class="drawer-menu__item">
-              <a href="">Advance – Professional Simulator</a>
+              <a href="">{{ "advance" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a href="">Aspire – Simple Training Box</a>
+              <a href="">{{ "aspire" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a href="">Adept – Basic Surgical Skills</a>
+              <a href="">{{ "adept" | translate }}</a>
             </li>
           </ul>
         </li>
@@ -128,63 +128,71 @@
           <a
             routerLink="../products/professionals"
             class="submenu__drawer__item__link"
-            >PROFESSIONALS – Advanced Simulators</a
+            >{{ "professionals" | translate }}</a
           >
           <ul class="drawer-menu">
             <li class="drawer-menu__item">
-              <a routerLink="../products/apex-pro"
-                >!NEW! Apex Pro – Hybrid Simulator</a
-              >
+              <a routerLink="../products/apex-pro">{{
+                "apexPro" | translate
+              }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a routerLink="../products/apex-vr"
-                >Apex VR – Mixed Reality Simulator</a
-              >
+              <a routerLink="../products/apex-vr">{{ "apexVr" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a routerLink="../products/analytic"
-                >Analytic – Simulation with Analysis</a
-              >
+              <a routerLink="../products/analytic">{{
+                "analytic" | translate
+              }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a routerLink="../products/advance-training-station"
-                >Advance Training Station</a
-              >
+              <a routerLink="../products/advance-training-station">{{
+                "advanceTraining" | translate
+              }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a routerLink="../products/advance-portable">Advance Portable</a>
+              <a routerLink="../products/advance-portable">{{
+                "advancePortable" | translate
+              }}</a>
             </li>
           </ul>
         </li>
 
         <!-- OTHER -->
         <li class="submenu__drawer__item">
-          <a href="" class="submenu__drawer__item__link">Other</a>
+          <a href="" class="submenu__drawer__item__link">{{
+            "other" | translate
+          }}</a>
           <ul class="drawer-menu">
             <li class="drawer-menu__item">
-              <a href="">Laparoscopic Instruments</a>
+              <a href="">{{ "laparoscopic" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a href="">Training Modules</a>
+              <a href="">{{ "training" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a href="">FLS & E-BLUS Exam Sets</a>
+              <a href="">{{ "examSets" | translate }}</a>
             </li>
             <li class="drawer-menu__item">
-              <a href="">Accesories</a>
+              <a href="">{{ "accesories" | translate }}</a>
             </li>
           </ul>
         </li>
       </ul>
     </li>
     <li class="drawer__item" (click)="closeDrawer.emit(false)">
-      <a class="drawer__item__link" routerLink="../about-us">About us</a>
+      <a class="drawer__item__link" routerLink="../about-us">{{
+        "aboutUs" | translate
+      }}</a>
     </li>
     <li class="drawer__item" (click)="closeDrawer.emit(false)">
-      <a class="drawer__item__link" routerLink="../blog">Blog</a>
+      <a class="drawer__item__link" routerLink="../blog">{{
+        "blog" | translate
+      }}</a>
     </li>
     <li class="drawer__item" (click)="closeDrawer.emit(false)">
-      <a class="drawer__item__link" routerLink="../contacts">Contact</a>
+      <a class="drawer__item__link" routerLink="../contacts">{{
+        "contact.contact" | translate
+      }}</a>
     </li>
   </ul>
 </ng-template>
