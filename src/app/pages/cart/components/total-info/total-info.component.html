@@ -1,7 +1,7 @@
 <div class="cart-collaterals">
   <div class="cart_totals">
     <div class="cart_totals__info">
-      <h5>Total</h5>
+      <h5>{{ "total" | translate }}</h5>
       <span>{{ totalPrice | myCurrency | async }}</span>
     </div>
 
@@ -9,7 +9,7 @@
       <a
         href="https://laparosimulators.com/checkout/"
         class="checkout-button button alt wc-forward"
-        >Send order</a
+        >{{ "sendOrder" | translate }}</a
       >
     </div>
   </div>

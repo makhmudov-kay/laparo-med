@@ -8,6 +8,7 @@ import { ProductDetail } from 'src/app/shared/models/product-detail.model';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -21,6 +22,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     NgIf,
     AsyncPipe,
     MyTranslatePipe,
+    TranslateModule,
   ],
 })
 export class ProductDetailComponent implements OnInit {

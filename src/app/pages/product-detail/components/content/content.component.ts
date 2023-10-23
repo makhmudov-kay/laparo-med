@@ -17,6 +17,7 @@ import {
   ProductItem,
 } from 'src/app/shared/models/product-detail.model';
 import { Price } from 'src/app/shared/models/price.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-content',
@@ -32,6 +33,7 @@ import { Price } from 'src/app/shared/models/price.model';
     MyCurrencyPipe,
     NgIf,
     AsyncPipe,
+    TranslateModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -8,13 +8,14 @@ import { DataState } from 'src/app/shared/store/data/data.state';
 import { CartAction } from 'src/app/shared/store/data/data.action';
 import { Price } from 'src/app/shared/models/price.model';
 import { ProductItem } from 'src/app/shared/models/product-detail.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.less'],
   standalone: true,
-  imports: [ProductListComponent, TotalInfoComponent, NgFor],
+  imports: [ProductListComponent, TotalInfoComponent, NgFor, TranslateModule],
 })
 export class CartComponent {
   /**

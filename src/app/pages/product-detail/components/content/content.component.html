@@ -4,7 +4,9 @@
   <div class="content__configurator">
     <ng-container *ngIf="product.items; else single">
       <div class="content__configurator__btn">
-        <button (click)="toggleConfigurator()">CREATE YOUR OWN SET</button>
+        <button (click)="toggleConfigurator()">
+          {{ "createYourOwnSet" | translate }}
+        </button>
       </div>
 
       <div class="content__configurator__items" *ngIf="configurator">
@@ -25,7 +27,7 @@
 
         <div class="content__configurator__items__totalPrice">
           <h6>
-            Total price:
+            {{ "totalPrice" | translate }}:
             <span>{{
               totalPrice ? (totalPrice | myCurrency | async) : 0
             }}</span>
@@ -44,13 +46,13 @@
 
       <div class="content__configurator__items__totalPrice">
         <h6>
-          Total price:
+          {{ "totalPrice" | translate }}:
           <span>{{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}</span>
         </h6>
       </div>
     </ng-template>
     <div class="content__configurator__cart-btn">
-      <button (click)="addToCart()">Add to cart</button>
+      <button (click)="addToCart()">{{ "addToCart" | translate }}</button>
     </div>
   </div>
 </div>

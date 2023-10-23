@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { SvgHideComponent } from 'src/app/shared/svg/svg-hide/svg-hide.component';
@@ -42,6 +42,12 @@ export class AuthComponent {
   /**
    *
    */
+  @Output()
+  submit = new EventEmitter<string>();
+
+  /**
+   *
+   */
   show = false;
 
   /**
@@ -52,6 +58,6 @@ export class AuthComponent {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.submit.emit(this.formType)
   }
 }

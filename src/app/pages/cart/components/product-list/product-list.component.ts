@@ -8,6 +8,7 @@ import {
   Output,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
 import { ProductItem } from 'src/app/shared/models/product-detail.model';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
@@ -25,6 +26,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     AsyncPipe,
     MyCurrencyPipe,
     RouterLink,
+    TranslateModule,
   ],
 })
 export class ProductListComponent {

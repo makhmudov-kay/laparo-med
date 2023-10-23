@@ -6,9 +6,9 @@
       blue: product.color === 'blue'
     }"
   >
-    {{ product.title }}
+    {{ product.title | translate }}
   </h2>
-  <h4 class="products__col__title__sub">{{ product.subtitle }}</h4>
+  <h4 class="products__col__title__sub">{{ product.subtitle | translate }}</h4>
 </div>
 <div class="products__col__info">
   <h3
@@ -18,10 +18,10 @@
       blue: product.color === 'blue'
     }"
   >
-    {{ product.textTitle }}
+    {{ product.textTitle | translate }}
   </h3>
   <p class="products__col__info__text">
-    {{ product.text }}
+    {{ product.text | translate }}
   </p>
   <div class="products__col__info__btn">
     <a
@@ -32,7 +32,7 @@
         blue: product.color === 'blue'
       }"
     >
-      <span>Read more</span>
+      <span>{{ "readMore" | translate }}</span>
       <svg-products-arrow class="d-flex"></svg-products-arrow>
     </a>
   </div>

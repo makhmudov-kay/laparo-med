@@ -6,12 +6,12 @@
     <div class="container">
       <div class="slider__content">
         <div class="slider__content__block">
-          <div class="slider__title">{{ slide.title }}</div>
+          <div class="slider__title">{{ slide.title | translate }}</div>
           <div class="slider__text">
-            {{ slide.text }}
+            {{ slide.text | translate }}
           </div>
           <a href="" class="slider__btn"
-            >Read more
+            >{{ "readMore" | translate }}
             <span class="slider__btn__arrow"
               ><svg-arrow class="d-flex"></svg-arrow></span
           ></a>

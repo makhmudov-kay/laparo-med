@@ -6,6 +6,7 @@ import { NEWS_BLOCK } from './news-block';
 import { News } from './news-block.interface';
 import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
 import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-nav.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-news',
@@ -18,6 +19,7 @@ import { SwiperNavComponent } from 'src/app/shared/components/swiper-nav/swiper-
     NewsSlideComponent,
     ArrowBtnSVG,
     SwiperNavComponent,
+    TranslateModule,
   ],
 })
 export class NewsComponent {

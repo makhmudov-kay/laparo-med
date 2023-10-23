@@ -5,14 +5,14 @@
   <div class="news-card__description">
     <h4 class="section-title date">{{ new.created_at }}</h4>
     <h5 class="news-card__description__title">
-      {{ new.title }}
+      {{ new.title | translate }}
     </h5>
     <p class="news-card__description__text">
-      {{ new.text }}
+      {{ new.text | translate }}
     </p>
     <div class="news-card__description__btn">
       <a href=""
-        ><span class="link">Read more </span>
+        ><span class="link">{{ "readMore" | translate }} </span>
         <span class="icon">
           <svg-arrow-btn></svg-arrow-btn>
         </span>

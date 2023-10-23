@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.component';
 
 @Component({
@@ -6,6 +7,9 @@ import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.co
   templateUrl: './awards-card.component.html',
   styleUrls: ['./awards-card.component.less'],
   standalone: true,
-  imports: [LinkBtnComponent],
+  imports: [LinkBtnComponent, TranslateModule],
 })
-export class AwardsCardComponent {}
+export class AwardsCardComponent {
+  @Input()
+  data!: any;
+}

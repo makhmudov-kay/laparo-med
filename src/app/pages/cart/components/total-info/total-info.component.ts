@@ -1,5 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { Price } from 'src/app/shared/models/price.model';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 
@@ -8,9 +9,11 @@ import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
   templateUrl: './total-info.component.html',
   styleUrls: ['./total-info.component.less'],
   standalone: true,
-  imports: [MyCurrencyPipe, AsyncPipe],
+  imports: [MyCurrencyPipe, AsyncPipe, TranslateModule],
 })
 export class TotalInfoComponent {
+  /**
+   */
   private _totalPrice!: Price;
   public get totalPrice(): Price {
     return this._totalPrice;

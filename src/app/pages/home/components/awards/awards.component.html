@@ -1,15 +1,13 @@
 <div class="awards">
   <div class="container">
-    <h4 class="section-title">Awards</h4>
+    <h4 class="section-title">{{ "awards" | translate }}</h4>
     <div class="awards__header">
-      <h2 class="title">Awards</h2>
+      <h2 class="title">{{ "awards" | translate }}</h2>
     </div>
     <div class="awards__wrapper">
       <div class="awards__description">
         <h5 class="awards__description__text">
-          We are proud to have received the recognition of some esteemed
-          business development organizations both domestically here in Poland
-          and more recently abroad internationally.
+          {{ "awardsText" | translate }}
         </h5>
       </div>
       <div class="awards__cards">
@@ -37,8 +35,8 @@
           }"
           class="awards__swiper"
         >
-          <ng-template swiperSlide *ngFor="let partner of [].constructor(10)">
-            <app-awards-card></app-awards-card>
+          <ng-template swiperSlide *ngFor="let partner of data">
+            <app-awards-card [data]="partner"></app-awards-card>
           </ng-template>
         </swiper>
       </div>

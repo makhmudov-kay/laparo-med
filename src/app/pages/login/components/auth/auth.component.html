@@ -47,7 +47,13 @@
       </div>
     </div>
     <div class="form__btn">
-      <button>{{ "login" | translate }}</button>
+      <button>
+        {{
+          formType === "login"
+            ? ("login" | translate)
+            : ("signUp" | translate | translate)
+        }}
+      </button>
     </div>
   </form>
 </div>
