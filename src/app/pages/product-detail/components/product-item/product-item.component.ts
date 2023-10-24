@@ -6,12 +6,14 @@ import {
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
+  OnInit,
 } from '@angular/core';
 import { CalcInputComponent } from 'src/app/shared/components/calc-input/calc-input.component';
 import { Price } from 'src/app/shared/models/price.model';
 import { ProductItem } from 'src/app/shared/models/product-detail.model';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
+import { ClearCountService } from '../../service/clear-count.service';
 
 @Component({
   selector: 'app-product-item',
@@ -21,7 +23,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
   imports: [CalcInputComponent, MyTranslatePipe, MyCurrencyPipe, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductItemComponent {
+export class ProductItemComponent implements OnInit {
   /**
    *
    */
@@ -51,14 +53,7 @@ export class ProductItemComponent {
   /**
    *
    */
-  private _count!: number;
-  public get count(): number {
-    return this._count;
-  }
-  @Input()
-  public set count(v: number) {
-    this._count = v;
-  }
+  count = 0;
 
   /**
    *
@@ -70,26 +65,41 @@ export class ProductItemComponent {
    *
    * @param cd
    */
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(
+    private cd: ChangeDetectorRef,
+    private clearCount$: ClearCountService
+  ) {}
+
+  /**
+   * 
+   */
+  private clearCountListener() {
+    this.clearCount$.clearCount$.subscribe((w) => {
+      if (w) {
+        this.count = 0;
+        this.cd.markForCheck();
+      }
+    });
+  }
+
+  /**
+   * 
+   */
+  ngOnInit() {
+    this.clearCountListener();
+  }
 
   /**
    *
    * @param encrese
    */
   private handleCounter(encrese: boolean = false) {
-    let count = this.count;
     if (encrese) {
-      // ++this.count;
-
-      this.increaseCount.emit();
-      ++count;
+      ++this.count;
     } else {
-      // --this.count;
-      this.decreaseCount.emit();
-      --count;
+      --this.count;
     }
-    // this.product.count = this.count;
-    this.product.count = count;
+    this.product.count = this.count;
 
     for (const key in this.product.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(this.product.totalPrice, key)) {

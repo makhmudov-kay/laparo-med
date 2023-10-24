@@ -19,7 +19,6 @@
           <app-product-additional
             *ngFor="let additional of product.items"
             [data]="additional"
-            [count]="count"
             (toggleCollapseHandler)="toggleCollapse($event)"
             (addOrDeleteProduct)="addOrDeleteProduct($event)"
           ></app-product-additional>
@@ -35,13 +34,12 @@
         </div>
       </div>
     </ng-container>
+
+
     <ng-template #single>
       <app-product-item
         [product]="singleProduct"
         (addOrDeleteProduct)="addOrDeleteProduct($event)"
-        [count]="count"
-        (increaseCount)="increaseCount()"
-        (decreaseCount)="decreaseCount()"
       ></app-product-item>
 
       <div class="content__configurator__items__totalPrice">
@@ -51,6 +49,7 @@
         </h6>
       </div>
     </ng-template>
+    
     <div class="content__configurator__cart-btn">
       <button (click)="addToCart()">{{ "addToCart" | translate }}</button>
     </div>

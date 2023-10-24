@@ -18,6 +18,7 @@ import {
 } from 'src/app/shared/models/product-detail.model';
 import { Price } from 'src/app/shared/models/price.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { ClearCountService } from '../../service/clear-count.service';
 
 @Component({
   selector: 'app-content',
@@ -33,7 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MyCurrencyPipe,
     NgIf,
     AsyncPipe,
-    TranslateModule
+    TranslateModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -63,7 +64,6 @@ export class ContentComponent {
     };
   }
 
-  count = 0;
   singleProduct!: ProductItem;
 
   /**
@@ -75,6 +75,10 @@ export class ContentComponent {
    *
    */
   list: any = [];
+
+  /**
+   *
+   */
   needToAddcart: any = [];
 
   /**
@@ -86,13 +90,19 @@ export class ContentComponent {
    *
    * @param $store
    */
-  constructor(private $store: Store, private cd: ChangeDetectorRef) {}
+  constructor(
+    private $store: Store,
+    private cd: ChangeDetectorRef,
+    private clearCount$: ClearCountService
+  ) {}
 
   /**
    *
    * @param product
    */
   addOrDeleteProduct(product: any) {
+    console.log(product);
+
     this.list.push(product);
     const result = Object.values(
       this.list.reduce(
@@ -144,13 +154,14 @@ export class ContentComponent {
       this.$store.dispatch(new CartAction(cart));
     }
 
-    this.count = 0;
     for (const key in this.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(this.totalPrice, key)) {
         this.totalPrice[key as keyof Price] = 0;
         this.cd.markForCheck();
       }
     }
+
+    this.clearCount$.clearCount$.next(true);
     this.cd.markForCheck();
   }
 
@@ -174,21 +185,5 @@ export class ContentComponent {
    */
   toggleConfigurator() {
     this.configurator = !this.configurator;
-  }
-
-  /**
-   *
-   */
-  increaseCount() {
-    ++this.count;
-    this.cd.markForCheck();
-  }
-
-  /**
-   *
-   */
-  decreaseCount() {
-    --this.count;
-    this.cd.markForCheck();
   }
 }

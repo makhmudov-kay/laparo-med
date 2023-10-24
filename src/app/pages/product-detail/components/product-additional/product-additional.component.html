@@ -8,7 +8,6 @@
     <app-product-item
       *ngFor="let product of data.product"
       [product]="product"
-      [count]="count"
       (addOrDeleteProduct)="addOrDeleteProduct.emit($event)"
     ></app-product-item>
   </div>
