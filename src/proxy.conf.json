@@ -1,10 +1,10 @@
 {
   "/api-imodel": {
-    "target": "http://jobir.uz",
+    "target": "https://jobir.uz",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {
-      "^/api-imodel": "/"
+      "^/api-imodel": "/backend/"
     }
   }
 }
