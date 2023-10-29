@@ -19,6 +19,7 @@ import {
 import { Price } from 'src/app/shared/models/price.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClearCountService } from '../../service/clear-count.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -35,6 +36,7 @@ import { ClearCountService } from '../../service/clear-count.service';
     NgIf,
     AsyncPipe,
     TranslateModule,
+    RouterLink,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -54,8 +56,10 @@ export class ContentComponent {
       id: v.id,
       title: v.title,
       price: v.price,
+      configurator_id: null,
       image: v.product_images[0].image,
       count: 0,
+      is_configurator: false,
       totalPrice: {
         usd: v.price.usd,
         uzs: v.price.uzs,
@@ -64,6 +68,8 @@ export class ContentComponent {
     };
   }
 
+  /**
+   */
   singleProduct!: ProductItem;
 
   /**
@@ -93,7 +99,8 @@ export class ContentComponent {
   constructor(
     private $store: Store,
     private cd: ChangeDetectorRef,
-    private clearCount$: ClearCountService
+    private clearCount$: ClearCountService,
+    private router: Router
   ) {}
 
   /**
@@ -185,5 +192,12 @@ export class ContentComponent {
    */
   toggleConfigurator() {
     this.configurator = !this.configurator;
+  }
+
+  /**
+   *
+   */
+  navigateToConfigurator() {
+    this.router.navigate(['products', 11]);
   }
 }

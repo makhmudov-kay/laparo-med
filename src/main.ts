@@ -15,6 +15,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxsModule } from '@ngxs/store';
 import { DataState } from './app/shared/store/data/data.state';
 import { DecimalPipe } from '@angular/common';
+import { provideEnvironmentNgxMask } from 'ngx-mask';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -26,6 +27,7 @@ bootstrapApplication(AppComponent, {
       ROUTES,
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
+    provideEnvironmentNgxMask(),
     importProvidersFrom(
       HttpClientModule,
       TranslateModule.forRoot({

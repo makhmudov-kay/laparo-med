@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { TranslateModule } from '@ngx-translate/core';
+import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
 
 @Component({
   selector: 'app-product-detail',
@@ -23,6 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
     AsyncPipe,
     MyTranslatePipe,
     TranslateModule,
+    SvgSpinnerComponent,
   ],
 })
 export class ProductDetailComponent implements OnInit {

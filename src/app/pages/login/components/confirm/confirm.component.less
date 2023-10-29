@@ -1,0 +1,102 @@
+.auth {
+
+    h4 {
+        font-size: 36px;
+        line-height: 105%;
+
+        @media (min-width: 992px) and (max-width: 1300px) {
+            font-size: 28px;
+            line-height: 105%;
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            font-size: 24px;
+            line-height: 120%;
+        }
+
+        @media (max-width: 992px) {
+            font-size: 28px;
+        }
+    }
+
+    .form {
+        padding: 20px;
+        margin: 2em 0;
+        text-align: left;
+        border-radius: 5px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            padding: 3px;
+
+            label {
+                line-height: 2;
+                font-weight: 400;
+                font-size: 14px;
+
+                span {
+                    color: red;
+                    font-weight: 700;
+                    border: 0 !important;
+                    text-decoration: none;
+                }
+            }
+
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                margin: 0;
+                outline: 0;
+                line-height: normal;
+                background-color: #f4f4f4;
+                padding: 10px 15px;
+                transition: all 0.4s;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            .password {
+                position: relative;
+
+                span {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 20px;
+                    user-select: unset;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__btn {
+            user-select: unset;
+
+            button {
+                float: left;
+                margin-right: 1em;
+                font-weight: 500 !important;
+                text-transform: uppercase !important;
+                font-size: 14px !important;
+                line-height: 170% !important;
+                align-items: center !important;
+                cursor: pointer !important;
+                padding: 10px 30px !important;
+                transition: all 0.4s !important;
+                background-color: #00619d !important;
+                color: #fff !important;
+                border-radius: 3px;
+                left: auto;
+                user-select: unset;
+
+                &:hover {
+                    background-color: #000 !important;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+}

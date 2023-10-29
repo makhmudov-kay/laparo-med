@@ -5,11 +5,14 @@ import { CategoriesComponent } from '../../blog/components/categories/categories
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SubscribeComponent } from 'src/app/shared/components/subscribe/subscribe.component';
 import { CategoryService } from 'src/app/shared/services/category.service';
-import { Observable } from 'rxjs';
+import { Observable, debounce, debounceTime, takeUntil } from 'rxjs';
 import { Grid } from 'src/app/shared/models/grid.model';
 import { Product } from 'src/app/shared/models/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { EmptyCardComponent } from './components/empty-card/empty-card.component';
+import { ActivatedRoute } from '@angular/router';
+import { NgDestroy } from 'src/app/core/services/ng-destroy.service';
 
 @Component({
   selector: 'app-product-list',
@@ -25,7 +28,9 @@ import { TranslateModule } from '@ngx-translate/core';
     PaginationComponent,
     SubscribeComponent,
     TranslateModule,
+    EmptyCardComponent,
   ],
+  providers: [NgDestroy ],
 })
 export class ProductListComponent {
   $category = inject(CategoryService);
@@ -47,7 +52,24 @@ export class ProductListComponent {
   /**
    *
    */
-  constructor() {
+  constructor(private route: ActivatedRoute, private destroy$: NgDestroy) {
+    this.getAllProducts();
+    this.route.queryParams
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((params) => {
+        const categoryId = Number(params['category_id']);
+        if (categoryId === 0) {
+          this.getAllProducts();
+          return;
+        }
+        this.filterDataByCategory(categoryId);
+      });
+  }
+
+  /**
+   *
+   */
+  getAllProducts() {
     this.product$ = this.$product.getAll();
   }
 
@@ -57,6 +79,24 @@ export class ProductListComponent {
    */
   handlePageIndexChange(pageIndex: number) {
     this.pageIndex = pageIndex;
-    this.product$ = this.$product.getAll();
+    this.getAllProducts();
+  }
+
+  /**
+   *
+   * @param categoryId
+   */
+  filterDataByCategory(categoryId: number) {
+    this.product$ = this.$product.getAll(categoryId);
+  }
+
+  /**
+   *
+   * @param text
+   */
+  search(text: string) {
+    this.product$ = this.$product
+      .getAll(undefined, text)
+      .pipe(debounceTime(1000));
   }
 }

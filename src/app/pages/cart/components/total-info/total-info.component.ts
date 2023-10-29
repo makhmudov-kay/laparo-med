@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Price } from 'src/app/shared/models/price.model';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
@@ -21,5 +21,17 @@ export class TotalInfoComponent {
   @Input()
   public set totalPrice(v: Price) {
     this._totalPrice = v;
+  }
+
+  /**
+   */
+  @Output()
+  sendOrder = new EventEmitter();
+
+  /**
+   *
+   */
+  sentOrder() {
+    this.sendOrder.emit();
   }
 }

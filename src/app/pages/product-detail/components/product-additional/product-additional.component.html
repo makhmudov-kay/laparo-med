@@ -8,6 +8,7 @@
     <app-product-item
       *ngFor="let product of data.product"
       [product]="product"
+      [configuratorId]="configuratorId"
       (addOrDeleteProduct)="addOrDeleteProduct.emit($event)"
     ></app-product-item>
   </div>

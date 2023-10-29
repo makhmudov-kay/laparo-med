@@ -11,7 +11,8 @@
         </div>
       </div>
     </div>
-    <div class="product-list__new all" *ngIf="product$ | async as product">
+
+    <div class="product-list__new all">
       <div class="product-list__new__title">
         <h3 class="title">{{ "allProducts" | translate }}</h3>
         <h4 class="section-title">NEW STUFF</h4>
@@ -20,23 +21,47 @@
         class="product-list__categories"
         *ngIf="category$ | async as categories"
       >
-        <app-categories [isDetail]="true" [data]="categories"></app-categories>
+        <app-categories
+          (seartValue)="search($event)"
+          [isDetail]="true"
+          [data]="categories"
+          (resetInputHandler)="getAllProducts()"
+        ></app-categories>
       </div>
+      <ng-container *ngIf="product$ | async as product; else empty">
+        <div
+          class="product-list__row wrap"
+          *ngIf="product.results && product.results.length; else emptyList"
+        >
+          <div class="product-list__col" *ngFor="let p of product.results">
+            <app-product-card [data]="p"></app-product-card>
+          </div>
+        </div>
+
+        <ng-template #emptyList>
+          <div class="empty-list">
+            <h3>{{ "emptyList" | translate }}</h3>
+          </div>
+        </ng-template>
+        <div class="product-list__pagination">
+          <app-pagination
+            [total]="product.count"
+            [pageIndex]="pageIndex"
+            (pageIndexChange)="handlePageIndexChange($event)"
+          ></app-pagination>
+        </div>
+      </ng-container>
+    </div>
+
+    <ng-template #empty>
       <div class="product-list__row wrap">
-        <div class="product-list__col" *ngFor="let p of product.results">
-          <app-product-card [data]="p"></app-product-card>
+        <div class="product-list__col" *ngFor="let p of [].constructor(12)">
+          <app-empty-card></app-empty-card>
         </div>
       </div>
-      <div class="product-list__pagination">
-        <app-pagination
-          [total]="product.count"
-          [pageIndex]="pageIndex"
-          (pageIndexChange)="handlePageIndexChange($event)"
-        ></app-pagination>
-      </div>
-    </div>
+    </ng-template>
   </div>
-  <div class="product-list__subscribe">
+  <!-- <div class="product-list__subscribe">
     <app-subscribe></app-subscribe>
-  </div>
+  </div> -->
 </div>

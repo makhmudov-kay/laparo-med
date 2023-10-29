@@ -9,9 +9,10 @@ import { LanguageComponent } from './components/language/language.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BurgerSVG } from 'src/app/shared/svg/burger/burger.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 import { SvgUserComponent } from 'src/app/shared/svg/svg-user/svg-user.component';
+import { AuthService } from 'src/app/pages/login/service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -50,7 +51,11 @@ export class HeaderComponent {
    *
    * @param el
    */
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+    private auth$: AuthService,
+    private router: Router
+  ) {}
 
   /**
    *
@@ -78,6 +83,14 @@ export class HeaderComponent {
    */
   closeDrawer(e: boolean) {
     this.isDrawer = e;
+  }
+
+  navigate() {
+    if (this.auth$.isAuthintificate()) {
+      this.router.navigate(['../cabinet']);
+    } else {
+      this.router.navigate(['../login']);
+    }
   }
 
   /**

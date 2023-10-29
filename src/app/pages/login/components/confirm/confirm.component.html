@@ -1,0 +1,15 @@
+<div class="auth">
+  <h4>
+    {{ "confirmTitle" | translate }}
+  </h4>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form__item">
+      <label>{{ "confirmLabel" | translate }} <span>*</span></label>
+      <input type="text" formControlName="secure_code" />
+    </div>
+
+    <div class="form__btn">
+      <button>{{ "confirmBtn" | translate }}</button>
+    </div>
+  </form>
+</div>

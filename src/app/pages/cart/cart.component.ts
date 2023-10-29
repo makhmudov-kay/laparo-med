@@ -9,6 +9,8 @@ import { CartAction } from 'src/app/shared/store/data/data.action';
 import { Price } from 'src/app/shared/models/price.model';
 import { ProductItem } from 'src/app/shared/models/product-detail.model';
 import { TranslateModule } from '@ngx-translate/core';
+import { OrderService } from './services/order.service';
+import { OrderRequest } from 'src/app/shared/models/order.request';
 
 @Component({
   selector: 'app-cart',
@@ -38,7 +40,11 @@ export class CartComponent {
    *
    * @param cd
    */
-  constructor(private cd: ChangeDetectorRef, private $store: Store) {
+  constructor(
+    private cd: ChangeDetectorRef,
+    private $store: Store,
+    private order$: OrderService
+  ) {
     this.cart$.subscribe((data) => {
       this.cartItems = data;
       this.calcTotalsPrice();
@@ -121,5 +127,26 @@ export class CartComponent {
       this.calcTotalPrice(newCartList);
     }
     this.updateCart(this.cartItems);
+  }
+
+  /**
+   *
+   */
+  sendOrder() {
+    const products: OrderRequest[] = [];
+    this.cartItems.forEach((item) => {
+      const newItem = {
+        configurator: item.configurator_id ? item.configurator_id : null,
+        product: item.id,
+        quantity: item.count,
+        price: item.price,
+      };
+
+      products.push(newItem);
+    });
+
+    this.order$.sendOrder(products).subscribe((e) => {
+      console.log(e);
+    });
   }
 }

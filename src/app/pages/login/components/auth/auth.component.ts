@@ -2,9 +2,10 @@ import { NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { SvgHideComponent } from 'src/app/shared/svg/svg-hide/svg-hide.component';
 import { SvgShowComponent } from 'src/app/shared/svg/svg-show/svg-show.component';
-type FormType = 'login' | 'register';
+export type FormType = 'login' | 'register' | 'confirm';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -17,13 +18,14 @@ type FormType = 'login' | 'register';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    NgxMaskDirective,
   ],
+  providers: [provideNgxMask()],
 })
 export class AuthComponent {
   /**
    *
    */
-
   private _formType!: FormType;
   public get formType(): FormType {
     return this._formType;
@@ -32,6 +34,8 @@ export class AuthComponent {
   public set formType(v: FormType) {
     this._formType = v;
   }
+
+  PHONE_PREFIX = '+998';
 
   /**
    *
@@ -58,6 +62,6 @@ export class AuthComponent {
   }
 
   onSubmit() {
-    this.submit.emit(this.formType)
+    this.submit.emit(this.formType);
   }
 }

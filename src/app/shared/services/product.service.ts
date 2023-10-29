@@ -12,10 +12,17 @@ export class ProductService {
   pageIndex = 1;
   constructor(private $base: BaseService) {}
 
-  getAll() {
-    const params = new HttpParams()
+  getAll(categoryId?: number, search?: string) {
+    let params = new HttpParams()
       .append('page', this.pageIndex)
       .append('page_size', Constants.PAGE_SIZE);
+
+    if (categoryId) {
+      params = params.append('category_id', categoryId);
+    }
+    if (search) {
+      params = params.append('search', search);
+    }
     return this.$base.get<Grid<Product>>('shop/products/', params);
   }
 }

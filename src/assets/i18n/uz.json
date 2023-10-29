@@ -122,5 +122,10 @@
   "professionalsTitle": "PROFESSIONAL",
   "createYourOwnSet": "TO'PLAMINGIZNI YIG'ING",
   "totalPrice": "Umumiy xarajat",
-  "addToCart": "Savatchaga"
+  "addToCart": "Savatchaga",
+  "emptyList": "Mahsulot topilmadi",
+  "confirmTitle": "Iltimos, telefon raqamingizni tasdiqlang",
+  "confirmLabel": "SMS-dan kodni kiriting",
+  "confirmBtn": "Tasdiqlash",
+  "successAuth": "Tabriklaymiz ro'yxatdan o'tish muvaffaqiyatli bo'ldi! Ko'proq imkoniyatlardan foydalanish uchun hisobingizga kiring."
 }

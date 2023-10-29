@@ -15,6 +15,7 @@ export interface ProductDetail extends Id {
   product_description: string;
   product_features: ProductFeature;
   main_item: ProductItem;
+  is_configurator: boolean;
 }
 
 export interface ItemsType {
@@ -29,6 +30,8 @@ export interface ProductItem extends Id {
   image: string;
   count?: number;
   totalPrice?: Price;
+  is_configurator: boolean;
+  configurator_id: number | null;
 }
 
 export interface ImageItem extends Id {

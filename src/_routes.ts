@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { authGuard } from './app/pages/login/service/auth.guard';
 
 export const ROUTES: Route[] = [
   {
@@ -49,6 +50,31 @@ export const ROUTES: Route[] = [
       import('./app/pages/cabinet/cabinet.component').then(
         (m) => m.CabinetComponent
       ),
+    canActivate: [authGuard],
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import(
+            './app/pages/cabinet/components/dashboard/dashboard.component'
+          ).then((m) => m.DashboardComponent),
+      },
+      {
+        path: 'orders',
+        loadComponent: () =>
+          import('./app/pages/cabinet/components/orders/orders.component').then(
+            (m) => m.OrdersComponent
+          ),
+      },
+      {
+        path: 'details',
+        loadComponent: () =>
+          import(
+            './app/pages/cabinet/components/acc-details/acc-details.component'
+          ).then((m) => m.AccDetailsComponent),
+      },
+    ],
   },
   {
     path: 'products',
@@ -65,13 +91,7 @@ export const ROUTES: Route[] = [
             './app/pages/products/product-list/product-list.component'
           ).then((m) => m.ProductListComponent),
       },
-      {
-        path: ':id',
-        loadComponent: () =>
-          import('./app/pages/product-detail/product-detail.component').then(
-            (m) => m.ProductDetailComponent
-          ),
-      },
+
       {
         path: 'individuals',
         loadComponent: () =>
@@ -120,6 +140,13 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/advance-portable/advance-portable.component'
           ).then((m) => m.AdvancePortableComponent),
+      },
+      {
+        path: ':id',
+        loadComponent: () =>
+          import('./app/pages/product-detail/product-detail.component').then(
+            (m) => m.ProductDetailComponent
+          ),
       },
     ],
   },

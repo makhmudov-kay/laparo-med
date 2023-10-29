@@ -18,6 +18,11 @@ export class ProductAdditionalComponent {
   data!: ItemsType;
 
   /**
+   */
+  @Input()
+  configuratorId!: null | number;
+
+  /**
    *
    */
   private _count!: number;

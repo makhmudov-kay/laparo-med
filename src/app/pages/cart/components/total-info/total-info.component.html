@@ -6,11 +6,9 @@
     </div>
 
     <div class="wc-proceed-to-checkout">
-      <a
-        href="https://laparosimulators.com/checkout/"
-        class="checkout-button button alt wc-forward"
-        >{{ "sendOrder" | translate }}</a
-      >
+      <a (click)="sentOrder()" class="checkout-button button alt wc-forward">{{
+        "sendOrder" | translate
+      }}</a>
     </div>
   </div>
 </div>

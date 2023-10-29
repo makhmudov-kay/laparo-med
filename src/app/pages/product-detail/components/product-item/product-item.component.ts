@@ -39,6 +39,16 @@ export class ProductItemComponent implements OnInit {
   }
 
   /**
+   */
+  @Input()
+  configuratorId!: null | number;
+
+  /**
+   */
+  @Input()
+  isConfigurator = false;
+
+  /**
    *
    */
   @Output()
@@ -71,7 +81,7 @@ export class ProductItemComponent implements OnInit {
   ) {}
 
   /**
-   * 
+   *
    */
   private clearCountListener() {
     this.clearCount$.clearCount$.subscribe((w) => {
@@ -83,7 +93,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   /**
-   * 
+   *
    */
   ngOnInit() {
     this.clearCountListener();
@@ -100,6 +110,8 @@ export class ProductItemComponent implements OnInit {
       --this.count;
     }
     this.product.count = this.count;
+    this.product.configurator_id = this.configuratorId;
+    this.product.is_configurator = this.isConfigurator;
 
     for (const key in this.product.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(this.product.totalPrice, key)) {

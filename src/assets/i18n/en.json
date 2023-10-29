@@ -122,5 +122,10 @@
   "professionalsTitle": "PROFESSIONALS",
   "createYourOwnSet": "CREATE YOUR OWN SET",
   "totalPrice": "Total price",
-  "addToCart": "Add to cart"
+  "addToCart": "Add to cart",
+  "emptyList": "Product not found",
+  "confirmTitle": "Please Confirm your phone number",
+  "confirmLabel": "Enter the code from the SMS",
+  "confirmBtn": "Confirm",
+  "successAuth": "Congratulations registration was successful! Log in to your account in order to use more features."
 }

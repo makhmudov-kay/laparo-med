@@ -1,6 +1,10 @@
 <div class="content">
   <app-product-info [info]="product.information"></app-product-info>
-
+  <div class="content__configurator__btn navigate" *ngIf="product.configurator">
+    <button routerLink="../../products/11">
+      {{ "createYourOwnSet" | translate }}
+    </button>
+  </div>
   <div class="content__configurator">
     <ng-container *ngIf="product.items; else single">
       <div class="content__configurator__btn">
@@ -13,12 +17,15 @@
         <app-product-item
           [product]="product.main_item"
           (addOrDeleteProduct)="addOrDeleteProduct($event)"
+          [configuratorId]="product.is_configurator ? product.id : null"
+          [isConfigurator]="product.is_configurator"
         ></app-product-item>
 
         <div class="content__configurator__items__additional">
           <app-product-additional
             *ngFor="let additional of product.items"
             [data]="additional"
+            [configuratorId]="product.is_configurator ? product.id : null"
             (toggleCollapseHandler)="toggleCollapse($event)"
             (addOrDeleteProduct)="addOrDeleteProduct($event)"
           ></app-product-additional>
@@ -35,7 +42,6 @@
       </div>
     </ng-container>
 
-
     <ng-template #single>
       <app-product-item
         [product]="singleProduct"
@@ -49,7 +55,7 @@
         </h6>
       </div>
     </ng-template>
-    
+
     <div class="content__configurator__cart-btn">
       <button (click)="addToCart()">{{ "addToCart" | translate }}</button>
     </div>

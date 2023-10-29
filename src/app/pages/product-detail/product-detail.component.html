@@ -1,4 +1,7 @@
-<section class="product-detail" *ngIf="product$ | async as product">
+<section
+  class="product-detail"
+  *ngIf="product$ | async as product; else loading"
+>
   <div class="grid grid--xl">
     <div class="product-detail__wrapper">
       <div class="row row60">
@@ -7,7 +10,9 @@
             <div class="product-detail__title__title">
               {{ product.title | myTranslate | async }}
             </div>
-            <div class="product-detail__title__subtitle">{{"professionalsTitle" | translate}}</div>
+            <div class="product-detail__title__subtitle">
+              {{ "professionalsTitle" | translate }}
+            </div>
           </div>
 
           <div class="product-detail__images">
@@ -25,3 +30,9 @@
     <app-product-share></app-product-share>
   </div>
 </section>
+
+<ng-template #loading>
+  <div class="spinner">
+    <svg-spinner class="d-flex"></svg-spinner>
+  </div>
+</ng-template>

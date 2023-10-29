@@ -15,7 +15,7 @@
     </div>
     <div class="col-lg-4">
       <!-- TOTAL -->
-      <app-total-info [totalPrice]="totalPrice"></app-total-info>
+      <app-total-info (sendOrder)="sendOrder()" [totalPrice]="totalPrice"></app-total-info>
     </div>
   </div>
 </section>

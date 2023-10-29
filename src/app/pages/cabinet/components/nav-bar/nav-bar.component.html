@@ -1,21 +1,16 @@
 <nav class="nav-link">
   <ul>
-    <li class="nav-link nav-link-dashboard is-active">
-      <a href="https://laparosimulators.com/my-account/">Dashboard</a>
+    <li class="nav-link nav-link-dashboard" routerLinkActive="is-active">
+      <a routerLink="dashboard">Dashboard</a>
     </li>
-    <li class="nav-link nav-link-orders">
-      <a href="https://laparosimulators.com/my-account/orders/">Orders</a>
+    <li class="nav-link nav-link-orders" routerLinkActive="is-active">
+      <a routerLink="orders">Orders</a>
     </li>
-    <li class="nav-link nav-link-edit-account">
-      <a href="https://laparosimulators.com/my-account/edit-account/"
-        >Account details</a
-      >
+    <li class="nav-link nav-link-edit-account" routerLinkActive="is-active">
+      <a routerLink="details">Account details</a>
     </li>
-    <li class="nav-link nav-link-customer-logout">
-      <a
-        href="https://laparosimulators.com/my-account/customer-logout/?_wpnonce=c13a75f765"
-        >Log out</a
-      >
+    <li class="nav-link nav-link-customer-logout" (click)="logout()">
+      <a>Log out</a>
     </li>
   </ul>
 </nav>

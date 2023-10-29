@@ -1,19 +1,36 @@
 <div class="categories" [ngClass]="{ isDetail: isDetail }">
   <h3 class="blog-title">{{ "categories" | translate }}</h3>
   <div class="categories__list">
-    <a *ngFor="let category of data" class="categories__list__item"
-      >{{ category.name | myTranslate| async }} ({{ category.count }})</a
+    <a class="categories__list__item" (click)="selectCategory(0)">{{
+      "allProducts" | translate
+    }}</a>
+    <a
+      *ngFor="let category of data"
+      class="categories__list__item"
+      (click)="selectCategory(category.id)"
+      >{{ category.name | myTranslate | async }} ({{ category.count }})</a
     >
   </div>
   <div class="categories__search">
-    <form class="categories__search__form">
-      <input type="text" placeholder="Search our blog" />
-      <button type="button" class="search-icon">
+    <div class="categories__search__form">
+      <input
+        type="text"
+        placeholder="Search our blog"
+        [(ngModel)]="value"
+        (keydown.enter)="searchText()"
+      />
+      <button
+        *ngIf="!value.length; else reset"
+        type="button"
+        class="search-icon"
+      >
         <svg-search class="d-flex"></svg-search>
       </button>
-      <button type="button" class="close-icon">
-        <svg-close class="d-flex"></svg-close>
-      </button>
-    </form>
+      <ng-template #reset>
+        <button type="button" class="close-icon" (click)="resetInput()">
+          <svg-close class="d-flex"></svg-close>
+        </button>
+      </ng-template>
+    </div>
   </div>
 </div>

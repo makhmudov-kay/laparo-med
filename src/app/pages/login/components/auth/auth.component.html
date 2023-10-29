@@ -12,7 +12,14 @@
       <label [for]="'username' + formType"
         >{{ "phone" | translate }} <span>*</span></label
       >
-      <input type="text" [id]="'username' + formType" formControlName="phone" />
+      <input
+        [mask]="'00 000 00 00'"
+        [prefix]="PHONE_PREFIX"
+        [showMaskTyped]="true"
+        type="text"
+        [id]="'username' + formType"
+        formControlName="phone"
+      />
     </div>
 
     <ng-container *ngIf="formType === 'register'">

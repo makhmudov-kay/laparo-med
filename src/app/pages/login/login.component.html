@@ -1,3 +1,6 @@
+<div class="reg-success grid grid--xl" *ngIf="isSuccess">
+  <p>{{ "successAuth" | translate }}</p>
+</div>
 <section class="shop__account">
   <div class="grid grid--xl">
     <div class="woocommerce-notices-wrapper"></div>
@@ -11,10 +14,18 @@
       </div>
       <div class="u-column2 col-lg-6">
         <app-auth
+          *ngIf="!confirm"
           [formType]="'register'"
           [form]="registrationFormGroup"
           (submit)="submit($event)"
         ></app-auth>
+
+        <app-confirm
+          *ngIf="confirm"
+          [form]="confirmFormGroup"
+          (submit)="submit($event)"
+          [formType]="'confirm'"
+        ></app-confirm>
       </div>
     </div>
   </div>
