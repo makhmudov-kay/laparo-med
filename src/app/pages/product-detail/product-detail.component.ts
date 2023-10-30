@@ -27,7 +27,7 @@ import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.
     SvgSpinnerComponent,
   ],
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent {
   /**
    *
    */
@@ -47,7 +47,11 @@ export class ProductDetailComponent implements OnInit {
     private $product: ProductDetailService,
     private route: ActivatedRoute
   ) {
-    this.id = this.route.snapshot.paramMap.get('id');
+    // this.id = this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe((e) => {
+      this.id = e['id'];
+      this.getProductById();
+    });
   }
 
   /**
@@ -59,12 +63,5 @@ export class ProductDetailComponent implements OnInit {
         .getProductById(this.id)
         .pipe(map((res) => res));
     }
-  }
-
-  /**
-   *
-   */
-  ngOnInit() {
-    this.getProductById();
   }
 }
