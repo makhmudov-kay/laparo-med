@@ -21,6 +21,10 @@ export class BaseService {
     return this.http.post<T>(`${this.apiUrl}${url}`, body);
   }
 
+  patch<T>(url: string, body: any) {
+    return this.http.patch<T>(`${this.apiUrl}${url}`, body);
+  }
+
   put<T>(url: string, body: any) {
     return this.http.put<T>(`${this.apiUrl}${url}`, body);
   }

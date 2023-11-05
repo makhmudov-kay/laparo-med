@@ -25,4 +25,12 @@ export class ProductService {
     }
     return this.$base.get<Grid<Product>>('shop/products/', params);
   }
+
+  /**
+   *
+   * @returns
+   */
+  getProductsWithDiscount() {
+    return this.$base.get<Product[]>('shop/sale/');
+  }
 }

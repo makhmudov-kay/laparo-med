@@ -127,5 +127,17 @@
   "confirmTitle": "Please Confirm your phone number",
   "confirmLabel": "Enter the code from the SMS",
   "confirmBtn": "Confirm",
-  "successAuth": "Congratulations registration was successful! Log in to your account in order to use more features."
+  "successAuth": "Congratulations registration was successful! Log in to your account in order to use more features.",
+  "inputYourPhone": "Enter your phone number",
+  "inputYourName": "Enter your name",
+  "inputYourLastName": "Enter your last name",
+  "minLengthPassword": "The password must not be less than 8 characters",
+  "fillTheField": "Fill in the field",
+  "forgotPassword": "Forgot your password?",
+  "passwordRestSuccess": "You have successfully changed your account password, now you can log in to your personal account using a new password.",
+  "resetPasswordText": "Forgot your password? Please specify your phone number that was linked to your account. After receiving the confirmation code, you will be able to set a new password.",
+  "enterSecureCode": "Enter secure core from SMS",
+  "resetPasswordBtn": "Reset password",
+  "resendCode": "Resend code",
+  "createNewPassword": "Create new password"
 }

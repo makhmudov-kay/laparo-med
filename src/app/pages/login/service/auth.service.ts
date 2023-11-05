@@ -100,4 +100,52 @@ export class AuthService {
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
   }
+
+  /**
+   *
+   * @param request
+   * @returns
+   */
+  resetPassword(request: { phone: string }): Observable<{ detail: string }> {
+    return this.$base.post('account/password-reset/', request);
+  }
+
+  /**
+   *
+   * @param request
+   * @returns
+   */
+  confirmResetPassword(request: {
+    phone: string;
+    secure_code: string;
+  }): Observable<{ token: string }> {
+    return this.$base.post('account/password-reset/confirm/', request);
+  }
+
+  /**
+   *
+   * @param encoded_pk
+   * @param token
+   * @param request
+   * @returns
+   */
+  setNewPassword(
+    encoded_pk: string,
+    token: string,
+    request: { password: string }
+  ) {
+    return this.$base.patch(
+      `account/password-reset/${encoded_pk}/${token}/`,
+      request
+    );
+  }
+
+  /**
+   *
+   * @param request
+   * @returns
+   */
+  resendCode(request: { phone: string }) {
+    return this.$base.post('account/resend/', request);
+  }
 }

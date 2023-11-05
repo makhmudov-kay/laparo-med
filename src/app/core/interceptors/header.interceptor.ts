@@ -19,10 +19,13 @@ export class HeaderInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const token = this.auth$.token;
 
-    const headers = req.headers
+    let headers = req.headers
       .set('accept-language', this.settings.language)
-      .set('currency', this.settings.currency)
-      .set('Authorization', `Bearer ${token}`);
+      .set('currency', this.settings.currency);
+
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
     const authReq = req.clone({ headers });
     return next.handle(authReq);
   }

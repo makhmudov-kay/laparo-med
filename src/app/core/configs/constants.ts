@@ -39,4 +39,7 @@ export class Constants {
   //   LOCALTROAGE KEYS
   public static readonly LOCALSTORAGE_CURRENT_LANGUAGE = 'currentLanguage';
   public static readonly LOCALSTORAGE_CURRENT_CURRENCY = 'currentCurrency';
+
+  // PREFIX
+  public static readonly PHONE_PREFIX = '+998';
 }

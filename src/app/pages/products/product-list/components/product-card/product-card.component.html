@@ -1,5 +1,8 @@
 <div class="product-card-wrapper">
   <div class="product-card" [routerLink]="['../', data.id]">
+    <div *ngIf="data.discount" class="product-card__discount">
+      {{ data.discount | number: '1.0-0' }}%
+    </div>
     <div class="product-card__img">
       <img [src]="data.image" alt="card" />
     </div>
@@ -9,8 +12,13 @@
       </h4>
       <!-- <p class="product-card__text">4 COMPLETE COURSES IN ONE SET</p> -->
       <span class="product-card__price"
-        ><strong>{{ data.price | myCurrency | async }}</strong></span
-      >
+        ><strong [ngClass]="{ discount: data.new_price }">{{
+          data.price | myCurrency | async
+        }}</strong>
+        <strong *ngIf="data.new_price">{{
+          data.new_price | myCurrency | async
+        }}</strong>
+      </span>
     </div>
   </div>
   <div class="product-card-wrapper__cart">

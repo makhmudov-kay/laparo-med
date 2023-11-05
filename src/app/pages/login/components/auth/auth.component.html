@@ -20,18 +20,45 @@
         [id]="'username' + formType"
         formControlName="phone"
       />
+      <small
+        class="error"
+        *ngIf="
+          (form.get('phone')?.touched && form.get('phone')?.invalid) ||
+          (validator && form.get('phone')?.invalid)
+        "
+        >{{ "inputYourPhone" | translate }}</small
+      >
     </div>
 
     <ng-container *ngIf="formType === 'register'">
       <div class="form__item">
         <label for="first">{{ "firstName" | translate }} <span>*</span></label>
         <input type="text" id="first" formControlName="first_name" />
+        <small
+          class="error"
+          *ngIf="
+            (form.get('first_name')?.touched &&
+              form.get('first_name')?.invalid) ||
+            (validator && form.get('first_name')?.invalid)
+          "
+          >{{ "inputYourName" | translate }}</small
+        >
       </div>
 
       <div class="form__item">
         <label for="last">{{ "lastName" | translate }} <span>*</span></label>
-        <input type="text" id="last" formControlName="last_name" /></div
-    ></ng-container>
+        <input type="text" id="last" formControlName="last_name" />
+        <small
+          class="error"
+          *ngIf="
+            (form.get('last_name')?.touched &&
+              form.get('last_name')?.invalid) ||
+            (validator && form.get('last_name')?.invalid)
+          "
+          >{{ "inputYourLastName" | translate }}</small
+        >
+      </div>
+    </ng-container>
 
     <div class="form__item">
       <label [for]="'password' + formType"
@@ -51,6 +78,26 @@
             <svg-hide class="d-flex"></svg-hide>
           </ng-template>
         </span>
+        <small
+          class="error"
+          *ngIf="
+            formType === 'register' &&
+            form.get('password')?.touched &&
+            form.get('password')?.invalid
+          "
+          >{{ "minLengthPassword" | translate }}.</small
+        >
+        <small
+          class="error"
+          *ngIf="
+            (formType === 'login' &&
+              form.get('password')?.touched &&
+              form.get('password')?.invalid) ||
+            (validator && form.get('password')?.invalid)
+          "
+        >
+          {{ "fillTheField" | translate }}</small
+        >
       </div>
     </div>
     <div class="form__btn">
@@ -61,6 +108,10 @@
             : ("signUp" | translate | translate)
         }}
       </button>
+
+      <a *ngIf="formType === 'login'" routerLink="../password-reset">{{
+        "forgotPassword" | translate
+      }}</a>
     </div>
   </form>
 </div>

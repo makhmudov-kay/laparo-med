@@ -45,6 +45,13 @@ export const ROUTES: Route[] = [
       import('./app/pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
+    path: 'password-reset',
+    loadComponent: () =>
+      import('./app/pages/password-reset/password-reset.component').then(
+        (m) => m.PasswordResetComponent
+      ),
+  },
+  {
     path: 'cabinet',
     loadComponent: () =>
       import('./app/pages/cabinet/cabinet.component').then(

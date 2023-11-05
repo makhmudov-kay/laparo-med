@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DecimalPipe, NgClass, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from 'src/app/shared/models/product.model';
@@ -17,15 +17,12 @@ import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-ad
     MyTranslatePipe,
     RouterLink,
     AsyncPipe,
+    NgIf,
+    NgClass,
+    DecimalPipe,
   ],
 })
 export class ProductCardComponent {
   @Input() // { required: true }
-  data: Product = {
-    id: 0,
-    title: { ru: 'test', en: 'test', uz: 'test' },
-    price: { uzs: 0, eur: 0, usd: 0 },
-    image: './assets/image/product-card-1.png',
-    category: 0,
-  };
+  data!: Product;
 }

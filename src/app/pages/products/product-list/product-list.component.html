@@ -2,12 +2,18 @@
   <div class="container">
     <div class="product-list__new">
       <div class="product-list__new__title">
-        <h3 class="title">NEW PRODUCTS</h3>
-        <h4 class="section-title">New products</h4>
+        <h3 class="title">Sales</h3>
+        <h4 class="section-title">Sales</h4>
       </div>
-      <div class="product-list__row">
-        <div class="product-list__col" *ngFor="let card of [].constructor(4)">
-          <app-product-card></app-product-card>
+      <div
+        class="product-list__row"
+        *ngIf="discountProduct$ | async as discountProducts; else emptyDiscount"
+      >
+        <div
+          class="product-list__col"
+          *ngFor="let discount of discountProducts"
+        >
+          <app-product-card [data]="discount"></app-product-card>
         </div>
       </div>
     </div>
@@ -56,6 +62,13 @@
     <ng-template #empty>
       <div class="product-list__row wrap">
         <div class="product-list__col" *ngFor="let p of [].constructor(12)">
+          <app-empty-card></app-empty-card>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #emptyDiscount>
+      <div class="product-list__row wrap">
+        <div class="product-list__col" *ngFor="let p of [].constructor(4)">
           <app-empty-card></app-empty-card>
         </div>
       </div>

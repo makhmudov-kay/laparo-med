@@ -127,5 +127,17 @@
   "confirmTitle": "Iltimos, telefon raqamingizni tasdiqlang",
   "confirmLabel": "SMS-dan kodni kiriting",
   "confirmBtn": "Tasdiqlash",
-  "successAuth": "Tabriklaymiz ro'yxatdan o'tish muvaffaqiyatli bo'ldi! Ko'proq imkoniyatlardan foydalanish uchun hisobingizga kiring."
+  "successAuth": "Tabriklaymiz ro'yxatdan o'tish muvaffaqiyatli bo'ldi! Ko'proq imkoniyatlardan foydalanish uchun hisobingizga kiring.",
+  "inputYourPhone": "Telefon raqamingizni kiriting",
+  "inputYourName": "Ismingizni kiriting",
+  "inputYourLastName": "Familiyangizni kiriting",
+  "minLengthPassword": "Parol 8 belgidan kam bo'lmasligi kerak",
+  "fillTheField": "Maydonni to'ldiring",
+  "forgotPassword": "Parolni unutdingizmi?",
+  "passwordRestSuccess": "Siz hisobingizdan parolni muvaffaqiyatli o'zgartirdingiz, endi siz yangi parol yordamida shaxsiy hisobingizga kirishingiz mumkin.",
+  "resetPasswordText": "Забыли пароль? Пожалуйста укажите свой номер телефона который был привязан к аккаунту. Получив код подтверждения вы сможете установить новый пароль.",
+  "enterSecureCode": "SMS-dan tasdiqlash kodini kiriting",
+  "resetPasswordBtn": "Parolni tiklash",
+  "resendCode": "Kodni yana yuboring",
+  "createNewPassword": "Yangi parol yarating"
 }

@@ -10,6 +10,7 @@
           [formType]="'login'"
           [form]="loginFormGroup"
           (submit)="submit($event)"
+          [validator]="loginValidator"
         ></app-auth>
       </div>
       <div class="u-column2 col-lg-6">
@@ -18,6 +19,7 @@
           [formType]="'register'"
           [form]="registrationFormGroup"
           (submit)="submit($event)"
+          [validator]="registerValidator"
         ></app-auth>
 
         <app-confirm

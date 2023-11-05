@@ -30,7 +30,7 @@ import { NgDestroy } from 'src/app/core/services/ng-destroy.service';
     TranslateModule,
     EmptyCardComponent,
   ],
-  providers: [NgDestroy ],
+  providers: [NgDestroy],
 })
 export class ProductListComponent {
   $category = inject(CategoryService);
@@ -41,6 +41,7 @@ export class ProductListComponent {
   }
 
   product$!: Observable<Grid<Product>>;
+  discountProduct$!: Observable<Product[]>;
 
   public get pageIndex(): number {
     return this.$product.pageIndex;
@@ -54,6 +55,7 @@ export class ProductListComponent {
    */
   constructor(private route: ActivatedRoute, private destroy$: NgDestroy) {
     this.getAllProducts();
+    this.getDiscountProducts();
     this.route.queryParams
       .pipe(takeUntil(this.destroy$))
       .subscribe((params) => {
@@ -71,6 +73,13 @@ export class ProductListComponent {
    */
   getAllProducts() {
     this.product$ = this.$product.getAll();
+  }
+
+  /**
+   *
+   */
+  getDiscountProducts() {
+    this.discountProduct$ = this.$product.getProductsWithDiscount();
   }
 
   /**

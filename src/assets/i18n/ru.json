@@ -127,5 +127,17 @@
   "confirmTitle": "Пожалуйста, подтвердите свой номер телефона",
   "confirmLabel": "Введите код из SMS",
   "confirmBtn": "Подтвердить",
-  "successAuth": "Поздравляем регистрация прошла успешно! Войдите в свой аккаунт для того чтоб использовать больше возможностей."
+  "successAuth": "Поздравляем регистрация прошла успешно! Войдите в свой аккаунт для того чтоб использовать больше возможностей.",
+  "inputYourPhone": "Введите свой номер телефона",
+  "inputYourName": "Введите ваше имя",
+  "inputYourLastName": "Введите свою фамилию",
+  "minLengthPassword": "Пароль не должен быть менее 8 символов",
+  "fillTheField": "Заполните поле",
+  "forgotPassword": "Забыли пароль?",
+  "passwordRestSuccess": "Вы успешно изменили пароль от вашего аккаунта, теперь вы можете войти в личный кабинет используя новый пароль.",
+  "resetPasswordText": "Parolni unutdingizmi? Iltimos, hisobingizga bog'langan telefon raqamingizni ko'rsating. Tasdiqlash kodini olganingizdan so'ng, siz yangi parolni o'rnatishingiz mumkin.",
+  "enterSecureCode": "Введите проверочный код из SMS",
+  "resetPasswordBtn": "Восстановить пароль",
+  "resendCode": "Отправить код снова",
+  "createNewPassword": "Создать новый пароль"
 }

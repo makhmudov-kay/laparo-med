@@ -30,6 +30,8 @@
   transition: all 0.4s;
   padding-bottom: 15px;
   display: block;
+  overflow: hidden;
+  position: relative;
 
   &__img {
     height: 300px;
@@ -50,5 +52,27 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+
+    .discount {
+      color: red;
+      text-decoration: line-through;
+    }
+  }
+
+  &__discount {
+    background: #00619d;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    text-align: center;
+    z-index: 10;
+    transform: rotate(45deg) translate(74px, -50px);
   }
 }

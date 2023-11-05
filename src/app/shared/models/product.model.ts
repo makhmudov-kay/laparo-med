@@ -7,4 +7,7 @@ export interface Product extends Id {
   title: LanguageModel;
   image: string;
   price: Price;
+  discount: number;
+  new_price: Price;
+  order_by: number;
 }

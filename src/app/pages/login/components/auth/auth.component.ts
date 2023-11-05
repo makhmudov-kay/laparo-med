@@ -1,8 +1,10 @@
 import { NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { Constants } from 'src/app/core/configs/constants';
 import { SvgHideComponent } from 'src/app/shared/svg/svg-hide/svg-hide.component';
 import { SvgShowComponent } from 'src/app/shared/svg/svg-show/svg-show.component';
 export type FormType = 'login' | 'register' | 'confirm';
@@ -19,6 +21,7 @@ export type FormType = 'login' | 'register' | 'confirm';
     ReactiveFormsModule,
     TranslateModule,
     NgxMaskDirective,
+    RouterLink,
   ],
   providers: [provideNgxMask()],
 })
@@ -35,7 +38,14 @@ export class AuthComponent {
     this._formType = v;
   }
 
-  PHONE_PREFIX = '+998';
+  /**
+   */
+  @Input()
+  validator!: boolean;
+
+  /**
+   */
+  PHONE_PREFIX = Constants.PHONE_PREFIX;
 
   /**
    *
@@ -61,6 +71,9 @@ export class AuthComponent {
     this.show = !this.show;
   }
 
+  /**
+   *
+   */
   onSubmit() {
     this.submit.emit(this.formType);
   }

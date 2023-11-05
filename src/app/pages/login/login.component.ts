@@ -39,6 +39,14 @@ export class LoginComponent implements OnInit {
   isSuccess = false;
 
   /**
+   */
+  loginValidator = false;
+
+  /**
+   */
+  registerValidator = false;
+
+  /**
    *
    * @param fb
    */
@@ -73,7 +81,7 @@ export class LoginComponent implements OnInit {
   private registrationFormInit() {
     this.registrationFormGroup = this.fb.group({
       phone: [null, [Validators.required]],
-      password: [null, [Validators.required]],
+      password: [null, [Validators.required, Validators.minLength(8)]],
       first_name: [null, [Validators.required]],
       last_name: [null, [Validators.required]],
     });
@@ -85,7 +93,7 @@ export class LoginComponent implements OnInit {
   private loginFormInit() {
     this.loginFormGroup = this.fb.group({
       phone: [null, [Validators.required]],
-      password: [null, [Validators.required]],
+      password: [null, [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -96,6 +104,7 @@ export class LoginComponent implements OnInit {
     if (formType === 'register') {
       if (this.registrationFormGroup.invalid) {
         console.log('invalid form');
+        this.registerValidator = true;
         return;
       }
       const request = this.registrationFormGroup.getRawValue();
@@ -114,6 +123,7 @@ export class LoginComponent implements OnInit {
     if (formType === 'login') {
       if (this.loginFormGroup.invalid) {
         console.log('invalid form');
+        this.loginValidator = true;
         return;
       }
 
