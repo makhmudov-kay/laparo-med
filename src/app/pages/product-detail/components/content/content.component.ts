@@ -44,7 +44,6 @@ export class ContentComponent {
   /**
    *
    */
-
   private _product!: ProductDetail;
   public get product(): ProductDetail {
     return this._product;

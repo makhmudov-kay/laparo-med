@@ -1,7 +1,7 @@
 <div class="content">
   <app-product-info [info]="product.information"></app-product-info>
   <div class="content__configurator__btn navigate" *ngIf="product.configurator">
-    <button routerLink="../../products/11">
+    <button [routerLink]="['../../products', product.configurator]">
       {{ "createYourOwnSet" | translate }}
     </button>
   </div>
