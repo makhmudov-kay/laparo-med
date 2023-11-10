@@ -1,7 +1,7 @@
 <div class="product-card-wrapper">
   <div class="product-card" [routerLink]="['../', data.id]">
     <div *ngIf="data.discount" class="product-card__discount">
-      {{ data.discount | number: '1.0-0' }}%
+      -{{ data.discount | number: '1.0-0' }}%
     </div>
     <div class="product-card__img">
       <img [src]="data.image" alt="card" />

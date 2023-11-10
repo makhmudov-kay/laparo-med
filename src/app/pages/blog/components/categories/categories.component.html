@@ -8,6 +8,7 @@
       *ngFor="let category of data"
       class="categories__list__item"
       (click)="selectCategory(category.id)"
+      [ngClass]="{ active: categoryId === category.id }"
       >{{ category.name | myTranslate | async }} ({{ category.count }})</a
     >
   </div>
