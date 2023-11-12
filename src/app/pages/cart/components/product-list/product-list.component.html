@@ -33,7 +33,9 @@
         </td>
         <td class="product-price" data-title="Price">
           <span class="woocommerce-Price-amount amount">{{
-            product.price | myCurrency | async
+            product.discount > 0
+              ? (product.new_price | myCurrency | async)
+              : (product.price | myCurrency | async)
           }}</span>
         </td>
         <td class="product-quantity" data-title="Quantity">
@@ -68,7 +70,13 @@
         </div>
         <div class="cart-list__item__row">
           <h5>Price</h5>
-          <p>{{ product.price | myCurrency | async }}</p>
+          <p>
+            {{
+              product.discount > 0
+                ? (product.new_price | myCurrency | async)
+                : (product.price | myCurrency | async)
+            }}
+          </p>
         </div>
         <div class="cart-list__item__row">
           <h5>Quantity</h5>

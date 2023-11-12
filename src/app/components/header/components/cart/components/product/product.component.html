@@ -17,7 +17,9 @@
     {{
       item.count +
         " X " +
-        (item.price | myCurrency | async) +
+        (item.discount > 0
+          ? (item.new_price | myCurrency | async)
+          : (item.price | myCurrency | async)) +
         " = " +
         (item.totalPrice | myCurrency | async)
     }}

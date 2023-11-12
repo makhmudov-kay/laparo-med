@@ -7,12 +7,23 @@ export interface ProductDetail extends Id {
   title: LanguageModel;
   information: LanguageModel;
   price: Price;
+  new_price: Price;
+  discount: number;
   count?: number;
   configurator: any; //what type?
   items: ItemsType[];
   product_images: ImageItem[];
-  product_video: string;
-  product_description: string;
+  product_galleries: ImageItem[];
+  product_video: {
+    id: number;
+    title: LanguageModel;
+    text: LanguageModel;
+    video_link: string;
+  };
+  product_description: {
+    id: number;
+    title: LanguageModel;
+  };
   product_features: ProductFeature;
   main_item: ProductItem;
   is_configurator: boolean;
@@ -27,7 +38,9 @@ export interface ItemsType {
 export interface ProductItem extends Id {
   title: LanguageModel;
   price: Price;
+  new_price: Price;
   image: string;
+  discount: number;
   count?: number;
   totalPrice?: Price;
   is_configurator: boolean;

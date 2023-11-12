@@ -38,9 +38,16 @@
     }
   }
 
-  &__price {
-    padding-right: 10px;
+  &__discount {
+    margin-right: 10px;
   }
 
-  
+  &__price {
+    padding-right: 10px;
+
+    &.discount {
+      color: red;
+      text-decoration: line-through;
+    }
+  }
 }

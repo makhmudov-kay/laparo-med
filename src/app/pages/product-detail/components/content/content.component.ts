@@ -55,6 +55,8 @@ export class ContentComponent {
       id: v.id,
       title: v.title,
       price: v.price,
+      new_price: v.new_price,
+      discount: v.discount,
       configurator_id: null,
       image: v.product_images[0].image,
       count: 0,
@@ -140,19 +142,35 @@ export class ContentComponent {
       const cart = this.$store.selectSnapshot(DataState.cart);
       this.needToAddcart.forEach((item: any) => {
         const sameItem = cart.find((cartItem: any) => item.id === cartItem.id);
+        console.log(sameItem);
+
         if (sameItem) {
           sameItem.count += item.count;
-          sameItem.totalPrice = {
-            usd: item.totalPrice.usd
-              ? sameItem.totalPrice.usd + item.price.usd * item.count
-              : item.price.usd * item.count,
-            uzs: item.totalPrice.uzs
-              ? sameItem.totalPrice.uzs + item.price.uzs * item.count
-              : item.price.uzs * item.count,
-            eur: item.totalPrice.eur
-              ? sameItem.totalPrice.eur + item.price.eur * item.count
-              : item.price.eur * item.count,
-          };
+          if (sameItem.discount > 0) {
+            sameItem.totalPrice = {
+              usd: item.totalPrice.usd
+                ? sameItem.totalPrice.usd + item.new_price.usd * item.count
+                : item.new_price.usd * item.count,
+              uzs: item.totalPrice.uzs
+                ? sameItem.totalPrice.uzs + item.new_price.uzs * item.count
+                : item.new_price.uzs * item.count,
+              eur: item.totalPrice.eur
+                ? sameItem.totalPrice.eur + item.new_price.eur * item.count
+                : item.new_price.eur * item.count,
+            };
+          } else {
+            sameItem.totalPrice = {
+              usd: item.totalPrice.usd
+                ? sameItem.totalPrice.usd + item.price.usd * item.count
+                : item.price.usd * item.count,
+              uzs: item.totalPrice.uzs
+                ? sameItem.totalPrice.uzs + item.price.uzs * item.count
+                : item.price.uzs * item.count,
+              eur: item.totalPrice.eur
+                ? sameItem.totalPrice.eur + item.price.eur * item.count
+                : item.price.eur * item.count,
+            };
+          }
         } else {
           cart.push({ ...item });
         }
@@ -191,12 +209,5 @@ export class ContentComponent {
    */
   toggleConfigurator() {
     this.configurator = !this.configurator;
-  }
-
-  /**
-   *
-   */
-  navigateToConfigurator() {
-    this.router.navigate(['products', 11]);
   }
 }

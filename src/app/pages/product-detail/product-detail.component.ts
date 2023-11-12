@@ -6,7 +6,7 @@ import { ProductDetailService } from 'src/app/shared/services/product-detail.ser
 import { Observable, map } from 'rxjs';
 import { ProductDetail } from 'src/app/shared/models/product-detail.model';
 import { ActivatedRoute } from '@angular/router';
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
@@ -25,6 +25,7 @@ import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.
     MyTranslatePipe,
     TranslateModule,
     SvgSpinnerComponent,
+    NgFor,
   ],
 })
 export class ProductDetailComponent {

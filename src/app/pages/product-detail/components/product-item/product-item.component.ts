@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgClass, NgIf } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
@@ -20,7 +20,14 @@ import { ClearCountService } from '../../service/clear-count.service';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.less'],
   standalone: true,
-  imports: [CalcInputComponent, MyTranslatePipe, MyCurrencyPipe, AsyncPipe],
+  imports: [
+    CalcInputComponent,
+    MyTranslatePipe,
+    MyCurrencyPipe,
+    AsyncPipe,
+    NgClass,
+    NgIf,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent implements OnInit {
@@ -35,7 +42,10 @@ export class ProductItemComponent implements OnInit {
   public set product(v: ProductItem) {
     this._product = v;
     this._product.count = 0;
-    this._product.totalPrice = { ...this.product.price };
+    this._product.totalPrice =
+      this.product.discount > 0
+        ? { ...this.product.new_price }
+        : { ...this.product.price };
   }
 
   /**
@@ -115,8 +125,13 @@ export class ProductItemComponent implements OnInit {
 
     for (const key in this.product.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(this.product.totalPrice, key)) {
-        this.product.totalPrice[key as keyof Price] =
-          this.product.price[key as keyof Price] * this.product.count;
+        if (this.product.discount > 0) {
+          this.product.totalPrice[key as keyof Price] =
+            this.product.new_price[key as keyof Price] * this.product.count;
+        } else {
+          this.product.totalPrice[key as keyof Price] =
+            this.product.price[key as keyof Price] * this.product.count;
+        }
       }
     }
 

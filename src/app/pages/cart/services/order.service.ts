@@ -7,6 +7,10 @@ import { OrderRequest } from 'src/app/shared/models/order.request';
 })
 export class OrderService {
   /**
+   */
+  url = 'shop/order/';
+
+  /**
    *
    * @param $base
    */
@@ -18,6 +22,14 @@ export class OrderService {
    * @returns
    */
   sendOrder(order: OrderRequest[]) {
-    return this.$base.post('shop/order/', order);
+    return this.$base.post(this.url, order);
+  }
+
+  /**
+   *
+   * @returns
+   */
+  getOrderList() {
+    return this.$base.get(this.url);
   }
 }

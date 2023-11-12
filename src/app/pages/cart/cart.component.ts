@@ -87,8 +87,13 @@ export class CartComponent {
   private calcTotalPrice(newCartList: any) {
     for (const key in newCartList.totalPrice) {
       if (Object.prototype.hasOwnProperty.call(newCartList.totalPrice, key)) {
-        newCartList.totalPrice[key as keyof Price] =
-          newCartList.price[key as keyof Price] * newCartList.count;
+        if (newCartList.discount > 0) {
+          newCartList.totalPrice[key as keyof Price] =
+            newCartList.new_price[key as keyof Price] * newCartList.count;
+        } else {
+          newCartList.totalPrice[key as keyof Price] =
+            newCartList.price[key as keyof Price] * newCartList.count;
+        }
       }
     }
   }
@@ -139,14 +144,12 @@ export class CartComponent {
         configurator: item.configurator_id ? item.configurator_id : null,
         product: item.id,
         quantity: item.count,
-        price: item.price,
+        price: item.discount > 0 ? item.new_price : item.price,
       };
 
       products.push(newItem);
     });
 
-    this.order$.sendOrder(products).subscribe((e) => {
-      console.log(e);
-    });
+    this.order$.sendOrder(products).subscribe();
   }
 }

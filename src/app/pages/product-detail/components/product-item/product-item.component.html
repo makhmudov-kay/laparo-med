@@ -8,7 +8,12 @@
     </div>
   </div>
   <div class="product__right">
-    <div class="product__price">{{ product.price | myCurrency | async }}</div>
+    <div class="product__discount" *ngIf="product.discount > 0">
+      {{ product.new_price | myCurrency | async }}
+    </div>
+    <div class="product__price" [ngClass]="{ discount: product.discount > 0 }">
+      {{ product.price | myCurrency | async }}
+    </div>
     <app-calc-input
       (countChangeDecrease)="decrease()"
       (countChangeIncrease)="increase()"
