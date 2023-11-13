@@ -1,3 +1,16 @@
-<p>
-  acc-details works!
-</p>
+<section class="user-info" *ngIf="userDetail$ | async as userDetail">
+  <h2>{{ "userInfo" | translate }}</h2>
+
+  <div class="user-info__data">
+    <div class="info">
+      <strong>{{ "firstName" | translate }}:</strong>
+      {{ userDetail.first_name }}
+    </div>
+    <div class="info">
+      <strong>{{ "lastName" | translate }}:</strong> {{ userDetail.last_name }}
+    </div>
+    <div class="info">
+      <strong>{{ "phone" | translate }}:</strong> +{{ userDetail.phone }}
+    </div>
+  </div>
+</section>

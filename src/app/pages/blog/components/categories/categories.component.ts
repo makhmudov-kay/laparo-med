@@ -75,8 +75,6 @@ export class CategoriesComponent {
     private cd: ChangeDetectorRef
   ) {
     this.route.queryParams.subscribe((p) => {
-      console.log(p);
-
       this.categoryId = +p['category_id'];
       this.cd.markForCheck();
     });

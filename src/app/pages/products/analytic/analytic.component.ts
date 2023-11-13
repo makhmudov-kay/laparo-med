@@ -45,15 +45,12 @@ export class AnalyticComponent {
   /**
    */
   introductionData = {
-    header: 'TRAINED TO PERFECTION',
-    description:
-      "Meet the LAPARO Analytic - the world's only laparoscopy simulator with advanced training analysis. ximize the effectiveness of your learning with the help of specialized training scenarios developed in ollaboration with surgeons and specialists.",
+    header: 'analyticHeader',
+    description: 'analyticDesc',
     video: './assets/video/analytic-video.mp4',
-    title: 'Camera 0° & 30°',
-    leftText:
-      'More surgeries in hospitals around the world are performed with the laparoscopic approach than ever before. As the method becomes widely adopted there is one obstacle standing in the way of many operating rooms: how can one prepare more new surgeons for these challenging procedures? Training the manual and decision-making skills with the use of professional laparoscopy simulators is becoming increasingly more popular. Surgery can be thought of as a type of craftsmanship, for it to be mastered, systematic training through repetition and reflection must be performed. Experience the high level of quality and rapid improvement with the LAPARO Analytic. It is a complex training station equipped with sophisticated sensors which precisely track and analyze the position of instruments during training. With tangible results from a comprehensive scoring system and the ability to track progress on a personalized learning curve based on interactive training scenarios. You will be able to hone your skills with little need for outside assistance.',
-    rightText:
-      'Having a good vision with a certain amount of light during minimally invasive surgery is a matter of success and directly affects patient safety. There are different methodologies and preferences of what endoscopic camera angle to use and when. This is why vision tracks are available with optics angles 0° and 30°. Why not implement it to simulators to make the training closer to reality? New Analytic’s camera can be adjusted to individual preferences. Thanks to the new mechanism it is possible to choose a preferred angle before the training. This is a standard feature of vision tracks but rarely found in laparoscopic simulators, not mention of training boxes. Changing the angle of the camera allows for more diversified training. Especially, using 30°angle requires re-adaptation. We are facing here different, deeper, and more difficult perspective. Additionally, using 30° camera we get the widest possible angle during surgery. In the simulators available on the market cameras are embedded or they are using photo cameras. Very often they are permanently mounted. There is no possibility to adjust it to specific needs.',
+    title: 'analyticCamera',
+    leftText: 'analyticLeftText',
+    rightText: 'analyticRightText',
   };
 
   /**
@@ -61,27 +58,27 @@ export class AnalyticComponent {
   infoBlockData = [
     {
       img: './assets/image/apex-vr-img.png',
-      title: 'Networking Capability',
+      title: 'analyticInfoBLock1',
     },
     {
       img: './assets/image/apex-vr-img-2.png',
-      title: 'Multiple User Accounts',
+      title: 'analyticInfoBLock2',
     },
     {
       img: './assets/image/apex-vr-img-3.png',
-      title: 'Training Analysis',
+      title: 'analyticInfoBLock3',
     },
     {
       img: './assets/image/apex-vr-img-4.png',
-      title: 'Complex Parameter Scoring System',
+      title: 'analyticInfoBLock4',
     },
     {
       img: './assets/image/apex-vr-img-5.png',
-      title: 'Learning Curve Tracking',
+      title: 'analyticInfoBLock5',
     },
     {
       img: './assets/image/apex-vr-img-6.png',
-      title: 'Easy Interface',
+      title: 'analyticInfoBLock6',
     },
   ];
 
@@ -93,33 +90,38 @@ export class AnalyticComponent {
     info: [
       {
         img: './assets/image/analytic-img-1.png',
-        title: 'Touchscreen Interface',
-        text: 'All-in-one 23" Touchscreen Computer with an easy interface and stand-alone Laparo Application.',
+        title: 'apexVRImageDataInfoTitle1',
+        text: 'apexVRImageDataInfoText1',
       },
       {
         img: './assets/image/analytic-img-2.jpg',
-        title: 'Camera',
-        text: 'Full HD adjustable camera 0°, 30° mounted on a rotatable ball-joint mount.',
+        title: 'camera',
+        text: 'apexVRImageDataInfoText2',
       },
       {
         img: './assets/image/analytic-img-3.png',
-        title: 'Instruments',
-        text: 'The included instruments provide a realistic high-fidelity training experience.',
+        title: 'instruments',
+        text: 'apexVRImageDataInfoText3',
       },
       {
         img: './assets/image/analytic-img-4.png',
-        title: 'Operating Area',
-        text: 'A hinge mounted lid on the top and a removable front cover allow easy access for adjustment.',
+        title: 'apexVRImageDataInfoTitle4',
+        text: 'apexVRImageDataInfoText4',
       },
       {
         img: './assets/image/analytic-img-5.png',
-        title: 'Adjustable Height',
-        text: 'An electric column allows easy and effortless height adjustment.',
+        title: 'apexVRImageDataInfoTitle5',
+        text: 'apexVRImageDataInfoText5',
       },
     ],
   };
 
   /**
+   *
+   *
+   * continuous
+   *
+   *
    */
   apexVRFeatures = {
     first: {

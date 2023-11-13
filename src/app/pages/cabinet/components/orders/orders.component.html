@@ -1,3 +1,28 @@
 <section class="order-list">
-  
+  <h2>{{ "myOrders" | translate }}</h2>
+
+  <ng-container *ngIf="order$ | async as orderList; else empty">
+    <div class="order-list__block" *ngFor="let order of orderList">
+      <h4>
+        {{ "dateOfOrder" | translate }}:
+        {{ order.created_at | date : "dd.MM.yyyy / HH:mm" }}
+      </h4>
+      <div class="product-list__row wrap">
+        <div
+          class="product-list__col"
+          *ngFor="let product of order.order_products"
+        >
+          <app-product-card [data]="product"></app-product-card>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </section>
+
+<ng-template #empty>
+  <div class="product-list__row wrap">
+    <div class="product-list__col" *ngFor="let p of [].constructor(6)">
+      <app-empty-card></app-empty-card>
+    </div>
+  </div>
+</ng-template>

@@ -1,16 +1,16 @@
 <nav class="nav-link">
   <ul>
-    <li class="nav-link nav-link-dashboard" routerLinkActive="is-active">
+    <!-- <li class="nav-link nav-link-dashboard" routerLinkActive="is-active">
       <a routerLink="dashboard">Dashboard</a>
-    </li>
+    </li> -->
     <li class="nav-link nav-link-orders" routerLinkActive="is-active">
-      <a routerLink="orders">Orders</a>
+      <a routerLink="orders">{{ "order" | translate }}</a>
     </li>
     <li class="nav-link nav-link-edit-account" routerLinkActive="is-active">
-      <a routerLink="details">Account details</a>
+      <a routerLink="details">{{ "accountDetail" | translate }}</a>
     </li>
     <li class="nav-link nav-link-customer-logout" (click)="logout()">
-      <a>Log out</a>
+      <a>{{ "logout" | translate }}</a>
     </li>
   </ul>
 </nav>

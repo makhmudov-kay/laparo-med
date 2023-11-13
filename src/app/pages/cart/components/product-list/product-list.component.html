@@ -63,13 +63,13 @@
           <button class="remove" (click)="deleteProduct()">X</button>
         </div>
         <div class="cart-list__item__row">
-          <h5>Product</h5>
+          <h5>{{ "product" | translate }}</h5>
           <a routerLink="../products/{{ product.id }}/"
             >{{ product.title | myTranslate | async }}
           </a>
         </div>
         <div class="cart-list__item__row">
-          <h5>Price</h5>
+          <h5>{{ "price" | translate }}</h5>
           <p>
             {{
               product.discount > 0
@@ -79,7 +79,7 @@
           </p>
         </div>
         <div class="cart-list__item__row">
-          <h5>Quantity</h5>
+          <h5>{{ "quantity" | translate }}</h5>
           <div class="quantity">
             <app-calc-input
               (countChangeDecrease)="decrease()"
@@ -89,7 +89,7 @@
           </div>
         </div>
         <div class="cart-list__item__row">
-          <h5>SubTotal</h5>
+          <h5>{{ "total" | translate }}</h5>
           <p>{{ product.totalPrice | myCurrency | async }}</p>
         </div>
       </div>

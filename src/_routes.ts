@@ -59,7 +59,7 @@ export const ROUTES: Route[] = [
       ),
     canActivate: [authGuard],
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'orders', pathMatch: 'full' },
       {
         path: 'dashboard',
         loadComponent: () =>

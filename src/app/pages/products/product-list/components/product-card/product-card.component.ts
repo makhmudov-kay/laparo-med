@@ -1,7 +1,13 @@
-import { AsyncPipe, DecimalPipe, NgClass, NgIf } from '@angular/common';
+import {
+  AsyncPipe,
+  DecimalPipe,
+  JsonPipe,
+  NgClass,
+  NgIf,
+} from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Product } from 'src/app/shared/models/product.model';
+import { Router, RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-add-to-cart.component';
@@ -20,9 +26,28 @@ import { SvgAddToCartComponent } from 'src/app/shared/svg/svg-add-to-cart/svg-ad
     NgIf,
     NgClass,
     DecimalPipe,
+    JsonPipe,
+    TranslateModule,
   ],
 })
 export class ProductCardComponent {
+  /**
+   *
+   */
   @Input() // { required: true }
-  data!: Product;
+  data!: any;
+
+  /**
+   *
+   * @param router
+   */
+  constructor(private router: Router) {}
+
+  /**
+   *
+   * @param id
+   */
+  navigateTo(id: number) {
+    this.router.navigate(['products', id]);
+  }
 }
