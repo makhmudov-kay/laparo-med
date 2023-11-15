@@ -118,40 +118,36 @@ export class AnalyticComponent {
 
   /**
    *
-   *
-   * continuous
-   *
-   *
    */
   apexVRFeatures = {
     first: {
-      title: 'Log In',
-      text: 'Enter your user credentials to login to your own personal account.',
+      title: 'apexVRFeaturesTitle1',
+      text: 'apexVRFeaturesText1',
       img: './assets/image/icon-feature-1.png',
     },
     second: {
-      title: 'Learn',
-      text: 'Watch the tutorial, pay close attention to see how to do it.',
+      title: 'apexVRFeaturesTitle2',
+      text: 'apexVRFeaturesText2',
       img: './assets/image/icon-feature-4.png',
     },
     third: {
-      title: 'Select Scenario',
-      text: 'Select a new training session by browsing available scenarios and placing right module in the operating area.',
+      title: 'apexVRFeaturesTitle3',
+      text: 'apexVRFeaturesText3',
       img: './assets/image/icon-feature-3.png',
     },
     fourth: {
-      title: 'Train',
-      text: 'Select start, insert the instruments through the trocar sensors and complete scenario requirements',
+      title: 'apexVRFeaturesTitle4',
+      text: 'apexVRFeaturesText4',
       img: './assets/image/icon-feature-2.png',
     },
     fivth: {
-      title: 'Score',
-      text: 'After completing training you will see a comprehensive score breakdown and you will be able to analyze your performance in detail.',
+      title: 'apexVRFeaturesTitle5',
+      text: 'apexVRFeaturesText5',
       img: './assets/image/icon-feature-6.png',
     },
     sixth: {
-      title: 'Review',
-      text: 'With the Timeline Analysis watch your past training performance, look for areas in need of improvement.',
+      title: 'apexVRFeaturesTitle6',
+      text: 'apexVRFeaturesText6',
       img: './assets/image/icon-feature-5.png',
     },
   };
@@ -160,49 +156,45 @@ export class AnalyticComponent {
    */
   analysis = {
     title: 'Analysis',
-    description:
-      'Meet the incredible capabilities of the LAPARO Analytic - ultra precise analysis based on original state-of-the-art electronic sensors. Increase the effectiveness of your training - monitor your skill development in real-time and make corrections to hone your technique. After completing training, analyze the results to draw your own conclusions on how to do better. See parameters for each hand separately, adjust future training to fit the training path of you and your students. Track progress and maximize efficiency!',
-    leftText:
-      'LAPARO Analytic software gives the surgeon the ability to precisely analyze even the most subtle instrument movements. After completing a session you will be able to scroll through an interactive timeline which displays detailed graphs and zones of interest along with the recorded video. This greatly improves the process of finding and defining the mistakes and problems, and it shows what mistakes are made and must be corrected.',
-    rightText:
-      'At the end of each training session the user can see the precise scores for each aspect of training, thanks to which he will know exactly where he is in his skill development. What’s important, all users have their own personal accounts with only their own scores, results and recorded videos.',
+    description: 'analysisDescription',
+    leftText: 'analysisLeftText',
+    rightText: 'analysisRightText',
   };
 
   /**
    */
   software = {
     img: './assets/image/software-2.png',
-    title: 'Multiple accounts One device',
-    text: 'A single LAPARO Analytic has the ability to store, hold, and protect the information of multiple trainees. Each user can log in with his own password-protected account and see all of his previous results as well as their own personal Learning Curve. A supervisor or professor with an administrator account can monitor all users and manage them in groups.',
+    title: 'softwareTitle',
+    text: 'softwareText',
   };
 
   /**
    */
   paralax = {
     img: '../../../../../assets/image/paralax-2.png',
-    title: 'LIMITLESS',
+    title: 'parallaxTitle',
   };
 
   /**
    */
   networking = {
-    title: 'Networking',
-    description:
-      'Configure your LAPARO Analytic trainers into a network and conduct high-quality group training sessions. The mentor station will let you monitor multiple trainees simultaneously and to correct their mistakes immediately. You can also stream your own view from your own operating area to your trainees so that they can focus and follow the exercise on their own screens.',
+    title: 'networkingTitle',
+    description: 'networkingDescription',
     works: [
       {
-        title: 'TEACH',
-        text: 'Stream your own screen during training ensuring that each trainee is able to watch your work closely.',
+        title: 'worksTitle1',
+        text: 'worksText1',
         value: 1,
       },
       {
-        title: 'SUPERVISE',
-        text: 'You may observe multiple students simultaneously from the comfort of your own station and react accordingly.',
+        title: 'worksTitle2',
+        text: 'worksText2',
         value: 2,
       },
       {
-        title: 'TAKE YOUR PICK',
-        text: 'With networking functionality each account is accessible on each training station - you may log-in on any training station available and work from your personal account.',
+        title: 'worksTitle3',
+        text: 'worksText3',
         value: 3,
       },
     ],
@@ -212,16 +204,16 @@ export class AnalyticComponent {
   /**
    */
   apexVRSpecification: Specification = {
-    title: 'Technical Data',
+    title: 'apexVRSpecificationTitle',
     list: [
       {
-        category: 'Main features',
+        category: 'mainFeature',
         options: [
-          { title: 'Main purpose', value: 'Physical Module-based training' },
-          { title: '', value: 'Virtual Reality training' },
+          { title: 'optionTitle1', value: 'optionValue1' },
+          { title: '', value: 'optionValue2' },
           {
-            title: 'Camera',
-            value: 'Full HD 1080p 0°, 30°, 45; electronically adjustable',
+            title: 'camera',
+            value: 'optionValue3',
           },
           {
             title: '',
@@ -361,7 +353,7 @@ export class AnalyticComponent {
         ],
       },
       {
-        category: 'Technical Data',
+        category: 'apexVRSpecificationTitle',
         options: [
           { title: 'Maximum Power', value: '900 W' },
           { title: 'Voltage', value: '110V/230V' },
