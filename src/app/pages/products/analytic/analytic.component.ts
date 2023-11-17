@@ -217,59 +217,55 @@ export class AnalyticComponent {
           },
           {
             title: '',
-            value: '360° movement',
+            value: 'degMovement',
           },
           {
             title: '',
-            value: 'Focus Ring',
+            value: 'focusRing',
           },
           {
             title: '',
-            value: 'Digital Zoom',
+            value: 'digitalZone',
           },
           {
             title: '',
-            value: 'LED lighting with saturation adjustment',
+            value: 'LEDadjustment',
           },
           {
-            title: 'Number of instrument ports',
-            value: '8 anatomical ports for instruments and track vision',
-          },
-          {
-            title: '',
-            value:
-              'Camera/laparoscope can be shifted and placed in any 1 of 8 ports and is held in place with a magic arm',
-          },
-          {
-            title: 'Training instruments',
-            value:
-              'Real clinical instruments: dissector, grasper, scissors, needle holder, clip applier, stapler, multitool: hook+suction + irrigator',
-          },
-          {
-            title: 'Training modules',
-            value:
-              'Dexterity, Tension, Suturing, Cutting Circles + Universal Holder, Dissection 3 in 1,',
+            title: 'optionTitle2',
+            value: 'optionValue4',
           },
           {
             title: '',
-            value:
-              'Appendectomy, Prostatectomy, Cholecystectomy, Ovarian Cyst Removal, Myomectomy, Vaginal Cuff Repair',
+            value: 'optionValue5',
           },
           {
-            title: 'Pedals for electrosurgery',
-            value: 'YES (for VR use)',
+            title: 'optionTitle3',
+            value: 'optionValue6',
           },
           {
-            title: 'Computer',
-            value: '27’’ touchscreen',
-          },
-          {
-            title: 'Ergonomics',
-            value: 'Automatic electric adjustment column',
+            title: 'optionTitle4',
+            value: 'optionValue7',
           },
           {
             title: '',
-            value: 'Screen adjustment on a rotating arm',
+            value: 'optionValue8',
+          },
+          {
+            title: 'optionTitle5',
+            value: 'optionValue9',
+          },
+          {
+            title: 'optionTitle6',
+            value: 'optionValue10',
+          },
+          {
+            title: 'optionTitle7',
+            value: 'optionValue11',
+          },
+          {
+            title: '',
+            value: 'optionValue12',
           },
           {
             title: '',
@@ -278,86 +274,86 @@ export class AnalyticComponent {
         ],
       },
       {
-        category: 'Software',
+        category: 'software',
         options: [
-          { title: 'Training analysis', value: '✅' },
-          { title: 'Automatic assessment', value: '✅' },
-          { title: 'Real time analysis', value: '✅' },
-          { title: 'Laparo Training Program', value: 'Basic manual skills' },
+          { title: 'optionTitle8', value: '✅' },
+          { title: 'optionTitle9', value: '✅' },
+          { title: 'optionTitle10', value: '✅' },
+          { title: 'optionTitle11', value: 'optionValue13' },
           {
             title: '',
-            value: 'Intermediate manual skills',
-          },
-          {
-            title: '',
-            value: 'Basic suturing skills',
+            value: 'optionValue14',
           },
           {
             title: '',
-            value: 'Advance suturing skills',
+            value: 'optionValue15',
           },
           {
             title: '',
-            value: 'Procedural skills (real)',
+            value: 'optionValue16',
           },
           {
             title: '',
-            value: 'Procedural skills (VR)',
+            value: 'optionValue17',
           },
           {
-            title: 'Multi-work (network)',
+            title: '',
+            value: 'optionValue18',
+          },
+          {
+            title: 'optionTitle12',
             value: '✅',
           },
           {
-            title: '„Teacher-student” training mode',
+            title: 'optionTitle13',
             value: '✅',
           },
           {
-            title: 'Learning curve tracking',
+            title: 'optionTitle14',
             value: '✅',
           },
           {
-            title: 'Custom training creator with tutorials',
+            title: 'optionTitle15',
             value: '✅',
           },
           {
-            title: 'User accounts',
-            value: 'User accounts – unlimited number + Administrator accounts',
+            title: 'optionTitle16',
+            value: 'optionValue19',
           },
           {
-            title: 'Possibility of data export',
+            title: 'optionTitle17',
             value: '✅',
           },
           {
-            title: 'Perpetual lifetime licence',
+            title: 'optionTitle18',
             value: '✅',
           },
         ],
       },
       {
-        category: 'Dimensions',
+        category: 'dimension',
         options: [
-          { title: 'Weight', value: '90 kg' },
+          { title: 'optionTitle19', value: '90kg' },
           {
-            title: 'Width',
-            value: '66 cm',
+            title: 'optionTitle20',
+            value: '66sm',
           },
           {
-            title: 'Depth',
-            value: '123 cm',
+            title: 'optionTitle21',
+            value: '123sm',
           },
           {
-            title: 'Height',
-            value: '170-195 cm',
+            title: 'optionTitle22',
+            value: '175195sm',
           },
         ],
       },
       {
         category: 'apexVRSpecificationTitle',
         options: [
-          { title: 'Maximum Power', value: '900 W' },
-          { title: 'Voltage', value: '110V/230V' },
-          { title: 'Frequency', value: '50-60 Hz' },
+          { title: 'optionTitle23', value: '900 W' },
+          { title: 'optionTitle24', value: '110V/230V' },
+          { title: 'optionTitle25', value: '50-60 Hz' },
         ],
       },
     ],
