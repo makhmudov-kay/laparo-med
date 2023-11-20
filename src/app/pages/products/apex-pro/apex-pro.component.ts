@@ -48,7 +48,7 @@ export class ApexProComponent {
       img: './assets/image/apex-info-1.jpg',
       imageList: [
         {
-          title: 'HYBRID APPROACH',
+          title: 'dataInformations.imageList.title',
           img: './assets/image/apex-pro-info-1.jpg',
         },
         {

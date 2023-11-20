@@ -265,5 +265,11 @@
   "175195sm": "170-195 sm",
   "optionTitle23": "Maksimal quvvat",
   "optionTitle24": "Kuchlanish",
-  "optionTitle25": "Chastotasi"
+  "optionTitle25": "Chastotasi",
+  "apexProAbout": "Jarrohlik tayyorgarligining kelajagiga qadam",
+  "apexProAboutText": "Laparo Apex Pro-da o'rganish tahlili jarrohlik ta'limini butunlay yangi bosqichga olib chiqadi. Trener o'quvchilarning tayyorgarlik darajasi va taraqqiyotini baholash uchun keng qamrovli ishlash ko'rsatkichlari va batafsil fikr-mulohazalarni taklif etadi. Ilg'or kuzatuv tizimlari asbob harakati va silliq yurish kabi asosiy parametrlarni yozib oladi va tahlil qiladi, bu esa tinglovchilarning texnikasi va ko'nikmalarini rivojlantirish bo'yicha qimmatli ma'lumotlarni taqdim etadi. Ta'limni tahlil qilish funktsiyasi ob'ektiv baholashni amalga oshirishga imkon beradi, bu esa maqsadli yaxshilanishlarga yordam beradi. Laparo Apex Pro-ning murakkab tahliliy imkoniyatlari bilan muassasalar va o'qituvchilar tinglovchilarning ish faoliyatini kuzatishi, takomillashtirish sohalarini aniqlashi va jarrohlik kompetentsiyasining eng yuqori standartlarini ta'minlashi mumkin.",
+  "apexProBannerText": "Laparo Apex Pro bilan tanishtirish – jarrohlik mashg'ulotlarini inqilob qiladigan zamonaviy Laparoskopik simulyator. Ilg'or xususiyatlari va immersion texnologiyasi bilan u jarrohlarga Real va xavfsiz sharoitlarda o'z malakalarini oshirish uchun misli ko'rilmagan platformani taqdim etadi.",
+  "productGallery": "Mahsulotlar galereyasi",
+  "FEATURES": "Xususiyatlari",
+  "dataInformations.imageList.title": "GIBRID YONDASHUV"
 }

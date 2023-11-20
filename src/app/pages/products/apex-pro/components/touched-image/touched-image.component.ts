@@ -1,5 +1,6 @@
 import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ProductImage } from 'src/app/shared/models/product-image.model';
 
 @Component({
@@ -7,7 +8,7 @@ import { ProductImage } from 'src/app/shared/models/product-image.model';
   templateUrl: './touched-image.component.html',
   styleUrls: ['./touched-image.component.less'],
   standalone: true,
-  imports: [NgClass, NgFor, NgStyle],
+  imports: [NgClass, NgFor, NgStyle, TranslateModule],
 })
 export class TouchedImageComponent {
   /**

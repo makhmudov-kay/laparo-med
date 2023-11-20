@@ -7,15 +7,15 @@
         </div>
         <div class="col-md-6">
           <div class="information__block__text">
-            <h2 class="information__title">{{ data.title }}</h2>
+            <h2 class="information__title">{{ data.title | translate }}</h2>
             <span class="information__description"
               ><div>
-                {{ data.text }}
+                {{ data.text | translate }}
               </div>
               <div></div>
               <div style="padding-left: 40px">
                 <span *ngFor="let list of data.list">
-                  {{ list }}
+                  {{ list | translate }}
                   <br />
                 </span></div
             ></span>
