@@ -66,6 +66,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/cabinet/components/dashboard/dashboard.component'
           ).then((m) => m.DashboardComponent),
+        canActivate: [authGuard],
       },
       {
         path: 'orders',
@@ -73,6 +74,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/cabinet/components/orders/orders.component').then(
             (m) => m.OrdersComponent
           ),
+        canActivate: [authGuard],
       },
       {
         path: 'details',
@@ -80,6 +82,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/cabinet/components/acc-details/acc-details.component'
           ).then((m) => m.AccDetailsComponent),
+        canActivate: [authGuard],
       },
     ],
   },

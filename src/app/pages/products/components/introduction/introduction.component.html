@@ -1,14 +1,14 @@
 <section class="analytic__introduction">
   <div class="grid grid--xl">
     <div class="heading heading--right">
-      <h4 class="section-title">{{ data.header }}</h4>
+      <h4 class="section-title">{{ data.header | translate }}</h4>
     </div>
   </div>
   <div class="grid grid--sm analytic__introduction__subtitle">
     <div class="row">
       <div class="col-lg-7">
         <h5>
-          {{ data.description }}
+          {{ data.description | translate}}
         </h5>
       </div>
     </div>
@@ -40,17 +40,17 @@
       </div>
       <div class="col-lg-6">
         <div class="wrap">
-          <h2 class="title">{{ data.title }}</h2>
+          <h2 class="title">{{ data.title | translate}}</h2>
           <div class="content">
             <div class="row">
               <div class="col-lg-6">
                 <div class="text text--14">
-                  {{ data.leftText }}
+                  {{ data.leftText | translate}}
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="text text--14">
-                  {{ data.rightText }}
+                  {{ data.rightText | translate}}
                 </div>
               </div>
             </div>

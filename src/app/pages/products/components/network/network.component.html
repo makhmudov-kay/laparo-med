@@ -6,12 +6,12 @@
   </div>
   <div class="work__wraper">
     <div class="grid grid--xl">
-      <h2 class="blue">{{ data.title }}</h2>
+      <h2 class="blue">{{ data.title | translate }}</h2>
     </div>
     <div class="grid grid--sm">
       <div class="work__h5">
         <h5>
-          {{ data.description }}
+          {{ data.description | translate }}
         </h5>
       </div>
     </div>
@@ -20,10 +20,10 @@
         <div class="row row60">
           <div class="col-lg-4" *ngFor="let work of data.works">
             <div class="work">
-              <div class="number">{{ work.value }}</div>
-              <div class="title">{{ work.title }}</div>
+              <div class="number">{{ work.value | translate }}</div>
+              <div class="title">{{ work.title | translate }}</div>
               <div class="text text--14">
-                {{ work.text }}
+                {{ work.text | translate }}
               </div>
             </div>
           </div>

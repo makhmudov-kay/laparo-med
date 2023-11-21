@@ -6,19 +6,19 @@
   </div>
   <div class="analytic__analysis__wrap">
     <div class="grid grid--md">
-      <h2 class="blue">{{ data.title }}</h2>
+      <h2 class="blue">{{ data.title | translate}}</h2>
       <div class="analytic__analysis__content">
         <h5>
-          {{ data.description }}
+          {{ data.description | translate}}
         </h5>
         <div class="content">
           <div class="row">
             <div class="col-lg-6">
-              <div class="text text--14">{{ data.leftText }}</div>
+              <div class="text text--14">{{ data.leftText | translate}}</div>
             </div>
             <div class="col-lg-6">
               <div class="text text--14">
-                {{ data.rightText }}
+                {{ data.rightText | translate}}
               </div>
             </div>
           </div>

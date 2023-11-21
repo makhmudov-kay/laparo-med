@@ -1,8 +1,8 @@
 <div class="product-specification tab-content active">
-  <div class="title">{{ data.contentTitle }}</div>
+  <div class="title">{{ data.contentTitle | translate }}</div>
   <div class="text text--14">
     <p *ngFor="let text of data.text">
-      <span style="font-weight: 400">{{ text }}</span>
+      <span style="font-weight: 400">{{ text | translate }}</span>
     </p>
   </div>
 </div>

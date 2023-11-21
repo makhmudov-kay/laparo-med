@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { IntroductionSvgComponent } from 'src/app/shared/svg/introduction-svg/introduction-svg.component';
 
 @Component({
@@ -6,7 +7,7 @@ import { IntroductionSvgComponent } from 'src/app/shared/svg/introduction-svg/in
   templateUrl: './introduction.component.html',
   styleUrls: ['./introduction.component.less'],
   standalone: true,
-  imports: [IntroductionSvgComponent],
+  imports: [IntroductionSvgComponent, TranslateModule],
 })
 export class IntroductionComponent {
   /**

@@ -16,6 +16,7 @@ import { NgxsModule } from '@ngxs/store';
 import { DataState } from './app/shared/store/data/data.state';
 import { DecimalPipe } from '@angular/common';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { HandleErrorInterceptor } from './app/core/interceptors/handle.error.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,6 +49,11 @@ bootstrapApplication(AppComponent, {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HeaderInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HandleErrorInterceptor,
       multi: true,
     },
     DecimalPipe,

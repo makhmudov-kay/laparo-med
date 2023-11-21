@@ -12,7 +12,7 @@
             {{ blog.title | myTranslate | async }}
           </h3>
           <p class="blog-detail__info__left__text">
-            {{ blog.description | myTranslate }}
+            {{ blog.description | myTranslate | async }}
           </p>
         </div>
         <div class="blog-detail__info__right">
@@ -22,30 +22,6 @@
       <app-social-links></app-social-links>
 
       <div [innerHTML]="blog.text | myTranslate | async"></div>
-
-      <!-- TODO: WE DO NOT NEED THIS PART. BE SURE! -->
-      <!-- <div class="blog-detail__info__content">
-        <p>
-          Recently, we showed you what esophageal atresia looks like in virtual
-          reality. Today it’s time for the physics module of the procedure! The
-          training module makes it possible to close the fistula between the
-          esophagus and the trachea, then suture the upper and lower parts of
-          the esophagus together. The silicone model maps the upper and lower
-          tracheas and part of the esophagus. In addition, it has a vein that
-          serves as navigation and a reconstructed membrane that simulates the
-          connective tissue that needs to be dissected to gain access to the
-          esophagus and trachea. This advanced training module allows surgeons
-          to practice the intricate steps involved in closing the fistula and
-          suturing the esophagus.The silicone model’s realistic representation
-          of the trachea and esophagus, along with the navigation vein and
-          reconstructed membrane, provides a highly accurate simulation for
-          surgeons to develop their skills before performing the procedure on
-          actual patients.
-        </p>
-      </div>
-      <div class="blog-detail__info__video">
-        <video controls src="./assets/video/video-1.mp4"></video>
-      </div> -->
 
       <app-social-links [center]="true"></app-social-links>
 

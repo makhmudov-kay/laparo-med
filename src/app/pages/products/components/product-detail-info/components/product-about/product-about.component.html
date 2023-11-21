@@ -9,14 +9,14 @@
               <ul class="row">
                 <div class="col-lg-6" *ngFor="let item of data.features">
                   <li>
-                    {{ item }}
+                    {{ item | translate }}
                   </li>
                 </div>
               </ul>
             </div>
           </div>
           <div class="text text--14">
-            {{ data.description }}
+            {{ data.description | translate }}
           </div>
         </div>
       </div>
