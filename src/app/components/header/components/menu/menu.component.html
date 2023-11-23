@@ -142,13 +142,25 @@
           >
           <ul class="drawer-menu">
             <li class="drawer-menu__item">
-              <a href="">{{ "advance" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '2' }"
+                >{{ "advance" | translate }}</a
+              >
             </li>
             <li class="drawer-menu__item">
-              <a href="">{{ "aspire" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '6' }"
+                >{{ "aspire" | translate }}</a
+              >
             </li>
             <li class="drawer-menu__item">
-              <a href="">{{ "adept" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '7' }"
+                >{{ "adept" | translate }}</a
+              >
             </li>
           </ul>
         </li>
@@ -189,21 +201,40 @@
 
         <!-- OTHER -->
         <li class="submenu__drawer__item">
-          <a href="" class="submenu__drawer__item__link">{{
-            "other" | translate
-          }}</a>
+          <a
+            [routerLink]="['../products/list']"
+            [queryParams]="{ category_id: '3' }"
+            class="submenu__drawer__item__link"
+            >{{ "other" | translate }}</a
+          >
           <ul class="drawer-menu">
             <li class="drawer-menu__item">
-              <a href="">{{ "laparoscopic" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '5' }"
+                >{{ "laparoscopic" | translate }}</a
+              >
             </li>
             <li class="drawer-menu__item">
-              <a href="">{{ "training" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '6' }"
+                >{{ "training" | translate }}</a
+              >
             </li>
             <li class="drawer-menu__item">
-              <a href="">{{ "examSets" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '4' }"
+                >{{ "examSets" | translate }}</a
+              >
             </li>
             <li class="drawer-menu__item">
-              <a href="">{{ "accesories" | translate }}</a>
+              <a
+                [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '4' }"
+                >{{ "accesories" | translate }}</a
+              >
             </li>
           </ul>
         </li>
