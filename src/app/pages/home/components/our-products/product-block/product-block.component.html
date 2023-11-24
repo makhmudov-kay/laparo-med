@@ -25,7 +25,7 @@
   </p>
   <div class="products__col__info__btn">
     <a
-      href=""
+      [routerLink]="[product.link]"
       class="products__col__info__btn__link"
       [ngClass]="{
         orange: product.color === 'orange',

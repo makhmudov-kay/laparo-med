@@ -4,4 +4,5 @@ export interface ProductsBlock {
   textTitle: string;
   text: string;
   color: string;
+  link: string;
 }

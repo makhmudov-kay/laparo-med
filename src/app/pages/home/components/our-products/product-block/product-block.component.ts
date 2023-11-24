@@ -3,13 +3,14 @@ import { ProductsArrowSVG } from 'src/app/shared/svg/products-arrow/products-arr
 import { ProductsBlock } from '../products-block.interface';
 import { NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-block',
   templateUrl: './product-block.component.html',
   styleUrls: ['./product-block.component.less'],
   standalone: true,
-  imports: [ProductsArrowSVG, NgClass, TranslateModule],
+  imports: [ProductsArrowSVG, NgClass, TranslateModule, RouterLink],
 })
 export class ProductBlockComponent {
   /**

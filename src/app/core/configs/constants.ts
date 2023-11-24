@@ -28,9 +28,9 @@ export class Constants {
   };
 
   public static readonly Language = {
-    uz: "O'zbekcha",
-    ru: 'Русский',
-    en: 'English',
+    uz: "O'ZB",
+    ru: 'RU',
+    en: 'EN',
   };
 
   public static readonly DEFAULT_LANGUAGE: LanguageType = 'uz';

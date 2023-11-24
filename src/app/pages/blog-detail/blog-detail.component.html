@@ -11,9 +11,13 @@
           <h3 class="blog-detail__info__left__title">
             {{ blog.title | myTranslate | async }}
           </h3>
-          <p class="blog-detail__info__left__text">
-            {{ blog.description | myTranslate | async }}
-          </p>
+          <div class="blog-detail__info__left__text">
+            <!-- {{ blog.description | myTranslate | async }} -->
+            <div
+              *ngIf="blog.description | myTranslate | async as desc"
+              [ngxSummernoteView]="desc"
+            ></div>
+          </div>
         </div>
         <div class="blog-detail__info__right">
           <img [src]="blog.preview_image" alt="image" />

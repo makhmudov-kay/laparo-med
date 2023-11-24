@@ -8,6 +8,7 @@ import { BlogDetails } from '../blog/models/blog-details.model';
 import { Observable } from 'rxjs';
 import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
+import { NgxSummernoteModule } from 'ngx-summernote';
 
 @Component({
   selector: 'app-blog-detail',
@@ -22,7 +23,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     DatePipe,
     NgIf,
     NgFor,
-
+    NgxSummernoteModule,
     MyTranslatePipe,
   ],
 })

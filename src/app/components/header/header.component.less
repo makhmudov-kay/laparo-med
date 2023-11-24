@@ -125,6 +125,15 @@
   ::ng-deep {
     svg {
       vertical-align: middle;
+
+      @media (max-width: 575px) {
+        width: 18px;
+        height: 18px;
+      }
     }
+  }
+
+  @media (max-width: 576px) {
+    margin: 0 10px;
   }
 }
