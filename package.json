@@ -22,6 +22,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "@ngxs/store": "^3.8.1",
     "jquery": "^3.7.1",
+    "ng-animate": "^2.0.1",
     "ngx-mask": "^16.3.9",
     "ngx-summernote": "^1.0.0",
     "rxjs": "~7.8.0",

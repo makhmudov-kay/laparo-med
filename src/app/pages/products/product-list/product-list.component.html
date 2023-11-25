@@ -11,7 +11,7 @@
       >
         <div
           class="product-list__col"
-          *ngFor="let discount of discountProducts"
+          *ngFor="let discount of discountProducts | slice: 0: 4"
         >
           <app-product-card [data]="discount"></app-product-card>
         </div>

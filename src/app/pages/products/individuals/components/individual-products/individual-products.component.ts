@@ -37,7 +37,7 @@ export class IndividualProductsComponent {
         'Software compatible with Windows, MacOS and Linux',
       ],
       img: './assets/image/individula-1.png',
-      link: '/',
+      link: '../products/list?category_id=6',
     },
     {
       title: 'Advance',
@@ -57,7 +57,7 @@ export class IndividualProductsComponent {
         'No subscription - you buy once and exercise as much as you want',
       ],
       img: './assets/image/individula-2.png',
-      link: '/',
+      link: '../products/list?category_id=2',
     },
     {
       title: 'Adept',
@@ -75,7 +75,7 @@ export class IndividualProductsComponent {
         'Handy and compact build - easily transportable',
       ],
       img: './assets/image/individula-3.png',
-      link: '/',
+      link: '../products/list?category_id=7',
     },
   ];
 }

@@ -5,7 +5,7 @@
   #swiper
 >
   <ng-template swiperSlide *ngFor="let slide of slides"
-    ><img [src]="slide.image"
+    ><img (click)="openImage(slide)" [src]="slide.image"
   /></ng-template>
 </swiper>
 <swiper
@@ -26,3 +26,29 @@
   (pre)="pre()"
   [spaceBeetWeen]="true"
 ></app-swiper-nav>
+
+<div class="view-image" *ngIf="viewImg">
+  <button (click)="viewImg = false" class="view-image__close">
+    <svg-circle-close class="d-flex"></svg-circle-close>
+  </button>
+
+  <div class="view-image__count">{{ isActiveindex }}/{{ slides.length }}</div>
+
+  <button class="view-image__btn pre" (click)="preSwiperView()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </button>
+  <swiper
+    [spaceBetween]="10"
+    [thumbs]="{ swiper: thumbsSwiper }"
+    class="mySwiper2"
+    [initialSlide]="initialSlide"
+    #swiperView
+  >
+    <ng-template swiperSlide *ngFor="let slide of slides"
+      ><img [src]="slide.image"
+    /></ng-template>
+  </swiper>
+  <button class="view-image__btn next" (click)="nextSwiperView()">
+    <svg-arrow-btn class="d-flex"></svg-arrow-btn>
+  </button>
+</div>

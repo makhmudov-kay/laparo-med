@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
 import { CategoriesComponent } from '../../blog/components/categories/categories.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SubscribeComponent } from 'src/app/shared/components/subscribe/subscribe.component';
@@ -29,6 +29,7 @@ import { NgDestroy } from 'src/app/core/services/ng-destroy.service';
     SubscribeComponent,
     TranslateModule,
     EmptyCardComponent,
+    SlicePipe
   ],
   providers: [NgDestroy],
 })

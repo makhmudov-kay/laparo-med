@@ -25,6 +25,8 @@
       </div>
       <app-social-links></app-social-links>
 
+      <div class="divider"></div>
+
       <div [innerHTML]="blog.text | myTranslate | async"></div>
 
       <app-social-links [center]="true"></app-social-links>

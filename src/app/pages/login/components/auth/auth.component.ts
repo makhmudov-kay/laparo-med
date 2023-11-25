@@ -45,6 +45,11 @@ export class AuthComponent {
 
   /**
    */
+  @Input()
+  errorType!: number;
+
+  /**
+   */
   PHONE_PREFIX = Constants.PHONE_PREFIX;
 
   /**

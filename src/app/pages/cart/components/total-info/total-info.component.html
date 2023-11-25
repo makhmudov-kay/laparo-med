@@ -6,9 +6,18 @@
     </div>
 
     <div class="wc-proceed-to-checkout">
-      <a (click)="sentOrder()" class="checkout-button button alt wc-forward">{{
-        "sendOrder" | translate
-      }}</a>
+      <a
+        (click)="sentOrder()"
+        class="checkout-button button alt wc-forward"
+        [ngClass]="{ loading: isLoading }"
+      >
+        <span *ngIf="!isLoading; else loading">
+          {{ "sendOrder" | translate }}
+        </span>
+        <ng-template #loading>
+          <svg-spinner class="d-flex"></svg-spinner
+        ></ng-template>
+      </a>
     </div>
   </div>
 </div>

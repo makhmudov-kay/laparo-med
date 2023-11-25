@@ -40,6 +40,104 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media (max-width: 768px) {
+        height: 65px;
+      }
+    }
+  }
+}
+
+
+.view-image {
+  position: fixed;
+  background: #00000069;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mySwiper2 {
+    max-width: 700px;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+
+    @media (max-width: 576px) {
+      max-width: 100%;
+      height: 100%;
+
+
+      img {
+        object-fit: cover;
+        max-height: 100%;
+        max-width: 100% !important;
+        height: auto;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  &__count {
+    color: #fff;
+    font-size: 32px;
+    font-family: Acherus-Bold;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  &__btn {
+
+    @media (max-width: 576px) {
+      position: absolute;
+      padding: 10px;
+      background: #0000003f;
+      z-index: 800;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ::ng-deep {
+      svg {
+        width: 34px;
+        height: 54px;
+      }
+    }
+
+    &.pre {
+      margin-left: 10%;
+
+      @media (max-width: 576px) {
+        left: 0;
+        margin: 0;
+      }
+    }
+
+    &.next {
+      margin-right: 10%;
+      transform: rotate(180deg);
+
+      @media (max-width: 576px) {
+        right: 0;
+        margin: 0;
+      }
     }
   }
 }

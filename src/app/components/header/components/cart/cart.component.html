@@ -19,7 +19,9 @@
           </div>
 
           <div class="cart__list__products__view-btn">
-            <button routerLink="../cart">{{ "viewBasket" | translate }}</button>
+            <button (click)="isVisibleCart = false" routerLink="../cart">
+              {{ "viewBasket" | translate }}
+            </button>
           </div>
 
           <ul class="cart__list__products__list">

@@ -57,7 +57,29 @@
     </ng-template>
 
     <div class="content__configurator__cart-btn">
-      <button (click)="addToCart()">{{ "addToCart" | translate }}</button>
+      <button
+        [disabled]="this.needToAddcart.length === 0"
+        (click)="addToCart()"
+      >
+        {{ "addToCart" | translate }}
+      </button>
     </div>
+  </div>
+</div>
+
+<div class="fixed-price-block">
+  <div class="fixed-price-block__text">
+    Price:
+    {{
+      singleProduct.new_price
+        ? (singleProduct.new_price | myCurrency | async)
+        : (singleProduct.price | myCurrency | async)
+    }}
+  </div>
+  <div class="fixed-price-block__text">Total: {{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}</div>
+  <div class="content__configurator__cart-btn">
+    <button [disabled]="this.needToAddcart.length === 0" (click)="addToCart()">
+      {{ "addToCart" | translate }}
+    </button>
   </div>
 </div>

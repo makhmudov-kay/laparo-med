@@ -17,6 +17,7 @@ import { DataState } from './app/shared/store/data/data.state';
 import { DecimalPipe } from '@angular/common';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { HandleErrorInterceptor } from './app/core/interceptors/handle.error.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,6 +31,7 @@ bootstrapApplication(AppComponent, {
     ),
     provideEnvironmentNgxMask(),
     importProvidersFrom(
+      BrowserAnimationsModule,
       HttpClientModule,
       TranslateModule.forRoot({
         loader: {

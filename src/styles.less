@@ -77,6 +77,11 @@ p {
   width: 100%;
   margin: auto;
   padding: 0 15px;
+
+  &__header {
+    max-width: 1900px;
+    padding: 0 20px;
+  }
 }
 
 li {
@@ -151,6 +156,7 @@ ul li {
   line-height: 100%;
   font-size: 72px;
   font-family: Acherus-Black;
+  text-transform: uppercase;
 
   @media (min-width: 992px) and (max-width: 1700px) {
     line-height: 120%;
@@ -239,7 +245,7 @@ textarea {
     border: 1px solid red !important;
   }
 
-  &.error + span {
+  &.error+span {
     font-size: 12px;
     color: red;
   }
@@ -1620,6 +1626,7 @@ label a {
 }
 
 @media (min-width: 576px) {
+
   .flex-sm-column,
   .flex-sm-row {
     flex-direction: row !important;
@@ -1740,6 +1747,7 @@ label a {
 }
 
 @media (min-width: 768px) {
+
   .flex-md-column,
   .flex-md-row {
     flex-direction: row !important;
@@ -1860,6 +1868,7 @@ label a {
 }
 
 @media (min-width: 992px) {
+
   .flex-lg-column,
   .flex-lg-row {
     flex-direction: row !important;
@@ -1980,6 +1989,7 @@ label a {
 }
 
 @media (min-width: 1200px) {
+
   .flex-xl-column,
   .flex-xl-row {
     flex-direction: row !important;

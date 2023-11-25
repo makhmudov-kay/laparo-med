@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { catchError } from 'rxjs';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthComponent } from './components/auth/auth.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './service/auth.service';
@@ -47,13 +48,20 @@ export class LoginComponent implements OnInit {
   registerValidator = false;
 
   /**
+   * 1 - неверный логин или пароль
+   * 2 - номер телефона занят
+   */
+  errorType!: number;
+
+  /**
    *
    * @param fb
    */
   constructor(
     private fb: FormBuilder,
     private auth$: AuthService,
-    private router: Router
+    private router: Router,
+    private cd: ChangeDetectorRef
   ) {}
 
   /**
@@ -63,6 +71,25 @@ export class LoginComponent implements OnInit {
     this.loginFormInit();
     this.registrationFormInit();
     this.confimFormInit();
+    this.valueChanges();
+  }
+
+  /**
+   *
+   */
+  private valueChanges() {
+    this.registrationFormGroup.controls['phone'].valueChanges.subscribe(() => {
+      this.errorType = 0;
+      this.cd.markForCheck();
+    });
+    this.loginFormGroup.controls['phone'].valueChanges.subscribe(() => {
+      this.errorType = 0;
+      this.cd.markForCheck();
+    });
+    this.loginFormGroup.controls['password'].valueChanges.subscribe(() => {
+      this.errorType = 0;
+      this.cd.markForCheck();
+    });
   }
 
   /**
@@ -111,12 +138,18 @@ export class LoginComponent implements OnInit {
       request.phone = '998' + request.phone;
       this.confirmFormGroup.controls['phone'].setValue(request.phone);
 
-      this.auth$.registration(request).subscribe((e: any) => {
-        console.log(e);
-        if (e.id) {
-          this.confirm = true;
-          this.registrationFormGroup.reset();
-        }
+      this.auth$.registration(request).subscribe({
+        next: (e: any) => {
+          console.log(e);
+          if (e.id) {
+            this.confirm = true;
+            this.registrationFormGroup.reset();
+          }
+        },
+        error: (error) => {
+          this.errorType = 2;
+          this.cd.markForCheck();
+        },
       });
     }
 
@@ -129,12 +162,21 @@ export class LoginComponent implements OnInit {
 
       const request = this.loginFormGroup.getRawValue();
       request.phone = '998' + request.phone;
-      this.auth$.auth(request).subscribe((e) => {
-        console.log(e);
-        this.loginFormGroup.reset();
-        if (e.access) {
-          this.router.navigate(['../cabinet']);
-        }
+      this.auth$.auth(request).subscribe({
+        next: (e) => {
+          console.log(e);
+          this.loginFormGroup.reset();
+          if (e.access) {
+            this.router.navigate(['../cabinet']);
+          }
+        },
+        error: (err) => {
+          console.log(err);
+          if (err?.error.detail) {
+            this.errorType = 1;
+          }
+          this.cd.markForCheck();
+        },
       });
     }
 

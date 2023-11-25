@@ -12,17 +12,17 @@ export class Constants {
   public static readonly CURRENCY = {
     [Constants.CURRENCY_UZS]: {
       code: Constants.CURRENCY_UZS,
-      name: 'UZS',
-      symbol: 'UZS',
+      name: 'UZS, so’m',
+      symbol: 'so’m',
     },
     [Constants.CURRENCY_USD]: {
       code: Constants.CURRENCY_USD,
-      name: 'USD',
+      name: 'USD, $',
       symbol: '$',
     },
     [Constants.CURRENCY_EURO]: {
       code: Constants.CURRENCY_EURO,
-      name: 'EURO',
+      name: 'EUR, €',
       symbol: '€',
     },
   };

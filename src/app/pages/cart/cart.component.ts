@@ -2,8 +2,8 @@ import { Observable } from 'rxjs';
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { TotalInfoComponent } from './components/total-info/total-info.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { NgFor } from '@angular/common';
-import { Select, Store } from '@ngxs/store';
+import { NgFor, NgIf } from '@angular/common';
+import { Select, Selector, State, Store } from '@ngxs/store';
 import { DataState } from 'src/app/shared/store/data/data.state';
 import { CartAction } from 'src/app/shared/store/data/data.action';
 import { Price } from 'src/app/shared/models/price.model';
@@ -11,13 +11,31 @@ import { ProductItem } from 'src/app/shared/models/product-detail.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { OrderService } from './services/order.service';
 import { OrderRequest } from 'src/app/shared/models/order.request';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { fadeInRight } from 'ng-animate';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.less'],
   standalone: true,
-  imports: [ProductListComponent, TotalInfoComponent, NgFor, TranslateModule],
+  imports: [
+    ProductListComponent,
+    TotalInfoComponent,
+    NgFor,
+    TranslateModule,
+    NgIf,
+  ],
+  animations: [
+    trigger('fadeIn', [
+      transition(
+        ':enter',
+        useAnimation(fadeInRight, {
+          params: { timing: 1 },
+        })
+      ),
+    ]),
+  ],
 })
 export class CartComponent {
   /**
@@ -26,9 +44,21 @@ export class CartComponent {
   cartItems!: ProductItem[];
 
   /**
+   */
+  fadeIn!: any;
+
+  /**
    *
    */
   totalPrice!: Price;
+
+  /**
+   */
+  visibleMessage = false;
+
+  /**
+   */
+  isLoading = false;
 
   /**
    *
@@ -138,6 +168,8 @@ export class CartComponent {
    *
    */
   sendOrder() {
+    this.isLoading = true;
+    this.cd.markForCheck();
     const products: OrderRequest[] = [];
     this.cartItems.forEach((item) => {
       const newItem = {
@@ -150,6 +182,19 @@ export class CartComponent {
       products.push(newItem);
     });
 
-    this.order$.sendOrder(products).subscribe();
+    this.order$.sendOrder(products).subscribe((result: any) => {
+      if (result.detail.includes('Order created')) {
+        this.visibleMessage = true;
+        this.isLoading = false;
+        this.cartItems = [];
+        this.$store.dispatch(new CartAction([]));
+        localStorage.removeItem('cart');
+        this.cd.markForCheck();
+        setTimeout(() => {
+          this.visibleMessage = false;
+          this.cd.markForCheck();
+        }, 3000);
+      }
+    });
   }
 }

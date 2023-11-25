@@ -12,13 +12,21 @@
         (increaseProduct)="increaseProduct($event)"
         (deleteProductHandler)="deleteProduct($event)"
       ></app-product-list>
+
+      <div *ngIf="!cartItems.length">
+        <h3 class="empty-basket">Basket is empty</h3>
+      </div>
+
     </div>
     <div class="col-lg-4">
       <!-- TOTAL -->
       <app-total-info
         (sendOrder)="sendOrder()"
+        [isLoading]="isLoading"
         [totalPrice]="totalPrice"
       ></app-total-info>
     </div>
   </div>
 </section>
+
+<div class="message" *ngIf="visibleMessage" [@fadeIn]>Order was created</div>

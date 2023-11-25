@@ -17,7 +17,7 @@
           ><strong *ngIf="data.quantity">{{ "price" | translate }}: </strong
           >{{ data.price | myCurrency | async }}</strong
         >
-        <strong *ngIf="data.new_price">{{
+        <strong class="new-price" *ngIf="data.new_price">{{
           data.new_price | myCurrency | async
         }}</strong>
       </span>

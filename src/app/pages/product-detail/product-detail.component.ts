@@ -4,7 +4,10 @@ import { ContentComponent } from './components/content/content.component';
 import { ProductShareComponent } from '../products/components/product-detail-info/components/product-share/product-share.component';
 import { ProductDetailService } from 'src/app/shared/services/product-detail.service';
 import { Observable, map } from 'rxjs';
-import { ProductDetail } from 'src/app/shared/models/product-detail.model';
+import {
+  ImageItem,
+  ProductDetail,
+} from 'src/app/shared/models/product-detail.model';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';

@@ -28,6 +28,10 @@
     &__cart-btn {
       text-align: right;
 
+      @media (max-width: 576px) {
+        text-align: center;
+      }
+
       button {
         font-weight: 500 !important;
         text-transform: uppercase !important;
@@ -44,6 +48,11 @@
           background-color: #000 !important;
           color: #fff !important;
         }
+
+        &:disabled {
+          background: grey !important;
+          cursor: not-allowed !important;
+        }
       }
     }
 
@@ -58,4 +67,39 @@
       }
     }
   }
+}
+
+.fixed-price-block {
+  display: none;
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 500;
+    padding: 15px;
+    gap: 10px;
+    border-top: 2px solid #000;
+
+    &__text {
+      font-size: 24px;
+      font-family: Acherus-Black;
+    }
+  }
+}
+
+.content__configurator__items__totalPrice {
+  @media (max-width: 576px) {
+    h6 {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+
 }

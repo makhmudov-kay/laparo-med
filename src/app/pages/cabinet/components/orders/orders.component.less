@@ -3,6 +3,48 @@
     display: flex;
   }
 
+  &__block {
+    margin-top: 20px;
+    border: 1px solid #000;
+
+
+    // border: 1px solid #000;
+    h4 {
+      font-size: 18px;
+      font-family: Acherus-Medium;
+      margin-bottom: 10px;
+      padding: 25px;
+    }
+
+    .id {
+      border-bottom: 1px solid #000;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(128, 128, 128, 0.112);
+      cursor: pointer;
+
+      ::ng-deep {
+        svg {
+          path {
+            stroke: #000;
+          }
+        }
+      }
+
+      .svg {
+        display: inline-block;
+        transform: rotate(90deg);
+      }
+    }
+
+    .date {
+      border-bottom: 1px solid #000;
+      margin-bottom: 0;
+    }
+  }
+
   h2 {
     font-size: 32px;
     color: #00619d;
@@ -15,6 +57,11 @@
     gap: 50px;
     margin-top: 20px;
     margin-bottom: 100px;
+    display: none;
+
+    &.isOpen {
+      display: flex;
+    }
 
     &.wrap {
       flex-wrap: wrap;

@@ -6,8 +6,16 @@
         : ("registration" | translate)
     }}
   </h4>
+
   <!-- LOGIN -->
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="alert" *ngIf="errorType === 1 && formType === 'login'">
+      Неверный логин или пароль
+    </div>
+    <div class="alert" *ngIf="errorType === 2 && formType === 'register'">
+      Номер телефона занят
+    </div>
+
     <div class="form__item">
       <label [for]="'username' + formType"
         >{{ "phone" | translate }} <span>*</span></label

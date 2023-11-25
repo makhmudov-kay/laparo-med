@@ -26,7 +26,7 @@ export class ProfessionalsProductComponent {
         'Patent pending',
       ],
       img: './assets/image/prof-product-1.png',
-      link: '/',
+      link: '../products/apex-pro',
     },
     {
       title: 'Analytic',
@@ -44,7 +44,7 @@ export class ProfessionalsProductComponent {
         'Durable Build Quality',
       ],
       img: './assets/image/prof-product-2.png',
-      link: '/',
+      link: '../products/analytic',
     },
     {
       title: 'Advance Training Station',
@@ -59,7 +59,7 @@ export class ProfessionalsProductComponent {
         '12 trocar positions',
       ],
       img: './assets/image/prof-product-3.png',
-      link: '/',
+      link: '../products/advance-training-station',
     },
     {
       title: 'Advance Portable',
@@ -77,7 +77,7 @@ export class ProfessionalsProductComponent {
         'Learn with the assistance of Laparo Learning Materials',
       ],
       img: './assets/image/prof-product-4.jpg',
-      link: '/',
+      link: '../products/advance-portable',
     },
   ];
 }

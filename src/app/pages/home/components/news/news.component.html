@@ -1,4 +1,4 @@
-<div class="news">
+<div class="news" *ngIf="blog">
   <div class="container">
     <h4 class="section-title">{{ "news" | translate }}</h4>
     <div class="news__header">
@@ -16,19 +16,19 @@
             spaceBetween: 5
           },
           '991': {
-            slidesPerView: 1.2,
+            slidesPerView: 2,
             spaceBetween: 20
           },
           '1170': {
-            slidesPerView: 1.5,
+            slidesPerView: 3.5,
             spaceBetween: 10
           },
           '1200': {
-            slidesPerView: 1.6,
+            slidesPerView: 3.6,
             spaceBetween: 10
           },
           '1300': {
-            slidesPerView: 1.9,
+            slidesPerView: 3.9,
             spaceBetween: 20
           }
         }"
@@ -37,9 +37,15 @@
         [spaceBetween]="10"
         class="news__swiper"
       >
-        <ng-template swiperSlide *ngFor="let newsEl of news"
-          ><app-news-slide [new]="newsEl"></app-news-slide
-        ></ng-template>
+        <ng-template swiperSlide *ngFor="let blog of blog.results">
+          <!-- <app-news-slide [new]="newsEl"></app-news-slide> -->
+
+          <app-post-card
+            [data]="blog"
+            [isSmCard]="true"
+            [withoutImg]="true"
+          ></app-post-card>
+        </ng-template>
       </swiper>
     </div>
     <app-swiper-nav (next)="next()" (pre)="pre()"></app-swiper-nav>

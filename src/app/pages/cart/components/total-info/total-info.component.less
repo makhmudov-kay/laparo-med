@@ -107,6 +107,27 @@
     left: auto;
     text-align: center;
 
+    &.loading {
+      background-color: rgba(128, 128, 128, 0.737) !important;
+      cursor: not-allowed;
+
+      svg-spinner {
+        justify-content: center;
+
+        ::ng-deep {
+          svg {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.737) !important;
+        color: #fff !important;
+      }
+    }
+
     &:hover {
       background-color: #000 !important;
       color: #fff !important;
