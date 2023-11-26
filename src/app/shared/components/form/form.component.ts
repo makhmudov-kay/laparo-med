@@ -51,7 +51,10 @@ export class FormComponent {
       return;
     }
 
-    this.$contact.sendContact(this.form.getRawValue()).subscribe((res) => {
+    const request = this.form.getRawValue();
+    request.phone = '+998' + request.phone;
+
+    this.$contact.sendContact(request).subscribe((res) => {
       alert('Message sent successfully');
     });
   }

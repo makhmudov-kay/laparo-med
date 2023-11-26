@@ -13,6 +13,7 @@ import { OrderService } from './services/order.service';
 import { OrderRequest } from 'src/app/shared/models/order.request';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { fadeInRight } from 'ng-animate';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -25,6 +26,7 @@ import { fadeInRight } from 'ng-animate';
     NgFor,
     TranslateModule,
     NgIf,
+    RouterLink
   ],
   animations: [
     trigger('fadeIn', [

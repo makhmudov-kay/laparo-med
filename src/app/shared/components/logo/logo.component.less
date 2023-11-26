@@ -4,9 +4,11 @@
   cursor: pointer;
   gap: 15px;
 
-  svg-logo {
-    display: flex;
-  }
+  &.footerL {
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+  } 
 
   ::ng-deep {
     svg {

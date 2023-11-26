@@ -13,6 +13,24 @@ import { IndividualProductsData } from '../../../individuals/components/individu
 export class ProfessionalsProductComponent {
   products: IndividualProductsData[] = [
     {
+      title: 'Apex Pro',
+      description:
+        "Introducing Laparo Apex Pro - the most advanced laparoscopic simulator that revolutionizes the surgical training process. Thanks to advanced features and fascinating technology, it creates an irreplaceable training platform for surgeons, enabling the development of skills and the acquisition of knowledge in a realistic, safe environment. Laparo Apex Pro is an advanced hybrid simulator that combines virtual reality with exercises on physical modules, providing unique training experiences. It is the world's first laparoscopic simulator dedicated to pediatric surgery, offering unparalleled opportunities to gain valuable experience in this demanding field.",
+
+      list: [
+        'Pediatric training program (Virtual + Real)',
+        'Trocars adapted to work also with 3 mm instruments',
+        '5 mm diameter real pediatric laparoscope',
+        'Training analysis',
+        '3 pediatric ports with reduced distance of 4.5 cm',
+        'Set of real pediatric instruments',
+        '15 anatomical ports for instruments and laparoscope',
+        'Realistic touch feedback between instruments in virtual reality',
+      ],
+      img: './assets/image/prof-product-0.jpg',
+      link: '../products/apex-pro',
+    },
+    {
       title: 'Apex',
       description:
         'The latest hybrid solution from LAPARO was created by combining the knowledge and experience of professionals and engineers with the use of the state-of-the art technologies. The hybrid simulator is an innovative solution on a global scale. It combines virtual reality with physical skills training. Despite its complexity, the trainer offers extremely simple and intuitive manual skills and procedures training, a wide selection of training modules, scenarios for conducting training in virtual reality and a number of tutorials that guide the user step by step like a personal trainer.',
@@ -26,7 +44,7 @@ export class ProfessionalsProductComponent {
         'Patent pending',
       ],
       img: './assets/image/prof-product-1.png',
-      link: '../products/apex-pro',
+      link: '../products/apex-vr',
     },
     {
       title: 'Analytic',

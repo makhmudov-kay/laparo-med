@@ -94,6 +94,10 @@ export class ContentComponent {
   configurator = false;
 
   /**
+   */
+  isConfiguratorAdded = false;
+
+  /**
    *
    * @param $store
    */
@@ -132,6 +136,12 @@ export class ContentComponent {
     const filteredList = result.filter((item: any) => item.count !== 0);
     this.totalPrice = totalPrices;
     this.needToAddcart = filteredList;
+    this.isConfiguratorAdded = !!this.needToAddcart.find(
+      (i: any) => i.is_configurator
+    );
+    this.cd.markForCheck();
+    console.log(this.isConfiguratorAdded);
+    
   }
 
   /**

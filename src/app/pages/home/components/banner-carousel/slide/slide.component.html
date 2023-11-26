@@ -10,7 +10,7 @@
           <div class="slider__text">
             {{ slide.text | translate }}
           </div>
-          <a href="" class="slider__btn"
+          <a [routerLink]="slide.link" class="slider__btn"
             >{{ "readMore" | translate }}
             <span class="slider__btn__arrow"
               ><svg-arrow class="d-flex"></svg-arrow></span

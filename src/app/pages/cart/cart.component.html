@@ -1,4 +1,7 @@
-<section class="shop__cart container">
+<section
+  class="shop__cart container"
+  *ngIf="cartItems && cartItems.length; else empty"
+>
   <div class="shop__cart__title">
     <h5>{{ "basket" | translate }} ({{ cartItems.length }})</h5>
   </div>
@@ -12,11 +15,6 @@
         (increaseProduct)="increaseProduct($event)"
         (deleteProductHandler)="deleteProduct($event)"
       ></app-product-list>
-
-      <div *ngIf="!cartItems.length">
-        <h3 class="empty-basket">Basket is empty</h3>
-      </div>
-
     </div>
     <div class="col-lg-4">
       <!-- TOTAL -->
@@ -28,5 +26,31 @@
     </div>
   </div>
 </section>
+
+<ng-template #empty>
+  <section class="default">
+    <div class="grid grid--xl">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text">
+            <div class="woocommerce">
+              <div class="woocommerce-notices-wrapper"></div>
+              <div class="wc-empty-cart-message">
+                <div class="cart-empty woocommerce-info">
+                  Your basket is currently empty.
+                </div>
+              </div>
+              <p class="return-to-shop">
+                <a [routerLink]="['../products']" 
+                  >Return to shop</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>
 
 <div class="message" *ngIf="visibleMessage" [@fadeIn]>Order was created</div>

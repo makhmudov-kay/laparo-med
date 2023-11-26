@@ -1,5 +1,5 @@
 .shop__cart {
-  margin-top: 80px;
+  margin-top: 100px;
 
   &__title {
     font-family: Acherus-Bold;
@@ -25,13 +25,17 @@
 .message {
   position: absolute;
   top: 110px;
-  right: 50px;
-  z-index: 500;
+  right: 3vw;
+  z-index: 10;
   max-width: 400px;
   width: 100%;
   padding: 25px;
   background: #00619d27;
   border-top: 3px solid #00619d;
+
+  @media (max-width: 576px) {
+    max-width: 94%;
+  }
 }
 
 .empty-basket {
@@ -45,4 +49,50 @@
   margin-top: 20px;
   font-size: 32px;
   font-family: Acherus-Regular;
+}
+
+.empty {
+  margin-top: 80px;
+}
+
+.default {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.cart-empty.woocommerce-info {
+  margin-bottom: 0px;
+}
+
+.cart-empty {
+  background: 0 0;
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 18px;
+}
+
+.cart-empty,
+.return-to-shop {
+  text-align: center;
+}
+
+.cart-empty {
+  font-family: Acherus-Bold;
+  font-weight: 600;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  padding: 1em 2em 1em 3.5em;
+  margin: 0 0 2em;
+  position: relative;
+  color: #515151;
+  width: auto;
+}
+
+.text a {
+  color: #00619D;
 }
