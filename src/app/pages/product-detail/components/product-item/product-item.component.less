@@ -20,7 +20,9 @@
     align-items: center;
 
     @media (max-width: 576px) {
-      flex-direction: column;
+      // flex-direction: column;
+      // width: 100%;
+      flex-wrap: wrap;
       gap: 10px;
     }
   }
@@ -51,14 +53,28 @@
   &__discount {
     margin-right: 10px;
     color: #00619d;
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+    }
   }
 
   &__price {
     padding-right: 10px;
 
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
+
     &.discount {
       color: #000;
       text-decoration: line-through;
     }
+  }
+}
+
+.hide-in-mobile {
+  @media (max-width: 576px) {
+    display: none;
   }
 }

@@ -2,12 +2,47 @@
   // width: 25% !important;
   float: left;
 
+  @media (max-width: 576px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
   ul {
     display: flex;
     flex-direction: column;
 
+    @media (max-width: 576px) {
+      flex-direction: row;
+      gap: 2px;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+
+      li {
+        text-align: center;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 20px;
+          background: #00619d;
+          width: 2px;
+        }
+      }
+    }
+
     li {
       padding: 10px 0;
+
+      @media (max-width: 576px) {
+        a {
+          font-size: 13px;
+        }
+      }
 
       a {
         cursor: pointer;

@@ -1,4 +1,5 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgxIntersectionComponent } from 'ngx-intersection2';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductsInfoComponent } from 'src/app/shared/components/products-info/products-info.component';
 import { IndividualProductsData } from '../../../individuals/components/individual-products/individual-products.component';
@@ -8,7 +9,13 @@ import { IndividualProductsData } from '../../../individuals/components/individu
   templateUrl: './professionals-product.component.html',
   styleUrls: ['./professionals-product.component.less'],
   standalone: true,
-  imports: [ProductsInfoComponent, NgFor, NgIf],
+  imports: [
+    ProductsInfoComponent,
+    NgFor,
+    NgIf,
+    NgxIntersectionComponent,
+    NgClass,
+  ],
 })
 export class ProfessionalsProductComponent {
   products: IndividualProductsData[] = [
@@ -98,4 +105,8 @@ export class ProfessionalsProductComponent {
       link: '../products/advance-portable',
     },
   ];
+
+  handleIntersection(e: boolean, product: IndividualProductsData) {
+    product.fade = e;
+  }
 }

@@ -1,11 +1,14 @@
 import { AsyncPipe, DatePipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Observable, map } from 'rxjs';
 import { OrderService } from 'src/app/pages/cart/services/order.service';
 import { EmptyCardComponent } from 'src/app/pages/products/product-list/components/empty-card/empty-card.component';
 import { ProductCardComponent } from 'src/app/pages/products/product-list/components/product-card/product-card.component';
 import { OrderList } from 'src/app/shared/models/order.request';
+import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
+import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
 
 @Component({
@@ -23,6 +26,9 @@ import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
     EmptyCardComponent,
     ArrowBtnSVG,
     NgClass,
+    MyCurrencyPipe,
+    MyTranslatePipe,
+    RouterLink,
   ],
 })
 export class OrdersComponent {
@@ -54,7 +60,7 @@ export class OrdersComponent {
   openOrder(index: number) {
     if (this.currentId === index) {
       this.currentId = null;
-      return
+      return;
     }
     this.currentId = index;
     this.cd.markForCheck();

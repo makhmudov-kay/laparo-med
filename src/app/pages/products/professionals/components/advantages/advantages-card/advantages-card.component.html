@@ -1,29 +1,34 @@
-<div class="advantages-card" [ngClass]="{even}">
-  <div class="advantages-card__left">
-    <div class="advantages-card__left__img">
-      <div class="advantages-card__left__number">{{ data.id }}</div>
-      <img [src]="data.img" alt="img" />
-    </div>
-  </div>
-  <div class="advantages-card__right">
-    <div class="advantages-card__right__content">
-      <div class="advantages-card__right__content__title">
-        <h3 class="advantages-card__right__content__title__rotate">
-          {{ data.title }}
-        </h3>
+<ngx-intersection
+  (isIntersecting)="handleIntersection($event)"
+  [threshold]="0.25"
+>
+  <div class="advantages-card opacity-0" [ngClass]="{even, fadeInTop: fade}">
+    <div class="advantages-card__left">
+      <div class="advantages-card__left__img">
+        <div class="advantages-card__left__number">{{ data.id }}</div>
+        <img [src]="data.img" alt="img" />
       </div>
-      <div class="advantages-card__right__content__text">
-        <div class="advantages-card__right__content__text__wrapper">
-          <p>
-            {{ data.description }}
-          </p>
-          <ul *ngIf="data.list && data.list.length">
-            <li *ngFor="let listItem of data.list">
-              {{ listItem }}
-            </li>
-          </ul>
+    </div>
+    <div class="advantages-card__right">
+      <div class="advantages-card__right__content">
+        <div class="advantages-card__right__content__title">
+          <h3 class="advantages-card__right__content__title__rotate">
+            {{ data.title }}
+          </h3>
+        </div>
+        <div class="advantages-card__right__content__text">
+          <div class="advantages-card__right__content__text__wrapper">
+            <p>
+              {{ data.description }}
+            </p>
+            <ul *ngIf="data.list && data.list.length">
+              <li *ngFor="let listItem of data.list">
+                {{ listItem }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div></ngx-intersection
+>

@@ -7,6 +7,10 @@
 .shop__myaccount {
   margin-top: 100px;
 
+  @media (max-width: 576px) {
+    margin-top: 20px;
+  }
+
   .woocommerce-MyAccount-navigation {
     width: 25% !important;
     float: left;
@@ -16,6 +20,10 @@
     width: 75% !important;
     font-size: 14px;
     float: right;
+
+    @media (max-width: 576px) {
+      width: 100% !important;
+    }
   }
 
   .woocommerce-MyAccount-navigation-link.is-active {

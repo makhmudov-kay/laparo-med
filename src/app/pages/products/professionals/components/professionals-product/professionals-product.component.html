@@ -1,23 +1,38 @@
 <div class="professionals-product">
   <div class="container">
-    <div
-      class="professionals-product__card"
-      *ngFor="let product of products; let isFirst = first"
-    >
-      <div class="professionals-product__left">
-        <div class="professionals-product__title" *ngIf="isFirst">
-          <h4 class="section-title left">Products</h4>
+    <div *ngFor="let product of products; let isFirst = first; let idx = index">
+      <div
+        class="professionals-product__card"
+        [ngClass]="{
+          'products__section--odd': (idx + 1) % 2 !== 0,
+          'products__section--even': (idx + 1) % 2 == 0,}"
+      >
+        <div class="professionals-product__left">
+          <div class="professionals-product__title" *ngIf="isFirst">
+            <h4 class="section-title left">Products</h4>
+          </div>
+          <div class="professionals-product__info">
+            <app-products-info
+              [product]="product"
+              [isProfessional]="true"
+            ></app-products-info>
+          </div>
         </div>
-        <div class="professionals-product__info">
-          <app-products-info
-            [product]="product"
-            [isProfessional]="true"
-          ></app-products-info>
-        </div>
-      </div>
 
-      <div class="professionals-product__right">
-        <img [src]="product.img" alt="image" />
+        <div
+          class="professionals-product__right opacity-0"
+          [ngClass]="{
+            fadeInLeft: product.fade && (idx + 1) % 2 == 0,
+            fadeInRight: product.fade && (idx + 1) % 2 !== 0
+          }"
+        >
+          <ngx-intersection
+            (isIntersecting)="handleIntersection($event, product)"
+            [threshold]="0.25"
+          >
+            <img [src]="product.img" alt="image" />
+          </ngx-intersection>
+        </div>
       </div>
     </div>
   </div>

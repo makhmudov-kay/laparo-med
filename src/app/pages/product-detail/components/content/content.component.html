@@ -48,7 +48,10 @@
         (addOrDeleteProduct)="addOrDeleteProduct($event)"
       ></app-product-item>
 
-      <div class="content__configurator__items__totalPrice">
+      <div
+        class="content__configurator__items__totalPrice"
+        [ngClass]="{ smallSize: !product.items }"
+      >
         <h6>
           {{ "totalPrice" | translate }}:
           <span>{{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}</span>
@@ -56,7 +59,10 @@
       </div>
     </ng-template>
 
-    <div class="content__configurator__cart-btn">
+    <div
+      class="content__configurator__cart-btn"
+      [ngClass]="{ smallSize: !product.items }"
+    >
       <button
         *ngIf="product.items; else singleBtn"
         [disabled]="this.needToAddcart.length === 0 || !isConfiguratorAdded"
@@ -77,20 +83,36 @@
 </div>
 
 <div class="fixed-price-block" *ngIf="!product.items">
-  <div class="fixed-price-block__text">
-    Price:
-    {{
-      singleProduct.new_price
-        ? (singleProduct.new_price | myCurrency | async)
-        : (singleProduct.price | myCurrency | async)
-    }}
+  <div class="fixed-price-block__top">
+    <div class="fixed-price-block__text">
+      Price:
+      {{
+        singleProduct.new_price
+          ? (singleProduct.new_price | myCurrency | async)
+          : (singleProduct.price | myCurrency | async)
+      }}
+    </div>
+    <div class="fixed-price-block__text">
+      Total: {{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}
+    </div>
   </div>
-  <div class="fixed-price-block__text">
-    Total: {{ totalPrice ? (totalPrice | myCurrency | async) : 0 }}
-  </div>
-  <div class="content__configurator__cart-btn">
-    <button [disabled]="this.needToAddcart.length === 0" (click)="addToCart()">
-      {{ "addToCart" | translate }}
-    </button>
+
+  <div class="fixed-price-block-bottom">
+    <div class="action-btns">
+      <app-product-item
+        [onlyCounter]="true"
+        [product]="singleProduct"
+        (addOrDeleteProduct)="addOrDeleteProduct($event)"
+      ></app-product-item>
+    </div>
+    <div class="content__configurator__cart-btn">
+      <button
+        [disabled]="this.needToAddcart.length === 0"
+        (click)="addToCart()"
+      >
+        {{ "addToCart" | translate }}
+      </button>
+    </div>
   </div>
 </div>
+

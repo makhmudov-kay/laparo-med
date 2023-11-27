@@ -83,13 +83,31 @@
     width: 100%;
     background: #fff;
     z-index: 500;
-    padding: 15px;
+    padding: 8px;
     gap: 10px;
     border-top: 2px solid #000;
 
     &__text {
-      font-size: 24px;
+      font-size: 16px;
       font-family: Acherus-Black;
+    }
+
+    &__top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      ::ng-deep {
+        .calc {
+          padding: 0;
+        }
+      }
     }
   }
 }
@@ -101,5 +119,10 @@
       margin: 10px 0;
     }
   }
+}
 
+.smallSize {
+  @media (max-width: 576px) {
+    display: none;
+  }
 }

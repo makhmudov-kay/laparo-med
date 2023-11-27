@@ -8,11 +8,15 @@ import {
   ImageItem,
   ProductDetail,
 } from 'src/app/shared/models/product-detail.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
+import { SvgCheckComponent } from 'src/app/shared/svg/svg-check/svg-check.component';
+import { ClearCountService } from './service/clear-count.service';
+import { transition, trigger, useAnimation } from '@angular/animations';
+import { fadeInRight } from 'ng-animate';
 
 @Component({
   selector: 'app-product-detail',
@@ -29,6 +33,18 @@ import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.
     TranslateModule,
     SvgSpinnerComponent,
     NgFor,
+    SvgCheckComponent,
+    RouterLink,
+  ],
+  animations: [
+    trigger('fadeIn', [
+      transition(
+        ':enter',
+        useAnimation(fadeInRight, {
+          params: { timing: 0.5 },
+        })
+      ),
+    ]),
   ],
 })
 export class ProductDetailComponent {
@@ -42,6 +58,8 @@ export class ProductDetailComponent {
    */
   product$!: Observable<ProductDetail>;
 
+  isNotification = false;
+
   /**
    *
    * @param $product
@@ -49,12 +67,17 @@ export class ProductDetailComponent {
    */
   constructor(
     private $product: ProductDetailService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private clearCount$: ClearCountService
   ) {
     // this.id = this.route.snapshot.paramMap.get('id');
     this.route.params.subscribe((e) => {
       this.id = e['id'];
       this.getProductById();
+    });
+
+    clearCount$.clearCount$.subscribe((state) => {
+      this.isNotification = state;
     });
   }
 

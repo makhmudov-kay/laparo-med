@@ -1,13 +1,18 @@
-<div class="card">
-  <div class="card__title">
-    <span>{{ teamCard.title | translate}}</span>
-  </div>
-  <div class="card__description" [ngClass]="{ reverse: isEven }">
-    <div class="card__description__img">
-      <img [src]="teamCard.img" alt="img" />
+<ngx-intersection
+  (isIntersecting)="handleIntersection($event)"
+  [threshold]="0.35"
+>
+  <div class="card opacity-0" [ngClass]="{ fadeInTop: fade }">
+    <div class="card__title">
+      <span>{{ teamCard.title | translate }}</span>
     </div>
-    <div class="card__description__text">
-      {{ teamCard.text | translate }}
+    <div class="card__description" [ngClass]="{ reverse: isEven }">
+      <div class="card__description__img">
+        <img [src]="teamCard.img" alt="img" />
+      </div>
+      <div class="card__description__text">
+        {{ teamCard.text | translate }}
+      </div>
     </div>
   </div>
-</div>
+</ngx-intersection>

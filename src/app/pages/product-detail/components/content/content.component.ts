@@ -5,7 +5,7 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { ProductAdditionalComponent } from '../product-additional/product-additional.component';
 import { ProductInfoComponent } from '../product-info/product-info.component';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
@@ -37,6 +37,7 @@ import { Router, RouterLink } from '@angular/router';
     AsyncPipe,
     TranslateModule,
     RouterLink,
+    NgClass
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

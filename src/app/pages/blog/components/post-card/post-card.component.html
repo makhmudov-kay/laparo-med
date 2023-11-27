@@ -1,26 +1,38 @@
-<div
-  class="card"
-  [ngClass]="{ isFirst: isFirst, smallCard: isSmCard, withoutImg: withoutImg }"
+<ngx-intersection
+  (isIntersecting)="handleIntersection($event)"
+  [threshold]="0.25"
 >
-  <img
-    *ngIf="!withoutImg"
-    [src]="data.preview_image"
-    alt="img"
-    class="card__img"
-  />
-  <div class="card__content">
-    <div class="date-view-style">
-      {{ data.created_at | date : "dd.MM.yyyy" }}
-    </div>
-    <h4 class="card__content__title">{{ data.title | myTranslate | async }}</h4>
+  <div
+    class="card"
+    [ngClass]="{
+      isFirst: isFirst,
+      smallCard: isSmCard,
+      withoutImg: withoutImg,
+      fadeInTop: fade
+    }"
+  >
+    <img
+      *ngIf="!withoutImg"
+      [src]="data.preview_image"
+      alt="img"
+      class="card__img"
+    />
+    <div class="card__content">
+      <div class="date-view-style">
+        {{ data.created_at | date : "dd.MM.yyyy" }}
+      </div>
+      <h4 class="card__content__title">
+        {{ data.title | myTranslate | async }}
+      </h4>
 
-    <!-- TODO: REMOVE OR IMPLEMENT -->
-    <p class="card__content__text" *ngIf="!isSmCard">
-      {{ data.description | myTranslate | async }}
-    </p>
+      <!-- TODO: REMOVE OR IMPLEMENT -->
+      <p class="card__content__text" *ngIf="!isSmCard">
+        {{ data.description | myTranslate | async }}
+      </p>
 
-    <div class="card__content__btn">
-      <app-link-btn [link]="['/blog', data.id]"></app-link-btn>
+      <div class="card__content__btn">
+        <app-link-btn [link]="['/blog', data.id]"></app-link-btn>
+      </div>
     </div>
   </div>
-</div>
+</ngx-intersection>

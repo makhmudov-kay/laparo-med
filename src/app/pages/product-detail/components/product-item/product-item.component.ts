@@ -56,6 +56,11 @@ export class ProductItemComponent implements OnInit {
   /**
    */
   @Input()
+  onlyCounter!: boolean;
+
+  /**
+   */
+  @Input()
   isConfigurator = false;
 
   /**

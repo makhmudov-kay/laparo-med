@@ -11,12 +11,20 @@
         <p>
           {{ "ourStoryText" | translate }}
         </p>
-        <div class="our-story__content__link">
+        <!-- <div class="our-story__content__link">
           <app-link-btn></app-link-btn>
-        </div>
+        </div> -->
       </div>
-      <div class="our-story__content__img">
-        <img src="./assets/image/our-story-img.png" alt="img" />
+      <div
+        class="our-story__content__img opacity-0"
+        [ngClass]="{ fadeInRight: fade }"
+      >
+        <ngx-intersection
+          (isIntersecting)="handleIntersection($event)"
+          [threshold]="0.25"
+        >
+          <img src="./assets/image/our-story-img.png" alt="img" />
+        </ngx-intersection>
       </div>
     </div>
   </div>

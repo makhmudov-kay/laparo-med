@@ -20,4 +20,6 @@ export class PopularComponent {
 
   @Input()
   data!: Blog[] | null;
+
+  fade = false
 }

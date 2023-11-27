@@ -6,14 +6,18 @@
       class="order-list__block"
       *ngFor="let order of orderList; let id = index"
     >
-      <h4 class="id" (click)="openOrder(id)">
+      <h4 class="id">
         <span>ID Заказа: {{ order.id }}</span>
-        <span class="svg"><svg-arrow-btn class="d-flex"></svg-arrow-btn></span>
       </h4>
       <h4 class="date">
         {{ "dateOfOrder" | translate }}:
         {{ order.created_at }}
       </h4>
+      <h3 class="count-product" (click)="openOrder(id)">
+        Tовары:
+        {{ orderList.length }}
+        <span class="svg"><svg-arrow-btn class="d-flex"></svg-arrow-btn></span>
+      </h3>
       <div
         class="product-list__row wrap"
         [ngClass]="{ isOpen: currentId === id }"
@@ -22,7 +26,24 @@
           class="product-list__col"
           *ngFor="let product of order.order_products"
         >
-          <app-product-card [data]="product"></app-product-card>
+          <!-- <app-product-card [data]="product"></app-product-card> -->
+
+          <div class="card" [routerLink]="['../../products/', product.id]">
+            <div class="card__img">
+              <img [src]="product.image" alt="image" />
+            </div>
+            <div class="card__info">
+              <p>
+                Title: <span>{{ product.title | myTranslate | async }}</span>
+              </p>
+              <p>
+                Count: <span>{{ product.quantity }}</span>
+              </p>
+              <p>
+                Price: <span>{{ product.price | myCurrency | async }}</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

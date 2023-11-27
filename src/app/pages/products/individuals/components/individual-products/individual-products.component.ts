@@ -1,3 +1,4 @@
+import { NgxIntersectionComponent } from 'ngx-intersection2';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductsInfoComponent } from 'src/app/shared/components/products-info/products-info.component';
@@ -10,6 +11,7 @@ export interface IndividualProductsData {
   list: string[];
   img: string;
   link: string;
+  fade?: boolean;
 }
 
 @Component({
@@ -17,7 +19,14 @@ export interface IndividualProductsData {
   templateUrl: './individual-products.component.html',
   styleUrls: ['./individual-products.component.less'],
   standalone: true,
-  imports: [ArrowSVG, NgFor, NgIf, NgClass, ProductsInfoComponent],
+  imports: [
+    ArrowSVG,
+    NgFor,
+    NgIf,
+    NgClass,
+    ProductsInfoComponent,
+    NgxIntersectionComponent,
+  ],
 })
 export class IndividualProductsComponent {
   products: IndividualProductsData[] = [
@@ -78,4 +87,8 @@ export class IndividualProductsComponent {
       link: '../products/list?category_id=7',
     },
   ];
+
+  handleIntersection(e: boolean, product: IndividualProductsData) {
+    product.fade = e;
+  }
 }

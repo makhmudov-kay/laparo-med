@@ -9,22 +9,33 @@
       'adept': idx === 2,
     }"
   >
-    <div class="container">
-      <div class="products__wrapper">
-        <div class="products__section__left">
-          <div class="products__section__left__title" *ngIf="isFirst">
-            <h4 class="section-title left">Products</h4>
-          </div>
+    <ngx-intersection
+      (isIntersecting)="handleIntersection($event, product)"
+      [threshold]="0.25"
+    >
+      <div class="container">
+        <div class="products__wrapper">
+          <div class="products__section__left">
+            <div class="products__section__left__title" *ngIf="isFirst">
+              <h4 class="section-title left">Products</h4>
+            </div>
 
-          <app-products-info
-            [product]="product"
-            [listColumn]="idx === 2"
-          ></app-products-info>
-        </div>
-        <div class="products__section__right">
-          <img [src]="product.img" alt="image" />
+            <app-products-info
+              [product]="product"
+              [listColumn]="idx === 2"
+            ></app-products-info>
+          </div>
+          <div
+            class="products__section__right opacity-0"
+            [ngClass]="{
+              fadeInLeft: product.fade && (idx + 1) % 2 == 0,
+              fadeInRight: product.fade && (idx + 1) % 2 !== 0
+            }"
+          >
+            <img [src]="product.img" alt="image" />
+          </div>
         </div>
       </div>
-    </div>
+    </ngx-intersection>
   </div>
 </div>

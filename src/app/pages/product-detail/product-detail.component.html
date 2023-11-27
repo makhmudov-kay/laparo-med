@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <app-product-share></app-product-share>
+    <!-- <app-product-share></app-product-share> -->
 
     <div class="product-detail__video" *ngIf="product.product_video">
       <div class="aspire">
@@ -158,3 +158,10 @@
     <svg-spinner class="d-flex"></svg-spinner>
   </div>
 </ng-template>
+
+<div class="notification" *ngIf="isNotification" [@fadeIn]>
+  <svg-check class="d-flex"></svg-check>
+  <h2>Lorem ipsum dolor sit.</h2>
+
+  <a routerLink="../../cart">View basket</a>
+</div>

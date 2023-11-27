@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
     NgFor,
     TranslateModule,
     NgIf,
-    RouterLink
+    RouterLink,
   ],
   animations: [
     trigger('fadeIn', [
@@ -44,10 +44,6 @@ export class CartComponent {
    *
    */
   cartItems!: ProductItem[];
-
-  /**
-   */
-  fadeIn!: any;
 
   /**
    *
@@ -186,16 +182,17 @@ export class CartComponent {
 
     this.order$.sendOrder(products).subscribe((result: any) => {
       if (result.detail.includes('Order created')) {
-        this.visibleMessage = true;
+        // this.visibleMessage = true;
         this.isLoading = false;
         this.cartItems = [];
         this.$store.dispatch(new CartAction([]));
         localStorage.removeItem('cart');
         this.cd.markForCheck();
-        setTimeout(() => {
-          this.visibleMessage = false;
-          this.cd.markForCheck();
-        }, 3000);
+        alert('Order created')
+        // setTimeout(() => {
+        //   this.visibleMessage = false;
+        //   this.cd.markForCheck();
+        // }, 3000);
       }
     });
   }

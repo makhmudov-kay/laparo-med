@@ -1,3 +1,4 @@
+import { NgxIntersectionComponent } from 'ngx-intersection2';
 import { AsyncPipe, DatePipe, NgClass, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.component';
@@ -16,6 +17,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     DatePipe,
     MyTranslatePipe,
     AsyncPipe,
+    NgxIntersectionComponent,
   ],
 })
 export class PostCardComponent {
@@ -56,4 +58,10 @@ export class PostCardComponent {
       en: 'Esophageal Atresia – Physical Mo...',
     },
   };
+
+  fade = false;
+
+  handleIntersection(e: boolean) {
+    this.fade = e;
+  }
 }

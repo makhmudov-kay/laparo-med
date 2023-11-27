@@ -19,7 +19,7 @@ import { SeeMoreComponent } from 'src/app/shared/components/see-more/see-more.co
     AdvantagesComponent,
     ProfessionalsProductComponent,
     ContactUsComponent,
-    SeeMoreComponent
+    SeeMoreComponent,
   ],
 })
 export class ProfessionalsComponent {}

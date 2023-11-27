@@ -1,35 +1,41 @@
-<div class="about-us">
-  <div class="container">
-    <h4 class="section-title">{{ "aboutUs" | translate }}</h4>
-  </div>
-  <div class="about-us__content">
-    <div class="about-us__title-shadow">{{ "aboutUs" | translate }}</div>
-    <div class="container about-us__wrapper">
-      <div class="about-us__img about-us__col">
-        <div class="about-us__img__wrapper">
-          <img src="./assets/image/about-us.png" alt="img" />
+<ngx-intersection (isIntersecting)="handleIntersection($event)" [threshold]="0.25">
+  <div class="about-us">
+    <div class="container">
+      <h4 class="section-title">{{ "aboutUs" | translate }}</h4>
+    </div>
+    <div class="about-us__content">
+      <div class="about-us__title-shadow">{{ "aboutUs" | translate }}</div>
+      <div class="container about-us__wrapper">
+        <div class="about-us__img about-us__col">
+          <div class="about-us__img__wrapper opacity-0" [ngClass]="{ fadeInLeft: fade }">
+            <img src="./assets/image/about-us.png" alt="img" />
+          </div>
         </div>
-      </div>
-      <div class="about-us__text about-us__col">
-        <div class="about-us__text__content">
-          <div class="about-us__text__content__wrapper">
-            <div class="about-us__text__content__wrapper__text">
-              <p>
-                {{ "aboutUsText" | translate }}
-              </p>
-            </div>
-            <div class="about-us__text__content__wrapper__text">
-              <p>
-                {{ "aboutUsText" | translate }}
-              </p>
-              <a href="" class="about-us__read-more" data-hover="Read more">
-                <span>{{ "readMore" | translate }}</span>
-                <svg-products-arrow></svg-products-arrow>
-              </a>
+        <div class="about-us__text about-us__col">
+          <div class="about-us__text__content">
+            <div class="about-us__text__content__wrapper">
+              <div class="about-us__text__content__wrapper__text">
+                <p>
+                  {{ "aboutUsText" | translate }}
+                </p>
+              </div>
+              <div class="about-us__text__content__wrapper__text">
+                <p>
+                  {{ "aboutUsText" | translate }}
+                </p>
+                <a
+                  routerLink="./about-us"
+                  class="about-us__read-more"
+                  data-hover="Read more"
+                >
+                  <span>{{ "readMore" | translate }}</span>
+                  <svg-products-arrow></svg-products-arrow>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</ngx-intersection>
