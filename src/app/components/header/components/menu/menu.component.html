@@ -80,6 +80,13 @@
           <li class="menu__item">
             <a
               [routerLink]="['../products/list']"
+              [queryParams]="{ category_id: '10' }"
+              >{{ "urology" | translate }}</a
+            >
+          </li>
+          <li class="menu__item">
+            <a
+              [routerLink]="['../products/list']"
               [queryParams]="{ category_id: '5' }"
               >{{ "laparoscopic" | translate }}</a
             >

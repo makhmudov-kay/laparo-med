@@ -23,7 +23,10 @@
           </div>
         </div>
         <div class="col-lg-7">
-          <app-content [product]="product"></app-content>
+          <app-content
+            [product]="product"
+            (isAddedToCart)="isAddedToCart($event)"
+          ></app-content>
         </div>
       </div>
     </div>
@@ -159,9 +162,8 @@
   </div>
 </ng-template>
 
-<div class="notification" *ngIf="isNotification" [@fadeIn]>
-  <svg-check class="d-flex"></svg-check>
-  <h2>Lorem ipsum dolor sit.</h2>
-
-  <a routerLink="../../cart">View basket</a>
-</div>
+<app-notification
+  [(isNotification)]="isNotification"
+  [visibleBtn]="true"
+  text="Product add to cart"
+></app-notification>

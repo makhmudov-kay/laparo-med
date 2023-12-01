@@ -3,6 +3,8 @@ import {
   Component,
   Input,
   ChangeDetectorRef,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
@@ -37,7 +39,7 @@ import { Router, RouterLink } from '@angular/router';
     AsyncPipe,
     TranslateModule,
     RouterLink,
-    NgClass
+    NgClass,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -69,6 +71,12 @@ export class ContentComponent {
       },
     };
   }
+
+  /**
+   *
+   */
+  @Output()
+  isAddedToCart = new EventEmitter<boolean>();
 
   /**
    */
@@ -105,8 +113,7 @@ export class ContentComponent {
   constructor(
     private $store: Store,
     private cd: ChangeDetectorRef,
-    private clearCount$: ClearCountService,
-    private router: Router
+    private clearCount$: ClearCountService
   ) {}
 
   /**
@@ -142,7 +149,6 @@ export class ContentComponent {
     );
     this.cd.markForCheck();
     console.log(this.isConfiguratorAdded);
-    
   }
 
   /**
@@ -153,7 +159,6 @@ export class ContentComponent {
       const cart = this.$store.selectSnapshot(DataState.cart);
       this.needToAddcart.forEach((item: any) => {
         const sameItem = cart.find((cartItem: any) => item.id === cartItem.id);
-        console.log(sameItem);
 
         if (sameItem) {
           sameItem.count += item.count;
@@ -197,6 +202,7 @@ export class ContentComponent {
     }
 
     this.clearCount$.clearCount$.next(true);
+    this.isAddedToCart.emit(true);
     this.cd.markForCheck();
   }
 

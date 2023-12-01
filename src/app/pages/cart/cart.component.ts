@@ -14,6 +14,7 @@ import { OrderRequest } from 'src/app/shared/models/order.request';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { fadeInRight } from 'ng-animate';
 import { RouterLink } from '@angular/router';
+import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
 
 @Component({
   selector: 'app-cart',
@@ -27,6 +28,7 @@ import { RouterLink } from '@angular/router';
     TranslateModule,
     NgIf,
     RouterLink,
+    NotificationComponent,
   ],
   animations: [
     trigger('fadeIn', [
@@ -182,17 +184,12 @@ export class CartComponent {
 
     this.order$.sendOrder(products).subscribe((result: any) => {
       if (result.detail.includes('Order created')) {
-        // this.visibleMessage = true;
+        this.visibleMessage = true;
         this.isLoading = false;
         this.cartItems = [];
         this.$store.dispatch(new CartAction([]));
         localStorage.removeItem('cart');
         this.cd.markForCheck();
-        alert('Order created')
-        // setTimeout(() => {
-        //   this.visibleMessage = false;
-        //   this.cd.markForCheck();
-        // }, 3000);
       }
     });
   }

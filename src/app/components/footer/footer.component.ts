@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 // import { LogoComponent } from 'src/app/shared/svg/logo/logo.component';
 
@@ -7,10 +9,6 @@ import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.less'],
   standalone: true,
-  imports: [LogoComponent],
+  imports: [LogoComponent, TranslateModule, RouterLink],
 })
-export class FooterComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class FooterComponent {}

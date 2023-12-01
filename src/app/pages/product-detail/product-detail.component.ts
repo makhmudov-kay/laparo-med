@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SwiperCarouselComponent } from './components/swiper-carousel/swiper-carousel.component';
 import { ContentComponent } from './components/content/content.component';
 import { ProductShareComponent } from '../products/components/product-detail-info/components/product-share/product-share.component';
 import { ProductDetailService } from 'src/app/shared/services/product-detail.service';
-import { Observable, map } from 'rxjs';
+import { Observable, filter, map } from 'rxjs';
 import {
   ImageItem,
   ProductDetail,
 } from 'src/app/shared/models/product-detail.model';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  NavigationStart,
+  Router,
+  RouterLink,
+} from '@angular/router';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
 import { SvgCheckComponent } from 'src/app/shared/svg/svg-check/svg-check.component';
-import { ClearCountService } from './service/clear-count.service';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { fadeInRight } from 'ng-animate';
+import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
 
 @Component({
   selector: 'app-product-detail',
@@ -35,16 +41,7 @@ import { fadeInRight } from 'ng-animate';
     NgFor,
     SvgCheckComponent,
     RouterLink,
-  ],
-  animations: [
-    trigger('fadeIn', [
-      transition(
-        ':enter',
-        useAnimation(fadeInRight, {
-          params: { timing: 0.5 },
-        })
-      ),
-    ]),
+    NotificationComponent
   ],
 })
 export class ProductDetailComponent {
@@ -58,6 +55,9 @@ export class ProductDetailComponent {
    */
   product$!: Observable<ProductDetail>;
 
+  /**
+   * 
+   */
   isNotification = false;
 
   /**
@@ -68,17 +68,26 @@ export class ProductDetailComponent {
   constructor(
     private $product: ProductDetailService,
     private route: ActivatedRoute,
-    private clearCount$: ClearCountService
+    private router: Router,
+    private cd: ChangeDetectorRef
   ) {
-    // this.id = this.route.snapshot.paramMap.get('id');
     this.route.params.subscribe((e) => {
       this.id = e['id'];
       this.getProductById();
     });
 
-    clearCount$.clearCount$.subscribe((state) => {
-      this.isNotification = state;
-    });
+    this.router.events
+      .pipe(
+        filter(
+          (e): e is NavigationEnd | NavigationStart =>
+            e instanceof NavigationEnd || e instanceof NavigationStart
+        )
+      )
+      .subscribe((e) => {
+        if (e instanceof NavigationEnd) {
+          this.isNotification = false;
+        }
+      });
   }
 
   /**
@@ -90,5 +99,14 @@ export class ProductDetailComponent {
         .getProductById(this.id)
         .pipe(map((res) => res));
     }
+  }
+
+  /**
+   *
+   * @param e
+   */
+  isAddedToCart(e: boolean) {
+    this.isNotification = e;
+    this.cd.markForCheck();
   }
 }

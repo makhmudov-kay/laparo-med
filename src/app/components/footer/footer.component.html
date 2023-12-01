@@ -8,13 +8,13 @@
             <span>LAPARO Sp. z o.o.</span>
           </li> -->
           <li class="footer__menu__item">
-            <span>Toshkent shahri,</span>
+            <span>{{ "city" | translate }}</span>
           </li>
           <li class="footer__menu__item">
-            <span>Chilonzor tumani kichik xalqa yo'li,</span>
+            <span>{{ "district" | translate }}</span>
           </li>
           <li class="footer__menu__item">
-            <span>Gavhar MFY, 45-uy</span>
+            <span>{{ "address" | translate }}</span>
           </li>
           <!-- <li class="footer__menu__item">
             <span>VAT-ID: PL8971818380</span>
@@ -36,25 +36,43 @@
         <h3 class="footer__title">OFFER</h3>
         <ul class="footer__menu">
           <li class="footer__menu__item">
-            <a href="">Apex VR</a>
+            <a routerLink="../products/apex-vr">{{ "apexVr" | translate }}</a>
           </li>
           <li class="footer__menu__item">
-            <a href="">Analytic</a>
+            <a routerLink="../products/analytic">{{
+              "analytic" | translate
+            }}</a>
           </li>
           <li class="footer__menu__item">
-            <a href="">Advance Training Station</a>
+            <a routerLink="../products/advance-training-station">{{
+              "advanceTraining" | translate
+            }}</a>
           </li>
           <li class="footer__menu__item">
-            <a href="">Advance Portable</a>
+            <a routerLink="../products/advance-portable">{{
+              "advancePortable" | translate
+            }}</a>
           </li>
           <li class="footer__menu__item">
-            <a href="">Aspire</a>
+            <a
+              [routerLink]="['../products/list']"
+              [queryParams]="{ category_id: '6' }"
+              >{{ "aspire" | translate }}</a
+            >
           </li>
           <li class="footer__menu__item">
-            <a href="">Advance</a>
+            <a
+              [routerLink]="['../products/list']"
+              [queryParams]="{ category_id: '2' }"
+              >{{ "advance" | translate }}</a
+            >
           </li>
           <li class="footer__menu__item">
-            <a href="">Adept "Surgical Skills"</a>
+            <a
+              [routerLink]="['../products/list']"
+              [queryParams]="{ category_id: '7' }"
+              >{{ "adept" | translate }}</a
+            >
           </li>
         </ul>
       </div>
@@ -82,24 +100,24 @@
         </ul>
       </div> -->
       <div class="footer__col">
-        <h3 class="footer__title">ABOUT US</h3>
+        <h3 class="footer__title">{{ "aboutUs" | translate }}</h3>
         <ul class="footer__menu">
           <!-- <li class="footer__menu__item">
             <a href="">Careers</a>
           </li> -->
           <li class="footer__menu__item">
-            <a href="">Story</a>
+            <a href="">{{ "story" | translate }}</a>
           </li>
           <!-- <li class="footer__menu__item">
             <a href="">Team</a>
           </li> -->
           <li class="footer__menu__item">
-            <a href="">Contact</a>
+            <a href="">{{ "contact.contact" | translate }}</a>
           </li>
         </ul>
       </div>
       <div class="footer__col">
-        <h3 class="footer__title">PARTNERS</h3>
+        <h3 class="footer__title">{{ "social" | translate }}</h3>
         <ul class="footer__menu">
           <!-- <li class="footer__menu__item">
             <a href="">Become a partner</a>

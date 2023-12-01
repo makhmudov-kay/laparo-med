@@ -1,0 +1,7 @@
+<div class="notification" *ngIf="isNotification" [ngClass]="{space: visibleBtn}">
+  <svg-check class="d-flex"></svg-check>
+  <h2>{{ text }}</h2>
+  <ng-container *ngIf="visibleBtn">
+    <a routerLink="../../cart">View basket</a>
+  </ng-container>
+</div>
