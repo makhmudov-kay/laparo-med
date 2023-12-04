@@ -10,10 +10,10 @@
   <!-- LOGIN -->
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="alert" *ngIf="errorType === 1 && formType === 'login'">
-      Неверный логин или пароль
+      {{ "invalidLogin" | translate }}
     </div>
     <div class="alert" *ngIf="errorType === 2 && formType === 'register'">
-      Номер телефона занят
+      {{ "phoneNumberIsBusy" | translate }}
     </div>
 
     <div class="form__item">

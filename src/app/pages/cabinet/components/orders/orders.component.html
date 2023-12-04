@@ -7,14 +7,14 @@
       *ngFor="let order of orderList; let id = index"
     >
       <h4 class="id">
-        <span>ID Заказа: {{ order.id }}</span>
+        <span>{{ "orderID" | translate }}: {{ order.id }}</span>
       </h4>
       <h4 class="date">
         {{ "dateOfOrder" | translate }}:
         {{ order.created_at }}
       </h4>
       <h3 class="count-product" (click)="openOrder(id)">
-        Tовары:
+        {{ "products" | translate }}:
         {{ orderList.length }}
         <span class="svg"><svg-arrow-btn class="d-flex"></svg-arrow-btn></span>
       </h3>

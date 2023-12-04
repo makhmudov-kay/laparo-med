@@ -1,11 +1,10 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { SwiperCarouselComponent } from './components/swiper-carousel/swiper-carousel.component';
 import { ContentComponent } from './components/content/content.component';
 import { ProductShareComponent } from '../products/components/product-detail-info/components/product-share/product-share.component';
 import { ProductDetailService } from 'src/app/shared/services/product-detail.service';
 import { Observable, filter, map } from 'rxjs';
 import {
-  ImageItem,
   ProductDetail,
 } from 'src/app/shared/models/product-detail.model';
 import {
@@ -20,8 +19,6 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
 import { SvgCheckComponent } from 'src/app/shared/svg/svg-check/svg-check.component';
-import { transition, trigger, useAnimation } from '@angular/animations';
-import { fadeInRight } from 'ng-animate';
 import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
 
 @Component({

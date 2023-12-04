@@ -52,71 +52,71 @@ export class ApexProComponent {
           img: './assets/image/apex-pro-info-1.jpg',
         },
         {
-          title: 'PEDIATRIC SURGERY',
+          title: 'dataInformations.imageList.title2',
           img: './assets/image/apex-pro-info-2.jpg',
         },
         {
-          title: 'TRAINING PROGRAM',
+          title: 'dataInformations.imageList.title3',
           img: './assets/image/apex-pro-info-3.jpg',
         },
       ],
-      title: 'Realistic surgical simulation',
-      text: 'Laparo Apex PRO is a revolutionary hybrid simulator that combines both virtual reality and physical module training to offer a comprehensive and unparalleled training experience. It is the first laparoscopic simulator in the world that is dedicated also to training in pediatric surgery, providing a unique opportunity for trainees to gain valuable experience and expertise in this challenging field.',
+      title: 'dataInformations.title',
+      text: 'dataInformations.text',
       list: [
-        '🔵 Complete training curriculum – from beginner manual skills to advanced procedures',
-        '🔵 Real clinical instruments and laparoscopes',
-        '🔵 Realistic touch feedback between instruments in virtual reality',
-        '🔵 Custom training creator',
+        '🔵 dataInformations.list1',
+        '🔵 dataInformations.list2',
+        '🔵 dataInformations.list3',
+        '🔵 dataInformations.list4',
       ],
     },
     {
       img: './assets/image/apex-info-2.jpg',
       imageList: [
         {
-          title: 'REAL INSTRUMENTS',
+          title: 'dataInformations.imageList.title4',
           img: './assets/image/apex-pro-info-4.jpg',
         },
         {
-          title: 'REDUCED AREA',
+          title: 'dataInformations.imageList.title5',
           img: './assets/image/apex-pro-info-5.jpg',
         },
         {
-          title: 'PEDIATRIC TRAINING PROGRAM',
+          title: 'dataInformations.imageList.title6',
           img: './assets/image/apex-pro-info-6.jpg',
         },
       ],
-      title: 'Experience the future of pediatric surgical training',
-      text: 'Unlock the potential of pediatric surgical training with Laparo Apex Pro. This advanced simulator is tailored to the needs of pediatric surgeons, offering comprehensive training in the three most commonly performed pediatric procedures. Trainees can refine their skills, from mastering essential techniques to navigating delicate anatomy, all within a realistic and immersive environment. Laparo Apex Pro’s lifelike simulations and real-time feedback empower surgeons to develop expertise in pediatric surgery and enhance patient outcomes.',
+      title: 'dataInformations.title2',
+      text: 'dataInformations.text2',
       list: [
-        '🔵 Pediatric training program (Virtual + Real)',
-        '🔵 3 pediatric ports with reduced distance of 4.5 cm',
-        '🔵 Trocars adapted to work also with 3 mm instruments',
-        '🔵 Set of pediatric instruments',
-        '🔵 5 mm diameter real pediatric laparoscope',
+        '🔵 dataInformations.list5',
+        '🔵 dataInformations.list6',
+        '🔵 dataInformations.list7',
+        '🔵 dataInformations.list8',
+        '🔵 dataInformations.list9',
       ],
     },
     {
       img: './assets/image/apex-info-3.jpg',
       imageList: [
         {
-          title: 'PATENTED SENSORS',
+          title: 'dataInformations.imageList.title7',
           img: './assets/image/apex-pro-info-7.jpg',
         },
         {
-          title: 'ADVANCED ANALYSIS',
+          title: 'dataInformations.imageList.title8',
           img: './assets/image/apex-pro-info-8.jpg',
         },
         {
-          title: 'REAL-TIME FEEDBACK',
+          title: 'dataInformations.imageList.title9',
           img: './assets/image/apex-pro-info-9.jpg',
         },
       ],
-      title: 'Achieve surgical excellence',
-      text: 'Laparo Apex Pro takes surgical training to new heights, providing a cutting-edge platform for surgeons to refine their skills and expertise in this specialized field. It offers a complete training curriculum that caters to both beginners and advanced learners, making it an indispensable tool for medical simulation centers, medical universities, hospitals, and research-oriented institutions seeking to enhance their surgical training programs.',
+      title: 'dataInformations.title3',
+      text: 'dataInformations.text3',
       list: [
-        '🔵 No subscription fees and lifelong software support',
-        '🔵 Real-time feedback during simulations, allowing trainees to adjust and improve their skills on the spot',
-        '🔵 Customization – Laparo Apex PRO can be tailored to specific training requirements, encompassing a broad range of general and pediatric surgical procedures.',
+        '🔵 dataInformations.list10',
+        '🔵 dataInformations.list11',
+        '🔵 dataInformations.list12',
       ],
     },
   ];
@@ -125,37 +125,37 @@ export class ApexProComponent {
    */
   apexImageData: ProductImage = {
     img: './assets/image/apex-pro-img-0.png',
-    type: 'apex-pro',
+    type: 'apexPro1',
     info: [
       {
         img: './assets/image/apex-pro-img-1.jpg',
-        title: '27’’ touchscreen with position adjustment',
-        text: '27-inch touchscreen monitor with easy-to-use interface and Laparo software',
+        title: 'apexImageDataTitle',
+        text: 'apexImageDataText',
       },
       {
         img: './assets/image/apex-pro-img-2.jpg',
-        title: 'Real laparoscopes',
-        text: '2 real laparoscopes in standard set - 0° and 30°',
+        title: 'apexImageDataTitle2',
+        text: 'apexImageDataText2',
       },
       {
         img: './assets/image/apex-pro-img-3.jpg',
-        title: 'Real instruments',
-        text: 'Instruments with embedded sensors: Dissector, Grasper, Scissors, Needle holder, Clip applier. Pediatric 3mm instruments : Needle Holder, Grasper, Dissector, Scissors',
+        title: 'apexImageDataTitle3',
+        text: 'apexImageDataText3',
       },
       {
         img: './assets/image/apex-pro-img-4.jpg',
-        title: 'Training Modules',
-        text: 'Training modules for manual skills - full set Training modules for procedures - 3 to choose VR training modules - 3 to choose',
+        title: 'apexImageDataTitle4',
+        text: 'apexImageDataText4',
       },
       {
         img: './assets/image/apex-pro-img-5.jpg',
-        title: 'Accessories storage',
-        text: '2 drawers for storing training modules and needed accessories',
+        title: 'apexImageDataTitle5',
+        text: 'apexImageDataText5',
       },
       {
         img: './assets/image/apex-pro-img-6.jpg',
-        title: 'Electrosurgery Pedals',
-        text: 'Some procedures like for example Cholecytectomy require special pedals for cutting and coagulation',
+        title: 'apexImageDataTitle6',
+        text: 'apexImageDataText6',
       },
     ],
   };
@@ -163,68 +163,61 @@ export class ApexProComponent {
   /**
    */
   apexSpecification: Specification = {
-    title: 'Specification',
+    title: 'specification',
     list: [
       {
-        category: 'Main features',
+        category: 'mainFeature',
         options: [
-          { title: 'Main purpose', value: 'Physical Module-based training' },
-          { title: '', value: 'Virtual Reality training' },
-          { title: '', value: 'Pediatric surgery training (Virtual + Real)' },
+          { title: 'optionTitle1', value: 'optionValue1' },
+          { title: '', value: 'optionValue2' },
+          { title: '', value: 'optionValuePediatric' },
           {
-            title: 'Camera',
-            value: '2 real laparoscopes - 0° and 30°',
+            title: 'camera',
+            value: 'optionValueApex',
           },
           {
             title: '',
-            value: 'Possibility to rotate the optics relative to camera',
+            value: 'optionValueApex2',
           },
           {
-            title: 'Light source',
-            value: 'optical fibre connected to laparoscope, LED light source',
+            title: 'optionTitleApex',
+            value: 'optionValueApex3',
           },
           {
-            title: 'Instrument ports',
-            value: '15 instrument ports',
-          },
-          {
-            title: '',
-            value:
-              'Reduced working area for pediatric use with 4,25 cm distance between trocars',
-          },
-          {
-            title: 'Training instruments',
-            value:
-              'Dissector, Grasper, Scissors, Needle holder, Clip applier, Multitool 1 (Stapler, Bipolar grasper, Vessel sealer, Ultrasonic scalpel), Multitool 2 (Hook, Suction-irrigator, pyloric knife)',
-          },
-          {
-            title: 'Pediatric 3mm instruments',
-            value: 'Needle Holder, Grasper, Dissector, Scissors',
-          },
-          {
-            title: 'Training modules',
-            value:
-              'Dexterity, Tension, Suturing, Cutting Circles + Universal Holder, Dissection 3 in 1,',
-          },
-          {
-            title: 'Procedural Training Modules - 3 to choose',
-            value:
-              'Appendectomy, Prostatectomy, Cholecystectomy, Ovarian Cyst Removal, Myomectomy, Vaginal Cuff Repair',
+            title: 'optionTitleApex2',
+            value: 'optionValueApex4',
           },
           {
             title: '',
-            value:
-              'Pediatric Training Modules: Pyloromyotomy, Pyeloplasty, Thoracoscopic repair of esophageal atresia',
+            value: 'optionValueApex5',
           },
           {
-            title: 'Virtual Procedures - 3 to choose',
-            value:
-              'Appendectomy Cholecystectomy Gynecology Pack Nephrectomy Prostatectomy',
+            title: 'optionValueApex6',
+            value: 'optionValueApex7',
+          },
+          {
+            title: 'optionValueApex8',
+            value: 'optionValueApex9',
+          },
+          {
+            title: 'training',
+            value: 'optionValue7',
+          },
+          {
+            title: 'optionValueApex10',
+            value: 'optionValue8',
           },
           {
             title: '',
-            value:
-              'Pediatric Pyloromyotomy Pediatric Pyeloplasty Pediatric Thoracoscopic repair of esophageal atresia',
+            value: 'optionValueApex11',
+          },
+          {
+            title: 'optionValueApex12',
+            value: 'optionValueApex13',
+          },
+          {
+            title: '',
+            value: 'optionValueApex14',
           },
           {
             title: '',
@@ -233,109 +226,109 @@ export class ApexProComponent {
         ],
       },
       {
-        category: 'Software',
+        category: 'software',
         options: [
-          { title: 'Training analysis', value: '✅' },
-          { title: 'Automatic assessment', value: '✅' },
-          { title: 'Real time analysis', value: '✅' },
-          { title: 'Laparo Training Program', value: 'Basic manual skills' },
+          { title: 'optionTitle8', value: '✅' },
+          { title: 'optionTitle9', value: '✅' },
+          { title: 'optionTitle10', value: '✅' },
+          { title: 'optionTitle11', value: 'optionValue13' },
           {
             title: '',
-            value: 'Intermediate manual skills',
+            value: 'optionValue14',
           },
           {
             title: '',
-            value: 'Basic suturing skills',
+            value: 'optionValue15',
           },
           {
             title: '',
-            value: 'Advance suturing skills',
+            value: 'optionValue16',
           },
           {
             title: '',
-            value: 'Procedural skills (real)',
+            value: 'optionValue17',
           },
           {
             title: '',
-            value: 'Procedural skills (virtual)',
+            value: 'optionValueApex15',
           },
           {
             title: '',
-            value: 'Pediatric Procedures (real)',
+            value: 'optionValueApex16',
           },
           {
             title: '',
-            value: 'Pediatric Procedures (virtual)',
+            value: 'optionValueApex17',
           },
           {
-            title: 'Multi-work (network)',
+            title: 'optionValueApex18',
             value: '✅',
           },
           {
-            title: '„Teacher-student” training mode',
+            title: 'optionValueApex19',
             value: '✅',
           },
           {
-            title: 'Learning curve tracking',
+            title: 'analyticInfoBLock5',
             value: '✅',
           },
           {
-            title: 'Custom training creator with tutorials',
+            title: 'optionTitle15',
             value: '✅',
           },
           {
-            title: 'User accounts',
-            value: 'User accounts – unlimited number + Administrator accounts',
+            title: 'optionTitle16',
+            value: 'optionTitle19',
           },
           {
-            title: 'Possibility of data export',
+            title: 'optionTitle17',
             value: '✅',
           },
           {
-            title: 'Perpetual lifetime licence',
+            title: 'optionTitle18',
             value: '✅',
           },
         ],
       },
       {
-        category: 'Hardware',
+        category: 'hardware',
         options: [
-          { title: 'Screen', value: '27’’ touchscreen' },
+          { title: 'screen', value: 'optionValue10' },
           {
-            title: 'Pedals for Electrosurgery',
-            value: 'YES (for virtual procedures)',
+            title: 'optionTitle5',
+            value: 'optionValueApex20',
           },
           {
-            title: 'Ergonomics',
-            value: 'Automatic electric adjustment column',
+            title: 'optionTitle7',
+            value: 'optionValue11',
           },
           {
             title: '',
-            value: 'Screen adjustment on a rotating arm',
+            value: 'optionValue12',
           },
           {
-            title: 'Keyboard',
-            value: 'Extra navigation keyboard with touchpad',
+            title: 'keyboard',
+            value: 'optionValueApex21',
           },
           {
-            title: 'Drawer for training modules storage',
+            title: 'optionValueApex22',
             value: '2',
           },
           {
-            title: 'Wheels with blockade',
+            title: 'optionValueApex23',
             value: '✅',
           },
         ],
       },
       {
-        category: 'Technical Data',
+        category: 'apexVRSpecificationTitle',
         options: [
-          { title: 'Device size', value: '166-216 cm x 125 cm x 62 cm' },
-          { title: 'Device weight', value: '115 kg' },
-          { title: 'Voltage', value: '110V/230V' },
-          { title: 'Frequency', value: '50-60 Hz' },
-          { title: 'Maximum Power', value: '900 W' },
-          { title: 'Guarantee', value: '2 years' },
+          { title: 'optionValueApex24', value: 'optionValueApex25' },
+          { title: 'optionValueApex26', value: 'optionValueApex27' },
+          { title: 'optionValueApex28', value: 'optionValueApex29' },
+          { title: 'optionValueApex30', value: 'optionValueApex31' },
+          { title: 'optionValueApex32', value: 'optionValueApex33' },
+          { title: 'optionValueApex34', value: 'optionValueApex35' },
         ],
       },
     ],

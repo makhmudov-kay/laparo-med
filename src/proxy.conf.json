@@ -1,6 +1,6 @@
 {
   "/api-imodel": {
-    "target": "https://jobir.uz",
+    "target": "https://imodels.uz",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {

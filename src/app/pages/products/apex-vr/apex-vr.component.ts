@@ -38,22 +38,19 @@ export class ApexVrComponent {
   /**
    */
   bannerData = {
-    title: 'APEX VR',
+    title: 'apexVRTitle',
     img: './assets/image/apex-vr-banner.png',
   };
 
   /**
    */
   introductionData = {
-    header: 'INTRODUCTION',
-    description:
-      'Meet LAPARO Apex - First Mixed Reality Laparoscopic Simulator by LAPARO. As a technology company, we push the boundaries of what technology can be used to improve and develop new, more effective training techniques. This is how the ambitious LAPARO Hybrid project was born to create a robust trainer for use in the most advanced medical simulation centers around the world.',
+    header: 'introductionData.header',
+    description: 'introductionData.desc',
     video: './assets/video/apex-vr-video.mp4',
-    title: 'Hybrid Simulator',
-    leftText:
-      'Over the past decade VR has been hailed as ‘cutting edge’ and as ‘must-have’ technology for every medical simulation center. Laparoscopy simulators costing millions promised incredible results in training surgeons with realistic procedures, haptic feedback and realistic 3D models. Many simulation centers and hospitals around the world ordered these devices only to find that their training capabilities are quite limited and impractical when used in the long-term with students. 15 years forward, laparoscopic surgeons agree on the immense drawbacks of such solutions - they are simply inadequate for testing and for preparing larger numbers of young surgeons for the OR. Their capabilities are limited in size and scope and they lack the technical support and active development of exercises and programs.',
-    rightText:
-      'For the price of a single VR simulator one could equip an entire medical simulation center with diverse laparoscopy trainers and training solutions of all levels. On the other hand, basic low-price laparoscopy trainers can also be limited in capabilities. Students can develop practical skills and they can gain an adequate understanding of the forces and physical properties on these low-fidelity devices, but that can only go so far. Such trainers cannot realistically simulate complete procedures such as appendectomies and cholecystectomies. They don’t feature analytical or scoring capabilities and most importantly - they can’t teach much without the direct supervision of qualified laparoscopic surgeons.',
+    title: 'introductionData.title',
+    leftText: 'introductionData.left',
+    rightText: 'introductionData.right',
   };
 
   /**
@@ -61,27 +58,27 @@ export class ApexVrComponent {
   infoBlockData = [
     {
       img: './assets/image/apex-vr-img.png',
-      title: 'The combination of VR &amp; REAL training',
+      title: 'infoBlockData.title1',
     },
     {
       img: './assets/image/apex-vr-img-2.png',
-      title: 'Next-generation Virtual Reality',
+      title: 'infoBlockData.title2',
     },
     {
       img: './assets/image/apex-vr-img-3.png',
-      title: 'Comprehensive Training Platform',
+      title: 'infoBlockData.title3',
     },
     {
       img: './assets/image/apex-vr-img-4.png',
-      title: 'Powerful Training Analysis',
+      title: 'infoBlockData.title4',
     },
     {
       img: './assets/image/apex-vr-img-5.png',
-      title: 'Adjustable Track Vision',
+      title: 'infoBlockData.title5',
     },
     {
       img: './assets/image/apex-vr-img-6.png',
-      title: 'Real Training Instruments',
+      title: 'infoBlockData.title6',
     },
   ];
 
@@ -89,57 +86,57 @@ export class ApexVrComponent {
    */
   apexVRImageData: ProductImage = {
     img: './assets/image/apex-vr-image.png',
-    type: 'apex-vr',
+    type: 'apexVRImageData',
     info: [
       {
         img: './assets/image/apex-vr-image-1.png',
-        title: 'Touchscreen Interface',
-        text: '27" Touchscreen Monitor with an easy interface and stand-alone Laparo Application',
+        title: 'apexVRImageData.title1',
+        text: 'apexVRImageData.text1',
       },
       {
         img: './assets/image/apex-vr-image-2.jpeg',
-        title: 'Navigation yboard',
-        text: 'Additional navigation keyboard as an alternative to a touchscreen monitor',
+        title: 'apexVRImageData.title2',
+        text: 'apexVRImageData.text2',
       },
       {
         img: './assets/image/apex-vr-image-3.jpg',
-        title: 'Rotating Arm',
-        text: 'Allows for different approaches thanks to monitor on a rotating arm',
+        title: 'apexVRImageData.title3',
+        text: 'apexVRImageData.text3',
       },
       {
         img: './assets/image/apex-vr-image-4.jpg',
-        title: 'Real Instruments',
-        text: 'Close-to-reality experience while training laparoscopic procedures on clinical instruments',
+        title: 'apexVRImageData.title4',
+        text: 'apexVRImageData.text4',
       },
       {
         img: './assets/image/apex-vr-image-5.jpg',
-        title: 'Adjustable Camera',
-        text: 'Electronically adjustable camera: 0°, 30°, 45° and from 0° to 70° with a knob',
+        title: 'apexVRImageData.title5',
+        text: 'apexVRImageData.text5',
       },
       {
         img: './assets/image/apex-vr-image-6.jpg',
-        title: 'Module Adjustment System',
-        text: 'Drawer with a unique system for setting training modules automatically',
+        title: 'apexVRImageData.title6',
+        text: 'apexVRImageData.text6',
       },
       {
         img: './assets/image/apex-vr-image-7.jpg',
-        title: 'All in one place',
-        text: 'Drawer for storing training modules and needed accessories',
+        title: 'apexVRImageData.title7',
+        text: 'apexVRImageData.text7',
       },
       {
         img: './assets/image/apex-vr-image-8.jpg',
-        title: 'Ergonomics First',
-        text: 'Electrical adjustable column for better ergonomics',
+        title: 'apexVRImageData.title8',
+        text: 'apexVRImageData.text8',
       },
       {
         img: './assets/image/apex-vr-image-9.jpg',
-        title: 'Durable &amp;  portable',
-        text: 'Large, durable wheels with blockade make it easy to transport from one training room to another',
+        title: 'apexVRImageData.title9',
+        text: 'apexVRImageData.text9',
       },
       {
         img: './assets/image/apex-vr-image-10.jpg',
-        title: 'Electrosurgery Pedals',
-        text: 'Some procedures like for example Cholecytectomy require special pedals for cutting and coagulation',
+        title: 'apexVRImageData.title10',
+        text: 'apexVRImageData.text10',
       },
     ],
   };
@@ -148,33 +145,33 @@ export class ApexVrComponent {
    */
   apexVRFeatures = {
     first: {
-      title: 'Log in',
-      text: 'Enter your user credentials to login to your own personal account.',
+      title: 'apexVRFeatures.title1',
+      text: 'apexVRFeatures.text1',
       img: './assets/image/icon-feature-1.png',
     },
     second: {
-      title: 'Review',
-      text: 'With the Timeline Analysis watch your past training performance, look for areas in need of improvement.',
+      title: 'apexVRFeatures.title2',
+      text: 'apexVRFeatures.text2',
       img: './assets/image/icon-feature-2.png',
     },
     third: {
-      title: 'Select Scenario',
-      text: 'Choose the scenario based on the skills you want to learn.',
+      title: 'apexVRFeatures.title3',
+      text: 'apexVRFeatures.text3',
       img: './assets/image/icon-feature-3.png',
     },
     fourth: {
-      title: 'Score',
-      text: 'After completing training you will see a comprehensive score breakdown and you will be able to analyze your performance in detail.',
+      title: 'apexVRFeatures.title4',
+      text: 'apexVRFeatures.text4',
       img: './assets/image/icon-feature-4.png',
     },
     fivth: {
-      title: 'Train',
-      text: 'Select start, insert the instruments through the trocar sensors and complete scenario requirements.',
+      title: 'apexVRFeatures.title5',
+      text: 'apexVRFeatures.text5',
       img: './assets/image/icon-feature-5.png',
     },
     sixth: {
-      title: 'Learn',
-      text: 'Watch the tutorial, pay close attention to see how to do it.',
+      title: 'apexVRFeatures.title6',
+      text: 'apexVRFeatures.text6',
       img: './assets/image/icon-feature-6.png',
     },
   };
@@ -182,21 +179,18 @@ export class ApexVrComponent {
   /**
    */
   analysis = {
-    title: 'Cutting-Edge Technology',
-    description:
-      'The technology applied in the Apex laparoscopic simulator is the result of years of cooperation with various international medical centers, placing greater emphasis on the accuracy and efficiency of training. The following solutions are currently in the process of obtaining international patents: - cutting-edge technology for measuring parameters of motion sensors and camera - unique camera with adjustable angle and focus - system of automatic setting of training modules - selected for particular training - laparoscopy training system',
-    leftText:
-      'The latest hybrid solution from LAPARO was created by combining the knowledge and experience of professionals and engineers with the use of the state-of-the art technologies. The hybrid simulator is an innovative solution on a global scale. It combines virtual reality with physical skills training. Despite its complexity, the trainer offers extremely simple and intuitive manual skills and procedures training, a wide selection of training modules, scenarios for conducting training in virtual reality and a number of tutorials that guide the user step by step like a personal trainer.',
-    rightText:
-      'Comprehensive training on one medical simulator? Now it’s possible! Physical training is necessary to develop the workshop of manual skills, while VR helps in learning surgical procedures (e.g. coagulation, clipping etc.), faithfully reflecting the conditions prevailing during the procedure. LAPARO Apex has been equipped with many specialized sensors, faithfully reflecting the measured values, measuring each parameter, thanks to which you can easily check the effectiveness of training and progress in learning - yours or your students.',
+    title: 'analysisTitle',
+    description: 'analysisDesc',
+    leftText: 'analysisLeft',
+    rightText: 'analysisRight',
   };
 
   /**
    */
   software = {
     img: './assets/image/software-1.jpeg',
-    title: 'Multiple accounts One device',
-    text: 'A single LAPARO Apex has the ability to store, hold, and protect the information of ultiple trainees. Each user can log in with his own password-protected account and see all of his previous results as well as their own personal Learning Curve. A supervisor or professor with an administrator account can monitor all users and manage them in groups.',
+    title: 'softwareTitle',
+    text: 'apexTextAnalytic',
   };
 
   /**
@@ -209,23 +203,22 @@ export class ApexVrComponent {
   /**
    */
   networking = {
-    title: 'Group training',
-    description:
-      "Connect your LAPARO Apex simulators to the group working network and conduct your workshops more efficiently. The mentor's station will allow you to supervise the work of many students at the same time and correct mistakes immediately. As an Administrator, you can also share your screen with other students so that they can repeat after you. Networking capability allows for: - sharing views between stations (Mentor Mode) - preview of exercises real-time on all stations - access to the user account from any device in the network - protection against data loss.",
+    title: 'networkingTitle1',
+    description: 'networkingDescription1',
     works: [
       {
-        title: 'PATENT PENDING',
-        text: 'Cutting-edge technology for measuring parameters of motion sensors and camera',
+        title: 'networkingWorkTitle',
+        text: 'networkingWorkText',
         value: 1,
       },
       {
-        title: 'MADE IN EU',
-        text: 'LAPARO simulators and training modules are designed and manufactured in the office placed in the center of Europe',
+        title: 'networkingWorkTitle1',
+        text: 'networkingWorkText1',
         value: 2,
       },
       {
-        title: '2 YEARS WARRANTY',
-        text: 'Test durability and quality, and constantly develop new solutions in response to the growing eeds of the medical industry and its progress',
+        title: 'networkingWorkTitle2',
+        text: 'networkingWorkText2',
         value: 3,
       },
     ],

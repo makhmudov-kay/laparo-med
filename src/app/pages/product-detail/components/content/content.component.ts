@@ -21,7 +21,7 @@ import {
 import { Price } from 'src/app/shared/models/price.model';
 import { TranslateModule } from '@ngx-translate/core';
 import { ClearCountService } from '../../service/clear-count.service';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-content',
