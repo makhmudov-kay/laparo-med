@@ -5,6 +5,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorDirective } from '../../directives/error.directive';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { TranslateModule } from '@ngx-translate/core';
+import { NotificationComponent } from '../notification/notification.component';
 
 @Component({
   selector: 'app-form',
@@ -18,6 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ErrorDirective,
     NgxMaskDirective,
     TranslateModule,
+    NotificationComponent,
   ],
   providers: [provideNgxMask()],
 })
@@ -39,6 +41,10 @@ export class FormComponent {
   PHONE_MASK = '(00) 000-00-00';
   PHONE_PREFIX = '+998 ';
 
+  /**
+   */
+  visibleMessage = false;
+
   sendContact() {
     Object.keys(this.form.controls).forEach((key) => {
       this.form.controls[key as keyof typeof this.form.controls].markAsDirty();
@@ -55,7 +61,9 @@ export class FormComponent {
     request.phone = '998' + request.phone;
 
     this.$contact.sendContact(request).subscribe((res) => {
-      alert('Message sent successfully');
+      // alert('Message sent successfully');
+      this.visibleMessage = true;
+      this.form.reset();
     });
   }
 }

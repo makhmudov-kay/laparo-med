@@ -67,3 +67,9 @@
     <button>{{ "send" | translate }}</button>
   </div>
 </form>
+
+
+<app-notification
+  [isNotification]="visibleMessage"
+  [text]="'successMessage' | translate"
+></app-notification>

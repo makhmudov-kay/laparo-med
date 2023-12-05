@@ -1,22 +1,23 @@
 <div class="product-list">
   <div class="container">
-    <div class="product-list__new">
-      <div class="product-list__new__title">
-        <h3 class="title">{{ "discounts" | translate }}</h3>
-        <h4 class="section-title">{{ "discounts" | translate }}</h4>
-      </div>
-      <div
-        class="product-list__row"
-        *ngIf="discountProduct$ | async as discountProducts; else emptyDiscount"
-      >
-        <div
-          class="product-list__col"
-          *ngFor="let discount of discountProducts | slice: 0: 4"
-        >
-          <app-product-card [data]="discount"></app-product-card>
+    <ng-container
+      *ngIf="discountProduct$ | async as discountProducts; else emptyDiscount"
+    >
+      <div class="product-list__new" *ngIf="discountProducts.length">
+        <div class="product-list__new__title">
+          <h3 class="title">{{ "discounts" | translate }}</h3>
+          <h4 class="section-title">{{ "discounts" | translate }}</h4>
+        </div>
+        <div class="product-list__row">
+          <div
+            class="product-list__col"
+            *ngFor="let discount of discountProducts | slice : 0 : 4"
+          >
+            <app-product-card [data]="discount"></app-product-card>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
 
     <div class="product-list__new all">
       <div class="product-list__new__title">

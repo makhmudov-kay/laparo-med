@@ -63,10 +63,10 @@ export class ApexProComponent {
       title: 'dataInformations.title',
       text: 'dataInformations.text',
       list: [
-        '🔵 dataInformations.list1',
-        '🔵 dataInformations.list2',
-        '🔵 dataInformations.list3',
-        '🔵 dataInformations.list4',
+        'dataInformations.list1',
+        'dataInformations.list2',
+        'dataInformations.list3',
+        'dataInformations.list4',
       ],
     },
     {
@@ -88,11 +88,11 @@ export class ApexProComponent {
       title: 'dataInformations.title2',
       text: 'dataInformations.text2',
       list: [
-        '🔵 dataInformations.list5',
-        '🔵 dataInformations.list6',
-        '🔵 dataInformations.list7',
-        '🔵 dataInformations.list8',
-        '🔵 dataInformations.list9',
+        'dataInformations.list5',
+        'dataInformations.list6',
+        'dataInformations.list7',
+        'dataInformations.list8',
+        'dataInformations.list9',
       ],
     },
     {
@@ -114,9 +114,9 @@ export class ApexProComponent {
       title: 'dataInformations.title3',
       text: 'dataInformations.text3',
       list: [
-        '🔵 dataInformations.list10',
-        '🔵 dataInformations.list11',
-        '🔵 dataInformations.list12',
+        'dataInformations.list10',
+        'dataInformations.list11',
+        'dataInformations.list12',
       ],
     },
   ];
@@ -125,7 +125,7 @@ export class ApexProComponent {
    */
   apexImageData: ProductImage = {
     img: './assets/image/apex-pro-img-0.png',
-    type: 'apexPro1',
+    type: 'apex-pro',
     info: [
       {
         img: './assets/image/apex-pro-img-1.jpg',

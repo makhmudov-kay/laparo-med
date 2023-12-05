@@ -1,5 +1,5 @@
 <div class="blog">
-  <div class="container" *ngIf="blog">
+  <div class="container" *ngIf="blog && blog.results.length; else empty">
     <div class="blog__wrapper">
       <div class="blog__list">
         <app-posts [data]="blog.results"></app-posts>
@@ -31,4 +31,10 @@
     </div>
   </div>
 </div>
-<app-subscribe></app-subscribe>
+<!-- <app-subscribe></app-subscribe> -->
+
+<ng-template #empty>
+  <div class="empty">
+    <h3>Content not found</h3>
+  </div>
+</ng-template>

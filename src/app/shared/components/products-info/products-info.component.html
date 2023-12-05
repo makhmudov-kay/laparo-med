@@ -1,19 +1,19 @@
-<div class="product-text" [ngClass]="{professional: isProfessional}">
+<div class="product-text" [ngClass]="{ professional: isProfessional }">
   <div class="product-text__text">
-    <h2>{{ product.title }}</h2>
+    <h2>{{ product.title | translate }}</h2>
     <p>
-      {{ product.description }}
+      {{ product.description | translate }}
     </p>
     <a [href]="product.link">
-      read more <span><svg-arrow></svg-arrow></span
+      {{ "readMore" | translate }} <span><svg-arrow></svg-arrow></span
     ></a>
   </div>
   <div class="product-text__list">
     <div class="product-text__list__wrapper" [ngClass]="{listColumn}">
-      <h4>{{ product.listTitle }}</h4>
+      <h4 *ngIf="product.listTitle">{{ product.listTitle | translate }}</h4>
       <ul>
         <li *ngFor="let list of product.list">
-          {{ list }}
+          {{ list | translate }}
         </li>
       </ul>
     </div>

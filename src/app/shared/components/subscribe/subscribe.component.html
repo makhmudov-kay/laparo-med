@@ -2,20 +2,20 @@
   <div class="subscribe__wrapper">
     <div class="subscribe__row">
       <div class="subscribe__col s-title">
-        <h3 class="subscribe__title">SUBSCRIBE</h3>
+        <h3 class="subscribe__title">{{ "subscribe" | translate }}</h3>
       </div>
       <div class="subscribe__col s-subtitle">
         <div class="subscribe__subtitle">
-          Sign up for our Newsletter and get a
+          {{ "signUpFor" | translate }}
         </div>
-        <div class="subscribe__discount">5% discount</div>
+        <div class="subscribe__discount">{{ "5%discount" | translate }}</div>
       </div>
       <div class="subscribe__col s-form">
         <form class="subscribe__form" [formGroup]="form">
           <label for="email">E-mail</label>
           <div class="subscribe__form__input">
             <input type="text" formControlName="email" id="email" />
-            <button>Subscribe</button>
+            <button>{{ "subscribe" | translate }}</button>
           </div>
           <div class="subscribe__form__terms">
             <div class="subscribe__form__terms__recieve">
@@ -25,7 +25,7 @@
                 [ngModelOptions]="{ standalone: true }"
                 id="receive"
               />
-              <label for="receive">I agree to receive the newsletter</label>
+              <label for="receive">{{ "agreeNewsLater" | translate }}</label>
             </div>
             <div class="subscribe__form__terms__recieve">
               <input
@@ -34,9 +34,7 @@
                 [ngModelOptions]="{ standalone: true }"
                 id="privacyPolice"
               />
-              <label for="privacyPolice"
-                >I accept the terms and privacy policy</label
-              >
+              <label for="privacyPolice">{{ "acceptTerms" | translate }}</label>
             </div>
           </div>
         </form>

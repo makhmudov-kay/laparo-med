@@ -12,13 +12,14 @@ import { NgClass, NgIf } from '@angular/common';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import { fadeInRight } from 'ng-animate';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.less'],
   standalone: true,
-  imports: [SvgCheckComponent, NgIf, RouterLink, NgClass],
+  imports: [SvgCheckComponent, NgIf, RouterLink, NgClass, TranslateModule],
   animations: [
     trigger('fadeIn', [
       transition(

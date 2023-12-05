@@ -3,6 +3,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductsInfoComponent } from 'src/app/shared/components/products-info/products-info.component';
 import { IndividualProductsData } from '../../../individuals/components/individual-products/individual-products.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-professionals-product',
@@ -15,91 +16,87 @@ import { IndividualProductsData } from '../../../individuals/components/individu
     NgIf,
     NgxIntersectionComponent,
     NgClass,
+    TranslateModule,
   ],
 })
 export class ProfessionalsProductComponent {
   products: IndividualProductsData[] = [
     {
-      title: 'Apex Pro',
-      description:
-        "Introducing Laparo Apex Pro - the most advanced laparoscopic simulator that revolutionizes the surgical training process. Thanks to advanced features and fascinating technology, it creates an irreplaceable training platform for surgeons, enabling the development of skills and the acquisition of knowledge in a realistic, safe environment. Laparo Apex Pro is an advanced hybrid simulator that combines virtual reality with exercises on physical modules, providing unique training experiences. It is the world's first laparoscopic simulator dedicated to pediatric surgery, offering unparalleled opportunities to gain valuable experience in this demanding field.",
+      title: 'individualProductTitle1',
+      description: 'individualProductDesc1',
 
       list: [
-        'Pediatric training program (Virtual + Real)',
-        'Trocars adapted to work also with 3 mm instruments',
-        '5 mm diameter real pediatric laparoscope',
-        'Training analysis',
-        '3 pediatric ports with reduced distance of 4.5 cm',
-        'Set of real pediatric instruments',
-        '15 anatomical ports for instruments and laparoscope',
-        'Realistic touch feedback between instruments in virtual reality',
+        'dataInformations.list5',
+        'dataInformations.list7',
+        'dataInformations.list9',
+        'analyticInfoBLock3',
+        'dataInformations.list6',
+        'individualProductList1',
+        'individualProductList2',
+        'dataInformations.list3',
       ],
       img: './assets/image/prof-product-0.jpg',
       link: '../products/apex-pro',
     },
     {
-      title: 'Apex',
-      description:
-        'The latest hybrid solution from LAPARO was created by combining the knowledge and experience of professionals and engineers with the use of the state-of-the art technologies. The hybrid simulator is an innovative solution on a global scale. It combines virtual reality with physical skills training. Despite its complexity, the trainer offers extremely simple and intuitive manual skills and procedures training, a wide selection of training modules, scenarios for conducting training in virtual reality and a number of tutorials that guide the user step by step like a personal trainer.',
+      title: 'individualProductTitle2',
+      description: 'individualProductDesc2',
 
       list: [
-        'Cutting-edge technology for measuring parameters of motion sensors and camera',
-        'Unique camera with adjustable angle and focus',
-        'System of automatic setting of training modules',
-        'Comprehensive training on one medical simulator - VR & REAL',
-        'Networking capability',
-        'Patent pending',
+        'networkingWorkText',
+        'individualProductList3',
+        'individualProductList4',
+        'individualProductList5',
+        'analyticInfoBLock1',
+        'individualProductList6',
       ],
       img: './assets/image/prof-product-1.png',
       link: '../products/apex-vr',
     },
     {
-      title: 'Analytic',
-      description:
-        'The Laparo Analytic takes laparoscopy training boxes to a higher level. It is a full-fledged workstation intended for use in medical simulation centers and hospitals and it was designed in close collaboration with surgeons to be used by surgeons. The device includes custom-built and cutting-edge solutions for training laparoscopy surgery in educational institutions around the world and it features software and technology which makes leaps in improving the quality of training.',
+      title: 'individualProductTitle3',
+      description: 'individualProductDesc3',
       list: [
-        'Networking Capabilities',
-        'Laser Sensors and Computer Vision Trackers',
-        'Scoring System with Analysis Software',
-        'Built-in scripts, Tutorials and Learning Materials',
-        'Custom Training Scenario Functionality',
-        'Easy Data Export and Video Recording for Research',
-        'Compatibility with all Modules and Approaches',
-        'Easy Electric Height Adjustment',
-        'Durable Build Quality',
+        'individualProductList7',
+        'individualProductList8',
+        'individualProductList9',
+        'individualProductList10',
+        'individualProductList11',
+        'individualProductList12',
+        'individualProductList13',
+        'individualProductList14',
+        'individualProductList15',
       ],
       img: './assets/image/prof-product-2.png',
       link: '../products/analytic',
     },
     {
-      title: 'Advance Training Station',
-      description:
-        'Are you looking for a reliable laparoscopic simulator with a full set of instruments and training modules that will cope with daily training? Meet LAPARO Advance Training Station, which is dedicated for medical simulation centers, universities and hospitals. Minimally invasive surgery trainer consists of an independent training station, equipped with an all-in-one computer with a touch screen. Need to transport your training station from one room to another? No problem, the base of the device has been equipped with wheels to make it easy.',
+      title: 'individualProductTitle4',
+      description: 'individualProductDesc4',
 
       list: [
-        'An all-in-one computer with large touch screen',
-        'Stable but mobile at the same time',
-        'Complete set - to start training, just connect the device to the power supply',
-        'Does not require installation of any additional software',
-        '12 trocar positions',
+        'individualProductList16',
+        'individualProductList17',
+        'individualProductList18',
+        'individualProductList19',
+        'individualProductList20',
       ],
       img: './assets/image/prof-product-3.png',
       link: '../products/advance-training-station',
     },
     {
-      title: 'Advance Portable',
-      description:
-        'Are you looking for a high quality Laparoscopic trainer which can function as a full fledged training station anywhere you take it? Meet LAPARO Advance Portable which was designed with durability and portability in mind. The trainer features a large heavy-duty case attached to a solid base. We developed this device in collaboration with practicing surgeons for use at institutions, medical simulation centers and in hospitals. The LAPARO Advance is the perfect solution for situations where laparoscopic procedures must be practiced frequently and the trainer must remain portable and easy to stow away.',
+      title: 'individualProductTitle5',
+      description: 'individualProductDesc5',
 
       list: [
-        '12 trocar positions',
-        '8 mm and 10 mm access holes',
-        'Software compatible with Windows, MacOS and Linux',
-        'Record, Time and Share Training Sessions',
-        'Ball-joint 30 degree lockable camera mount for free movement in all directions',
-        'Full HD 1080p USB Camera',
-        'Ergonomics Imitating Real-Life Surgery Conditions',
-        'Learn with the assistance of Laparo Learning Materials',
+        'individualProductList20',
+        'individualProductList21',
+        'aspireList8',
+        'aspireList2',
+        'individualProductList22',
+        'individualProductList23',
+        'individualProductList24',
+        'aspireList3',
       ],
       img: './assets/image/prof-product-4.jpg',
       link: '../products/advance-portable',

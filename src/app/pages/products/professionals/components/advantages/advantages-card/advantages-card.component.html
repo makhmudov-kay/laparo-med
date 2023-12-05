@@ -13,17 +13,17 @@
       <div class="advantages-card__right__content">
         <div class="advantages-card__right__content__title">
           <h3 class="advantages-card__right__content__title__rotate">
-            {{ data.title }}
+            {{ data.title | translate }}
           </h3>
         </div>
         <div class="advantages-card__right__content__text">
           <div class="advantages-card__right__content__text__wrapper">
             <p>
-              {{ data.description }}
+              {{ data.description | translate }}
             </p>
             <ul *ngIf="data.list && data.list.length">
               <li *ngFor="let listItem of data.list">
-                {{ listItem }}
+                {{ listItem | translate }}
               </li>
             </ul>
           </div>

@@ -45,10 +45,10 @@ export class AdvancePortableComponent {
       img: './assets/image/advance-portable-img.jpg',
     },
     slides: [
-      './assets/image/portable-slide-1.jpg',
-      './assets/image/portable-slide-2.jpg',
-      './assets/image/portable-slide-3.png',
-      './assets/image/portable-slide-4.png',
+      { image: './assets/image/portable-slide-1.jpg' },
+      { image: './assets/image/portable-slide-2.jpg' },
+      { image: './assets/image/portable-slide-3.png' },
+      { image: './assets/image/portable-slide-4.png' },
     ],
   };
 }
