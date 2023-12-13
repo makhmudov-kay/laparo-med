@@ -176,11 +176,13 @@ export class ProductDetailComponent {
   collectionModules(items: ItemsType[]): ProductItem[] {
     let filteredItems: ProductItem[] = [];
 
-    items.forEach((item) => {
-      item.product.forEach((el) => {
-        filteredItems.push(el);
+    if (items && items.length) {
+      items.forEach((item) => {
+        item.product.forEach((el) => {
+          filteredItems.push(el);
+        });
       });
-    });
+    }
 
     return filteredItems;
   }
