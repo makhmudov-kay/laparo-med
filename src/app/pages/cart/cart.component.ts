@@ -61,6 +61,10 @@ export class CartComponent {
   isLoading = false;
 
   /**
+   */
+  sendOrderText = false
+
+  /**
    *
    */
   @Select(DataState.cart)
@@ -185,6 +189,7 @@ export class CartComponent {
     this.order$.sendOrder(products).subscribe((result: any) => {
       if (result.detail.includes('Order created')) {
         this.visibleMessage = true;
+        this.sendOrderText = true;
         this.isLoading = false;
         this.cartItems = [];
         this.$store.dispatch(new CartAction([]));

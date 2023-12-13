@@ -45,7 +45,7 @@
                   "returnToShop" | translate
                 }}</a>
               </p>
-              <div class="notification">
+              <div class="notification" *ngIf="sendOrderText">
                 <h2>
                   {{ "orderCreated" | translate }}
                 </h2>

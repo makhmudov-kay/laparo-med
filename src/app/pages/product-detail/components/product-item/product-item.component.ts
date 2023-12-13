@@ -73,6 +73,12 @@ export class ProductItemComponent implements OnInit {
    *
    */
   @Output()
+  openModuleSlider = new EventEmitter<number>();
+
+  /**
+   *
+   */
+  @Output()
   decreaseCount = new EventEmitter();
 
   /**

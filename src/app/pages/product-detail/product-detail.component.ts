@@ -1,11 +1,13 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { SwiperCarouselComponent } from './components/swiper-carousel/swiper-carousel.component';
 import { ContentComponent } from './components/content/content.component';
 import { ProductShareComponent } from '../products/components/product-detail-info/components/product-share/product-share.component';
 import { ProductDetailService } from 'src/app/shared/services/product-detail.service';
-import { Observable, filter, map } from 'rxjs';
+import { Observable, filter, map, tap } from 'rxjs';
 import {
+  ItemsType,
   ProductDetail,
+  ProductItem,
 } from 'src/app/shared/models/product-detail.model';
 import {
   ActivatedRoute,
@@ -20,6 +22,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SvgSpinnerComponent } from 'src/app/shared/svg/svg-spinner/svg-spinner.component';
 import { SvgCheckComponent } from 'src/app/shared/svg/svg-check/svg-check.component';
 import { NotificationComponent } from 'src/app/shared/components/notification/notification.component';
+import { SvgCloseComponent } from 'src/app/shared/svg/svg-close/svg-close.component';
+import { SwiperComponent, SwiperModule } from 'swiper/angular';
+import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
+import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-detail',
@@ -38,7 +45,11 @@ import { NotificationComponent } from 'src/app/shared/components/notification/no
     NgFor,
     SvgCheckComponent,
     RouterLink,
-    NotificationComponent
+    NotificationComponent,
+    SvgCloseComponent,
+    SwiperModule,
+    ArrowBtnSVG,
+    MyCurrencyPipe,
   ],
 })
 export class ProductDetailComponent {
@@ -53,9 +64,46 @@ export class ProductDetailComponent {
   product$!: Observable<ProductDetail>;
 
   /**
-   * 
+   *
    */
   isNotification = false;
+
+  /**
+   *
+   */
+  thumbsSwiper: any;
+
+  /**
+   *
+   */
+  @ViewChild('swiperView')
+  swiperView!: SwiperComponent;
+
+  /**
+   */
+  viewImg = false;
+
+  /**
+   */
+  initialSlide!: number;
+
+  /**
+   */
+  isActiveindex!: number;
+
+  /**
+   */
+  modules!: ProductItem[];
+
+  /**
+   */
+  visibleModulesSlide = false;
+
+  sanitizer!: DomSanitizer;
+
+  /**
+   */
+  videoId!: string;
 
   /**
    *
@@ -66,8 +114,10 @@ export class ProductDetailComponent {
     private $product: ProductDetailService,
     private route: ActivatedRoute,
     private router: Router,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private $sanitizer: DomSanitizer
   ) {
+    this.sanitizer = $sanitizer;
     this.route.params.subscribe((e) => {
       this.id = e['id'];
       this.getProductById();
@@ -90,12 +140,49 @@ export class ProductDetailComponent {
   /**
    *
    */
+  preSwiperView() {
+    this.swiperView.swiperRef.slidePrev();
+    this.isActiveindex = this.swiperView.swiperRef.activeIndex + 1;
+  }
+
+  /**
+   *
+   */
+  nextSwiperView() {
+    this.swiperView.swiperRef.slideNext();
+    this.isActiveindex = this.swiperView.swiperRef.activeIndex + 1;
+  }
+
+  /**
+   *
+   */
   private getProductById() {
     if (this.id) {
-      this.product$ = this.$product
-        .getProductById(this.id)
-        .pipe(map((res) => res));
+      this.product$ = this.$product.getProductById(this.id).pipe(
+        map((res) => res),
+        tap((res) => {
+          this.modules = this.collectionModules(res.items);
+          this.cd.markForCheck();
+        })
+      );
     }
+  }
+
+  /**
+   *
+   * @param items
+   * @returns
+   */
+  collectionModules(items: ItemsType[]): ProductItem[] {
+    let filteredItems: ProductItem[] = [];
+
+    items.forEach((item) => {
+      item.product.forEach((el) => {
+        filteredItems.push(el);
+      });
+    });
+
+    return filteredItems;
   }
 
   /**
@@ -105,5 +192,31 @@ export class ProductDetailComponent {
   isAddedToCart(e: boolean) {
     this.isNotification = e;
     this.cd.markForCheck();
+  }
+
+  /**
+   *
+   * @param id
+   */
+  openModuleSlider(id: number) {
+    const selectedProduct = this.modules.findIndex(
+      (product) => product.id === id
+    );
+    this.initialSlide = selectedProduct;
+    this.isActiveindex = selectedProduct + 1;
+    this.visibleModulesSlide = true;
+    this.cd.markForCheck();
+  }
+
+  /**
+   *
+   * @param link
+   * @returns
+   */
+  setUrl(link: string) {
+    let id = link.split('=')[1];
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.youtube.com/embed/${id}`
+    );
   }
 }

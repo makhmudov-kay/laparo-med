@@ -28,6 +28,7 @@
             [configuratorId]="product.is_configurator ? product.id : null"
             (toggleCollapseHandler)="toggleCollapse($event)"
             (addOrDeleteProduct)="addOrDeleteProduct($event)"
+            (openModuleSlider)="openModuleSlider.emit($event)"
           ></app-product-additional>
         </div>
 

@@ -104,7 +104,6 @@ export class SwiperCarouselComponent {
    * @param collection
    */
   openImage(image: ImageItem) {
-    console.log(image);
     const selectedImage = this.slides.findIndex((img) => img.id === image.id);
     this.initialSlide = selectedImage;
     this.isActiveindex = selectedImage + 1;

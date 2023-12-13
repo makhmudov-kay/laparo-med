@@ -193,9 +193,9 @@ export class LoginComponent implements OnInit {
           this.isSuccess = true;
           this.confirm = false;
           this.confirmFormGroup.reset();
-          setTimeout(() => {
-            this.isSuccess = false;
-          }, 5000);
+          // setTimeout(() => {
+          //   this.isSuccess = false;
+          // }, 5000);
         }
       });
     }

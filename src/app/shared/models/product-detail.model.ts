@@ -23,6 +23,7 @@ export interface ProductDetail extends Id {
   product_description: {
     id: number;
     title: LanguageModel;
+    description_points: ProductDescriptionPoint[];
   };
   product_features: ProductFeature;
   main_item: ProductItem;
@@ -58,4 +59,8 @@ export interface ProductFeature extends Id {
 
 export interface Feature extends Id {
   feature: LanguageModel;
+}
+
+export interface ProductDescriptionPoint extends Id {
+  text: LanguageModel;
 }

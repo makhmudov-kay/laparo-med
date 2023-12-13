@@ -1,6 +1,6 @@
 <div class="additional-item" [ngClass]="{ active: data.isOpened }">
   <div class="additional-item__title" (click)="toggleCollapse(data.type)">
-    <span class="title-t">{{ data.type }}</span>
+    <span class="title-t">{{ data.type | myTranslate | async}}</span>
     <span class="plus">{{ data.isOpened ? "-" : "+" }}</span>
   </div>
 
@@ -10,6 +10,7 @@
       [product]="product"
       [configuratorId]="configuratorId"
       (addOrDeleteProduct)="addOrDeleteProduct.emit($event)"
+      (openModuleSlider)="openModuleSlider.emit($event)"
     ></app-product-item>
   </div>
 </div>

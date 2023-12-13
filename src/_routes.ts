@@ -7,6 +7,7 @@ export const ROUTES: Route[] = [
     pathMatch: 'full',
     loadComponent: () =>
       import('./app/pages/home/home.component').then((m) => m.HomeComponent),
+    data: { title: 'iModels' },
   },
   {
     path: 'about-us',
@@ -14,6 +15,7 @@ export const ROUTES: Route[] = [
       import('./app/pages/about-us/about-us.component').then(
         (m) => m.AboutUsComponent
       ),
+    data: { title: 'iModelsAboutUs' },
   },
   {
     path: 'contacts',
@@ -21,11 +23,13 @@ export const ROUTES: Route[] = [
       import('./app/pages/contacts/contacts.component').then(
         (m) => m.ContactsComponent
       ),
+    data: { title: 'iModelscontacts' },
   },
   {
     path: 'blog',
     loadComponent: () =>
       import('./app/pages/blog/blog.component').then((m) => m.BlogComponent),
+    data: { title: 'iModelsblog' },
   },
   {
     path: 'blog/:id',
@@ -33,16 +37,19 @@ export const ROUTES: Route[] = [
       import('./app/pages/blog-detail/blog-detail.component').then(
         (m) => m.BlogDetailComponent
       ),
+    data: { title: 'iModelsblog' },
   },
   {
     path: 'cart',
     loadComponent: () =>
       import('./app/pages/cart/cart.component').then((m) => m.CartComponent),
+    data: { title: 'iModelscart' },
   },
   {
     path: 'login',
     loadComponent: () =>
       import('./app/pages/login/login.component').then((m) => m.LoginComponent),
+    data: { title: 'iModelslogin' },
   },
   {
     path: 'password-reset',
@@ -50,6 +57,7 @@ export const ROUTES: Route[] = [
       import('./app/pages/password-reset/password-reset.component').then(
         (m) => m.PasswordResetComponent
       ),
+    data: { title: 'iModelspasswordReset' },
   },
   {
     path: 'cabinet',
@@ -67,6 +75,7 @@ export const ROUTES: Route[] = [
             './app/pages/cabinet/components/dashboard/dashboard.component'
           ).then((m) => m.DashboardComponent),
         canActivate: [authGuard],
+        data: { title: 'iModelsdashboard' },
       },
       {
         path: 'orders',
@@ -75,6 +84,7 @@ export const ROUTES: Route[] = [
             (m) => m.OrdersComponent
           ),
         canActivate: [authGuard],
+        data: { title: 'iModelsorders' },
       },
       {
         path: 'details',
@@ -83,6 +93,7 @@ export const ROUTES: Route[] = [
             './app/pages/cabinet/components/acc-details/acc-details.component'
           ).then((m) => m.AccDetailsComponent),
         canActivate: [authGuard],
+        data: { title: 'iModelsdetails' },
       },
     ],
   },
@@ -100,6 +111,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/product-list/product-list.component'
           ).then((m) => m.ProductListComponent),
+        data: { title: 'iModelslist' },
       },
 
       {
@@ -108,6 +120,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/products/individuals/individuals.component').then(
             (m) => m.IndividualsComponent
           ),
+        data: { title: 'iModelsindividuals' },
       },
       {
         path: 'professionals',
@@ -115,6 +128,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/professionals/professionals.component'
           ).then((m) => m.ProfessionalsComponent),
+        data: { title: 'iModelsprofessionals' },
       },
       {
         path: 'apex-pro',
@@ -122,6 +136,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/products/apex-pro/apex-pro.component').then(
             (m) => m.ApexProComponent
           ),
+        data: { title: 'iModelsapexPro' },
       },
       {
         path: 'apex-vr',
@@ -129,6 +144,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/products/apex-vr/apex-vr.component').then(
             (m) => m.ApexVrComponent
           ),
+        data: { title: 'iModelsapexVr' },
       },
       {
         path: 'analytic',
@@ -136,6 +152,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/products/analytic/analytic.component').then(
             (m) => m.AnalyticComponent
           ),
+        data: { title: 'iModelsanalytic' },
       },
       {
         path: 'advance-training-station',
@@ -143,6 +160,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/training-station/training-station.component'
           ).then((m) => m.TrainingStationComponent),
+        data: { title: 'iModelsadvanceTrainingStation' },
       },
       {
         path: 'advance-portable',
@@ -150,6 +168,7 @@ export const ROUTES: Route[] = [
           import(
             './app/pages/products/advance-portable/advance-portable.component'
           ).then((m) => m.AdvancePortableComponent),
+        data: { title: 'iModelsadvancePortable' },
       },
       {
         path: ':id',
@@ -157,6 +176,7 @@ export const ROUTES: Route[] = [
           import('./app/pages/product-detail/product-detail.component').then(
             (m) => m.ProductDetailComponent
           ),
+        data: { title: 'iModelsproduct' },
       },
     ],
   },

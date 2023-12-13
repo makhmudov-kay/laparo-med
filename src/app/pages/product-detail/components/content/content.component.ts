@@ -79,6 +79,12 @@ export class ContentComponent {
   isAddedToCart = new EventEmitter<boolean>();
 
   /**
+   *
+   */
+  @Output()
+  openModuleSlider = new EventEmitter<number>();
+
+  /**
    */
   singleProduct!: ProductItem;
 

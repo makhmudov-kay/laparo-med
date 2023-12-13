@@ -57,6 +57,8 @@ export class PasswordResetComponent implements OnInit {
    */
   timer = 60;
 
+  phoneNotFound = false;
+
   /**
    *
    * @param fb
@@ -83,6 +85,12 @@ export class PasswordResetComponent implements OnInit {
       secure_code: [''],
       password: ['', [Validators.minLength(8)]],
     });
+
+    this.form.controls['phone'].valueChanges.subscribe(() => {
+      if (this.phoneNotFound) {
+        this.phoneNotFound = false;
+      }
+    });
   }
 
   /**
@@ -105,6 +113,7 @@ export class PasswordResetComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    console.log(111);
 
     const request = this.form.getRawValue();
     request.phone = '998' + request.phone;
@@ -114,14 +123,25 @@ export class PasswordResetComponent implements OnInit {
     this.$auth
       .resetPassword(request)
       .pipe(takeUntil(this.$destroy))
-      .subscribe((res) => {
-        console.log(res);
-        if (res.detail) {
-          this.resetPasswordStep = 2;
-          this.startTimer();
-        }
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          if (res.detail !== 'Not found.') {
+            this.resetPasswordStep = 2;
+            this.startTimer();
+          }
+        },
+        error: (err) => {
+          this.phoneNotFound = true;
+        },
       });
   }
+
+  // focusInput() {
+  //   if (this.phoneNotFound) {
+  //     this.phoneNotFound = false;
+  //   }
+  // }
 
   /**
    *
