@@ -24,7 +24,7 @@ export class MyCurrencySyncPipe implements PipeTransform {
       return `${separatedNumber} ${
         localStorage.getItem(
           Constants.LOCALSTORAGE_CURRENT_CURRENCY
-        ) as CurrencyType
+        ) as CurrencyType || Constants.DEFAULT_CURRENCY
       }`;
     }
 

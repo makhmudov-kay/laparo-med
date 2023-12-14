@@ -18,9 +18,9 @@ export class MyTranslateSyncPipe implements PipeTransform {
     }
 
     return value[
-      localStorage.getItem(
+      (localStorage.getItem(
         Constants.LOCALSTORAGE_CURRENT_LANGUAGE
-      ) as keyof LanguageModel
+      ) as keyof LanguageModel) || Constants.DEFAULT_LANGUAGE
     ];
   }
 }
