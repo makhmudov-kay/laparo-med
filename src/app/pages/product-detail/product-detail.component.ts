@@ -27,6 +27,8 @@ import { SwiperComponent, SwiperModule } from 'swiper/angular';
 import { ArrowBtnSVG } from 'src/app/shared/svg/arrow-btn/arrow-btn.component';
 import { MyCurrencyPipe } from 'src/app/shared/pipes/my-currency.pipe';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MyTranslateSyncPipe } from 'src/app/shared/pipes/my-translate-sync.pipe';
+import { MyCurrencySyncPipe } from 'src/app/shared/pipes/my-currency-sync.pipe';
 
 @Component({
   selector: 'app-product-detail',
@@ -50,6 +52,8 @@ import { DomSanitizer } from '@angular/platform-browser';
     SwiperModule,
     ArrowBtnSVG,
     MyCurrencyPipe,
+    MyTranslateSyncPipe,
+    MyCurrencySyncPipe
   ],
 })
 export class ProductDetailComponent {

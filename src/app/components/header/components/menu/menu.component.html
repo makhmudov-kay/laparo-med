@@ -225,6 +225,13 @@
             <li class="drawer-menu__item">
               <a
                 [routerLink]="['../products/list']"
+                [queryParams]="{ category_id: '10' }"
+                >{{ "urology" | translate }}</a
+              >
+            </li>
+            <li class="drawer-menu__item">
+              <a
+                [routerLink]="['../products/list']"
                 [queryParams]="{ category_id: '6' }"
                 >{{ "training" | translate }}</a
               >

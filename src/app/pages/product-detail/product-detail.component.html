@@ -191,15 +191,16 @@
         ><div class="item-block">
           <div class="item-block__left side">
             <img [src]="slide.image" alt="slide" />
+            <button class="close" (click)="visibleModulesSlide = false">
+              <svg-close></svg-close>
+            </button>
           </div>
           <div class="item-block__right side">
             <button class="close" (click)="visibleModulesSlide = false">
               <svg-close></svg-close>
             </button>
-            <h2>{{ slide.title | myTranslate | async }}</h2>
-            <p>
-              {{ "price" | translate }}: {{ slide.price | myCurrency | async }}
-            </p>
+            <h2>{{ slide.title | myTranslateSync }}</h2>
+            <p>{{ "price" | translate }}: {{ slide.price | myCurrencySync }}</p>
           </div>
         </div></ng-template
       >
