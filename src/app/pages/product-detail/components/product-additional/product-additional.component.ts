@@ -23,6 +23,12 @@ export class ProductAdditionalComponent {
   @Input()
   configuratorId!: null | number;
 
+  
+  /**
+   */
+  @Input()
+  isConfigurator = false;
+
   /**
    *
    */

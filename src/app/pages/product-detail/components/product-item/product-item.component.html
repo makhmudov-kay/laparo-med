@@ -15,7 +15,7 @@
       <strong> {{ product.new_price | myCurrency | async }}</strong>
     </div>
 
-    <div class="hide-in-mobile">
+    <div [ngClass]="{ 'hide-in-mobile': !isConfigurator }">
       <app-calc-input
         (countChangeDecrease)="decrease()"
         (countChangeIncrease)="increase()"

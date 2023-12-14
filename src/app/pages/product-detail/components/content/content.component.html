@@ -29,6 +29,7 @@
             (toggleCollapseHandler)="toggleCollapse($event)"
             (addOrDeleteProduct)="addOrDeleteProduct($event)"
             (openModuleSlider)="openModuleSlider.emit($event)"
+            [isConfigurator]="product.is_configurator"
           ></app-product-additional>
         </div>
 
