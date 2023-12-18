@@ -18,6 +18,12 @@ export class CalcInputComponent {
   /**
    *
    */
+  @Input()
+  mainItem!: boolean;
+
+  /**
+   *
+   */
   @Output()
   countChangeDecrease = new EventEmitter();
 

@@ -11,10 +11,8 @@
         </h5>
         <div class="stories">
           <ng-container *ngFor="let story of stories; let idx = index">
-            <ngx-intersection
-              (isIntersecting)="handleIntersection($event, story)"
-              [threshold]="0.25"
-            >
+            <div class="relative">
+              <div class="story__circle"><span></span></div>
               <div
                 class="story opacity-0"
                 [ngClass]="{
@@ -23,15 +21,19 @@
                   even: story.fade && (idx + 1) % 2 == 0
                 }"
               >
-                <div class="story__circle"><span></span></div>
                 <div class="story__content">
-                  <h4 class="story__content__date">{{ story.date }}</h4>
-                  <p class="story__content__title">
-                    {{ story.title | translate }}
-                  </p>
+                  <ngx-intersection
+                    (isIntersecting)="handleIntersection($event, story)"
+                    [threshold]="0.25"
+                  >
+                    <h4 class="story__content__date">{{ story.date }}</h4>
+                    <p class="story__content__title">
+                      {{ story.title | translate }}
+                    </p>
+                  </ngx-intersection>
                 </div>
               </div>
-            </ngx-intersection>
+            </div>
           </ng-container>
         </div>
       </div>

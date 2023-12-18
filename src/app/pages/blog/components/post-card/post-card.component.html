@@ -22,12 +22,12 @@
         {{ data.created_at | date : "dd.MM.yyyy" }}
       </div>
       <h4 class="card__content__title">
-        {{ data.title | myTranslate | async }}
+        {{ data.title | myTranslateSync }}
       </h4>
 
       <!-- TODO: REMOVE OR IMPLEMENT -->
       <p class="card__content__text" *ngIf="!isSmCard">
-        {{ data.description | myTranslate | async }}
+        {{ data.description | myTranslateSync }}
       </p>
 
       <div class="card__content__btn">

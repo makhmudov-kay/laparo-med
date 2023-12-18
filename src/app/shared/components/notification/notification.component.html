@@ -3,9 +3,12 @@
   *ngIf="isNotification"
   [ngClass]="{ space: visibleBtn }"
 >
-  <svg-check class="d-flex"></svg-check>
-  <h2>{{ text }}</h2>
-  <ng-container *ngIf="visibleBtn">
-    <a routerLink="../../cart">{{ "viewBasket" | translate }}</a>
-  </ng-container>
+  <button (click)="isNotificationChange.emit(false)">X</button>
+  <div class="notification-content">
+    <svg-check class="d-flex"></svg-check>
+    <h2>{{ text }}</h2>
+    <ng-container *ngIf="visibleBtn">
+      <a routerLink="../../cart">{{ "viewBasket" | translate }}</a>
+    </ng-container>
+  </div>
 </div>

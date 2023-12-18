@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
 import { LinkBtnComponent } from 'src/app/shared/components/link-btn/link-btn.component';
 import { Blog } from '../../models/blog.model';
 import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
+import { MyTranslateSyncPipe } from 'src/app/shared/pipes/my-translate-sync.pipe';
 
 @Component({
   selector: 'app-post-card',
@@ -18,6 +19,7 @@ import { MyTranslatePipe } from 'src/app/shared/pipes/my-translate.pipe';
     MyTranslatePipe,
     AsyncPipe,
     NgxIntersectionComponent,
+    MyTranslateSyncPipe
   ],
 })
 export class PostCardComponent {

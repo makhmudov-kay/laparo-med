@@ -127,8 +127,6 @@ export class ContentComponent {
    * @param product
    */
   addOrDeleteProduct(product: any) {
-    console.log(product);
-
     this.list.push(product);
     const result = Object.values(
       this.list.reduce(
@@ -154,7 +152,6 @@ export class ContentComponent {
       (i: any) => i.is_configurator
     );
     this.cd.markForCheck();
-    console.log(this.isConfiguratorAdded);
   }
 
   /**

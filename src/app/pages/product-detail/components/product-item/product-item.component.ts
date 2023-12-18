@@ -41,7 +41,7 @@ export class ProductItemComponent implements OnInit {
   @Input()
   public set product(v: ProductItem) {
     this._product = v;
-    this._product.count = 0;
+    this._product.count = 1;
     this._product.totalPrice =
       this.product.discount > 0
         ? { ...this.product.new_price }
@@ -52,6 +52,16 @@ export class ProductItemComponent implements OnInit {
    */
   @Input()
   configuratorId!: null | number;
+
+  /**
+   */
+  @Input()
+  mainItem!: boolean;
+
+  /**
+   */
+  @Input()
+  single!: boolean;
 
   /**
    */
@@ -108,6 +118,9 @@ export class ProductItemComponent implements OnInit {
     this.clearCount$.clearCount$.subscribe((w) => {
       if (w) {
         this.count = 0;
+        if ((this.mainItem || this.single) && this.count === 0) {
+          this.increase();
+        }
         this.cd.markForCheck();
       }
     });
@@ -118,6 +131,9 @@ export class ProductItemComponent implements OnInit {
    */
   ngOnInit() {
     this.clearCountListener();
+    if ((this.mainItem || this.single) && this.count === 0) {
+      this.increase();
+    }
   }
 
   /**
@@ -145,6 +161,8 @@ export class ProductItemComponent implements OnInit {
         }
       }
     }
+    console.log(this.product.count);
+    console.log(this.product);
 
     this.addOrDeleteProduct.emit(this.product);
     this.cd.markForCheck();

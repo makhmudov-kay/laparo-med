@@ -1,5 +1,7 @@
 <div class="calc">
-  <button (click)="decrease()">-</button>
+  <button (click)="decrease()" [disabled]="count && count < 2 && mainItem">
+    -
+  </button>
   <input type="number" [(ngModel)]="count" />
   <button (click)="increase()">+</button>
 </div>

@@ -10,7 +10,12 @@
   </h2>
   <h4 class="products__col__title__sub">{{ product.subtitle | translate }}</h4>
 </div>
-<div class="products__col__info">
+<div
+  class="products__col__info"
+  [ngClass]="{
+    individ: product.color === 'orange'
+  }"
+>
   <h3
     class="products__col__info__title"
     [ngClass]="{
