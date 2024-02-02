@@ -1,6 +1,7 @@
 {
   "requiredField": "Required field",
   "name": "Name",
+  "whoAreWe": "Who are we?",
   "phone": "Phone",
   "yourMessage": "Your message",
   "send": "Send",
