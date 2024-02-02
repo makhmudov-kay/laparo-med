@@ -33,7 +33,7 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h3 class="footer__title">OFFER</h3>
+        <h3 class="footer__title">{{ "offer" | translate }}</h3>
         <ul class="footer__menu">
           <li class="footer__menu__item">
             <a routerLink="../products/apex-vr">{{ "apexVr" | translate }}</a>
@@ -106,7 +106,7 @@
             <a href="">Careers</a>
           </li> -->
           <li class="footer__menu__item">
-            <a href="">{{ "story" | translate }}</a>
+            <a [routerLink]="['../blog', 1]">{{ "story" | translate }}</a>
           </li>
           <!-- <li class="footer__menu__item">
             <a href="">Team</a>
@@ -170,5 +170,9 @@
         </ul>
       </div>
     </div>
+    <span class="producer"
+      >WEB SITE CREATED BY
+      <a href="https://jobiruz.pythonanywhere.com/">JOBIR.UZ</a></span
+    >
   </div>
 </div>

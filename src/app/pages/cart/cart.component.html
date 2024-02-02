@@ -61,6 +61,6 @@
 <!-- <div class="message" *ngIf="visibleMessage" [@fadeIn]>Order was created</div> -->
 
 <app-notification
-  [isNotification]="visibleMessage"
+  [(isNotification)]="visibleMessage"
   [text]="'wasCreated' | translate"
 ></app-notification>
