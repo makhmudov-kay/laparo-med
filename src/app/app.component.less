@@ -2,3 +2,35 @@
   padding-top: 90px;
   min-height: 100vh;
 }
+
+.technical-works {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__text {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background: #ffffffa2;
+
+    h1 {
+      font-size: 52px;
+      color: blue;
+    }
+
+    p {
+      font-size: 32px;
+      color: blue;
+    }
+  }
+}
