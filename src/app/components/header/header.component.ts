@@ -13,6 +13,7 @@ import { Router, RouterLink } from '@angular/router';
 import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
 import { SvgUserComponent } from 'src/app/shared/svg/svg-user/svg-user.component';
 import { AuthService } from 'src/app/pages/login/service/auth.service';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-header',
@@ -28,6 +29,7 @@ import { AuthService } from 'src/app/pages/login/service/auth.service';
     RouterLink,
     LogoComponent,
     SvgUserComponent,
+    NzIconModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
