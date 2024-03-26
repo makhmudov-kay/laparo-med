@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer__col">
-        <app-logo [footer]="true"></app-logo>
+        <!-- <app-logo [footer]="true"></app-logo> -->
         <ul class="footer__menu sub-logo">
           <!-- <li class="footer__menu__item">
             <span>LAPARO Sp. z o.o.</span>
@@ -20,12 +20,8 @@
             <span>VAT-ID: PL8971818380</span>
           </li> -->
           <li class="footer__menu__item">
-            <span
-              >E:
-              <a href="mailto:shukrullayev99@gmail.com"
-                >shukrullayev99@gmail.com</a
-              ></span
-            >
+            <span>E:
+              <a href="mailto:shukrullayev99@gmail.com">shukrullayev99@gmail.com</a></span>
           </li>
           <li class="footer__menu__item">
             <span>T: <a href="tel:+998900137077">+998 90 013 70 77</a></span>
@@ -41,38 +37,26 @@
           <li class="footer__menu__item">
             <a routerLink="../products/analytic">{{
               "analytic" | translate
-            }}</a>
+              }}</a>
           </li>
           <li class="footer__menu__item">
             <a routerLink="../products/advance-training-station">{{
               "advanceTraining" | translate
-            }}</a>
+              }}</a>
           </li>
           <li class="footer__menu__item">
             <a routerLink="../products/advance-portable">{{
               "advancePortable" | translate
-            }}</a>
+              }}</a>
           </li>
           <li class="footer__menu__item">
-            <a
-              [routerLink]="['../products/list']"
-              [queryParams]="{ category_id: '6' }"
-              >{{ "aspire" | translate }}</a
-            >
+            <a [routerLink]="['../products/list']" [queryParams]="{ category_id: '6' }">{{ "aspire" | translate }}</a>
           </li>
           <li class="footer__menu__item">
-            <a
-              [routerLink]="['../products/list']"
-              [queryParams]="{ category_id: '2' }"
-              >{{ "advance" | translate }}</a
-            >
+            <a [routerLink]="['../products/list']" [queryParams]="{ category_id: '2' }">{{ "advance" | translate }}</a>
           </li>
           <li class="footer__menu__item">
-            <a
-              [routerLink]="['../products/list']"
-              [queryParams]="{ category_id: '7' }"
-              >{{ "adept" | translate }}</a
-            >
+            <a [routerLink]="['../products/list']" [queryParams]="{ category_id: '7' }">{{ "adept" | translate }}</a>
           </li>
         </ul>
       </div>
@@ -117,12 +101,12 @@
         </ul>
       </div>
       <div class="footer__col">
-        <h3 class="footer__title">{{ "social" | translate }}</h3>
+        <!-- <h3 class="footer__title">{{ "social" | translate }}</h3> -->
         <ul class="footer__menu">
           <!-- <li class="footer__menu__item">
             <a href="">Become a partner</a>
           </li> -->
-          <li class="footer__menu__item socials">
+          <!-- <li class="footer__menu__item socials">
             <a href="https://t.me/iModels_uz">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -163,16 +147,14 @@
             <a href="https://www.youtube.com/@iModelsuz">
               <img src="./assets/image/youtube-1.png" alt="icon" />
             </a>
-            <!-- <a href="">
+            <a href="">
               <img src="./assets/image/linkedin-1.png" alt="icon" />
-            </a> -->
-          </li>
+            </a>
+          </li> -->
         </ul>
       </div>
     </div>
-    <span class="producer"
-      >WEB SITE CREATED BY
-      <a href="https://jobir.uz/">JOBIR.UZ</a></span
-    >
+    <span class="producer">WEB SITE CREATED BY
+      <a href="https://jobir.uz/">JOBIR.UZ</a></span>
   </div>
 </div>

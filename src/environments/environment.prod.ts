@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  endpoint: 'https://imodels.uz/backend/',
+  endpoint: 'https://jobir.uz/backend/',
 };
